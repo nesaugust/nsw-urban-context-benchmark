@@ -1,0 +1,42 @@
+# ── Data folders (too large for GitHub, download via scripts) ──────────────
+data/
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.geojson
+*.json
+*.pb
+*.zip
+
+# ── Python environment ──────────────────────────────────────────────────────
+weather_env/
+venv/
+.env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# ── Jupyter notebooks checkpoints ──────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── API keys — NEVER commit these ──────────────────────────────────────────
+.env
+secrets.py
+config.py
+*_key.txt
+*_token.txt
+
+# ── OS files ────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ─────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.user
