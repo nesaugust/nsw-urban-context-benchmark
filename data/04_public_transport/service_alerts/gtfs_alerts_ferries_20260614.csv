@@ -1,0 +1,73 @@
+mode,alert_id,effect,cause,header,description,start_unix,end_unix,route_id,stop_id,agency_id
+ferries,3a79b056-7aec-5b2a-aebf-f377e043b2b4,8,10,Drummoyne Wharf temporary closure,"From Monday 15 to Friday 19 June, Drummoyne Wharf will be temporarily closed for maintenance.
+Use bus Routes 500N, 500X, 501, 505, 506 and 507 from Victoria Rd instead.",1781452800,1781877590,9-F3-sj2-1,,SF
+ferries,3a79b056-7aec-5b2a-aebf-f377e043b2b4,8,10,Drummoyne Wharf temporary closure,"From Monday 15 to Friday 19 June, Drummoyne Wharf will be temporarily closed for maintenance.
+Use bus Routes 500N, 500X, 501, 505, 506 and 507 from Victoria Rd instead.",1781452800,1781877590,9-F3-sj2-1,,SF
+ferries,8312a5a0-65da-5f12-9395-086dfcad78ce,8,10,Hunters Hill Wharf temporary closure,"From Monday 15 to Friday 26 June, Hunters Hill Wharf will be temporarily closed for maintenance.
+Walk 450 metres to the nearest bus stop on Ferry Street to connect with bus services to the city.",1781452800,1782482347,4-CCL-C-sj2-1,,CCC
+ferries,8312a5a0-65da-5f12-9395-086dfcad78ce,8,10,Hunters Hill Wharf temporary closure,"From Monday 15 to Friday 26 June, Hunters Hill Wharf will be temporarily closed for maintenance.
+Walk 450 metres to the nearest bus stop on Ferry Street to connect with bus services to the city.",1781452800,1782482347,4-CCL-C-sj2-1,,CCC
+ferries,a6ee201b-ca20-5dea-8697-893203ce0920,8,2,Manly Fast Ferry altered timetable,"From Monday 2 March to Friday 10 July, the Manly Fast Ferry service will depart Circular Quay from Wharf 6 to an altered timetable. 
+ 
+For all other services, please check indicator screens and listen for announcements.",1772377200,1783612800,MFF,,MFF
+ferries,a6ee201b-ca20-5dea-8697-893203ce0920,8,2,Manly Fast Ferry altered timetable,"From Monday 2 March to Friday 10 July, the Manly Fast Ferry service will depart Circular Quay from Wharf 6 to an altered timetable. 
+ 
+For all other services, please check indicator screens and listen for announcements.",1772377200,1783612800,MFF,,MFF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F1-sj2-1,,SF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F1-sj2-1,,SF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F2-sj2-1,,SF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F2-sj2-1,,SF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F3-sj2-1,,SF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F3-sj2-1,,SF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F4-sj2-1,,SF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F4-sj2-1,,SF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F5-sj2-1,,SF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F5-sj2-1,,SF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F6-sj2-1,,SF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F6-sj2-1,,SF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F7-sj2-1,,SF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F7-sj2-1,,SF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F8-sj2-1,,SF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F8-sj2-1,,SF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F9-sj2-1,,SF
+ferries,3be54248-ff02-58f3-82d0-d8f014876956,8,10,Circular Quay Wharf 4 temporary closure for maintenance,"From Monday 15 June to Friday 17 July, Circular Quay Wharf 4 will be temporarily closed for maintenance.
+The Manly Fast Ferry Service will depart from Wharf 6.
+For all other services, please check indicator screens and listen for announcements.",1781452800,1784296762,9-F9-sj2-1,,SF
+ferries,f9a205ac-bcdc-5fe1-a62d-07329239b431,3,2,Services reaching capacity,"Due to large crowds travelling for VIVID, services leaving Sydney Olympic Park are reaching capacity. Allow additional travel time or use alternative transport options.",1781334600,0,9-F3-sj2-1,,SF
+ferries,f9a205ac-bcdc-5fe1-a62d-07329239b431,3,2,Services reaching capacity,"Due to large crowds travelling for VIVID, services leaving Sydney Olympic Park are reaching capacity. Allow additional travel time or use alternative transport options.",1781334600,0,9-F3-sj2-1,,SF
+ferries,9073a49f-ce70-544c-8194-529b5475cab4,3,2,Services reaching capacity,"Due to large crowds travelling for VIVID, services are reaching capacity at Circular Quay and Milsons Point wharves. Allow additional travel time or use alternative transport options.",1781339340,0,9-F4-sj2-1,,SF
+ferries,9073a49f-ce70-544c-8194-529b5475cab4,3,2,Services reaching capacity,"Due to large crowds travelling for VIVID, services are reaching capacity at Circular Quay and Milsons Point wharves. Allow additional travel time or use alternative transport options.",1781339340,0,9-F4-sj2-1,,SF

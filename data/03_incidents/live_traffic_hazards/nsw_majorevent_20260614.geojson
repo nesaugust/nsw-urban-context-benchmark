@@ -1,0 +1,927 @@
+{
+  "type": "FeatureCollection",
+  "lastPublished": 1781431860000,
+  "layerName": "MajorEvent-Open",
+  "rights": {
+    "copyright": "Transport for NSW",
+    "licence": "https://opendata.transport.nsw.gov.au/dataset/live-traffic-hazards"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": 266545,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.1763367,
+          -33.8661363
+        ],
+        "collections": []
+      },
+      "properties": {
+        "webLinks": [
+          {
+            "linkText": "White Bay Power Station - Biennale of Sydney",
+            "linkURL": "https://www.whitebaypowerstation.com/whats-on/events/25th-biennale-of-sydney"
+          }
+        ],
+        "headline": "",
+        "periods": [],
+        "speedLimit": -1,
+        "weblinkUrl": null,
+        "expectedDelay": -1,
+        "ended": false,
+        "isNewIncident": false,
+        "publicTransport": "<p>Route 441 and 442 buses run regularly to Rozelle. As well, route 443 heritage buses will run on weekends and public holidays. See details at <a href=\"https://transportnsw.info/events/2026/03/biennale-of-sydney-rozelle\" target=\"_blank\">transportnsw.info</a></p>",
+        "impactingNetwork": false,
+        "subCategoryB": null,
+        "arrangementAttachments": [
+          {
+            "displayName": "Biennale_RoadClosure_12June",
+            "fileName": "Biennale_RoadClosure_12June.pdf",
+            "fileType": "PDF",
+            "linkName": "Biennale_RoadClosure_12June",
+            "sizeInBytes": 292506,
+            "uniqueFileName": "749339_1780449203086_Biennale_RoadClosure_12June.pdf"
+          }
+        ],
+        "isInitialReport": false,
+        "created": 1772405573000,
+        "isMajor": false,
+        "name": null,
+        "subCategoryA": "null",
+        "adviceA": "Use public transport",
+        "adviceB": "Allow extra travel time",
+        "adviceC": " ",
+        "end": 1781442000000,
+        "hideEndDate": false,
+        "incidentKind": "Planned",
+        "mainCategory": "SPECIAL EVENT",
+        "lastUpdated": 1780449213858,
+        "otherAdvice": "<p><strong>The Biennale of Sydney will be held at White Bay Power Station open from Tuesday-Sundays 10am-5pm daily, from Saturday 14 March to Sunday 14 June. The exhibition will also be open on public holidays.</strong></p><p>Traffic will be heavy on roads approaching White Bay Power Station as crowds travel to and from the event,</p><p>Attendees driving should carpool with their group, plan to arrive early as local parking is limited.</p><p>Motorists should allow extra travel time on Victoria Rd, the City West Link and Robert St.</p><p><strong>Friday 12 June - After Dark event and street party - traffic changes and parking restrictions</strong></p><ul><li>From 5pm Fri 12 June to 4am Sat 13 Jun - Full road closure on Robert St between Mullens St and Port Access Rd</li><li>8am Temporary no parking zone on southern side of Robert St</li><li>4pm Temporary no parking zone on northern side of Robert St</li></ul><p><br></p>",
+        "arrangementElements": [],
+        "diversions": "",
+        "additionalInfo": [],
+        "weblinkName": null,
+        "attendingGroups": null,
+        "encodedPolylines": [],
+        "duration": null,
+        "start": 1773406800000,
+        "displayName": "Biennale",
+        "roads": [
+          {
+            "conditionTendency": "",
+            "crossStreet": "White Bay Power Station",
+            "delay": "",
+            "impactedLanes": [],
+            "locationQualifier": "at",
+            "mainStreet": "Robert Street",
+            "quadrant": "",
+            "queueLength": 0,
+            "region": "Sydney",
+            "secondLocation": "",
+            "suburb": "Rozelle",
+            "trafficVolume": ""
+          }
+        ],
+        "isLocalRoad": "State road",
+        "CategoryIcon": "PublicEvent"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 276763,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.0037879,
+          -33.8160766
+        ],
+        "collections": []
+      },
+      "properties": {
+        "webLinks": [
+          {
+            "linkText": "World Cup Live Site - Parramatta Square",
+            "linkURL": "https://www.cityofparramatta.nsw.gov.au/council/latest-news/socceroos-fans-to-cheer-on-their-team-at-parramatta-square"
+          }
+        ],
+        "headline": "",
+        "periods": [],
+        "speedLimit": -1,
+        "weblinkUrl": null,
+        "expectedDelay": -1,
+        "ended": false,
+        "isNewIncident": false,
+        "publicTransport": "<p>Visit\u00a0<a href=\"https://transportnsw.info/events\" target=\"_blank\">transportnsw.info</a> to plan your trip.</p>",
+        "impactingNetwork": false,
+        "subCategoryB": null,
+        "arrangementAttachments": [],
+        "isInitialReport": false,
+        "created": 1780465253000,
+        "isMajor": false,
+        "name": null,
+        "subCategoryA": "null",
+        "adviceA": "Allow extra travel time",
+        "adviceB": "Use public transport",
+        "adviceC": " ",
+        "end": 1782478800000,
+        "hideEndDate": false,
+        "incidentKind": "Planned",
+        "mainCategory": "SPECIAL EVENT",
+        "lastUpdated": 1780466125468,
+        "otherAdvice": "<p><strong>A live site will be set up for the FIFA World Cup men&#39;s games from Sunday 14 to Friday 26 June. </strong></p><p>The matches will be shown live on the big screen and the site is free to visit:</p><ul><li><strong>Sunday 14 June</strong>: Australia vs T\u00fcrkiye, kick off 2pm AEST</li><li><strong>Saturday 20 June</strong>: USA v Australia, kick off 5am AEST</li><li><strong>Friday 26 June</strong>: Paraguay v Australia, kick off 12pm AEST</li></ul><p>Traffic may be heavier than usual in the area. Motorists should be aware of increased pedestrian activity on roads around Parramatta Square and station.</p>",
+        "arrangementElements": [],
+        "diversions": "",
+        "additionalInfo": [],
+        "weblinkName": null,
+        "attendingGroups": null,
+        "encodedPolylines": [],
+        "duration": null,
+        "start": 1781359200000,
+        "displayName": "World Cup Live Site",
+        "roads": [
+          {
+            "conditionTendency": "",
+            "crossStreet": "Parramatta CBD",
+            "delay": "",
+            "impactedLanes": [],
+            "locationQualifier": "at",
+            "mainStreet": "O'Connell Street, Phillip Street, Macquarie St and George Street",
+            "quadrant": "",
+            "queueLength": 0,
+            "region": "Sydney",
+            "secondLocation": "",
+            "suburb": "Parramatta",
+            "trafficVolume": ""
+          }
+        ],
+        "isLocalRoad": "State road",
+        "CategoryIcon": "PublicEvent"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 276759,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.1995098,
+          -33.8765384
+        ],
+        "collections": []
+      },
+      "properties": {
+        "webLinks": [
+          {
+            "linkText": "World Cup live site - Darling Harbour",
+            "linkURL": "https://www.darlingharbour.com/whats-on/events/world-cup-live-site"
+          }
+        ],
+        "headline": "",
+        "periods": [],
+        "speedLimit": -1,
+        "weblinkUrl": null,
+        "expectedDelay": -1,
+        "ended": false,
+        "isNewIncident": false,
+        "publicTransport": "<p>L1 Light rail services run regularly to Exhibition Centre and Paddys Markets within walking distance of Tumbalong Park. Visit <a href=\"https://transportnsw.info/events/2026/06/world-cup-live-site-darling-harbour\" target=\"_blank\">transportnsw.info</a> to plan your trip.</p>",
+        "impactingNetwork": true,
+        "subCategoryB": null,
+        "arrangementAttachments": [],
+        "isInitialReport": false,
+        "created": 1780465514000,
+        "isMajor": false,
+        "name": null,
+        "subCategoryA": "null",
+        "adviceA": "Use public transport",
+        "adviceB": "Allow extra travel time",
+        "adviceC": " ",
+        "end": 1784555100000,
+        "hideEndDate": false,
+        "incidentKind": "Planned",
+        "mainCategory": "SPECIAL EVENT",
+        "lastUpdated": 1780466169754,
+        "otherAdvice": "<p>A live site will be open at Tumbalong Park in Darling Harbour from Sunday 14 June to Monday 20 July for the upcoming FIFA World Cup Men&#39;s matches.</p><p>The matches will be shown live on the big screen and the site is free to visit:</p><ul><li><strong>Sunday 14 June</strong>: Australia vs T\u00fcrkiye, kick off 2pm AEST</li><li><strong>Saturday 20 June</strong>: USA v Australia, kick off 5am AEST</li><li><strong>Friday 26 June</strong>: Paraguay v Australia, kick off 12pm AEST</li><li><strong>9 \u2013 11 July: </strong>Quarter-finals, date and time TBC</li><li><strong>14 \u2013 15 July: </strong>Semi-finals, date and time TBC</li><li><strong>Mon 20 July: </strong>Final, time TBC</li></ul><p>Attendees are encouraged to catch public transport as traffic may be heavier than usual.</p><p>Motorists should allow extra travel time and be aware of increased pedestrian activity on local roads throughout the Sydney CBD.</p>",
+        "arrangementElements": [],
+        "diversions": "",
+        "additionalInfo": [],
+        "weblinkName": null,
+        "attendingGroups": null,
+        "encodedPolylines": [],
+        "duration": null,
+        "start": 1781359200000,
+        "displayName": "World Cup Live Site",
+        "roads": [
+          {
+            "conditionTendency": "",
+            "crossStreet": "Tumbalong Park",
+            "delay": "",
+            "impactedLanes": [],
+            "locationQualifier": "at",
+            "mainStreet": "Harbour Street, Darling Drive",
+            "quadrant": "",
+            "queueLength": 0,
+            "region": "Sydney",
+            "secondLocation": "",
+            "suburb": "Sydney",
+            "trafficVolume": ""
+          }
+        ],
+        "isLocalRoad": "State road",
+        "CategoryIcon": "PublicEvent"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 273441,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.0007222,
+          -33.8110917
+        ],
+        "collections": [
+          {
+            "type": "Point",
+            "coordinates": [
+              151.026021,
+              -33.810099
+            ]
+          },
+          {
+            "type": "Point",
+            "coordinates": [
+              150.99496,
+              -33.805145
+            ]
+          }
+        ]
+      },
+      "properties": {
+        "webLinks": [
+          {
+            "linkText": "Parramatta Half Marathon website",
+            "linkURL": "https://www.parramattahalfmarathon.com/"
+          },
+          {
+            "linkText": "TfNSW Interactive road closure and clearway map - Parramatta Half Marathon",
+            "linkURL": "https://experience.arcgis.com/experience/33d5c8ab25f34cd68015cfb465b887f2"
+          }
+        ],
+        "headline": "",
+        "periods": [],
+        "speedLimit": -1,
+        "weblinkUrl": null,
+        "expectedDelay": -1,
+        "ended": false,
+        "isNewIncident": false,
+        "publicTransport": "<p>Light rail services will not run between Parramatta Square and Westmead from 5am to 12pm. Route 545 buses will be diverting and using different stops while roads are closed. Visit\u00a0<a href=\"https://transportnsw.info/events/2026/05/mothers-day-classic-parramatta\" target=\"_blank\">transportnsw.info</a> to plan your trip.</p>",
+        "impactingNetwork": false,
+        "subCategoryB": null,
+        "arrangementAttachments": [
+          {
+            "displayName": "ParramattaHalfMarathon_TransportMap",
+            "fileName": "ParramattaHalfMarathon_TransportMap.pdf",
+            "fileType": "PDF",
+            "linkName": "ParramattaHalfMarathon_TransportMap",
+            "sizeInBytes": 4098943,
+            "uniqueFileName": "682392_1779322185422_ParramattaHalfMarathon_TransportMap.pdf"
+          },
+          {
+            "displayName": "ParramattaHalfMarathon_RoadClosuresClearwaysMap",
+            "fileName": "ParramattaHalfMarathon_RoadClosuresClearwaysMap.pdf",
+            "fileType": "PDF",
+            "linkName": "ParramattaHalfMarathon_RoadClosuresClearwaysMap",
+            "sizeInBytes": 1099694,
+            "uniqueFileName": "768265_1780972530198_ParramattaHalfMarathon_RoadClosuresClearwaysMap.pdf"
+          }
+        ],
+        "isInitialReport": false,
+        "created": 1779081240000,
+        "isMajor": false,
+        "name": null,
+        "subCategoryA": "null",
+        "adviceA": "Allow extra travel time",
+        "adviceB": "Use public transport",
+        "adviceC": "Check signage",
+        "end": 1782007200000,
+        "hideEndDate": true,
+        "incidentKind": "Planned",
+        "mainCategory": "SPECIAL EVENT",
+        "lastUpdated": 1780972624530,
+        "otherAdvice": "<p>Up to 8,000 people are expected to take part in the <strong>inaugural Parramatta Half Marathon </strong>on Sunday 21 June starting from 7am. Participants will begin their run on O&#39;Connell St bridge and continue through Parramatta Park, around Parramatta CBD before finishing at CommBank Stadium by 11.15am.</p><p><strong>Road closures will be in place to support the event.</strong></p><ul><li><strong>3am to 10.30am</strong>: roads in Western Sydney Uni campus area including sections of Fifth St and Railway St, and in Parramatta on River Rd West between James Ruse Dr and Alfred St, and sections of Noller Pde and Baludarri Dr</li><li><strong>3am to 11am</strong>: roads in Parramatta CBD including sections of Marsden St, George St, Thomas St, Phillip St, Macarthur St, Palmer St, Marist Pl, Market St, Sorrell St, Elizabeth St and surrounding local roads. Access for residents will be maintained on sections of Phillip St, George St and surrounding local lanes.</li><li><strong>3am to 11am: </strong>all roads in Parramatta Park west of Parramatta River will be closed.</li><li><strong>3am to 12 midday</strong>: roads in Parramatta CBD including O&#39;Connell St between Victoria Rd and Argyle St, and sections of Park Pde, Alexandra Ave eastbound, Macquarie, George, Hunter and Pitt Streets, and roads in Parramatta Park east of Parramatta River.</li><li>The Valley Cycleway (Parramatta River foreshore shared path) will be closed to cyclists and pedestrians between 6:30am and 10:30am during the event period.</li></ul><p>Motorists should allow extra travel time and be aware of increased pedestrian activity on roads in the area.</p><p><strong>Special event clearways will be in effect between 1am and 12pm midday on sections of O&#39;Connell St, Victoria Rd, Elizabeth St, Hunter St, Macquarie St, George St, Macarthur St, River Rd West and other local roads.</strong></p><p>Clearways are strict no-parking zones for all vehicle types and apply even to local residents and TfNSW Mobility Scheme Permit holders. Check signs carefully as vehicles left in clearways will be towed and a fee applies. If your vehicle is towed, you can search your vehicle registration at the\u00a0<a href=\"https://www.nsw.gov.au/driving-boating-and-transport/demerits-penalties-and-offences/offences/if-your-car-gets-towed\" target=\"_blank\">Find My Car website</a>\u00a0to find its new location, or alternatively call 132 701 to speak to an operator</p>",
+        "arrangementElements": [
+          {
+            "html": "<p><strong>WESTERN SYDNEY UNIVERSITY, PARRAMATTA CAMPUS</strong></p><p><strong>From 3:00am to 10:30am</strong></p><ul><li>Fifth St 1 between Bridge St and Railway St (internal road) </li><li>Railway St 1 between Fifth St and Fifth St (internal road) </li></ul><p><strong>Notes</strong>: 1 Access available to P1 parking for University of Western Sydney only.</p><p><strong>PARRAMATTA</strong></p><p><strong>From 3:00am to 10:30am</strong></p><ul><li>Alfred St 1 between George St and Noller Pde </li><li>Baludarri Dr (east/west section) between Morton St and Baludarri Dr (north/south section) </li><li>Baludarri Dr (north/south section)2 between Gibson Rd and Baludarri Dr (east/west section) southbound</li><li>Morton St 2 between Gibson Rd and Baludarri Dr southbound</li><li>Noller Pde between Alfred St and George St </li><li>River Rd West3 between James Ruse Dr and Arthur St westbound</li><li>River Rd West between Arthur St and Tramway Ave westbound</li><li>River Rd West between Tramway Ave and Alfred St </li></ul><p><strong>Notes:</strong></p><p>1 Local residential access only to Alfred St north of George St. No access to Noller Pde. , and Noller Pde.</p><p>2 Local residential access only.</p><p>3 Local residential access only from James Ruse Dr. Detour from River Rd West left into Arthur St, right into Tramway Ave, right into River Rd West.</p><p><strong>PARRAMATTA</strong></p><p><strong>From 3:00am to 11:00am</strong></p><ul><li>Alaska St from Thomas St to end of road </li><li>Andrew Nash Ln2 from George St to end of road </li><li>Auctioneer Ln from Horwood Pl to end of road </li><li>Betts St4 between Victoria Rd and Thomas St southbound</li><li>Church St between Market St and Victoria Rd </li><li>Dirrabarri Ln1 from Phillip St to end of road </li><li>Elizabeth Ln from Thomas St to end of road </li><li>Elizabeth St3 between Thomas St and southern end of road </li><li>Elizabeth St4 between Victoria Rd and Thomas St southbound</li><li>Erby Pl1 from Phillip St to end of road </li><li>Freemasons Arms Ln between Phillip St and George St </li><li>George St between Marsden St and Andrew Nash Ln </li><li>George St between Macarthur St and Noller Pde </li><li>George St2 between Smith St and Andrew Nash Ln </li><li>Harvey St3 between Macarthur St and end of road </li><li>Horwood Pl between George St and Auctioneer Ln </li><li>Horwood Pl between Macquarie St and Macquarie Ln </li><li>Hunter St between O\u2019Connell St and eastern end of road </li><li>Lamont St3 from Sorrell St to end of road </li><li>Macarthur St3 between Thomas St and George St </li><li>Macquarie Ln between Horwood Pl and Smith St </li><li>Macquarie St between Marsden St and Horwood Pl </li><li>Marist Pl between Victoria Rd and Market St </li><li>Market St between Marsden St and Church St </li><li>Marsden St between Market St and Argyle St </li><li>New Zealand St3 between Macarthur St and Rangihou Cr </li><li>Palmer Ln from Palmer St to end of road </li><li>Palmer St between Church St and Sorrell St </li><li>Phillip Ln1 from Phillip St to end of road </li><li>Phillip St between Freemasons Arms Ln and Marsden St </li><li>Phillip St1 between Smith St and Freemasons Arms Ln </li><li>Queens Ave between Thomas St and end of road </li><li>Rangihou Cr3 from New Zealand St to end of road </li><li>Robertson St3 between Elizabeth St and Queens Ave </li><li>Sorrell St3 between Victoria Rd and southern end of road </li><li>Stewart St3 from Thomas St to end of road </li><li>Thomas St3 between Elizabeth St and Macarthur St </li><li>United Ln between Macquarie St and end of road </li></ul><p><strong>Notes:</strong></p><p>1 Managed local access available via Smith St and Phillip St.</p><p>2 Managed local access available via Smith St and George St.</p><p>3 Managed exit only. No entry while roads are closed.</p><p>4 Local residential access only.</p><p><strong>PARRAMATTA PARK</strong></p><p><strong>From 3:00am to 11:00am</strong></p><ul><li>Byrnes Ave between West Domain Ave and Federal Ave </li><li>Federal Ave between Governor Macquarie\u2019s Carriage Dr and Railway Pde </li><li>Governor Macquarie\u2019s Carriage Dr between Railway Pde and Federal Ave </li><li>Long Ave between Byrnes Ave and Railway Pde </li><li>Railway Pde between Byrnes Ave and West Domain Ave </li><li>West Domain Ave between Railway Pde and Byrnes Ave </li></ul><p><strong>Note</strong>: All Parramatta Park gates and internal roads will be closed during this time.</p><p><strong>PARRAMATTA / WESTMEAD</strong></p><p><strong>From 3:00am to 12 Midday</strong></p><ul><li>Alexandra Ave1 between Hawkesbury Rd and Park Pde eastbound</li><li>George St between O\u2019Connell St and Marsden St </li><li>Hunter St between O\u2019Connell St and Pitt St </li><li>Macquarie St between Pitt St and Marsden St </li><li>O\u2019Connell St between Victoria Rd and Argyle St </li><li>Park Pde1 between Alexandra Ave and Pitt St eastbound</li><li>Pitt St between Park Pde and Macquarie St </li></ul><p><strong>Notes</strong>: 1 Route buses excepted.</p><p><br></p><p><strong>SHARED PATH AND CYCLEWAY CLOSURES</strong></p><p>Shared path closures include cycleways and pedestrian paths in the locations specified.</p><p><strong>PARRAMATTA</strong></p><p><strong>From 5:30AM to 10:00AM</strong></p><ul><li>Parramatta Light Rail Trail1 between Yallamundi Light Rail Stop and River Rd West </li><li>Queens Wharf Reserve shared path between Alfred St Bridge and Macarthur St overpass </li></ul><p><strong>Notes</strong>: 1 Managed pedestrian access to Rosehill Gardens light rail stop from Grand Ave and Grand Ave North.</p><p>Managed pedestrian access to Tramway Ave light rail stop from the north will be available when a safe gap between runners presents.</p><p>Access to Tramway Ave light rail stop from the south will be available at all times.</p><p><strong>From 5:30AM to 10:30AM</strong></p><ul><li>Alfred St Bridge1 between Alfred St and Baludarri Dr </li><li>Elizabeth St Footbridge1 between Elizabeth St and Phillip St </li><li>Parramatta Valley Cycleway between Parramatta Park and Brodie St, Rydalmere </li></ul><p><strong>Notes: </strong>1 Pedestrian access maintained.</p>",
+            "title": "Road & Shared Pathway closures",
+            "id": "851568"
+          },
+          {
+            "html": "<p><strong>Special Event Clearways apply to both sides of the road unless stated otherwise.</strong></p><p><strong>PARRAMATTA</strong></p><p><strong>From 1:00AM to 12 Midday</strong></p><ul><li>O\u2019Connell St between Victoria Rd and George St </li></ul><p><strong>PARRAMATTA PARK</strong></p><p><strong>From 3:00AM to 11:00AM</strong></p><ul><li>Internal roads west of Parramatta River \u00a0via the Macquarie St Gate and Queens Rd Gate </li></ul><p><strong>From 3:00AM to 10:30AM</strong></p><ul><li>Baludarri Dr between Morton St and Baludarri Dr </li><li>Morton St between telegraph pole south of no. 2 Baludarri Dr and Baludarri Dr </li><li>River Rd West between (opp) no. 2 River Rd West driveway and Alfred St southern side</li><li>River Rd West between Alfred St and no. 6 River Rd West (building B, lobby 1) northern side</li><li>From 3:00AM to 11:00AM</li><li>Elizabeth St between Thomas St and southern end of road eastern side</li><li>Elizabeth St between southern end of road and no.17-25 Elizabeth St western side</li><li>George St between Marsden St and Smith St </li><li>Hunter St between O\u2019Connell St and eastern end of road </li><li>Macarthur St between George St and Thomas St </li><li>Macquarie St between Marsden St and Church St </li><li>Marist Pl between Victoria Rd and Market St </li><li>Market St between Marsden St and Church St </li><li>Marsden St between Market St and Hunter St </li><li>Palmer St between Church St and Sorrell St </li><li>Phillip St between Freemasons Arms Ln and Marsden St </li><li>Sorrell St between no. 20-24 Sorrell St driveway and southern end of road eastern side</li><li>Sorrell St between southern end of road and Palmer St western side</li><li>Thomas St between Elizabeth St and Macarthur St </li></ul><p><strong>From 3:00AM to 12 Midday</strong></p><ul><li>George St between O\u2019Connell St and Marsden St </li><li>Hunter St between O\u2019Connell St and Pitt St </li><li>Macquarie St between Pitt St and Marsden St </li><li>O\u2019Connell St between George St and Hunter St </li><li>Pitt St between Park Pde and Macquarie St </li><li>Victoria Rd between Church St and O\u2019Connell St southern side</li></ul>",
+            "title": "Special Event Clearways",
+            "id": "851569"
+          }
+        ],
+        "diversions": "<p>Motorists travelling north or south of Parramatta CBD will be detoured via Wilde Ave, Smith St and Station St East only. All other key roads corridors will be closed for the event.</p><p>Access to Parramatta Westfield will remain available from the south.</p><p>Detour around Parramatta CBD via James Ruse Dr, Victoria Rd, Cumberland Hwy, and Great Western Hwy to avoid creating and being caught in traffic congestion and delays.</p>",
+        "additionalInfo": [],
+        "weblinkName": null,
+        "attendingGroups": null,
+        "encodedPolylines": [],
+        "duration": null,
+        "start": 1781964000000,
+        "displayName": "Parramatta Half Marathon",
+        "roads": [
+          {
+            "conditionTendency": "",
+            "crossStreet": "",
+            "delay": "",
+            "impactedLanes": [],
+            "locationQualifier": "-",
+            "mainStreet": "O'Connell Street, Marsden St, Macarthur St",
+            "quadrant": "",
+            "queueLength": 0,
+            "region": "Sydney",
+            "secondLocation": "",
+            "suburb": "Parramatta, Westmead",
+            "trafficVolume": ""
+          }
+        ],
+        "isLocalRoad": "State road",
+        "CategoryIcon": "PublicEvent"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 276755,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.2265093,
+          -33.904483
+        ],
+        "collections": []
+      },
+      "properties": {
+        "webLinks": [],
+        "headline": "",
+        "periods": [],
+        "speedLimit": -1,
+        "weblinkUrl": null,
+        "expectedDelay": -1,
+        "ended": false,
+        "isNewIncident": true,
+        "publicTransport": "<p>Visit <a href=\"https://transportnsw.info/events/2026/06/stakes-day\" target=\"_blank\">transportnsw.info</a> to plan your trip.</p>",
+        "impactingNetwork": false,
+        "subCategoryB": null,
+        "arrangementAttachments": [],
+        "isInitialReport": false,
+        "created": 1780987195000,
+        "isMajor": false,
+        "name": null,
+        "subCategoryA": "null",
+        "adviceA": "Allow extra travel time",
+        "adviceB": "Use public transport",
+        "adviceC": " ",
+        "end": 1781940600000,
+        "hideEndDate": true,
+        "incidentKind": "Planned",
+        "mainCategory": "SPECIAL EVENT",
+        "lastUpdated": 1780987196376,
+        "otherAdvice": "<p><strong>Stakes Day at Royal Randwick Racecourse</strong>. First race from 11am, last race from 4.25pm.</p><p>Traffic will be heavier than usual on\u00a0Anzac Pde, Doncaster Ave, High St, Alison Rd and Darley Rd as crowds travel to and from the event.</p><p>Motorists should allow extra travel time and be aware of increased pedestrian activity on local roads.</p>",
+        "arrangementElements": [],
+        "diversions": "",
+        "additionalInfo": [],
+        "weblinkName": null,
+        "attendingGroups": null,
+        "encodedPolylines": [],
+        "duration": null,
+        "start": 1781877600000,
+        "displayName": "Race Day",
+        "roads": [
+          {
+            "conditionTendency": "",
+            "crossStreet": "Royal Randwick Racecourse",
+            "delay": "",
+            "impactedLanes": [],
+            "locationQualifier": "approaching",
+            "mainStreet": "Anzac Parade, Alison Road, High Street",
+            "quadrant": "",
+            "queueLength": 0,
+            "region": "Sydney",
+            "secondLocation": "",
+            "suburb": "Randwick",
+            "trafficVolume": ""
+          }
+        ],
+        "isLocalRoad": "State road",
+        "CategoryIcon": "PublicEvent"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 276761,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.0651488,
+          -33.8459075
+        ],
+        "collections": []
+      },
+      "properties": {
+        "webLinks": [
+          {
+            "linkText": "Sydney Olympic Park - World Cup FIFA Men's live site",
+            "linkURL": "https://www.sydneyolympicpark.nsw.gov.au/things-to-see-and-do/world-cup-live-site"
+          }
+        ],
+        "headline": "",
+        "periods": [],
+        "speedLimit": -1,
+        "weblinkUrl": null,
+        "expectedDelay": -1,
+        "ended": false,
+        "isNewIncident": true,
+        "publicTransport": "<p><strong>\ufeff</strong>Visit\u00a0<a href=\"https://transportnsw.info/events/2026/06/world-cup-live-site-sydney-olympic-park\" target=\"_blank\">transportnsw.info</a> to plan your trip.</p>",
+        "impactingNetwork": false,
+        "subCategoryB": null,
+        "arrangementAttachments": [],
+        "isInitialReport": false,
+        "created": 1780987473000,
+        "isMajor": false,
+        "name": null,
+        "subCategoryA": "null",
+        "adviceA": "Allow extra travel time",
+        "adviceB": "Use public transport",
+        "adviceC": " ",
+        "end": 1782453600000,
+        "hideEndDate": true,
+        "incidentKind": "Planned",
+        "mainCategory": "SPECIAL EVENT",
+        "lastUpdated": 1780987474222,
+        "otherAdvice": "<p><strong>A free live site will be open at Cathy Freeman Park screening the FIFA World Cup men&#39;s matches live on the big screen from Sunday 14 to Friday 26 June. </strong></p><ul><li><strong>Sunday 14 June</strong>: Australia vs T\u00fcrkiye, kick off 2pm AEST</li><li><strong>Saturday 20 June</strong>: USA v Australia, kick off 5am AEST</li><li><strong>Friday 26 June</strong>: Paraguay v Australia, kick off 12pm AEST</li></ul><p>Motorists should allow extra travel time on the M4 Mwy, Homebush Bay Dr, Concord Rd, Lane Cove Rd, Parramatta Rd, Centenary Dr and Silverwater Rd.</p>",
+        "arrangementElements": [],
+        "diversions": "",
+        "additionalInfo": [],
+        "weblinkName": null,
+        "attendingGroups": null,
+        "encodedPolylines": [],
+        "duration": null,
+        "start": 1781359200000,
+        "displayName": "World Cup live site",
+        "roads": [
+          {
+            "conditionTendency": "",
+            "crossStreet": "Cathy Freeman Park",
+            "delay": "",
+            "impactedLanes": [],
+            "locationQualifier": "approaching",
+            "mainStreet": "M4 Motorway, Homebush Bay Drive, Parramatta Road, Centenary Drive",
+            "quadrant": "",
+            "queueLength": 0,
+            "region": "Sydney",
+            "secondLocation": "",
+            "suburb": "Sydney Olympic Park",
+            "trafficVolume": ""
+          }
+        ],
+        "isLocalRoad": "State road",
+        "CategoryIcon": "PublicEvent"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 276748,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.0624443,
+          -33.8424232
+        ],
+        "collections": []
+      },
+      "properties": {
+        "webLinks": [],
+        "headline": "",
+        "periods": [],
+        "speedLimit": -1,
+        "weblinkUrl": null,
+        "expectedDelay": -1,
+        "ended": false,
+        "isNewIncident": true,
+        "publicTransport": "<p>Visit <a href=\"https://transportnsw.info/events/2026/06/leehom\" target=\"_blank\">transportnsw.info</a> to plan your trip.</p>",
+        "impactingNetwork": false,
+        "subCategoryB": null,
+        "arrangementAttachments": [],
+        "isInitialReport": false,
+        "created": 1780987525000,
+        "isMajor": false,
+        "name": null,
+        "subCategoryA": "null",
+        "adviceA": "Allow extra travel time",
+        "adviceB": "Use public transport",
+        "adviceC": " ",
+        "end": 1781701200000,
+        "hideEndDate": true,
+        "incidentKind": "Planned",
+        "mainCategory": "SPECIAL EVENT",
+        "lastUpdated": 1780987526538,
+        "otherAdvice": "<p><strong>Leehom at Qudos Bank Arena. Show starts at 7pm</strong></p><p>Traffic delays are expected as attendees make their way to Olympic Park during the busy evening peak. Motorists should allow extra travel time on roads including the M4 Mwy, Homebush Bay Dr, Concord Rd, Lane Cove Rd, Parramatta Rd, Centenary Dr and Silverwater Rd.</p><p>If you&#39;re driving, <a href=\"https://www.sydneyolympicpark.com.au/parking/\" target=\"_blank\">pre-book parking online</a>\u00a0in advance to secure a space, available until 11:59pm the night before the show unless sold out prior. If you have pre-booked your parking, follow the directions of staff and have your parking ticket ready to show at the car park entry.</p><p>Sydney Olympic Park Authority may close some local roads to accommodate increased public transport services and ensure pedestrian safety during events. For road closure details, visit the\u00a0<a href=\"https://www.sydneyolympicpark.nsw.gov.au/map\" target=\"_blank\">Sydney Olympic Park interactive map</a>\u00a0for more details.\u00a0\u00a0</p>",
+        "arrangementElements": [],
+        "diversions": "",
+        "additionalInfo": [],
+        "weblinkName": null,
+        "attendingGroups": null,
+        "encodedPolylines": [],
+        "duration": null,
+        "start": 1781618400000,
+        "displayName": "Concert",
+        "roads": [
+          {
+            "conditionTendency": "",
+            "crossStreet": "Qudos Bank Arena",
+            "delay": "",
+            "impactedLanes": [],
+            "locationQualifier": "approaching",
+            "mainStreet": "M4 Motorway, Homebush Bay Drive, Parramatta Road",
+            "quadrant": "",
+            "queueLength": 0,
+            "region": "Sydney",
+            "secondLocation": "",
+            "suburb": "Sydney Olympic Park",
+            "trafficVolume": ""
+          }
+        ],
+        "isLocalRoad": "State road",
+        "CategoryIcon": "PublicEvent"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 276749,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.7245507,
+          -32.918225
+        ],
+        "collections": []
+      },
+      "properties": {
+        "webLinks": [],
+        "headline": "",
+        "periods": [],
+        "speedLimit": -1,
+        "weblinkUrl": null,
+        "expectedDelay": -1,
+        "ended": false,
+        "isNewIncident": true,
+        "publicTransport": "<p>Free shuttle bus services will operate for the game. Visit <a href=\"https://transportnsw.info/events/2026/06/nrl-knights-v-dragons\" target=\"_blank\">transportnsw.info</a> to plan your trip</p>",
+        "impactingNetwork": false,
+        "subCategoryB": null,
+        "arrangementAttachments": [],
+        "isInitialReport": false,
+        "created": 1781151142000,
+        "isMajor": false,
+        "name": null,
+        "subCategoryA": "null",
+        "adviceA": "Allow extra travel time",
+        "adviceB": " ",
+        "adviceC": " ",
+        "end": 1781874000000,
+        "hideEndDate": true,
+        "incidentKind": "Planned",
+        "mainCategory": "SPECIAL EVENT",
+        "lastUpdated": 1781151143374,
+        "otherAdvice": "<p><strong>NRL Knights v Dragons at McDonald Jones Stadium. Kick off at 8pm, full time at 10pm.</strong></p><p>Traffic may be heavier than usual as fans travel to and from the match. Allow extra travel time on Turton Rd, Griffiths Rd, Newcastle Rd, Lambton Rd and Bridges Rd through Broadmeadow while fans are making their way to and from the stadium.</p><p>For passenger drop-off,\u00a0use the allocated 10-minute loading zone in the McDonald Jones Stadium car park. Entry is via the driveway off Turton Road.</p><p>Motorists should allow extra travel time and be aware of increased pedestrian activity on local roads.</p>",
+        "arrangementElements": [],
+        "diversions": "",
+        "additionalInfo": [],
+        "weblinkName": null,
+        "attendingGroups": null,
+        "encodedPolylines": [],
+        "duration": null,
+        "start": 1781791200000,
+        "displayName": "NRL",
+        "roads": [
+          {
+            "conditionTendency": "",
+            "crossStreet": "Turton Road",
+            "delay": "",
+            "impactedLanes": [],
+            "locationQualifier": "at",
+            "mainStreet": "Griffiths Road",
+            "quadrant": "",
+            "queueLength": 0,
+            "region": "Hunter",
+            "secondLocation": "",
+            "suburb": "Broadmeadow",
+            "trafficVolume": ""
+          }
+        ],
+        "isLocalRoad": "State road",
+        "CategoryIcon": "PublicEvent"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 276754,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.0636972,
+          -33.8440366
+        ],
+        "collections": []
+      },
+      "properties": {
+        "webLinks": [],
+        "headline": "",
+        "periods": [],
+        "speedLimit": -1,
+        "weblinkUrl": null,
+        "expectedDelay": -1,
+        "ended": false,
+        "isNewIncident": true,
+        "publicTransport": "<p>Match tickets include travel on public transport for the AFL &amp; NRL games. Visit <a href=\"https://transportnsw.info/events/\" target=\"_blank\">transportnsw.info</a> to plan your trip.</p>",
+        "impactingNetwork": false,
+        "subCategoryB": null,
+        "arrangementAttachments": [],
+        "isInitialReport": false,
+        "created": 1781151239000,
+        "isMajor": false,
+        "name": null,
+        "subCategoryA": "null",
+        "adviceA": "Use public transport",
+        "adviceB": "Allow extra travel time",
+        "adviceC": " ",
+        "end": 1781963100000,
+        "hideEndDate": true,
+        "incidentKind": "Planned",
+        "mainCategory": "SPECIAL EVENT",
+        "lastUpdated": 1781151239784,
+        "otherAdvice": "<p><strong>Sydney Olympic Park will be very busy on Saturday with more than 50,000 people attending various events at venues across the precinct, alongside the Supanova Comic Con &amp; Gaming expo:</strong></p><ul><li><a href=\"https://www.sydneyshowground.com.au/whats-on/giants-vs-carlton/\" target=\"_blank\"><strong>AFL GWS Giants v Carlton </strong></a><strong>at ENGIE Stadium. First Bounce at 4.15pm, full time at 6.45pm</strong></li><li><a href=\"https://www.accorstadium.com.au/events/n2026_nrl_round_16__bulldogs_vs_sea_eagles\" target=\"_blank\"><strong>NRL Bulldogs v Sea Eagles</strong></a><strong> at Accor Stadium. Kick off at 7.30pm, full time at 9.15pm</strong></li><li><a href=\"https://qudosbankarena.com.au/event/dave\" target=\"_blank\"><strong>DAVE: The Boy Who Played the Harp tour</strong></a><strong> at Qudos Bank Arena. Show starts at 8pm</strong></li></ul><p>Motorists should allow extra travel time on roads including the M4 Mwy, Homebush Bay Dr, Concord Rd, Lane Cove Rd, Parramatta Rd, Centenary Dr and Silverwater Rd.</p><p>If you need to drive, <a href=\"https://www.sydneyolympicpark.com.au/parking/\" target=\"_blank\">pre-book parking online</a>\u00a0in advance to secure a space. Follow the directions of staff and have your parking ticket ready to show at the car park entry. Parking will be in high demand with more than 50,000 people attending various events in the precinct.</p><p>Sydney Olympic Park Authority may close some local roads to accommodate increased public transport services and ensure pedestrian safety during events. For road closure details, visit the\u00a0<a href=\"https://www.sydneyolympicpark.nsw.gov.au/map\" target=\"_blank\">Sydney Olympic Park interactive map</a>\u00a0for more details.\u00a0\u00a0</p>",
+        "arrangementElements": [],
+        "diversions": "",
+        "additionalInfo": [],
+        "weblinkName": null,
+        "attendingGroups": null,
+        "encodedPolylines": [],
+        "duration": null,
+        "start": 1781877600000,
+        "displayName": "Multiple special events",
+        "roads": [
+          {
+            "conditionTendency": "",
+            "crossStreet": "Accor Stadium",
+            "delay": "",
+            "impactedLanes": [],
+            "locationQualifier": "approaching",
+            "mainStreet": "M4 Motorway, Homebush Bay Drive, Parramatta Road, Centenary Drive",
+            "quadrant": "",
+            "queueLength": 0,
+            "region": "Sydney",
+            "secondLocation": "",
+            "suburb": "Sydney Olympic Park",
+            "trafficVolume": ""
+          }
+        ],
+        "isLocalRoad": "State road",
+        "CategoryIcon": "PublicEvent"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 276751,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.0707409,
+          -33.8440044
+        ],
+        "collections": []
+      },
+      "properties": {
+        "webLinks": [],
+        "headline": "",
+        "periods": [],
+        "speedLimit": -1,
+        "weblinkUrl": null,
+        "expectedDelay": -1,
+        "ended": false,
+        "isNewIncident": true,
+        "publicTransport": "<p>Visit\u00a0<a href=\"https://transportnsw.info/events/2026/06/supanova-comic-con-gaming\" target=\"_blank\">transportnsw.info</a> to plan your trip.</p>",
+        "impactingNetwork": false,
+        "subCategoryB": null,
+        "arrangementAttachments": [],
+        "isInitialReport": false,
+        "created": 1781151949000,
+        "isMajor": false,
+        "name": null,
+        "subCategoryA": "null",
+        "adviceA": "Allow extra travel time",
+        "adviceB": "Use public transport",
+        "adviceC": " ",
+        "end": 1782032400000,
+        "hideEndDate": false,
+        "incidentKind": "Planned",
+        "mainCategory": "SPECIAL EVENT",
+        "lastUpdated": 1781151950501,
+        "otherAdvice": "<p><strong>Supanova Comic Con &amp; Gaming at Sydney Showground from Friday 19 to Sunday 21 June. Expo starts daily at 10am finishes nightly at 6pm. </strong></p><p>Traffic may be heavier than usual on roads approaching Sydney Olympic Park as attendees travel to and from the expo. Travel with your group and allow extra travel time on the M4, Parramatta Rd, Homebush Bay Dr and Concord Rd.</p><p><strong>Ticketholders to Saturday\u2019s event should expect additional traffic with 50,000 people also attending events at surrounding venues. </strong></p><p>If you have to drive, carpool with your group <a href=\"https://www.sydneyolympicpark.nsw.gov.au/parking\" target=\"_blank\">pre-book your parking online</a> ahead of time to secure a space \u2013 available until 11:59pm the night before the event unless sold out prior. Parking will be in high demand on with more than 50,000 people attending various events in the precinct on Saturday 20 June.\u00a0</p><p>Sydney Olympic Park Authority may close some local roads to accommodate increased public transport services and ensure pedestrian safety during events. For road closure details, visit the <a href=\"https://www.sydneyolympicpark.nsw.gov.au/map\" target=\"_blank\">Sydney Olympic Park interactive map</a> for more details.\u00a0\u00a0<strong>\ufeff</strong></p>",
+        "arrangementElements": [],
+        "diversions": "",
+        "additionalInfo": [],
+        "weblinkName": null,
+        "attendingGroups": null,
+        "encodedPolylines": [],
+        "duration": null,
+        "start": 1781791200000,
+        "displayName": "Expo",
+        "roads": [
+          {
+            "conditionTendency": "",
+            "crossStreet": "Sydney Showground",
+            "delay": "",
+            "impactedLanes": [],
+            "locationQualifier": "approaching",
+            "mainStreet": "M4 Motorway, Homebush Bay Drive, Parramatta Road",
+            "quadrant": "",
+            "queueLength": 0,
+            "region": "Sydney",
+            "secondLocation": "",
+            "suburb": "Sydney Olympic Park",
+            "trafficVolume": ""
+          }
+        ],
+        "isLocalRoad": "State road",
+        "CategoryIcon": "PublicEvent"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 276752,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          150.835112,
+          -34.0510412
+        ],
+        "collections": []
+      },
+      "properties": {
+        "webLinks": [],
+        "headline": "",
+        "periods": [],
+        "speedLimit": -1,
+        "weblinkUrl": null,
+        "expectedDelay": -1,
+        "ended": false,
+        "isNewIncident": false,
+        "publicTransport": "<p>Visit <a href=\"https://transportnsw.info/events/2026/06/nrl-wests-tigers-v-dolphins\" target=\"_blank\">transportnsw.info</a> to plan your trip.</p>",
+        "impactingNetwork": false,
+        "subCategoryB": null,
+        "arrangementAttachments": [],
+        "isInitialReport": false,
+        "created": 1781151675000,
+        "isMajor": false,
+        "name": null,
+        "subCategoryA": "null",
+        "adviceA": "Allow extra travel time",
+        "adviceB": " ",
+        "adviceC": " ",
+        "end": 1781941500000,
+        "hideEndDate": true,
+        "incidentKind": "Planned",
+        "mainCategory": "SPECIAL EVENT",
+        "lastUpdated": 1781151957098,
+        "otherAdvice": "<p><strong>NRL: Wests Tigers v Dolphins at Campbelltown Sports Stadium. Kick-off at 3pm, full time around 5pm.</strong></p><p>Traffic may be heavier than usual as fans travel to the match. Allow extra travel time on roads including Pembroke Rd, Rose Payten Dr and Leumeah Rd.</p><p>Motorists should also be aware of increased pedestrian activity in the area.</p>",
+        "arrangementElements": [],
+        "diversions": "",
+        "additionalInfo": [],
+        "weblinkName": null,
+        "attendingGroups": null,
+        "encodedPolylines": [],
+        "duration": null,
+        "start": 1781877600000,
+        "displayName": "NRL",
+        "roads": [
+          {
+            "conditionTendency": "",
+            "crossStreet": "Campbelltown Sports Stadium",
+            "delay": "",
+            "impactedLanes": [],
+            "locationQualifier": "approaching",
+            "mainStreet": "Pembroke Road and Rose Payten Drive",
+            "quadrant": "",
+            "queueLength": 0,
+            "region": "Sydney",
+            "secondLocation": "",
+            "suburb": "Leumeah",
+            "trafficVolume": ""
+          }
+        ],
+        "isLocalRoad": "State road",
+        "CategoryIcon": "PublicEvent"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 277877,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          150.7737397,
+          -34.5708403
+        ],
+        "collections": []
+      },
+      "properties": {
+        "webLinks": [
+          {
+            "linkText": "Eats and Beats Albion Park",
+            "linkURL": "https://www.shellharbourevents.com.au/eatsandbeats"
+          }
+        ],
+        "headline": "",
+        "periods": [
+          {
+            "closureType": "ROAD_CLOSURE",
+            "roadextent": "Closed",
+            "roadtype": "Road",
+            "direction": "Both directions",
+            "finishTime": "10:00pm",
+            "fromDay": "Saturday",
+            "startTime": "3:00pm",
+            "toDay": ""
+          }
+        ],
+        "speedLimit": -1,
+        "weblinkUrl": null,
+        "expectedDelay": -1,
+        "ended": false,
+        "isNewIncident": true,
+        "publicTransport": "",
+        "impactingNetwork": false,
+        "subCategoryB": null,
+        "arrangementAttachments": [
+          {
+            "displayName": "EatsandBeatsTruckDetour",
+            "fileName": "EatsandBeatsTruckDetour.png",
+            "fileType": "PNG",
+            "linkName": "EatsandBeatsTruckDetour",
+            "sizeInBytes": 83361,
+            "uniqueFileName": "957816_1781239807747_EatsandBeatsTruckDetour.png"
+          }
+        ],
+        "isInitialReport": false,
+        "created": 1781239880000,
+        "isMajor": false,
+        "name": null,
+        "subCategoryA": "null",
+        "adviceA": "Allow extra travel time",
+        "adviceB": "Use diversions",
+        "adviceC": " ",
+        "end": 1782561600000,
+        "hideEndDate": false,
+        "incidentKind": "Planned",
+        "mainCategory": "SPECIAL EVENT",
+        "lastUpdated": 1781239880456,
+        "otherAdvice": "",
+        "arrangementElements": [
+          {
+            "html": "<p>Heavy vehicles up to 14 metres long can use the following detours: </p><p>Westbound \u2013 Terry St, Russell St</p><p>Eastbound- Calderwood Rd and Taylor Rd.</p><p>Vehicles between 14 metres and 23 metres long will be detoured via Church St. </p><p>Vehicles greater than 23 metres long can detour via Mt Ousley, Picton Rd, and the Hume Hwy to reach the Southern Highlands. All other heavy vehicles will be required to park up for the duration of the event (Illawarra Hwy, east of Escarpment Dr; Princes Hwy northbound, between Woollybutt Dr and Tongarra Rd; Princes Hwy southbound, before and after Kaylaur Cres; Albion Park showground and Tripoli</p><p>Way contingency parking). Load limits have been waived for Taylor Rd during detour.</p>",
+            "title": "Information for heavy vehicle operators",
+            "id": "853903"
+          }
+        ],
+        "diversions": "<p>Eastbound detour via Calderwood Rd, Taylor Rd and Terry St. </p><p>Westbound detour via Terry St and Russell St.</p>",
+        "additionalInfo": [],
+        "weblinkName": null,
+        "attendingGroups": null,
+        "encodedPolylines": [],
+        "duration": null,
+        "start": 1782536400000,
+        "displayName": "Eats and Beats",
+        "roads": [
+          {
+            "conditionTendency": "",
+            "crossStreet": "Terry Street",
+            "delay": "",
+            "impactedLanes": [],
+            "locationQualifier": "between",
+            "mainStreet": "Tongarra Road",
+            "quadrant": "",
+            "queueLength": 0,
+            "region": "South Coast",
+            "secondLocation": "Russell St",
+            "suburb": "Albion Park",
+            "trafficVolume": ""
+          }
+        ],
+        "isLocalRoad": "State road",
+        "CategoryIcon": "PublicEvent"
+      }
+    }
+  ]
+}

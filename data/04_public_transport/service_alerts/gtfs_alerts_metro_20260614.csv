@@ -1,0 +1,1001 @@
+mode,alert_id,effect,cause,header,description,start_unix,end_unix,route_id,stop_id,agency_id
+metro,669cd03f-4cdf-50e2-8cee-0031b13398a6,6,9,Buses replace metro services between Tallawong and Chatswood. Use trains between Epping or Chatswood and Sydenham,"Saturday 20 and Sunday 21 June
+Metro services do not run between Tallawong and Sydenham.
+Buses replace services between Tallawong and Chatswood only.
+Use trains between Epping or Chatswood, the City and Sydenham.
+For travel to and from Waterloo use local buses or trains from Redfern.",1781884800,1782057620,SMNW_M1,,SMNW
+metro,669cd03f-4cdf-50e2-8cee-0031b13398a6,6,9,Buses replace metro services between Tallawong and Chatswood. Use trains between Epping or Chatswood and Sydenham,"Saturday 20 and Sunday 21 June
+Metro services do not run between Tallawong and Sydenham.
+Buses replace services between Tallawong and Chatswood only.
+Use trains between Epping or Chatswood, the City and Sydenham.
+For travel to and from Waterloo use local buses or trains from Redfern.",1781884800,1782057620,SMNW_M1,,SMNW
+metro,3f532a04-2a96-5203-8e8c-a7dc18c1817d,8,9,"Metro services run between Tallawong, Martin Place and Central only. Change services at Martin Place","Nightly from 9:50PM, metro services do not run between Central and Sydenham. Services run between Tallawong and Martin Place, and between Martin Place and Central only.",1782129000,1782144000,SMNW_M1,,SMNW
+metro,3f532a04-2a96-5203-8e8c-a7dc18c1817d,8,9,"Metro services run between Tallawong, Martin Place and Central only. Change services at Martin Place","Nightly from 9:50PM, metro services do not run between Central and Sydenham. Services run between Tallawong and Martin Place, and between Martin Place and Central only.",1782129000,1782144000,SMNW_M1,,SMNW
+metro,3f532a04-2a96-5203-8e8c-a7dc18c1817d,8,9,"Metro services run between Tallawong, Martin Place and Central only. Change services at Martin Place","Nightly from 9:50PM, metro services do not run between Central and Sydenham. Services run between Tallawong and Martin Place, and between Martin Place and Central only.",1782215400,1782230400,SMNW_M1,,SMNW
+metro,3f532a04-2a96-5203-8e8c-a7dc18c1817d,8,9,"Metro services run between Tallawong, Martin Place and Central only. Change services at Martin Place","Nightly from 9:50PM, metro services do not run between Central and Sydenham. Services run between Tallawong and Martin Place, and between Martin Place and Central only.",1782215400,1782230400,SMNW_M1,,SMNW
+metro,3f532a04-2a96-5203-8e8c-a7dc18c1817d,8,9,"Metro services run between Tallawong, Martin Place and Central only. Change services at Martin Place","Nightly from 9:50PM, metro services do not run between Central and Sydenham. Services run between Tallawong and Martin Place, and between Martin Place and Central only.",1782301800,1782316800,SMNW_M1,,SMNW
+metro,3f532a04-2a96-5203-8e8c-a7dc18c1817d,8,9,"Metro services run between Tallawong, Martin Place and Central only. Change services at Martin Place","Nightly from 9:50PM, metro services do not run between Central and Sydenham. Services run between Tallawong and Martin Place, and between Martin Place and Central only.",1782301800,1782316800,SMNW_M1,,SMNW
+metro,ca78161d-291a-59e8-b91a-19c359de260b,8,9,Buses replace metro services between Tallawong and Chatswood. Use trains between Epping or Chatswood and the City,"Buses replace metro services between Tallawong and Chatswood. Use trains between Epping or Chatswood and the city.
+Southwest Link buses run to a changed timetable and stopping pattern between Bankstown and Central.",1782489600,1782662400,SMNW_M1,,SMNW
+metro,ca78161d-291a-59e8-b91a-19c359de260b,8,9,Buses replace metro services between Tallawong and Chatswood. Use trains between Epping or Chatswood and the City,"Buses replace metro services between Tallawong and Chatswood. Use trains between Epping or Chatswood and the city.
+Southwest Link buses run to a changed timetable and stopping pattern between Bankstown and Central.",1782489600,1782662400,SMNW_M1,,SMNW
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,NSN_2a,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,NSN_2i,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,NSN_2k,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,WST_2c,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,WST_2d,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_2b,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_2c,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_2d,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_2e,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_2f,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_2g,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_2h,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_2i,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_2j,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BNK_1c,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BNK_2a,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BNK_2b,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BNK_2d,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BNK_2e,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BNK_2f,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BNK_2g,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BNK_2h,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,T3_2a,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,T3_2b,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,T3_2c,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,T3_2d,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,ESI_2a,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,ESI_2b,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,ESI_2c,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,ESI_2d,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,ESI_2e,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,ESI_2f,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,OLY_1a,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,OLY_2b,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,APS_2a,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,APS_2b,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,APS_2c,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,APS_2d,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,APS_2e,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,APS_2f,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,APS_2g,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,APS_2h,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,NTH_2a,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BMT_2,200060,NSWTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,CCN_2a,200060,NSWTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,CCN_2b,200060,NSWTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,SCO_2a,200060,NSWTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,SCO_2b,200060,NSWTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,SMNW_M1,200060,SMNW
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.NT32,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.NT34,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.NT36,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.NP24,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.2402,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.2404,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.2406,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.2802,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3204,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3206,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3208,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3404,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3406,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3408,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3604,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3606,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3608,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.4202,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.4204,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.WT28,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.4416,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.4418,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.WP46,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6202,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6204,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6206,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6208,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.ST22,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6232,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6234,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6236,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6238,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.ST24,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.SP32,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.SP34,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.SP36,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6402,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6404,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6406,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6408,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.7202,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.7204,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.7206,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.7402,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.7404,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.7406,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.BMT,200060,X000
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.SHL,200060,X000
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,NSN_1a,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,WST_1a,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,WST_1b,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_1a,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_1b,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_1c,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_1d,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_1e,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_1f,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_1g,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_1h,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_1i,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_1j,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,IWL_2a,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BNK_1a,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BNK_1b,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BNK_1d,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BNK_1e,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BNK_1f,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BNK_1g,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BNK_1h,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BNK_2c,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,T3_1a,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,T3_1b,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,T3_1c,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,T3_1d,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,ESI_1a,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,ESI_1b,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,ESI_1c,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,ESI_1d,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,ESI_1e,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,ESI_1f,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,OLY_1b,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,OLY_2a,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,APS_1a,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,APS_1b,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,APS_1c,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,APS_1d,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,APS_1e,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,APS_1f,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,APS_1g,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,APS_1h,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,NTH_1a,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,NTH_1b,200060,SydneyTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,BMT_1,200060,NSWTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,CCN_1a,200060,NSWTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,CCN_1b,200060,NSWTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,CCN_1c,200060,NSWTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,SCO_1a,200060,NSWTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,SCO_1b,200060,NSWTrains
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,SMNW_M1,200060,SMNW
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.NT31,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.NT33,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.NT35,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.NP23,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.2301,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.2303,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.2305,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.2701,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3101,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3105,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3107,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3303,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3305,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3307,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3501,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3505,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.3507,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.4101,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.4103,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.WT27,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.4315,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.4317,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.WP45,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6101,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6103,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6105,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6107,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.ST21,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.ST23,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6301,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6303,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6305,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6307,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.SP31,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6331,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6333,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6335,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.6337,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.SP33,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.SP35,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.7101,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.7103,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.7105,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.7301,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.7303,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.C.7305,200060,711
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.BMT,200060,X000
+metro,7e669567-64e5-5fec-83a2-7332090518c3,8,1,Station Update - Central,"From Monday 18 May until further notice, weekly from Sunday to Thursday, between 10pm and 5am, ceiling installation works will take place in the pedestrian tunnel between platforms 4 and 11 and the lower concourse.
+
+ - During this time, the Redfern end stairs on Platforms 4 to 11 will be closed.
+ - Customer will need to use the City end of the platform to exit via the Grand Concourse.
+ - If you need assistance, ask station staff or call 9379 1777.",1778821232,0,4T.T.SHL,200060,X000

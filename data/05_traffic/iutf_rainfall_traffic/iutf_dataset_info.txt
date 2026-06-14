@@ -1,0 +1,20 @@
+IUTF — Integrated Urban Traffic + Rainfall (40 cities)
+=======================================================
+This dataset is too large for automatic download (~10GB).
+
+Download manually from Figshare:
+    https://doi.org/10.6084/m9.figshare.30022807.v1
+
+Click "Download all" on the Figshare page.
+
+Save the extracted files to this folder:
+    C:\Users\agnes\Downloads\Capstone\weather_env\data\05_traffic\iutf_rainfall_traffic
+
+What you get:
+  - Hourly traffic counts from 21,700+ sensors
+  - ERA5 hourly rainfall aligned to each sensor
+  - OSM road network topology
+  - Covers 40 global cities (2015-2017)
+  - Pre-integrated: no joining needed
+
+Paper: https://www.nature.com/articles/s41597-025-06336-3
