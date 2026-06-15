@@ -770,7 +770,7 @@ if question:
             """,
             unsafe_allow_html=True,
         )
-        
+
 if mode == "Benchmark Evaluation":
     with col2:
         if benchmark_expected is not None:
@@ -819,6 +819,35 @@ if mode == "Benchmark Evaluation":
         )
 
     st.caption(f"Prediction source: {source_text}")
+
+    st.markdown('<div class="section-title">Reasoning</div>', unsafe_allow_html=True)
+
+    if len(drivers) == 0:
+        st.markdown(
+            '<div class="driver-box">No strong contextual signal was detected from the question or retrieved data.</div>',
+            unsafe_allow_html=True,
+        )
+    else:
+        for d in drivers:
+            st.markdown(
+                f'<div class="driver-box">{d}</div>',
+                unsafe_allow_html=True,
+            )
+
+    st.markdown(
+        '<div class="section-title">Explanation</div>',
+        unsafe_allow_html=True,
+    )
+
+    st.write(
+        generate_interpretation(
+            summary,
+            prediction_full,
+            score,
+            source_text
+            )
+        )
+    
 
     st.markdown('<div class="section-title">Context Signals</div>', unsafe_allow_html=True)
 
@@ -872,5 +901,3 @@ if mode == "Benchmark Evaluation":
         with st.expander("View benchmark file"):
             st.dataframe(benchmark_df.head(200), use_container_width=True)
 
-else:
-    st.info("Choose a benchmark example from the sidebar or ask a manual question.")
