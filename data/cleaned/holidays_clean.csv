@@ -1,0 +1,1561 @@
+datetime,holiday_name,is_public_holiday
+1970-01-01 00:00:00,New Year's Day,True
+1970-01-01 01:00:00,New Year's Day,True
+1970-01-01 02:00:00,New Year's Day,True
+1970-01-01 03:00:00,New Year's Day,True
+1970-01-01 04:00:00,New Year's Day,True
+1970-01-01 05:00:00,New Year's Day,True
+1970-01-01 06:00:00,New Year's Day,True
+1970-01-01 07:00:00,New Year's Day,True
+1970-01-01 08:00:00,New Year's Day,True
+1970-01-01 09:00:00,New Year's Day,True
+1970-01-01 10:00:00,New Year's Day,True
+1970-01-01 11:00:00,New Year's Day,True
+1970-01-01 12:00:00,New Year's Day,True
+1970-01-01 13:00:00,New Year's Day,True
+1970-01-01 14:00:00,New Year's Day,True
+1970-01-01 15:00:00,New Year's Day,True
+1970-01-01 16:00:00,New Year's Day,True
+1970-01-01 17:00:00,New Year's Day,True
+1970-01-01 18:00:00,New Year's Day,True
+1970-01-01 19:00:00,New Year's Day,True
+1970-01-01 20:00:00,New Year's Day,True
+1970-01-01 21:00:00,New Year's Day,True
+1970-01-01 22:00:00,New Year's Day,True
+1970-01-01 23:00:00,New Year's Day,True
+1970-01-01 00:00:00,Australia Day,True
+1970-01-01 01:00:00,Australia Day,True
+1970-01-01 02:00:00,Australia Day,True
+1970-01-01 03:00:00,Australia Day,True
+1970-01-01 04:00:00,Australia Day,True
+1970-01-01 05:00:00,Australia Day,True
+1970-01-01 06:00:00,Australia Day,True
+1970-01-01 07:00:00,Australia Day,True
+1970-01-01 08:00:00,Australia Day,True
+1970-01-01 09:00:00,Australia Day,True
+1970-01-01 10:00:00,Australia Day,True
+1970-01-01 11:00:00,Australia Day,True
+1970-01-01 12:00:00,Australia Day,True
+1970-01-01 13:00:00,Australia Day,True
+1970-01-01 14:00:00,Australia Day,True
+1970-01-01 15:00:00,Australia Day,True
+1970-01-01 16:00:00,Australia Day,True
+1970-01-01 17:00:00,Australia Day,True
+1970-01-01 18:00:00,Australia Day,True
+1970-01-01 19:00:00,Australia Day,True
+1970-01-01 20:00:00,Australia Day,True
+1970-01-01 21:00:00,Australia Day,True
+1970-01-01 22:00:00,Australia Day,True
+1970-01-01 23:00:00,Australia Day,True
+1970-01-01 00:00:00,Good Friday,True
+1970-01-01 01:00:00,Good Friday,True
+1970-01-01 02:00:00,Good Friday,True
+1970-01-01 03:00:00,Good Friday,True
+1970-01-01 04:00:00,Good Friday,True
+1970-01-01 05:00:00,Good Friday,True
+1970-01-01 06:00:00,Good Friday,True
+1970-01-01 07:00:00,Good Friday,True
+1970-01-01 08:00:00,Good Friday,True
+1970-01-01 09:00:00,Good Friday,True
+1970-01-01 10:00:00,Good Friday,True
+1970-01-01 11:00:00,Good Friday,True
+1970-01-01 12:00:00,Good Friday,True
+1970-01-01 13:00:00,Good Friday,True
+1970-01-01 14:00:00,Good Friday,True
+1970-01-01 15:00:00,Good Friday,True
+1970-01-01 16:00:00,Good Friday,True
+1970-01-01 17:00:00,Good Friday,True
+1970-01-01 18:00:00,Good Friday,True
+1970-01-01 19:00:00,Good Friday,True
+1970-01-01 20:00:00,Good Friday,True
+1970-01-01 21:00:00,Good Friday,True
+1970-01-01 22:00:00,Good Friday,True
+1970-01-01 23:00:00,Good Friday,True
+1970-01-01 00:00:00,Easter Saturday,True
+1970-01-01 01:00:00,Easter Saturday,True
+1970-01-01 02:00:00,Easter Saturday,True
+1970-01-01 03:00:00,Easter Saturday,True
+1970-01-01 04:00:00,Easter Saturday,True
+1970-01-01 05:00:00,Easter Saturday,True
+1970-01-01 06:00:00,Easter Saturday,True
+1970-01-01 07:00:00,Easter Saturday,True
+1970-01-01 08:00:00,Easter Saturday,True
+1970-01-01 09:00:00,Easter Saturday,True
+1970-01-01 10:00:00,Easter Saturday,True
+1970-01-01 11:00:00,Easter Saturday,True
+1970-01-01 12:00:00,Easter Saturday,True
+1970-01-01 13:00:00,Easter Saturday,True
+1970-01-01 14:00:00,Easter Saturday,True
+1970-01-01 15:00:00,Easter Saturday,True
+1970-01-01 16:00:00,Easter Saturday,True
+1970-01-01 17:00:00,Easter Saturday,True
+1970-01-01 18:00:00,Easter Saturday,True
+1970-01-01 19:00:00,Easter Saturday,True
+1970-01-01 20:00:00,Easter Saturday,True
+1970-01-01 21:00:00,Easter Saturday,True
+1970-01-01 22:00:00,Easter Saturday,True
+1970-01-01 23:00:00,Easter Saturday,True
+1970-01-01 00:00:00,Easter Sunday,True
+1970-01-01 01:00:00,Easter Sunday,True
+1970-01-01 02:00:00,Easter Sunday,True
+1970-01-01 03:00:00,Easter Sunday,True
+1970-01-01 04:00:00,Easter Sunday,True
+1970-01-01 05:00:00,Easter Sunday,True
+1970-01-01 06:00:00,Easter Sunday,True
+1970-01-01 07:00:00,Easter Sunday,True
+1970-01-01 08:00:00,Easter Sunday,True
+1970-01-01 09:00:00,Easter Sunday,True
+1970-01-01 10:00:00,Easter Sunday,True
+1970-01-01 11:00:00,Easter Sunday,True
+1970-01-01 12:00:00,Easter Sunday,True
+1970-01-01 13:00:00,Easter Sunday,True
+1970-01-01 14:00:00,Easter Sunday,True
+1970-01-01 15:00:00,Easter Sunday,True
+1970-01-01 16:00:00,Easter Sunday,True
+1970-01-01 17:00:00,Easter Sunday,True
+1970-01-01 18:00:00,Easter Sunday,True
+1970-01-01 19:00:00,Easter Sunday,True
+1970-01-01 20:00:00,Easter Sunday,True
+1970-01-01 21:00:00,Easter Sunday,True
+1970-01-01 22:00:00,Easter Sunday,True
+1970-01-01 23:00:00,Easter Sunday,True
+1970-01-01 00:00:00,Easter Monday,True
+1970-01-01 01:00:00,Easter Monday,True
+1970-01-01 02:00:00,Easter Monday,True
+1970-01-01 03:00:00,Easter Monday,True
+1970-01-01 04:00:00,Easter Monday,True
+1970-01-01 05:00:00,Easter Monday,True
+1970-01-01 06:00:00,Easter Monday,True
+1970-01-01 07:00:00,Easter Monday,True
+1970-01-01 08:00:00,Easter Monday,True
+1970-01-01 09:00:00,Easter Monday,True
+1970-01-01 10:00:00,Easter Monday,True
+1970-01-01 11:00:00,Easter Monday,True
+1970-01-01 12:00:00,Easter Monday,True
+1970-01-01 13:00:00,Easter Monday,True
+1970-01-01 14:00:00,Easter Monday,True
+1970-01-01 15:00:00,Easter Monday,True
+1970-01-01 16:00:00,Easter Monday,True
+1970-01-01 17:00:00,Easter Monday,True
+1970-01-01 18:00:00,Easter Monday,True
+1970-01-01 19:00:00,Easter Monday,True
+1970-01-01 20:00:00,Easter Monday,True
+1970-01-01 21:00:00,Easter Monday,True
+1970-01-01 22:00:00,Easter Monday,True
+1970-01-01 23:00:00,Easter Monday,True
+1970-01-01 00:00:00,Anzac Day,True
+1970-01-01 01:00:00,Anzac Day,True
+1970-01-01 02:00:00,Anzac Day,True
+1970-01-01 03:00:00,Anzac Day,True
+1970-01-01 04:00:00,Anzac Day,True
+1970-01-01 05:00:00,Anzac Day,True
+1970-01-01 06:00:00,Anzac Day,True
+1970-01-01 07:00:00,Anzac Day,True
+1970-01-01 08:00:00,Anzac Day,True
+1970-01-01 09:00:00,Anzac Day,True
+1970-01-01 10:00:00,Anzac Day,True
+1970-01-01 11:00:00,Anzac Day,True
+1970-01-01 12:00:00,Anzac Day,True
+1970-01-01 13:00:00,Anzac Day,True
+1970-01-01 14:00:00,Anzac Day,True
+1970-01-01 15:00:00,Anzac Day,True
+1970-01-01 16:00:00,Anzac Day,True
+1970-01-01 17:00:00,Anzac Day,True
+1970-01-01 18:00:00,Anzac Day,True
+1970-01-01 19:00:00,Anzac Day,True
+1970-01-01 20:00:00,Anzac Day,True
+1970-01-01 21:00:00,Anzac Day,True
+1970-01-01 22:00:00,Anzac Day,True
+1970-01-01 23:00:00,Anzac Day,True
+1970-01-01 00:00:00,Queen's Birthday,True
+1970-01-01 01:00:00,Queen's Birthday,True
+1970-01-01 02:00:00,Queen's Birthday,True
+1970-01-01 03:00:00,Queen's Birthday,True
+1970-01-01 04:00:00,Queen's Birthday,True
+1970-01-01 05:00:00,Queen's Birthday,True
+1970-01-01 06:00:00,Queen's Birthday,True
+1970-01-01 07:00:00,Queen's Birthday,True
+1970-01-01 08:00:00,Queen's Birthday,True
+1970-01-01 09:00:00,Queen's Birthday,True
+1970-01-01 10:00:00,Queen's Birthday,True
+1970-01-01 11:00:00,Queen's Birthday,True
+1970-01-01 12:00:00,Queen's Birthday,True
+1970-01-01 13:00:00,Queen's Birthday,True
+1970-01-01 14:00:00,Queen's Birthday,True
+1970-01-01 15:00:00,Queen's Birthday,True
+1970-01-01 16:00:00,Queen's Birthday,True
+1970-01-01 17:00:00,Queen's Birthday,True
+1970-01-01 18:00:00,Queen's Birthday,True
+1970-01-01 19:00:00,Queen's Birthday,True
+1970-01-01 20:00:00,Queen's Birthday,True
+1970-01-01 21:00:00,Queen's Birthday,True
+1970-01-01 22:00:00,Queen's Birthday,True
+1970-01-01 23:00:00,Queen's Birthday,True
+1970-01-01 00:00:00,Bank Holiday,True
+1970-01-01 01:00:00,Bank Holiday,True
+1970-01-01 02:00:00,Bank Holiday,True
+1970-01-01 03:00:00,Bank Holiday,True
+1970-01-01 04:00:00,Bank Holiday,True
+1970-01-01 05:00:00,Bank Holiday,True
+1970-01-01 06:00:00,Bank Holiday,True
+1970-01-01 07:00:00,Bank Holiday,True
+1970-01-01 08:00:00,Bank Holiday,True
+1970-01-01 09:00:00,Bank Holiday,True
+1970-01-01 10:00:00,Bank Holiday,True
+1970-01-01 11:00:00,Bank Holiday,True
+1970-01-01 12:00:00,Bank Holiday,True
+1970-01-01 13:00:00,Bank Holiday,True
+1970-01-01 14:00:00,Bank Holiday,True
+1970-01-01 15:00:00,Bank Holiday,True
+1970-01-01 16:00:00,Bank Holiday,True
+1970-01-01 17:00:00,Bank Holiday,True
+1970-01-01 18:00:00,Bank Holiday,True
+1970-01-01 19:00:00,Bank Holiday,True
+1970-01-01 20:00:00,Bank Holiday,True
+1970-01-01 21:00:00,Bank Holiday,True
+1970-01-01 22:00:00,Bank Holiday,True
+1970-01-01 23:00:00,Bank Holiday,True
+1970-01-01 00:00:00,Labour Day,True
+1970-01-01 01:00:00,Labour Day,True
+1970-01-01 02:00:00,Labour Day,True
+1970-01-01 03:00:00,Labour Day,True
+1970-01-01 04:00:00,Labour Day,True
+1970-01-01 05:00:00,Labour Day,True
+1970-01-01 06:00:00,Labour Day,True
+1970-01-01 07:00:00,Labour Day,True
+1970-01-01 08:00:00,Labour Day,True
+1970-01-01 09:00:00,Labour Day,True
+1970-01-01 10:00:00,Labour Day,True
+1970-01-01 11:00:00,Labour Day,True
+1970-01-01 12:00:00,Labour Day,True
+1970-01-01 13:00:00,Labour Day,True
+1970-01-01 14:00:00,Labour Day,True
+1970-01-01 15:00:00,Labour Day,True
+1970-01-01 16:00:00,Labour Day,True
+1970-01-01 17:00:00,Labour Day,True
+1970-01-01 18:00:00,Labour Day,True
+1970-01-01 19:00:00,Labour Day,True
+1970-01-01 20:00:00,Labour Day,True
+1970-01-01 21:00:00,Labour Day,True
+1970-01-01 22:00:00,Labour Day,True
+1970-01-01 23:00:00,Labour Day,True
+1970-01-01 00:00:00,Christmas Day ,True
+1970-01-01 01:00:00,Christmas Day ,True
+1970-01-01 02:00:00,Christmas Day ,True
+1970-01-01 03:00:00,Christmas Day ,True
+1970-01-01 04:00:00,Christmas Day ,True
+1970-01-01 05:00:00,Christmas Day ,True
+1970-01-01 06:00:00,Christmas Day ,True
+1970-01-01 07:00:00,Christmas Day ,True
+1970-01-01 08:00:00,Christmas Day ,True
+1970-01-01 09:00:00,Christmas Day ,True
+1970-01-01 10:00:00,Christmas Day ,True
+1970-01-01 11:00:00,Christmas Day ,True
+1970-01-01 12:00:00,Christmas Day ,True
+1970-01-01 13:00:00,Christmas Day ,True
+1970-01-01 14:00:00,Christmas Day ,True
+1970-01-01 15:00:00,Christmas Day ,True
+1970-01-01 16:00:00,Christmas Day ,True
+1970-01-01 17:00:00,Christmas Day ,True
+1970-01-01 18:00:00,Christmas Day ,True
+1970-01-01 19:00:00,Christmas Day ,True
+1970-01-01 20:00:00,Christmas Day ,True
+1970-01-01 21:00:00,Christmas Day ,True
+1970-01-01 22:00:00,Christmas Day ,True
+1970-01-01 23:00:00,Christmas Day ,True
+1970-01-01 00:00:00,Boxing Day,True
+1970-01-01 01:00:00,Boxing Day,True
+1970-01-01 02:00:00,Boxing Day,True
+1970-01-01 03:00:00,Boxing Day,True
+1970-01-01 04:00:00,Boxing Day,True
+1970-01-01 05:00:00,Boxing Day,True
+1970-01-01 06:00:00,Boxing Day,True
+1970-01-01 07:00:00,Boxing Day,True
+1970-01-01 08:00:00,Boxing Day,True
+1970-01-01 09:00:00,Boxing Day,True
+1970-01-01 10:00:00,Boxing Day,True
+1970-01-01 11:00:00,Boxing Day,True
+1970-01-01 12:00:00,Boxing Day,True
+1970-01-01 13:00:00,Boxing Day,True
+1970-01-01 14:00:00,Boxing Day,True
+1970-01-01 15:00:00,Boxing Day,True
+1970-01-01 16:00:00,Boxing Day,True
+1970-01-01 17:00:00,Boxing Day,True
+1970-01-01 18:00:00,Boxing Day,True
+1970-01-01 19:00:00,Boxing Day,True
+1970-01-01 20:00:00,Boxing Day,True
+1970-01-01 21:00:00,Boxing Day,True
+1970-01-01 22:00:00,Boxing Day,True
+1970-01-01 23:00:00,Boxing Day,True
+1970-01-01 00:00:00,Christmas (additional day),True
+1970-01-01 01:00:00,Christmas (additional day),True
+1970-01-01 02:00:00,Christmas (additional day),True
+1970-01-01 03:00:00,Christmas (additional day),True
+1970-01-01 04:00:00,Christmas (additional day),True
+1970-01-01 05:00:00,Christmas (additional day),True
+1970-01-01 06:00:00,Christmas (additional day),True
+1970-01-01 07:00:00,Christmas (additional day),True
+1970-01-01 08:00:00,Christmas (additional day),True
+1970-01-01 09:00:00,Christmas (additional day),True
+1970-01-01 10:00:00,Christmas (additional day),True
+1970-01-01 11:00:00,Christmas (additional day),True
+1970-01-01 12:00:00,Christmas (additional day),True
+1970-01-01 13:00:00,Christmas (additional day),True
+1970-01-01 14:00:00,Christmas (additional day),True
+1970-01-01 15:00:00,Christmas (additional day),True
+1970-01-01 16:00:00,Christmas (additional day),True
+1970-01-01 17:00:00,Christmas (additional day),True
+1970-01-01 18:00:00,Christmas (additional day),True
+1970-01-01 19:00:00,Christmas (additional day),True
+1970-01-01 20:00:00,Christmas (additional day),True
+1970-01-01 21:00:00,Christmas (additional day),True
+1970-01-01 22:00:00,Christmas (additional day),True
+1970-01-01 23:00:00,Christmas (additional day),True
+1970-01-01 00:00:00,Boxing Day (additional day),True
+1970-01-01 01:00:00,Boxing Day (additional day),True
+1970-01-01 02:00:00,Boxing Day (additional day),True
+1970-01-01 03:00:00,Boxing Day (additional day),True
+1970-01-01 04:00:00,Boxing Day (additional day),True
+1970-01-01 05:00:00,Boxing Day (additional day),True
+1970-01-01 06:00:00,Boxing Day (additional day),True
+1970-01-01 07:00:00,Boxing Day (additional day),True
+1970-01-01 08:00:00,Boxing Day (additional day),True
+1970-01-01 09:00:00,Boxing Day (additional day),True
+1970-01-01 10:00:00,Boxing Day (additional day),True
+1970-01-01 11:00:00,Boxing Day (additional day),True
+1970-01-01 12:00:00,Boxing Day (additional day),True
+1970-01-01 13:00:00,Boxing Day (additional day),True
+1970-01-01 14:00:00,Boxing Day (additional day),True
+1970-01-01 15:00:00,Boxing Day (additional day),True
+1970-01-01 16:00:00,Boxing Day (additional day),True
+1970-01-01 17:00:00,Boxing Day (additional day),True
+1970-01-01 18:00:00,Boxing Day (additional day),True
+1970-01-01 19:00:00,Boxing Day (additional day),True
+1970-01-01 20:00:00,Boxing Day (additional day),True
+1970-01-01 21:00:00,Boxing Day (additional day),True
+1970-01-01 22:00:00,Boxing Day (additional day),True
+1970-01-01 23:00:00,Boxing Day (additional day),True
+1970-01-01 00:00:00,New Year's Day,True
+1970-01-01 01:00:00,New Year's Day,True
+1970-01-01 02:00:00,New Year's Day,True
+1970-01-01 03:00:00,New Year's Day,True
+1970-01-01 04:00:00,New Year's Day,True
+1970-01-01 05:00:00,New Year's Day,True
+1970-01-01 06:00:00,New Year's Day,True
+1970-01-01 07:00:00,New Year's Day,True
+1970-01-01 08:00:00,New Year's Day,True
+1970-01-01 09:00:00,New Year's Day,True
+1970-01-01 10:00:00,New Year's Day,True
+1970-01-01 11:00:00,New Year's Day,True
+1970-01-01 12:00:00,New Year's Day,True
+1970-01-01 13:00:00,New Year's Day,True
+1970-01-01 14:00:00,New Year's Day,True
+1970-01-01 15:00:00,New Year's Day,True
+1970-01-01 16:00:00,New Year's Day,True
+1970-01-01 17:00:00,New Year's Day,True
+1970-01-01 18:00:00,New Year's Day,True
+1970-01-01 19:00:00,New Year's Day,True
+1970-01-01 20:00:00,New Year's Day,True
+1970-01-01 21:00:00,New Year's Day,True
+1970-01-01 22:00:00,New Year's Day,True
+1970-01-01 23:00:00,New Year's Day,True
+1970-01-01 00:00:00,New Year's Day (additional day),True
+1970-01-01 01:00:00,New Year's Day (additional day),True
+1970-01-01 02:00:00,New Year's Day (additional day),True
+1970-01-01 03:00:00,New Year's Day (additional day),True
+1970-01-01 04:00:00,New Year's Day (additional day),True
+1970-01-01 05:00:00,New Year's Day (additional day),True
+1970-01-01 06:00:00,New Year's Day (additional day),True
+1970-01-01 07:00:00,New Year's Day (additional day),True
+1970-01-01 08:00:00,New Year's Day (additional day),True
+1970-01-01 09:00:00,New Year's Day (additional day),True
+1970-01-01 10:00:00,New Year's Day (additional day),True
+1970-01-01 11:00:00,New Year's Day (additional day),True
+1970-01-01 12:00:00,New Year's Day (additional day),True
+1970-01-01 13:00:00,New Year's Day (additional day),True
+1970-01-01 14:00:00,New Year's Day (additional day),True
+1970-01-01 15:00:00,New Year's Day (additional day),True
+1970-01-01 16:00:00,New Year's Day (additional day),True
+1970-01-01 17:00:00,New Year's Day (additional day),True
+1970-01-01 18:00:00,New Year's Day (additional day),True
+1970-01-01 19:00:00,New Year's Day (additional day),True
+1970-01-01 20:00:00,New Year's Day (additional day),True
+1970-01-01 21:00:00,New Year's Day (additional day),True
+1970-01-01 22:00:00,New Year's Day (additional day),True
+1970-01-01 23:00:00,New Year's Day (additional day),True
+1970-01-01 00:00:00,Australia Day,True
+1970-01-01 01:00:00,Australia Day,True
+1970-01-01 02:00:00,Australia Day,True
+1970-01-01 03:00:00,Australia Day,True
+1970-01-01 04:00:00,Australia Day,True
+1970-01-01 05:00:00,Australia Day,True
+1970-01-01 06:00:00,Australia Day,True
+1970-01-01 07:00:00,Australia Day,True
+1970-01-01 08:00:00,Australia Day,True
+1970-01-01 09:00:00,Australia Day,True
+1970-01-01 10:00:00,Australia Day,True
+1970-01-01 11:00:00,Australia Day,True
+1970-01-01 12:00:00,Australia Day,True
+1970-01-01 13:00:00,Australia Day,True
+1970-01-01 14:00:00,Australia Day,True
+1970-01-01 15:00:00,Australia Day,True
+1970-01-01 16:00:00,Australia Day,True
+1970-01-01 17:00:00,Australia Day,True
+1970-01-01 18:00:00,Australia Day,True
+1970-01-01 19:00:00,Australia Day,True
+1970-01-01 20:00:00,Australia Day,True
+1970-01-01 21:00:00,Australia Day,True
+1970-01-01 22:00:00,Australia Day,True
+1970-01-01 23:00:00,Australia Day,True
+1970-01-01 00:00:00,Good Friday,True
+1970-01-01 01:00:00,Good Friday,True
+1970-01-01 02:00:00,Good Friday,True
+1970-01-01 03:00:00,Good Friday,True
+1970-01-01 04:00:00,Good Friday,True
+1970-01-01 05:00:00,Good Friday,True
+1970-01-01 06:00:00,Good Friday,True
+1970-01-01 07:00:00,Good Friday,True
+1970-01-01 08:00:00,Good Friday,True
+1970-01-01 09:00:00,Good Friday,True
+1970-01-01 10:00:00,Good Friday,True
+1970-01-01 11:00:00,Good Friday,True
+1970-01-01 12:00:00,Good Friday,True
+1970-01-01 13:00:00,Good Friday,True
+1970-01-01 14:00:00,Good Friday,True
+1970-01-01 15:00:00,Good Friday,True
+1970-01-01 16:00:00,Good Friday,True
+1970-01-01 17:00:00,Good Friday,True
+1970-01-01 18:00:00,Good Friday,True
+1970-01-01 19:00:00,Good Friday,True
+1970-01-01 20:00:00,Good Friday,True
+1970-01-01 21:00:00,Good Friday,True
+1970-01-01 22:00:00,Good Friday,True
+1970-01-01 23:00:00,Good Friday,True
+1970-01-01 00:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 01:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 02:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 03:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 04:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 05:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 06:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 07:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 08:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 09:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 10:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 11:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 12:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 13:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 14:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 15:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 16:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 17:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 18:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 19:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 20:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 21:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 22:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 23:00:00,Easter Saturday - the Saturday following Good Friday,True
+1970-01-01 00:00:00,Easter Sunday,True
+1970-01-01 01:00:00,Easter Sunday,True
+1970-01-01 02:00:00,Easter Sunday,True
+1970-01-01 03:00:00,Easter Sunday,True
+1970-01-01 04:00:00,Easter Sunday,True
+1970-01-01 05:00:00,Easter Sunday,True
+1970-01-01 06:00:00,Easter Sunday,True
+1970-01-01 07:00:00,Easter Sunday,True
+1970-01-01 08:00:00,Easter Sunday,True
+1970-01-01 09:00:00,Easter Sunday,True
+1970-01-01 10:00:00,Easter Sunday,True
+1970-01-01 11:00:00,Easter Sunday,True
+1970-01-01 12:00:00,Easter Sunday,True
+1970-01-01 13:00:00,Easter Sunday,True
+1970-01-01 14:00:00,Easter Sunday,True
+1970-01-01 15:00:00,Easter Sunday,True
+1970-01-01 16:00:00,Easter Sunday,True
+1970-01-01 17:00:00,Easter Sunday,True
+1970-01-01 18:00:00,Easter Sunday,True
+1970-01-01 19:00:00,Easter Sunday,True
+1970-01-01 20:00:00,Easter Sunday,True
+1970-01-01 21:00:00,Easter Sunday,True
+1970-01-01 22:00:00,Easter Sunday,True
+1970-01-01 23:00:00,Easter Sunday,True
+1970-01-01 00:00:00,Easter Monday,True
+1970-01-01 01:00:00,Easter Monday,True
+1970-01-01 02:00:00,Easter Monday,True
+1970-01-01 03:00:00,Easter Monday,True
+1970-01-01 04:00:00,Easter Monday,True
+1970-01-01 05:00:00,Easter Monday,True
+1970-01-01 06:00:00,Easter Monday,True
+1970-01-01 07:00:00,Easter Monday,True
+1970-01-01 08:00:00,Easter Monday,True
+1970-01-01 09:00:00,Easter Monday,True
+1970-01-01 10:00:00,Easter Monday,True
+1970-01-01 11:00:00,Easter Monday,True
+1970-01-01 12:00:00,Easter Monday,True
+1970-01-01 13:00:00,Easter Monday,True
+1970-01-01 14:00:00,Easter Monday,True
+1970-01-01 15:00:00,Easter Monday,True
+1970-01-01 16:00:00,Easter Monday,True
+1970-01-01 17:00:00,Easter Monday,True
+1970-01-01 18:00:00,Easter Monday,True
+1970-01-01 19:00:00,Easter Monday,True
+1970-01-01 20:00:00,Easter Monday,True
+1970-01-01 21:00:00,Easter Monday,True
+1970-01-01 22:00:00,Easter Monday,True
+1970-01-01 23:00:00,Easter Monday,True
+1970-01-01 00:00:00,Anzac Day,True
+1970-01-01 01:00:00,Anzac Day,True
+1970-01-01 02:00:00,Anzac Day,True
+1970-01-01 03:00:00,Anzac Day,True
+1970-01-01 04:00:00,Anzac Day,True
+1970-01-01 05:00:00,Anzac Day,True
+1970-01-01 06:00:00,Anzac Day,True
+1970-01-01 07:00:00,Anzac Day,True
+1970-01-01 08:00:00,Anzac Day,True
+1970-01-01 09:00:00,Anzac Day,True
+1970-01-01 10:00:00,Anzac Day,True
+1970-01-01 11:00:00,Anzac Day,True
+1970-01-01 12:00:00,Anzac Day,True
+1970-01-01 13:00:00,Anzac Day,True
+1970-01-01 14:00:00,Anzac Day,True
+1970-01-01 15:00:00,Anzac Day,True
+1970-01-01 16:00:00,Anzac Day,True
+1970-01-01 17:00:00,Anzac Day,True
+1970-01-01 18:00:00,Anzac Day,True
+1970-01-01 19:00:00,Anzac Day,True
+1970-01-01 20:00:00,Anzac Day,True
+1970-01-01 21:00:00,Anzac Day,True
+1970-01-01 22:00:00,Anzac Day,True
+1970-01-01 23:00:00,Anzac Day,True
+1970-01-01 00:00:00,Queen's Birthday,True
+1970-01-01 01:00:00,Queen's Birthday,True
+1970-01-01 02:00:00,Queen's Birthday,True
+1970-01-01 03:00:00,Queen's Birthday,True
+1970-01-01 04:00:00,Queen's Birthday,True
+1970-01-01 05:00:00,Queen's Birthday,True
+1970-01-01 06:00:00,Queen's Birthday,True
+1970-01-01 07:00:00,Queen's Birthday,True
+1970-01-01 08:00:00,Queen's Birthday,True
+1970-01-01 09:00:00,Queen's Birthday,True
+1970-01-01 10:00:00,Queen's Birthday,True
+1970-01-01 11:00:00,Queen's Birthday,True
+1970-01-01 12:00:00,Queen's Birthday,True
+1970-01-01 13:00:00,Queen's Birthday,True
+1970-01-01 14:00:00,Queen's Birthday,True
+1970-01-01 15:00:00,Queen's Birthday,True
+1970-01-01 16:00:00,Queen's Birthday,True
+1970-01-01 17:00:00,Queen's Birthday,True
+1970-01-01 18:00:00,Queen's Birthday,True
+1970-01-01 19:00:00,Queen's Birthday,True
+1970-01-01 20:00:00,Queen's Birthday,True
+1970-01-01 21:00:00,Queen's Birthday,True
+1970-01-01 22:00:00,Queen's Birthday,True
+1970-01-01 23:00:00,Queen's Birthday,True
+1970-01-01 00:00:00,Bank Holiday,True
+1970-01-01 01:00:00,Bank Holiday,True
+1970-01-01 02:00:00,Bank Holiday,True
+1970-01-01 03:00:00,Bank Holiday,True
+1970-01-01 04:00:00,Bank Holiday,True
+1970-01-01 05:00:00,Bank Holiday,True
+1970-01-01 06:00:00,Bank Holiday,True
+1970-01-01 07:00:00,Bank Holiday,True
+1970-01-01 08:00:00,Bank Holiday,True
+1970-01-01 09:00:00,Bank Holiday,True
+1970-01-01 10:00:00,Bank Holiday,True
+1970-01-01 11:00:00,Bank Holiday,True
+1970-01-01 12:00:00,Bank Holiday,True
+1970-01-01 13:00:00,Bank Holiday,True
+1970-01-01 14:00:00,Bank Holiday,True
+1970-01-01 15:00:00,Bank Holiday,True
+1970-01-01 16:00:00,Bank Holiday,True
+1970-01-01 17:00:00,Bank Holiday,True
+1970-01-01 18:00:00,Bank Holiday,True
+1970-01-01 19:00:00,Bank Holiday,True
+1970-01-01 20:00:00,Bank Holiday,True
+1970-01-01 21:00:00,Bank Holiday,True
+1970-01-01 22:00:00,Bank Holiday,True
+1970-01-01 23:00:00,Bank Holiday,True
+1970-01-01 00:00:00,Labour Day,True
+1970-01-01 01:00:00,Labour Day,True
+1970-01-01 02:00:00,Labour Day,True
+1970-01-01 03:00:00,Labour Day,True
+1970-01-01 04:00:00,Labour Day,True
+1970-01-01 05:00:00,Labour Day,True
+1970-01-01 06:00:00,Labour Day,True
+1970-01-01 07:00:00,Labour Day,True
+1970-01-01 08:00:00,Labour Day,True
+1970-01-01 09:00:00,Labour Day,True
+1970-01-01 10:00:00,Labour Day,True
+1970-01-01 11:00:00,Labour Day,True
+1970-01-01 12:00:00,Labour Day,True
+1970-01-01 13:00:00,Labour Day,True
+1970-01-01 14:00:00,Labour Day,True
+1970-01-01 15:00:00,Labour Day,True
+1970-01-01 16:00:00,Labour Day,True
+1970-01-01 17:00:00,Labour Day,True
+1970-01-01 18:00:00,Labour Day,True
+1970-01-01 19:00:00,Labour Day,True
+1970-01-01 20:00:00,Labour Day,True
+1970-01-01 21:00:00,Labour Day,True
+1970-01-01 22:00:00,Labour Day,True
+1970-01-01 23:00:00,Labour Day,True
+1970-01-01 00:00:00,Christmas Day ,True
+1970-01-01 01:00:00,Christmas Day ,True
+1970-01-01 02:00:00,Christmas Day ,True
+1970-01-01 03:00:00,Christmas Day ,True
+1970-01-01 04:00:00,Christmas Day ,True
+1970-01-01 05:00:00,Christmas Day ,True
+1970-01-01 06:00:00,Christmas Day ,True
+1970-01-01 07:00:00,Christmas Day ,True
+1970-01-01 08:00:00,Christmas Day ,True
+1970-01-01 09:00:00,Christmas Day ,True
+1970-01-01 10:00:00,Christmas Day ,True
+1970-01-01 11:00:00,Christmas Day ,True
+1970-01-01 12:00:00,Christmas Day ,True
+1970-01-01 13:00:00,Christmas Day ,True
+1970-01-01 14:00:00,Christmas Day ,True
+1970-01-01 15:00:00,Christmas Day ,True
+1970-01-01 16:00:00,Christmas Day ,True
+1970-01-01 17:00:00,Christmas Day ,True
+1970-01-01 18:00:00,Christmas Day ,True
+1970-01-01 19:00:00,Christmas Day ,True
+1970-01-01 20:00:00,Christmas Day ,True
+1970-01-01 21:00:00,Christmas Day ,True
+1970-01-01 22:00:00,Christmas Day ,True
+1970-01-01 23:00:00,Christmas Day ,True
+1970-01-01 00:00:00,Boxing Day,True
+1970-01-01 01:00:00,Boxing Day,True
+1970-01-01 02:00:00,Boxing Day,True
+1970-01-01 03:00:00,Boxing Day,True
+1970-01-01 04:00:00,Boxing Day,True
+1970-01-01 05:00:00,Boxing Day,True
+1970-01-01 06:00:00,Boxing Day,True
+1970-01-01 07:00:00,Boxing Day,True
+1970-01-01 08:00:00,Boxing Day,True
+1970-01-01 09:00:00,Boxing Day,True
+1970-01-01 10:00:00,Boxing Day,True
+1970-01-01 11:00:00,Boxing Day,True
+1970-01-01 12:00:00,Boxing Day,True
+1970-01-01 13:00:00,Boxing Day,True
+1970-01-01 14:00:00,Boxing Day,True
+1970-01-01 15:00:00,Boxing Day,True
+1970-01-01 16:00:00,Boxing Day,True
+1970-01-01 17:00:00,Boxing Day,True
+1970-01-01 18:00:00,Boxing Day,True
+1970-01-01 19:00:00,Boxing Day,True
+1970-01-01 20:00:00,Boxing Day,True
+1970-01-01 21:00:00,Boxing Day,True
+1970-01-01 22:00:00,Boxing Day,True
+1970-01-01 23:00:00,Boxing Day,True
+1970-01-01 00:00:00,Christmas (additional day),True
+1970-01-01 01:00:00,Christmas (additional day),True
+1970-01-01 02:00:00,Christmas (additional day),True
+1970-01-01 03:00:00,Christmas (additional day),True
+1970-01-01 04:00:00,Christmas (additional day),True
+1970-01-01 05:00:00,Christmas (additional day),True
+1970-01-01 06:00:00,Christmas (additional day),True
+1970-01-01 07:00:00,Christmas (additional day),True
+1970-01-01 08:00:00,Christmas (additional day),True
+1970-01-01 09:00:00,Christmas (additional day),True
+1970-01-01 10:00:00,Christmas (additional day),True
+1970-01-01 11:00:00,Christmas (additional day),True
+1970-01-01 12:00:00,Christmas (additional day),True
+1970-01-01 13:00:00,Christmas (additional day),True
+1970-01-01 14:00:00,Christmas (additional day),True
+1970-01-01 15:00:00,Christmas (additional day),True
+1970-01-01 16:00:00,Christmas (additional day),True
+1970-01-01 17:00:00,Christmas (additional day),True
+1970-01-01 18:00:00,Christmas (additional day),True
+1970-01-01 19:00:00,Christmas (additional day),True
+1970-01-01 20:00:00,Christmas (additional day),True
+1970-01-01 21:00:00,Christmas (additional day),True
+1970-01-01 22:00:00,Christmas (additional day),True
+1970-01-01 23:00:00,Christmas (additional day),True
+1970-01-01 00:00:00,New Year's Day,True
+1970-01-01 01:00:00,New Year's Day,True
+1970-01-01 02:00:00,New Year's Day,True
+1970-01-01 03:00:00,New Year's Day,True
+1970-01-01 04:00:00,New Year's Day,True
+1970-01-01 05:00:00,New Year's Day,True
+1970-01-01 06:00:00,New Year's Day,True
+1970-01-01 07:00:00,New Year's Day,True
+1970-01-01 08:00:00,New Year's Day,True
+1970-01-01 09:00:00,New Year's Day,True
+1970-01-01 10:00:00,New Year's Day,True
+1970-01-01 11:00:00,New Year's Day,True
+1970-01-01 12:00:00,New Year's Day,True
+1970-01-01 13:00:00,New Year's Day,True
+1970-01-01 14:00:00,New Year's Day,True
+1970-01-01 15:00:00,New Year's Day,True
+1970-01-01 16:00:00,New Year's Day,True
+1970-01-01 17:00:00,New Year's Day,True
+1970-01-01 18:00:00,New Year's Day,True
+1970-01-01 19:00:00,New Year's Day,True
+1970-01-01 20:00:00,New Year's Day,True
+1970-01-01 21:00:00,New Year's Day,True
+1970-01-01 22:00:00,New Year's Day,True
+1970-01-01 23:00:00,New Year's Day,True
+1970-01-01 00:00:00,New Year's Day (observed),True
+1970-01-01 01:00:00,New Year's Day (observed),True
+1970-01-01 02:00:00,New Year's Day (observed),True
+1970-01-01 03:00:00,New Year's Day (observed),True
+1970-01-01 04:00:00,New Year's Day (observed),True
+1970-01-01 05:00:00,New Year's Day (observed),True
+1970-01-01 06:00:00,New Year's Day (observed),True
+1970-01-01 07:00:00,New Year's Day (observed),True
+1970-01-01 08:00:00,New Year's Day (observed),True
+1970-01-01 09:00:00,New Year's Day (observed),True
+1970-01-01 10:00:00,New Year's Day (observed),True
+1970-01-01 11:00:00,New Year's Day (observed),True
+1970-01-01 12:00:00,New Year's Day (observed),True
+1970-01-01 13:00:00,New Year's Day (observed),True
+1970-01-01 14:00:00,New Year's Day (observed),True
+1970-01-01 15:00:00,New Year's Day (observed),True
+1970-01-01 16:00:00,New Year's Day (observed),True
+1970-01-01 17:00:00,New Year's Day (observed),True
+1970-01-01 18:00:00,New Year's Day (observed),True
+1970-01-01 19:00:00,New Year's Day (observed),True
+1970-01-01 20:00:00,New Year's Day (observed),True
+1970-01-01 21:00:00,New Year's Day (observed),True
+1970-01-01 22:00:00,New Year's Day (observed),True
+1970-01-01 23:00:00,New Year's Day (observed),True
+1970-01-01 00:00:00,Australia Day,True
+1970-01-01 01:00:00,Australia Day,True
+1970-01-01 02:00:00,Australia Day,True
+1970-01-01 03:00:00,Australia Day,True
+1970-01-01 04:00:00,Australia Day,True
+1970-01-01 05:00:00,Australia Day,True
+1970-01-01 06:00:00,Australia Day,True
+1970-01-01 07:00:00,Australia Day,True
+1970-01-01 08:00:00,Australia Day,True
+1970-01-01 09:00:00,Australia Day,True
+1970-01-01 10:00:00,Australia Day,True
+1970-01-01 11:00:00,Australia Day,True
+1970-01-01 12:00:00,Australia Day,True
+1970-01-01 13:00:00,Australia Day,True
+1970-01-01 14:00:00,Australia Day,True
+1970-01-01 15:00:00,Australia Day,True
+1970-01-01 16:00:00,Australia Day,True
+1970-01-01 17:00:00,Australia Day,True
+1970-01-01 18:00:00,Australia Day,True
+1970-01-01 19:00:00,Australia Day,True
+1970-01-01 20:00:00,Australia Day,True
+1970-01-01 21:00:00,Australia Day,True
+1970-01-01 22:00:00,Australia Day,True
+1970-01-01 23:00:00,Australia Day,True
+1970-01-01 00:00:00,Good Friday,True
+1970-01-01 01:00:00,Good Friday,True
+1970-01-01 02:00:00,Good Friday,True
+1970-01-01 03:00:00,Good Friday,True
+1970-01-01 04:00:00,Good Friday,True
+1970-01-01 05:00:00,Good Friday,True
+1970-01-01 06:00:00,Good Friday,True
+1970-01-01 07:00:00,Good Friday,True
+1970-01-01 08:00:00,Good Friday,True
+1970-01-01 09:00:00,Good Friday,True
+1970-01-01 10:00:00,Good Friday,True
+1970-01-01 11:00:00,Good Friday,True
+1970-01-01 12:00:00,Good Friday,True
+1970-01-01 13:00:00,Good Friday,True
+1970-01-01 14:00:00,Good Friday,True
+1970-01-01 15:00:00,Good Friday,True
+1970-01-01 16:00:00,Good Friday,True
+1970-01-01 17:00:00,Good Friday,True
+1970-01-01 18:00:00,Good Friday,True
+1970-01-01 19:00:00,Good Friday,True
+1970-01-01 20:00:00,Good Friday,True
+1970-01-01 21:00:00,Good Friday,True
+1970-01-01 22:00:00,Good Friday,True
+1970-01-01 23:00:00,Good Friday,True
+1970-01-01 00:00:00,Easter Saturday,True
+1970-01-01 01:00:00,Easter Saturday,True
+1970-01-01 02:00:00,Easter Saturday,True
+1970-01-01 03:00:00,Easter Saturday,True
+1970-01-01 04:00:00,Easter Saturday,True
+1970-01-01 05:00:00,Easter Saturday,True
+1970-01-01 06:00:00,Easter Saturday,True
+1970-01-01 07:00:00,Easter Saturday,True
+1970-01-01 08:00:00,Easter Saturday,True
+1970-01-01 09:00:00,Easter Saturday,True
+1970-01-01 10:00:00,Easter Saturday,True
+1970-01-01 11:00:00,Easter Saturday,True
+1970-01-01 12:00:00,Easter Saturday,True
+1970-01-01 13:00:00,Easter Saturday,True
+1970-01-01 14:00:00,Easter Saturday,True
+1970-01-01 15:00:00,Easter Saturday,True
+1970-01-01 16:00:00,Easter Saturday,True
+1970-01-01 17:00:00,Easter Saturday,True
+1970-01-01 18:00:00,Easter Saturday,True
+1970-01-01 19:00:00,Easter Saturday,True
+1970-01-01 20:00:00,Easter Saturday,True
+1970-01-01 21:00:00,Easter Saturday,True
+1970-01-01 22:00:00,Easter Saturday,True
+1970-01-01 23:00:00,Easter Saturday,True
+1970-01-01 00:00:00,Easter Sunday,True
+1970-01-01 01:00:00,Easter Sunday,True
+1970-01-01 02:00:00,Easter Sunday,True
+1970-01-01 03:00:00,Easter Sunday,True
+1970-01-01 04:00:00,Easter Sunday,True
+1970-01-01 05:00:00,Easter Sunday,True
+1970-01-01 06:00:00,Easter Sunday,True
+1970-01-01 07:00:00,Easter Sunday,True
+1970-01-01 08:00:00,Easter Sunday,True
+1970-01-01 09:00:00,Easter Sunday,True
+1970-01-01 10:00:00,Easter Sunday,True
+1970-01-01 11:00:00,Easter Sunday,True
+1970-01-01 12:00:00,Easter Sunday,True
+1970-01-01 13:00:00,Easter Sunday,True
+1970-01-01 14:00:00,Easter Sunday,True
+1970-01-01 15:00:00,Easter Sunday,True
+1970-01-01 16:00:00,Easter Sunday,True
+1970-01-01 17:00:00,Easter Sunday,True
+1970-01-01 18:00:00,Easter Sunday,True
+1970-01-01 19:00:00,Easter Sunday,True
+1970-01-01 20:00:00,Easter Sunday,True
+1970-01-01 21:00:00,Easter Sunday,True
+1970-01-01 22:00:00,Easter Sunday,True
+1970-01-01 23:00:00,Easter Sunday,True
+1970-01-01 00:00:00,Easter Monday,True
+1970-01-01 01:00:00,Easter Monday,True
+1970-01-01 02:00:00,Easter Monday,True
+1970-01-01 03:00:00,Easter Monday,True
+1970-01-01 04:00:00,Easter Monday,True
+1970-01-01 05:00:00,Easter Monday,True
+1970-01-01 06:00:00,Easter Monday,True
+1970-01-01 07:00:00,Easter Monday,True
+1970-01-01 08:00:00,Easter Monday,True
+1970-01-01 09:00:00,Easter Monday,True
+1970-01-01 10:00:00,Easter Monday,True
+1970-01-01 11:00:00,Easter Monday,True
+1970-01-01 12:00:00,Easter Monday,True
+1970-01-01 13:00:00,Easter Monday,True
+1970-01-01 14:00:00,Easter Monday,True
+1970-01-01 15:00:00,Easter Monday,True
+1970-01-01 16:00:00,Easter Monday,True
+1970-01-01 17:00:00,Easter Monday,True
+1970-01-01 18:00:00,Easter Monday,True
+1970-01-01 19:00:00,Easter Monday,True
+1970-01-01 20:00:00,Easter Monday,True
+1970-01-01 21:00:00,Easter Monday,True
+1970-01-01 22:00:00,Easter Monday,True
+1970-01-01 23:00:00,Easter Monday,True
+1970-01-01 00:00:00,Anzac Day,True
+1970-01-01 01:00:00,Anzac Day,True
+1970-01-01 02:00:00,Anzac Day,True
+1970-01-01 03:00:00,Anzac Day,True
+1970-01-01 04:00:00,Anzac Day,True
+1970-01-01 05:00:00,Anzac Day,True
+1970-01-01 06:00:00,Anzac Day,True
+1970-01-01 07:00:00,Anzac Day,True
+1970-01-01 08:00:00,Anzac Day,True
+1970-01-01 09:00:00,Anzac Day,True
+1970-01-01 10:00:00,Anzac Day,True
+1970-01-01 11:00:00,Anzac Day,True
+1970-01-01 12:00:00,Anzac Day,True
+1970-01-01 13:00:00,Anzac Day,True
+1970-01-01 14:00:00,Anzac Day,True
+1970-01-01 15:00:00,Anzac Day,True
+1970-01-01 16:00:00,Anzac Day,True
+1970-01-01 17:00:00,Anzac Day,True
+1970-01-01 18:00:00,Anzac Day,True
+1970-01-01 19:00:00,Anzac Day,True
+1970-01-01 20:00:00,Anzac Day,True
+1970-01-01 21:00:00,Anzac Day,True
+1970-01-01 22:00:00,Anzac Day,True
+1970-01-01 23:00:00,Anzac Day,True
+1970-01-01 00:00:00,King's Birthday,True
+1970-01-01 01:00:00,King's Birthday,True
+1970-01-01 02:00:00,King's Birthday,True
+1970-01-01 03:00:00,King's Birthday,True
+1970-01-01 04:00:00,King's Birthday,True
+1970-01-01 05:00:00,King's Birthday,True
+1970-01-01 06:00:00,King's Birthday,True
+1970-01-01 07:00:00,King's Birthday,True
+1970-01-01 08:00:00,King's Birthday,True
+1970-01-01 09:00:00,King's Birthday,True
+1970-01-01 10:00:00,King's Birthday,True
+1970-01-01 11:00:00,King's Birthday,True
+1970-01-01 12:00:00,King's Birthday,True
+1970-01-01 13:00:00,King's Birthday,True
+1970-01-01 14:00:00,King's Birthday,True
+1970-01-01 15:00:00,King's Birthday,True
+1970-01-01 16:00:00,King's Birthday,True
+1970-01-01 17:00:00,King's Birthday,True
+1970-01-01 18:00:00,King's Birthday,True
+1970-01-01 19:00:00,King's Birthday,True
+1970-01-01 20:00:00,King's Birthday,True
+1970-01-01 21:00:00,King's Birthday,True
+1970-01-01 22:00:00,King's Birthday,True
+1970-01-01 23:00:00,King's Birthday,True
+1970-01-01 00:00:00,Bank Holiday,True
+1970-01-01 01:00:00,Bank Holiday,True
+1970-01-01 02:00:00,Bank Holiday,True
+1970-01-01 03:00:00,Bank Holiday,True
+1970-01-01 04:00:00,Bank Holiday,True
+1970-01-01 05:00:00,Bank Holiday,True
+1970-01-01 06:00:00,Bank Holiday,True
+1970-01-01 07:00:00,Bank Holiday,True
+1970-01-01 08:00:00,Bank Holiday,True
+1970-01-01 09:00:00,Bank Holiday,True
+1970-01-01 10:00:00,Bank Holiday,True
+1970-01-01 11:00:00,Bank Holiday,True
+1970-01-01 12:00:00,Bank Holiday,True
+1970-01-01 13:00:00,Bank Holiday,True
+1970-01-01 14:00:00,Bank Holiday,True
+1970-01-01 15:00:00,Bank Holiday,True
+1970-01-01 16:00:00,Bank Holiday,True
+1970-01-01 17:00:00,Bank Holiday,True
+1970-01-01 18:00:00,Bank Holiday,True
+1970-01-01 19:00:00,Bank Holiday,True
+1970-01-01 20:00:00,Bank Holiday,True
+1970-01-01 21:00:00,Bank Holiday,True
+1970-01-01 22:00:00,Bank Holiday,True
+1970-01-01 23:00:00,Bank Holiday,True
+1970-01-01 00:00:00,Labour Day,True
+1970-01-01 01:00:00,Labour Day,True
+1970-01-01 02:00:00,Labour Day,True
+1970-01-01 03:00:00,Labour Day,True
+1970-01-01 04:00:00,Labour Day,True
+1970-01-01 05:00:00,Labour Day,True
+1970-01-01 06:00:00,Labour Day,True
+1970-01-01 07:00:00,Labour Day,True
+1970-01-01 08:00:00,Labour Day,True
+1970-01-01 09:00:00,Labour Day,True
+1970-01-01 10:00:00,Labour Day,True
+1970-01-01 11:00:00,Labour Day,True
+1970-01-01 12:00:00,Labour Day,True
+1970-01-01 13:00:00,Labour Day,True
+1970-01-01 14:00:00,Labour Day,True
+1970-01-01 15:00:00,Labour Day,True
+1970-01-01 16:00:00,Labour Day,True
+1970-01-01 17:00:00,Labour Day,True
+1970-01-01 18:00:00,Labour Day,True
+1970-01-01 19:00:00,Labour Day,True
+1970-01-01 20:00:00,Labour Day,True
+1970-01-01 21:00:00,Labour Day,True
+1970-01-01 22:00:00,Labour Day,True
+1970-01-01 23:00:00,Labour Day,True
+1970-01-01 00:00:00,Christmas Day ,True
+1970-01-01 01:00:00,Christmas Day ,True
+1970-01-01 02:00:00,Christmas Day ,True
+1970-01-01 03:00:00,Christmas Day ,True
+1970-01-01 04:00:00,Christmas Day ,True
+1970-01-01 05:00:00,Christmas Day ,True
+1970-01-01 06:00:00,Christmas Day ,True
+1970-01-01 07:00:00,Christmas Day ,True
+1970-01-01 08:00:00,Christmas Day ,True
+1970-01-01 09:00:00,Christmas Day ,True
+1970-01-01 10:00:00,Christmas Day ,True
+1970-01-01 11:00:00,Christmas Day ,True
+1970-01-01 12:00:00,Christmas Day ,True
+1970-01-01 13:00:00,Christmas Day ,True
+1970-01-01 14:00:00,Christmas Day ,True
+1970-01-01 15:00:00,Christmas Day ,True
+1970-01-01 16:00:00,Christmas Day ,True
+1970-01-01 17:00:00,Christmas Day ,True
+1970-01-01 18:00:00,Christmas Day ,True
+1970-01-01 19:00:00,Christmas Day ,True
+1970-01-01 20:00:00,Christmas Day ,True
+1970-01-01 21:00:00,Christmas Day ,True
+1970-01-01 22:00:00,Christmas Day ,True
+1970-01-01 23:00:00,Christmas Day ,True
+1970-01-01 00:00:00,Boxing Day,True
+1970-01-01 01:00:00,Boxing Day,True
+1970-01-01 02:00:00,Boxing Day,True
+1970-01-01 03:00:00,Boxing Day,True
+1970-01-01 04:00:00,Boxing Day,True
+1970-01-01 05:00:00,Boxing Day,True
+1970-01-01 06:00:00,Boxing Day,True
+1970-01-01 07:00:00,Boxing Day,True
+1970-01-01 08:00:00,Boxing Day,True
+1970-01-01 09:00:00,Boxing Day,True
+1970-01-01 10:00:00,Boxing Day,True
+1970-01-01 11:00:00,Boxing Day,True
+1970-01-01 12:00:00,Boxing Day,True
+1970-01-01 13:00:00,Boxing Day,True
+1970-01-01 14:00:00,Boxing Day,True
+1970-01-01 15:00:00,Boxing Day,True
+1970-01-01 16:00:00,Boxing Day,True
+1970-01-01 17:00:00,Boxing Day,True
+1970-01-01 18:00:00,Boxing Day,True
+1970-01-01 19:00:00,Boxing Day,True
+1970-01-01 20:00:00,Boxing Day,True
+1970-01-01 21:00:00,Boxing Day,True
+1970-01-01 22:00:00,Boxing Day,True
+1970-01-01 23:00:00,Boxing Day,True
+1970-01-01 00:00:00,New Year's Day,True
+1970-01-01 01:00:00,New Year's Day,True
+1970-01-01 02:00:00,New Year's Day,True
+1970-01-01 03:00:00,New Year's Day,True
+1970-01-01 04:00:00,New Year's Day,True
+1970-01-01 05:00:00,New Year's Day,True
+1970-01-01 06:00:00,New Year's Day,True
+1970-01-01 07:00:00,New Year's Day,True
+1970-01-01 08:00:00,New Year's Day,True
+1970-01-01 09:00:00,New Year's Day,True
+1970-01-01 10:00:00,New Year's Day,True
+1970-01-01 11:00:00,New Year's Day,True
+1970-01-01 12:00:00,New Year's Day,True
+1970-01-01 13:00:00,New Year's Day,True
+1970-01-01 14:00:00,New Year's Day,True
+1970-01-01 15:00:00,New Year's Day,True
+1970-01-01 16:00:00,New Year's Day,True
+1970-01-01 17:00:00,New Year's Day,True
+1970-01-01 18:00:00,New Year's Day,True
+1970-01-01 19:00:00,New Year's Day,True
+1970-01-01 20:00:00,New Year's Day,True
+1970-01-01 21:00:00,New Year's Day,True
+1970-01-01 22:00:00,New Year's Day,True
+1970-01-01 23:00:00,New Year's Day,True
+1970-01-01 00:00:00,Australia Day,True
+1970-01-01 01:00:00,Australia Day,True
+1970-01-01 02:00:00,Australia Day,True
+1970-01-01 03:00:00,Australia Day,True
+1970-01-01 04:00:00,Australia Day,True
+1970-01-01 05:00:00,Australia Day,True
+1970-01-01 06:00:00,Australia Day,True
+1970-01-01 07:00:00,Australia Day,True
+1970-01-01 08:00:00,Australia Day,True
+1970-01-01 09:00:00,Australia Day,True
+1970-01-01 10:00:00,Australia Day,True
+1970-01-01 11:00:00,Australia Day,True
+1970-01-01 12:00:00,Australia Day,True
+1970-01-01 13:00:00,Australia Day,True
+1970-01-01 14:00:00,Australia Day,True
+1970-01-01 15:00:00,Australia Day,True
+1970-01-01 16:00:00,Australia Day,True
+1970-01-01 17:00:00,Australia Day,True
+1970-01-01 18:00:00,Australia Day,True
+1970-01-01 19:00:00,Australia Day,True
+1970-01-01 20:00:00,Australia Day,True
+1970-01-01 21:00:00,Australia Day,True
+1970-01-01 22:00:00,Australia Day,True
+1970-01-01 23:00:00,Australia Day,True
+1970-01-01 00:00:00,Good Friday,True
+1970-01-01 01:00:00,Good Friday,True
+1970-01-01 02:00:00,Good Friday,True
+1970-01-01 03:00:00,Good Friday,True
+1970-01-01 04:00:00,Good Friday,True
+1970-01-01 05:00:00,Good Friday,True
+1970-01-01 06:00:00,Good Friday,True
+1970-01-01 07:00:00,Good Friday,True
+1970-01-01 08:00:00,Good Friday,True
+1970-01-01 09:00:00,Good Friday,True
+1970-01-01 10:00:00,Good Friday,True
+1970-01-01 11:00:00,Good Friday,True
+1970-01-01 12:00:00,Good Friday,True
+1970-01-01 13:00:00,Good Friday,True
+1970-01-01 14:00:00,Good Friday,True
+1970-01-01 15:00:00,Good Friday,True
+1970-01-01 16:00:00,Good Friday,True
+1970-01-01 17:00:00,Good Friday,True
+1970-01-01 18:00:00,Good Friday,True
+1970-01-01 19:00:00,Good Friday,True
+1970-01-01 20:00:00,Good Friday,True
+1970-01-01 21:00:00,Good Friday,True
+1970-01-01 22:00:00,Good Friday,True
+1970-01-01 23:00:00,Good Friday,True
+1970-01-01 00:00:00,Easter Saturday,True
+1970-01-01 01:00:00,Easter Saturday,True
+1970-01-01 02:00:00,Easter Saturday,True
+1970-01-01 03:00:00,Easter Saturday,True
+1970-01-01 04:00:00,Easter Saturday,True
+1970-01-01 05:00:00,Easter Saturday,True
+1970-01-01 06:00:00,Easter Saturday,True
+1970-01-01 07:00:00,Easter Saturday,True
+1970-01-01 08:00:00,Easter Saturday,True
+1970-01-01 09:00:00,Easter Saturday,True
+1970-01-01 10:00:00,Easter Saturday,True
+1970-01-01 11:00:00,Easter Saturday,True
+1970-01-01 12:00:00,Easter Saturday,True
+1970-01-01 13:00:00,Easter Saturday,True
+1970-01-01 14:00:00,Easter Saturday,True
+1970-01-01 15:00:00,Easter Saturday,True
+1970-01-01 16:00:00,Easter Saturday,True
+1970-01-01 17:00:00,Easter Saturday,True
+1970-01-01 18:00:00,Easter Saturday,True
+1970-01-01 19:00:00,Easter Saturday,True
+1970-01-01 20:00:00,Easter Saturday,True
+1970-01-01 21:00:00,Easter Saturday,True
+1970-01-01 22:00:00,Easter Saturday,True
+1970-01-01 23:00:00,Easter Saturday,True
+1970-01-01 00:00:00,Easter Sunday,True
+1970-01-01 01:00:00,Easter Sunday,True
+1970-01-01 02:00:00,Easter Sunday,True
+1970-01-01 03:00:00,Easter Sunday,True
+1970-01-01 04:00:00,Easter Sunday,True
+1970-01-01 05:00:00,Easter Sunday,True
+1970-01-01 06:00:00,Easter Sunday,True
+1970-01-01 07:00:00,Easter Sunday,True
+1970-01-01 08:00:00,Easter Sunday,True
+1970-01-01 09:00:00,Easter Sunday,True
+1970-01-01 10:00:00,Easter Sunday,True
+1970-01-01 11:00:00,Easter Sunday,True
+1970-01-01 12:00:00,Easter Sunday,True
+1970-01-01 13:00:00,Easter Sunday,True
+1970-01-01 14:00:00,Easter Sunday,True
+1970-01-01 15:00:00,Easter Sunday,True
+1970-01-01 16:00:00,Easter Sunday,True
+1970-01-01 17:00:00,Easter Sunday,True
+1970-01-01 18:00:00,Easter Sunday,True
+1970-01-01 19:00:00,Easter Sunday,True
+1970-01-01 20:00:00,Easter Sunday,True
+1970-01-01 21:00:00,Easter Sunday,True
+1970-01-01 22:00:00,Easter Sunday,True
+1970-01-01 23:00:00,Easter Sunday,True
+1970-01-01 00:00:00,Easter Monday,True
+1970-01-01 01:00:00,Easter Monday,True
+1970-01-01 02:00:00,Easter Monday,True
+1970-01-01 03:00:00,Easter Monday,True
+1970-01-01 04:00:00,Easter Monday,True
+1970-01-01 05:00:00,Easter Monday,True
+1970-01-01 06:00:00,Easter Monday,True
+1970-01-01 07:00:00,Easter Monday,True
+1970-01-01 08:00:00,Easter Monday,True
+1970-01-01 09:00:00,Easter Monday,True
+1970-01-01 10:00:00,Easter Monday,True
+1970-01-01 11:00:00,Easter Monday,True
+1970-01-01 12:00:00,Easter Monday,True
+1970-01-01 13:00:00,Easter Monday,True
+1970-01-01 14:00:00,Easter Monday,True
+1970-01-01 15:00:00,Easter Monday,True
+1970-01-01 16:00:00,Easter Monday,True
+1970-01-01 17:00:00,Easter Monday,True
+1970-01-01 18:00:00,Easter Monday,True
+1970-01-01 19:00:00,Easter Monday,True
+1970-01-01 20:00:00,Easter Monday,True
+1970-01-01 21:00:00,Easter Monday,True
+1970-01-01 22:00:00,Easter Monday,True
+1970-01-01 23:00:00,Easter Monday,True
+1970-01-01 00:00:00,Anzac Day,True
+1970-01-01 01:00:00,Anzac Day,True
+1970-01-01 02:00:00,Anzac Day,True
+1970-01-01 03:00:00,Anzac Day,True
+1970-01-01 04:00:00,Anzac Day,True
+1970-01-01 05:00:00,Anzac Day,True
+1970-01-01 06:00:00,Anzac Day,True
+1970-01-01 07:00:00,Anzac Day,True
+1970-01-01 08:00:00,Anzac Day,True
+1970-01-01 09:00:00,Anzac Day,True
+1970-01-01 10:00:00,Anzac Day,True
+1970-01-01 11:00:00,Anzac Day,True
+1970-01-01 12:00:00,Anzac Day,True
+1970-01-01 13:00:00,Anzac Day,True
+1970-01-01 14:00:00,Anzac Day,True
+1970-01-01 15:00:00,Anzac Day,True
+1970-01-01 16:00:00,Anzac Day,True
+1970-01-01 17:00:00,Anzac Day,True
+1970-01-01 18:00:00,Anzac Day,True
+1970-01-01 19:00:00,Anzac Day,True
+1970-01-01 20:00:00,Anzac Day,True
+1970-01-01 21:00:00,Anzac Day,True
+1970-01-01 22:00:00,Anzac Day,True
+1970-01-01 23:00:00,Anzac Day,True
+1970-01-01 00:00:00,King's Birthday,True
+1970-01-01 01:00:00,King's Birthday,True
+1970-01-01 02:00:00,King's Birthday,True
+1970-01-01 03:00:00,King's Birthday,True
+1970-01-01 04:00:00,King's Birthday,True
+1970-01-01 05:00:00,King's Birthday,True
+1970-01-01 06:00:00,King's Birthday,True
+1970-01-01 07:00:00,King's Birthday,True
+1970-01-01 08:00:00,King's Birthday,True
+1970-01-01 09:00:00,King's Birthday,True
+1970-01-01 10:00:00,King's Birthday,True
+1970-01-01 11:00:00,King's Birthday,True
+1970-01-01 12:00:00,King's Birthday,True
+1970-01-01 13:00:00,King's Birthday,True
+1970-01-01 14:00:00,King's Birthday,True
+1970-01-01 15:00:00,King's Birthday,True
+1970-01-01 16:00:00,King's Birthday,True
+1970-01-01 17:00:00,King's Birthday,True
+1970-01-01 18:00:00,King's Birthday,True
+1970-01-01 19:00:00,King's Birthday,True
+1970-01-01 20:00:00,King's Birthday,True
+1970-01-01 21:00:00,King's Birthday,True
+1970-01-01 22:00:00,King's Birthday,True
+1970-01-01 23:00:00,King's Birthday,True
+1970-01-01 00:00:00,Bank Holiday,True
+1970-01-01 01:00:00,Bank Holiday,True
+1970-01-01 02:00:00,Bank Holiday,True
+1970-01-01 03:00:00,Bank Holiday,True
+1970-01-01 04:00:00,Bank Holiday,True
+1970-01-01 05:00:00,Bank Holiday,True
+1970-01-01 06:00:00,Bank Holiday,True
+1970-01-01 07:00:00,Bank Holiday,True
+1970-01-01 08:00:00,Bank Holiday,True
+1970-01-01 09:00:00,Bank Holiday,True
+1970-01-01 10:00:00,Bank Holiday,True
+1970-01-01 11:00:00,Bank Holiday,True
+1970-01-01 12:00:00,Bank Holiday,True
+1970-01-01 13:00:00,Bank Holiday,True
+1970-01-01 14:00:00,Bank Holiday,True
+1970-01-01 15:00:00,Bank Holiday,True
+1970-01-01 16:00:00,Bank Holiday,True
+1970-01-01 17:00:00,Bank Holiday,True
+1970-01-01 18:00:00,Bank Holiday,True
+1970-01-01 19:00:00,Bank Holiday,True
+1970-01-01 20:00:00,Bank Holiday,True
+1970-01-01 21:00:00,Bank Holiday,True
+1970-01-01 22:00:00,Bank Holiday,True
+1970-01-01 23:00:00,Bank Holiday,True
+1970-01-01 00:00:00,Labour Day,True
+1970-01-01 01:00:00,Labour Day,True
+1970-01-01 02:00:00,Labour Day,True
+1970-01-01 03:00:00,Labour Day,True
+1970-01-01 04:00:00,Labour Day,True
+1970-01-01 05:00:00,Labour Day,True
+1970-01-01 06:00:00,Labour Day,True
+1970-01-01 07:00:00,Labour Day,True
+1970-01-01 08:00:00,Labour Day,True
+1970-01-01 09:00:00,Labour Day,True
+1970-01-01 10:00:00,Labour Day,True
+1970-01-01 11:00:00,Labour Day,True
+1970-01-01 12:00:00,Labour Day,True
+1970-01-01 13:00:00,Labour Day,True
+1970-01-01 14:00:00,Labour Day,True
+1970-01-01 15:00:00,Labour Day,True
+1970-01-01 16:00:00,Labour Day,True
+1970-01-01 17:00:00,Labour Day,True
+1970-01-01 18:00:00,Labour Day,True
+1970-01-01 19:00:00,Labour Day,True
+1970-01-01 20:00:00,Labour Day,True
+1970-01-01 21:00:00,Labour Day,True
+1970-01-01 22:00:00,Labour Day,True
+1970-01-01 23:00:00,Labour Day,True
+1970-01-01 00:00:00,Christmas Day ,True
+1970-01-01 01:00:00,Christmas Day ,True
+1970-01-01 02:00:00,Christmas Day ,True
+1970-01-01 03:00:00,Christmas Day ,True
+1970-01-01 04:00:00,Christmas Day ,True
+1970-01-01 05:00:00,Christmas Day ,True
+1970-01-01 06:00:00,Christmas Day ,True
+1970-01-01 07:00:00,Christmas Day ,True
+1970-01-01 08:00:00,Christmas Day ,True
+1970-01-01 09:00:00,Christmas Day ,True
+1970-01-01 10:00:00,Christmas Day ,True
+1970-01-01 11:00:00,Christmas Day ,True
+1970-01-01 12:00:00,Christmas Day ,True
+1970-01-01 13:00:00,Christmas Day ,True
+1970-01-01 14:00:00,Christmas Day ,True
+1970-01-01 15:00:00,Christmas Day ,True
+1970-01-01 16:00:00,Christmas Day ,True
+1970-01-01 17:00:00,Christmas Day ,True
+1970-01-01 18:00:00,Christmas Day ,True
+1970-01-01 19:00:00,Christmas Day ,True
+1970-01-01 20:00:00,Christmas Day ,True
+1970-01-01 21:00:00,Christmas Day ,True
+1970-01-01 22:00:00,Christmas Day ,True
+1970-01-01 23:00:00,Christmas Day ,True
+1970-01-01 00:00:00,Boxing Day,True
+1970-01-01 01:00:00,Boxing Day,True
+1970-01-01 02:00:00,Boxing Day,True
+1970-01-01 03:00:00,Boxing Day,True
+1970-01-01 04:00:00,Boxing Day,True
+1970-01-01 05:00:00,Boxing Day,True
+1970-01-01 06:00:00,Boxing Day,True
+1970-01-01 07:00:00,Boxing Day,True
+1970-01-01 08:00:00,Boxing Day,True
+1970-01-01 09:00:00,Boxing Day,True
+1970-01-01 10:00:00,Boxing Day,True
+1970-01-01 11:00:00,Boxing Day,True
+1970-01-01 12:00:00,Boxing Day,True
+1970-01-01 13:00:00,Boxing Day,True
+1970-01-01 14:00:00,Boxing Day,True
+1970-01-01 15:00:00,Boxing Day,True
+1970-01-01 16:00:00,Boxing Day,True
+1970-01-01 17:00:00,Boxing Day,True
+1970-01-01 18:00:00,Boxing Day,True
+1970-01-01 19:00:00,Boxing Day,True
+1970-01-01 20:00:00,Boxing Day,True
+1970-01-01 21:00:00,Boxing Day,True
+1970-01-01 22:00:00,Boxing Day,True
+1970-01-01 23:00:00,Boxing Day,True
+1970-01-01 00:00:00,New Year's Day,True
+1970-01-01 01:00:00,New Year's Day,True
+1970-01-01 02:00:00,New Year's Day,True
+1970-01-01 03:00:00,New Year's Day,True
+1970-01-01 04:00:00,New Year's Day,True
+1970-01-01 05:00:00,New Year's Day,True
+1970-01-01 06:00:00,New Year's Day,True
+1970-01-01 07:00:00,New Year's Day,True
+1970-01-01 08:00:00,New Year's Day,True
+1970-01-01 09:00:00,New Year's Day,True
+1970-01-01 10:00:00,New Year's Day,True
+1970-01-01 11:00:00,New Year's Day,True
+1970-01-01 12:00:00,New Year's Day,True
+1970-01-01 13:00:00,New Year's Day,True
+1970-01-01 14:00:00,New Year's Day,True
+1970-01-01 15:00:00,New Year's Day,True
+1970-01-01 16:00:00,New Year's Day,True
+1970-01-01 17:00:00,New Year's Day,True
+1970-01-01 18:00:00,New Year's Day,True
+1970-01-01 19:00:00,New Year's Day,True
+1970-01-01 20:00:00,New Year's Day,True
+1970-01-01 21:00:00,New Year's Day,True
+1970-01-01 22:00:00,New Year's Day,True
+1970-01-01 23:00:00,New Year's Day,True
+1970-01-01 00:00:00,Australia Day,True
+1970-01-01 01:00:00,Australia Day,True
+1970-01-01 02:00:00,Australia Day,True
+1970-01-01 03:00:00,Australia Day,True
+1970-01-01 04:00:00,Australia Day,True
+1970-01-01 05:00:00,Australia Day,True
+1970-01-01 06:00:00,Australia Day,True
+1970-01-01 07:00:00,Australia Day,True
+1970-01-01 08:00:00,Australia Day,True
+1970-01-01 09:00:00,Australia Day,True
+1970-01-01 10:00:00,Australia Day,True
+1970-01-01 11:00:00,Australia Day,True
+1970-01-01 12:00:00,Australia Day,True
+1970-01-01 13:00:00,Australia Day,True
+1970-01-01 14:00:00,Australia Day,True
+1970-01-01 15:00:00,Australia Day,True
+1970-01-01 16:00:00,Australia Day,True
+1970-01-01 17:00:00,Australia Day,True
+1970-01-01 18:00:00,Australia Day,True
+1970-01-01 19:00:00,Australia Day,True
+1970-01-01 20:00:00,Australia Day,True
+1970-01-01 21:00:00,Australia Day,True
+1970-01-01 22:00:00,Australia Day,True
+1970-01-01 23:00:00,Australia Day,True
+1970-01-01 00:00:00,Good Friday,True
+1970-01-01 01:00:00,Good Friday,True
+1970-01-01 02:00:00,Good Friday,True
+1970-01-01 03:00:00,Good Friday,True
+1970-01-01 04:00:00,Good Friday,True
+1970-01-01 05:00:00,Good Friday,True
+1970-01-01 06:00:00,Good Friday,True
+1970-01-01 07:00:00,Good Friday,True
+1970-01-01 08:00:00,Good Friday,True
+1970-01-01 09:00:00,Good Friday,True
+1970-01-01 10:00:00,Good Friday,True
+1970-01-01 11:00:00,Good Friday,True
+1970-01-01 12:00:00,Good Friday,True
+1970-01-01 13:00:00,Good Friday,True
+1970-01-01 14:00:00,Good Friday,True
+1970-01-01 15:00:00,Good Friday,True
+1970-01-01 16:00:00,Good Friday,True
+1970-01-01 17:00:00,Good Friday,True
+1970-01-01 18:00:00,Good Friday,True
+1970-01-01 19:00:00,Good Friday,True
+1970-01-01 20:00:00,Good Friday,True
+1970-01-01 21:00:00,Good Friday,True
+1970-01-01 22:00:00,Good Friday,True
+1970-01-01 23:00:00,Good Friday,True
+1970-01-01 00:00:00,Easter Saturday,True
+1970-01-01 01:00:00,Easter Saturday,True
+1970-01-01 02:00:00,Easter Saturday,True
+1970-01-01 03:00:00,Easter Saturday,True
+1970-01-01 04:00:00,Easter Saturday,True
+1970-01-01 05:00:00,Easter Saturday,True
+1970-01-01 06:00:00,Easter Saturday,True
+1970-01-01 07:00:00,Easter Saturday,True
+1970-01-01 08:00:00,Easter Saturday,True
+1970-01-01 09:00:00,Easter Saturday,True
+1970-01-01 10:00:00,Easter Saturday,True
+1970-01-01 11:00:00,Easter Saturday,True
+1970-01-01 12:00:00,Easter Saturday,True
+1970-01-01 13:00:00,Easter Saturday,True
+1970-01-01 14:00:00,Easter Saturday,True
+1970-01-01 15:00:00,Easter Saturday,True
+1970-01-01 16:00:00,Easter Saturday,True
+1970-01-01 17:00:00,Easter Saturday,True
+1970-01-01 18:00:00,Easter Saturday,True
+1970-01-01 19:00:00,Easter Saturday,True
+1970-01-01 20:00:00,Easter Saturday,True
+1970-01-01 21:00:00,Easter Saturday,True
+1970-01-01 22:00:00,Easter Saturday,True
+1970-01-01 23:00:00,Easter Saturday,True
+1970-01-01 00:00:00,Easter Sunday,True
+1970-01-01 01:00:00,Easter Sunday,True
+1970-01-01 02:00:00,Easter Sunday,True
+1970-01-01 03:00:00,Easter Sunday,True
+1970-01-01 04:00:00,Easter Sunday,True
+1970-01-01 05:00:00,Easter Sunday,True
+1970-01-01 06:00:00,Easter Sunday,True
+1970-01-01 07:00:00,Easter Sunday,True
+1970-01-01 08:00:00,Easter Sunday,True
+1970-01-01 09:00:00,Easter Sunday,True
+1970-01-01 10:00:00,Easter Sunday,True
+1970-01-01 11:00:00,Easter Sunday,True
+1970-01-01 12:00:00,Easter Sunday,True
+1970-01-01 13:00:00,Easter Sunday,True
+1970-01-01 14:00:00,Easter Sunday,True
+1970-01-01 15:00:00,Easter Sunday,True
+1970-01-01 16:00:00,Easter Sunday,True
+1970-01-01 17:00:00,Easter Sunday,True
+1970-01-01 18:00:00,Easter Sunday,True
+1970-01-01 19:00:00,Easter Sunday,True
+1970-01-01 20:00:00,Easter Sunday,True
+1970-01-01 21:00:00,Easter Sunday,True
+1970-01-01 22:00:00,Easter Sunday,True
+1970-01-01 23:00:00,Easter Sunday,True
+1970-01-01 00:00:00,Easter Monday,True
+1970-01-01 01:00:00,Easter Monday,True
+1970-01-01 02:00:00,Easter Monday,True
+1970-01-01 03:00:00,Easter Monday,True
+1970-01-01 04:00:00,Easter Monday,True
+1970-01-01 05:00:00,Easter Monday,True
+1970-01-01 06:00:00,Easter Monday,True
+1970-01-01 07:00:00,Easter Monday,True
+1970-01-01 08:00:00,Easter Monday,True
+1970-01-01 09:00:00,Easter Monday,True
+1970-01-01 10:00:00,Easter Monday,True
+1970-01-01 11:00:00,Easter Monday,True
+1970-01-01 12:00:00,Easter Monday,True
+1970-01-01 13:00:00,Easter Monday,True
+1970-01-01 14:00:00,Easter Monday,True
+1970-01-01 15:00:00,Easter Monday,True
+1970-01-01 16:00:00,Easter Monday,True
+1970-01-01 17:00:00,Easter Monday,True
+1970-01-01 18:00:00,Easter Monday,True
+1970-01-01 19:00:00,Easter Monday,True
+1970-01-01 20:00:00,Easter Monday,True
+1970-01-01 21:00:00,Easter Monday,True
+1970-01-01 22:00:00,Easter Monday,True
+1970-01-01 23:00:00,Easter Monday,True
+1970-01-01 00:00:00,Anzac Day,True
+1970-01-01 01:00:00,Anzac Day,True
+1970-01-01 02:00:00,Anzac Day,True
+1970-01-01 03:00:00,Anzac Day,True
+1970-01-01 04:00:00,Anzac Day,True
+1970-01-01 05:00:00,Anzac Day,True
+1970-01-01 06:00:00,Anzac Day,True
+1970-01-01 07:00:00,Anzac Day,True
+1970-01-01 08:00:00,Anzac Day,True
+1970-01-01 09:00:00,Anzac Day,True
+1970-01-01 10:00:00,Anzac Day,True
+1970-01-01 11:00:00,Anzac Day,True
+1970-01-01 12:00:00,Anzac Day,True
+1970-01-01 13:00:00,Anzac Day,True
+1970-01-01 14:00:00,Anzac Day,True
+1970-01-01 15:00:00,Anzac Day,True
+1970-01-01 16:00:00,Anzac Day,True
+1970-01-01 17:00:00,Anzac Day,True
+1970-01-01 18:00:00,Anzac Day,True
+1970-01-01 19:00:00,Anzac Day,True
+1970-01-01 20:00:00,Anzac Day,True
+1970-01-01 21:00:00,Anzac Day,True
+1970-01-01 22:00:00,Anzac Day,True
+1970-01-01 23:00:00,Anzac Day,True
+1970-01-01 00:00:00,King's Birthday,True
+1970-01-01 01:00:00,King's Birthday,True
+1970-01-01 02:00:00,King's Birthday,True
+1970-01-01 03:00:00,King's Birthday,True
+1970-01-01 04:00:00,King's Birthday,True
+1970-01-01 05:00:00,King's Birthday,True
+1970-01-01 06:00:00,King's Birthday,True
+1970-01-01 07:00:00,King's Birthday,True
+1970-01-01 08:00:00,King's Birthday,True
+1970-01-01 09:00:00,King's Birthday,True
+1970-01-01 10:00:00,King's Birthday,True
+1970-01-01 11:00:00,King's Birthday,True
+1970-01-01 12:00:00,King's Birthday,True
+1970-01-01 13:00:00,King's Birthday,True
+1970-01-01 14:00:00,King's Birthday,True
+1970-01-01 15:00:00,King's Birthday,True
+1970-01-01 16:00:00,King's Birthday,True
+1970-01-01 17:00:00,King's Birthday,True
+1970-01-01 18:00:00,King's Birthday,True
+1970-01-01 19:00:00,King's Birthday,True
+1970-01-01 20:00:00,King's Birthday,True
+1970-01-01 21:00:00,King's Birthday,True
+1970-01-01 22:00:00,King's Birthday,True
+1970-01-01 23:00:00,King's Birthday,True
+1970-01-01 00:00:00,Bank Holiday,True
+1970-01-01 01:00:00,Bank Holiday,True
+1970-01-01 02:00:00,Bank Holiday,True
+1970-01-01 03:00:00,Bank Holiday,True
+1970-01-01 04:00:00,Bank Holiday,True
+1970-01-01 05:00:00,Bank Holiday,True
+1970-01-01 06:00:00,Bank Holiday,True
+1970-01-01 07:00:00,Bank Holiday,True
+1970-01-01 08:00:00,Bank Holiday,True
+1970-01-01 09:00:00,Bank Holiday,True
+1970-01-01 10:00:00,Bank Holiday,True
+1970-01-01 11:00:00,Bank Holiday,True
+1970-01-01 12:00:00,Bank Holiday,True
+1970-01-01 13:00:00,Bank Holiday,True
+1970-01-01 14:00:00,Bank Holiday,True
+1970-01-01 15:00:00,Bank Holiday,True
+1970-01-01 16:00:00,Bank Holiday,True
+1970-01-01 17:00:00,Bank Holiday,True
+1970-01-01 18:00:00,Bank Holiday,True
+1970-01-01 19:00:00,Bank Holiday,True
+1970-01-01 20:00:00,Bank Holiday,True
+1970-01-01 21:00:00,Bank Holiday,True
+1970-01-01 22:00:00,Bank Holiday,True
+1970-01-01 23:00:00,Bank Holiday,True
+1970-01-01 00:00:00,Labour Day,True
+1970-01-01 01:00:00,Labour Day,True
+1970-01-01 02:00:00,Labour Day,True
+1970-01-01 03:00:00,Labour Day,True
+1970-01-01 04:00:00,Labour Day,True
+1970-01-01 05:00:00,Labour Day,True
+1970-01-01 06:00:00,Labour Day,True
+1970-01-01 07:00:00,Labour Day,True
+1970-01-01 08:00:00,Labour Day,True
+1970-01-01 09:00:00,Labour Day,True
+1970-01-01 10:00:00,Labour Day,True
+1970-01-01 11:00:00,Labour Day,True
+1970-01-01 12:00:00,Labour Day,True
+1970-01-01 13:00:00,Labour Day,True
+1970-01-01 14:00:00,Labour Day,True
+1970-01-01 15:00:00,Labour Day,True
+1970-01-01 16:00:00,Labour Day,True
+1970-01-01 17:00:00,Labour Day,True
+1970-01-01 18:00:00,Labour Day,True
+1970-01-01 19:00:00,Labour Day,True
+1970-01-01 20:00:00,Labour Day,True
+1970-01-01 21:00:00,Labour Day,True
+1970-01-01 22:00:00,Labour Day,True
+1970-01-01 23:00:00,Labour Day,True
+1970-01-01 00:00:00,Christmas Day,True
+1970-01-01 01:00:00,Christmas Day,True
+1970-01-01 02:00:00,Christmas Day,True
+1970-01-01 03:00:00,Christmas Day,True
+1970-01-01 04:00:00,Christmas Day,True
+1970-01-01 05:00:00,Christmas Day,True
+1970-01-01 06:00:00,Christmas Day,True
+1970-01-01 07:00:00,Christmas Day,True
+1970-01-01 08:00:00,Christmas Day,True
+1970-01-01 09:00:00,Christmas Day,True
+1970-01-01 10:00:00,Christmas Day,True
+1970-01-01 11:00:00,Christmas Day,True
+1970-01-01 12:00:00,Christmas Day,True
+1970-01-01 13:00:00,Christmas Day,True
+1970-01-01 14:00:00,Christmas Day,True
+1970-01-01 15:00:00,Christmas Day,True
+1970-01-01 16:00:00,Christmas Day,True
+1970-01-01 17:00:00,Christmas Day,True
+1970-01-01 18:00:00,Christmas Day,True
+1970-01-01 19:00:00,Christmas Day,True
+1970-01-01 20:00:00,Christmas Day,True
+1970-01-01 21:00:00,Christmas Day,True
+1970-01-01 22:00:00,Christmas Day,True
+1970-01-01 23:00:00,Christmas Day,True
+1970-01-01 00:00:00,Boxing Day,True
+1970-01-01 01:00:00,Boxing Day,True
+1970-01-01 02:00:00,Boxing Day,True
+1970-01-01 03:00:00,Boxing Day,True
+1970-01-01 04:00:00,Boxing Day,True
+1970-01-01 05:00:00,Boxing Day,True
+1970-01-01 06:00:00,Boxing Day,True
+1970-01-01 07:00:00,Boxing Day,True
+1970-01-01 08:00:00,Boxing Day,True
+1970-01-01 09:00:00,Boxing Day,True
+1970-01-01 10:00:00,Boxing Day,True
+1970-01-01 11:00:00,Boxing Day,True
+1970-01-01 12:00:00,Boxing Day,True
+1970-01-01 13:00:00,Boxing Day,True
+1970-01-01 14:00:00,Boxing Day,True
+1970-01-01 15:00:00,Boxing Day,True
+1970-01-01 16:00:00,Boxing Day,True
+1970-01-01 17:00:00,Boxing Day,True
+1970-01-01 18:00:00,Boxing Day,True
+1970-01-01 19:00:00,Boxing Day,True
+1970-01-01 20:00:00,Boxing Day,True
+1970-01-01 21:00:00,Boxing Day,True
+1970-01-01 22:00:00,Boxing Day,True
+1970-01-01 23:00:00,Boxing Day,True

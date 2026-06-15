@@ -1,15 +1,9 @@
-# ── Data folders (too large for GitHub, download via scripts) ──────────────
-data/
-*.csv
-*.xlsx
-*.xls
-*.parquet
-*.geojson
-*.json
-*.pb
-*.zip
+# Data
+data/raw/
+data/temp/
 
-# ── Python environment ──────────────────────────────────────────────────────
+# Python environment
+.venv/
 weather_env/
 venv/
 .env/
@@ -19,24 +13,61 @@ __pycache__/
 *.pyd
 .Python
 
-# ── Jupyter notebooks checkpoints ──────────────────────────────────────────
+# Jupyter
 .ipynb_checkpoints/
-*.ipynb
 
-# ── API keys — NEVER commit these ──────────────────────────────────────────
+# API keys
 .env
 secrets.py
 config.py
 *_key.txt
 *_token.txt
 
-# ── OS files ────────────────────────────────────────────────────────────────
+# OS files
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# ── IDE ─────────────────────────────────────────────────────────────────────
+# IDE
 .vscode/
 .idea/
 *.suo
 *.user
+# Local environments
+.venv/
+weather_env/
+cache/
+
+# Large datasets
+data/01_weather/bom_meteostat/nsw_all_regions_bom.csv
+data/05_traffic/nsw_traffic_hf/Traffic_X.csv
+data/05_traffic/nsw_traffic_hf/Traffic_X.npy
+data/cleaned/master_context_table.csv
+data/cleaned/traffic_counts_clean.csv
+data/cleaned/weather_clean.csv
+
+# Local environments
+.venv/
+weather_env/
+cache/
+
+# Large datasets
+data/01_weather/bom_meteostat/nsw_all_regions_bom.csv
+data/05_traffic/nsw_traffic_hf/Traffic_X.csv
+data/05_traffic/nsw_traffic_hf/Traffic_X.npy
+data/cleaned/master_context_table.csv
+data/cleaned/traffic_counts_clean.csv
+data/cleaned/weather_clean.csv
+
+# Local environments
+.venv/
+weather_env/
+cache/
+
+# Large datasets
+data/01_weather/bom_meteostat/nsw_all_regions_bom.csv
+data/05_traffic/nsw_traffic_hf/Traffic_X.csv
+data/05_traffic/nsw_traffic_hf/Traffic_X.npy
+data/cleaned/master_context_table.csv
+data/cleaned/traffic_counts_clean.csv
+data/cleaned/weather_clean.csv

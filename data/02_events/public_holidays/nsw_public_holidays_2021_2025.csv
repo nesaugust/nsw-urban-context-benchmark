@@ -1,0 +1,66 @@
+ID,Date,Holiday Name,Information,More Information,Jurisdiction
+16,20210101.0,New Year's Day,New Year's Day is the first day of the calendar year and is celebrated each January 1st,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+17,20210126.0,Australia Day,Always celebrated on 26 January,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+18,20210402.0,Good Friday,Easter is celebrated with Good Friday and Easter Monday creating a 4 day long weekend.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+19,20210403.0,Easter Saturday,Easter Saturday is between Good Friday and Easter Sunday in Australia.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+20,20210404.0,Easter Sunday,Public Holiday as part of Easter.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+21,20210405.0,Easter Monday,Public Holiday as part of Easter.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+22,20210425.0,Anzac Day,Celebrated on the 25 April each year.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+23,20210614.0,Queen's Birthday,Celebrated on second Monday in June except in Western Australia and Queensland.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+24,20210802.0,Bank Holiday,"Applies to banks and certain financial institutions, per the Retail Trading Act 2008",https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+25,20211004.0,Labour Day,"Always on a Monday, creating a long weekend. It celebrates the eight-hour working day, a victory for workers in the mid-late 19th century.",https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+26,20211225.0,Christmas Day ,Christmas Day is an annual holiday which celebrates the birth of Jesus Christ over 2000 years ago.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+27,20211226.0,Boxing Day,Boxing Day occurs the day after Christmas. Sydney-to-Hobart yacht race and Boxing Day Test Match (Cricket) start on this day.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+28,20211227.0,Christmas (additional day),"As 25 December (Christmas Day) falls on a Saturday in 2021, there is an additional public holiday on the Monday.",https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+29,20211228.0,Boxing Day (additional day),"As 26 December (Boxing Day) falls on a Sunday in 2021, there is an additional public holiday on the Tuesday.",https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+129,20220101.0,New Year's Day,New Year's Day is the first day of the calendar year and is celebrated each January 1st,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+130,20220103.0,New Year's Day (additional day),New Year's Day is the first day of the calendar year and is celebrated each January 1st,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+131,20220126.0,Australia Day,Always celebrated on 26 January,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+132,20220415.0,Good Friday,Easter is celebrated with Good Friday and Easter Monday creating a 4 day long weekend.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+133,20220416.0,Easter Saturday - the Saturday following Good Friday,Easter Saturday is between Good Friday and Easter Sunday in Australia.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+134,20220417.0,Easter Sunday,Public Holiday as part of Easter.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+135,20220418.0,Easter Monday,Public Holiday as part of Easter.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+136,20220425.0,Anzac Day,Celebrated on the 25 April each year.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+137,20220613.0,Queen's Birthday,Celebrated on second Monday in June except in Western Australia and Queensland.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+138,20220801.0,Bank Holiday,"Applies to banks and certain financial institutions, per the Retail Trading Act 2008",https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+139,20221003.0,Labour Day,"Always on a Monday, creating a long weekend. It celebrates the eight-hour working day, a victory for workers in the mid-late 19th century.",https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+140,20221225.0,Christmas Day ,Christmas Day is an annual holiday which celebrates the birth of Jesus Christ over 2000 years ago.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+141,20221226.0,Boxing Day,Boxing Day occurs the day after Christmas. Sydney-to-Hobart yacht race and Boxing Day Test Match (Cricket) start on this day.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+142,20221227.0,Christmas (additional day),As 25 December (Christmas Day) falls on a Sunday in 2022 there is an additional public holiday on the Tuesday.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+237,20230101.0,New Year's Day,New Year's Day is the first day of the calendar year and is celebrated each January 1st,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+238,20230102.0,New Year's Day (observed),"As 1 January 2023 falls on a Saturday in 2023, the following Monday is observed as an additional public holiday.",https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+239,20230126.0,Australia Day,Always celebrated on 26 January,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+240,20230407.0,Good Friday,Easter is celebrated with Good Friday and Easter Monday creating a 4 day long weekend.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+241,20230408.0,Easter Saturday,Easter Saturday is between Good Friday and Easter Sunday in Australia.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+242,20230409.0,Easter Sunday,Public Holiday as part of Easter.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+243,20230410.0,Easter Monday,Public Holiday as part of Easter.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+244,20230425.0,Anzac Day,Celebrated on the 25 April each year.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+245,20230612.0,King's Birthday,Celebrated on second Monday in June except in Western Australia and Queensland.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+246,20230807.0,Bank Holiday,"Applies to banks and certain financial institutions, per the Retail Trading Act 2008",https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+247,20231002.0,Labour Day,Always on a Monday creating a long weekend. It celebrates the eight-hour working day a victory for workers in the mid-late 19th century.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+248,20231225.0,Christmas Day ,Christmas Day is an annual holiday which celebrates the birth of Jesus Christ over 2000 years ago.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+249,20231226.0,Boxing Day,Boxing Day occurs the day after Christmas. Sydney-to-Hobart yacht race and Boxing Day Test Match (Cricket) start on this day.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+346,20240101.0,New Year's Day,New Year's Day is the first day of the calendar year and is celebrated each January 1st,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+347,20240126.0,Australia Day,Always celebrated on 26 January,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+348,20240329.0,Good Friday,Easter is celebrated with Good Friday and Easter Monday creating a 4 day long weekend.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+349,20240330.0,Easter Saturday,Easter Saturday is between Good Friday and Easter Sunday in Australia.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+350,20240331.0,Easter Sunday,Public Holiday as part of Easter.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+351,20240401.0,Easter Monday,Public Holiday as part of Easter.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+352,20240425.0,Anzac Day,Celebrated on the 25 April each year.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+353,20240610.0,King's Birthday,Celebrated on second Monday in June except in Western Australia and Queensland.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+354,20240805.0,Bank Holiday,"Applies to banks and certain financial institutions, per the Retail Trading Act 2008",https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+355,20241007.0,Labour Day,Always on a Monday creating a long weekend. It celebrates the eight-hour working day a victory for workers in the mid-late 19th century.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+356,20241225.0,Christmas Day ,Christmas Day is an annual holiday which celebrates the birth of Jesus Christ over 2000 years ago.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+357,20241226.0,Boxing Day,Boxing Day occurs the day after Christmas. Sydney-to-Hobart yacht race and Boxing Day Test Match (Cricket) start on this day.,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+448,20250101.0,New Year's Day,,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+449,20250127.0,Australia Day,,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+450,20250418.0,Good Friday,,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+451,20250419.0,Easter Saturday,,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+452,20250420.0,Easter Sunday,,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+453,20250421.0,Easter Monday,,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+454,20250425.0,Anzac Day,,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+455,20250609.0,King's Birthday,,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+456,20250804.0,Bank Holiday,"Applies to banks and certain financial institutions, see the Retail Trading Act 2008.",https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+457,20251006.0,Labour Day,,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+458,20251225.0,Christmas Day,,https://www.nsw.gov.au/about-nsw/public-holidays,nsw
+459,20251226.0,Boxing Day,,https://www.nsw.gov.au/about-nsw/public-holidays,nsw

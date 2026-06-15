@@ -1,0 +1,76 @@
+{
+  "benchmark_name": "NSW Urban Context Benchmark (Topic 3)",
+  "version": "1.1",
+  "created": "2026-06-15T02:38:28.002532",
+  "description": "Context-aware urban reasoning benchmark using weather, events, holidays, school terms, road incidents, transport disruptions, pedestrian, traffic, and POI/mobility context.",
+  "data_coverage": {
+    "regions": 17,
+    "date_range": "2022-01-01 to 2026-06-07",
+    "total_rows": 660552,
+    "has_poi_mobility": false,
+    "has_traffic": false,
+    "has_pedestrian": true
+  },
+  "tasks": {
+    "task1_traffic_prediction": {
+      "n_examples": 300,
+      "format": "4-option MCQ",
+      "metric": "accuracy"
+    },
+    "task2_anomaly_classification": {
+      "n_examples": 300,
+      "format": "4-option MCQ",
+      "metric": "accuracy"
+    },
+    "task3_region_sensitivity": {
+      "n_examples": 100,
+      "format": "4-option MCQ",
+      "metric": "accuracy"
+    },
+    "task4_scenario_cards": {
+      "n_examples": 40,
+      "format": "JSON scenario card",
+      "metric": "coverage and diversity"
+    },
+    "task5_contrastive_examples": {
+      "n_examples": 87,
+      "format": "open-ended reasoning pair",
+      "metric": "contrastive reasoning accuracy"
+    },
+    "task6_poi_mobility_reasoning": {
+      "n_examples": 200,
+      "format": "4-option MCQ",
+      "metric": "accuracy"
+    }
+  },
+  "total_items": 1027,
+  "difficulty_distribution": {
+    "easy": 800,
+    "medium": 42,
+    "hard": 145
+  },
+  "context_signals_used": [
+    "weather",
+    "public holidays",
+    "school terms",
+    "large events",
+    "crash historical risk profile",
+    "road incidents",
+    "public transport alerts",
+    "pedestrian counts",
+    "traffic activity",
+    "POI/mobility activity patterns"
+  ],
+  "data_sources": [
+    "Open-Meteo",
+    "data.gov.au holidays",
+    "NSW school terms",
+    "Ticketmaster",
+    "TfNSW crashes",
+    "TfNSW live hazards",
+    "TfNSW GTFS-RT/service alerts",
+    "City of Sydney pedestrian counts",
+    "HuggingFace traffic",
+    "Massive-STEPS Sydney"
+  ]
+}

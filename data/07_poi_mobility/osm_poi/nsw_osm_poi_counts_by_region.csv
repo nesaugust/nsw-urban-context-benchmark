@@ -1,0 +1,109 @@
+location,poi_category,poi_count
+Bondi,amenity,542
+Bondi,leisure,69
+Bondi,office,7
+Bondi,other,1010
+Bondi,public_transport,23
+Bondi,shop,64
+Bondi,tourism,25
+Byron Bay,amenity,284
+Byron Bay,leisure,141
+Byron Bay,office,6
+Byron Bay,other,1331
+Byron Bay,public_transport,38
+Byron Bay,railway,28
+Byron Bay,shop,79
+Byron Bay,tourism,85
+Coffs Harbour,amenity,1395
+Coffs Harbour,leisure,569
+Coffs Harbour,office,25
+Coffs Harbour,other,3685
+Coffs Harbour,public_transport,153
+Coffs Harbour,railway,40
+Coffs Harbour,shop,229
+Coffs Harbour,tourism,69
+Dubbo,amenity,808
+Dubbo,leisure,363
+Dubbo,office,5
+Dubbo,other,1672
+Dubbo,public_transport,304
+Dubbo,railway,207
+Dubbo,shop,127
+Dubbo,tourism,118
+Liverpool,amenity,5311
+Liverpool,leisure,1378
+Liverpool,office,31
+Liverpool,other,6443
+Liverpool,public_transport,1073
+Liverpool,railway,417
+Liverpool,shop,518
+Liverpool,tourism,40
+Manly,amenity,666
+Manly,leisure,277
+Manly,office,9
+Manly,other,1700
+Manly,public_transport,73
+Manly,shop,62
+Manly,tourism,99
+Newcastle,amenity,679
+Newcastle,leisure,120
+Newcastle,office,9
+Newcastle,other,514
+Newcastle,public_transport,34
+Newcastle,railway,90
+Newcastle,shop,55
+Newcastle,tourism,41
+Nowra,amenity,98
+Nowra,leisure,104
+Nowra,office,2
+Nowra,other,656
+Nowra,public_transport,41
+Nowra,shop,37
+Nowra,tourism,11
+Orange,amenity,1030
+Orange,leisure,315
+Orange,office,14
+Orange,other,7702
+Orange,public_transport,300
+Orange,railway,100
+Orange,shop,134
+Orange,tourism,38
+Parramatta,amenity,1742
+Parramatta,leisure,302
+Parramatta,office,95
+Parramatta,other,1960
+Parramatta,public_transport,109
+Parramatta,railway,354
+Parramatta,shop,283
+Parramatta,tourism,69
+Penrith,amenity,944
+Penrith,leisure,315
+Penrith,office,37
+Penrith,other,6226
+Penrith,public_transport,145
+Penrith,railway,181
+Penrith,shop,229
+Penrith,tourism,17
+Port Macquarie,amenity,839
+Port Macquarie,leisure,369
+Port Macquarie,office,52
+Port Macquarie,other,2663
+Port Macquarie,public_transport,267
+Port Macquarie,shop,341
+Port Macquarie,tourism,94
+Tamworth,amenity,904
+Tamworth,leisure,469
+Tamworth,office,36
+Tamworth,other,4594
+Tamworth,public_transport,335
+Tamworth,railway,231
+Tamworth,shop,315
+Tamworth,tourism,174
+Wollongong,amenity,497
+Wollongong,leisure,109
+Wollongong,office,10
+Wollongong,other,3570
+Wollongong,public_transport,72
+Wollongong,railway,51
+Wollongong,shop,52
+Wollongong,tourism,32

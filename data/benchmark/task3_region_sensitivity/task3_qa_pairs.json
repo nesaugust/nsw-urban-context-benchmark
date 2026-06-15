@@ -1,0 +1,2102 @@
+[
+  {
+    "id": "t3_0001",
+    "task": "region_sensitivity",
+    "question": "Compare Nowra and Orange. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Nowra",
+      "region_b": "Orange",
+      "condition": "rainfall",
+      "sensitivity_a": 0.6,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Nowra",
+      "B. Orange",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Nowra has the higher estimated/heuristic sensitivity score for rainfall. Scores: Nowra=0.60, Orange=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0002",
+    "task": "region_sensitivity",
+    "question": "Compare Perisher and Canberra. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Perisher",
+      "region_b": "Canberra",
+      "condition": "rainfall",
+      "sensitivity_a": 0.7,
+      "sensitivity_b": 0.6
+    },
+    "options": [
+      "A. Perisher",
+      "B. Canberra",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Perisher has the higher estimated/heuristic sensitivity score for rainfall. Scores: Perisher=0.70, Canberra=0.60.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0003",
+    "task": "region_sensitivity",
+    "question": "Compare Liverpool and Broken Hill. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Liverpool",
+      "region_b": "Broken Hill",
+      "condition": "rainfall",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.3
+    },
+    "options": [
+      "A. Liverpool",
+      "B. Broken Hill",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Liverpool has the higher estimated/heuristic sensitivity score for rainfall. Scores: Liverpool=0.50, Broken Hill=0.30.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0004",
+    "task": "region_sensitivity",
+    "question": "Compare Parramatta and Wagga Wagga. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Parramatta",
+      "region_b": "Wagga Wagga",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.63,
+      "sensitivity_b": 0.53
+    },
+    "options": [
+      "A. Parramatta",
+      "B. Wagga Wagga",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Parramatta has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Parramatta=0.63, Wagga Wagga=0.53.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0005",
+    "task": "region_sensitivity",
+    "question": "Compare Liverpool and Cessnock. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Liverpool",
+      "region_b": "Cessnock",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.53,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Liverpool",
+      "B. Cessnock",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Liverpool has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Liverpool=0.53, Cessnock=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0006",
+    "task": "region_sensitivity",
+    "question": "Compare Sydney CBD and Tamworth. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Sydney CBD",
+      "region_b": "Tamworth",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.73,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Sydney CBD",
+      "B. Tamworth",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Sydney CBD has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Sydney CBD=0.73, Tamworth=0.50.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0007",
+    "task": "region_sensitivity",
+    "question": "Compare Port Macquarie and Armidale. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Port Macquarie",
+      "region_b": "Armidale",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Port Macquarie",
+      "B. Armidale",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Port Macquarie has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Port Macquarie=0.50, Armidale=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0008",
+    "task": "region_sensitivity",
+    "question": "Compare Parramatta and Dubbo. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Parramatta",
+      "region_b": "Dubbo",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.63,
+      "sensitivity_b": 0.47
+    },
+    "options": [
+      "A. Parramatta",
+      "B. Dubbo",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Parramatta has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Parramatta=0.63, Dubbo=0.47.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0009",
+    "task": "region_sensitivity",
+    "question": "Compare Liverpool and Canberra. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Liverpool",
+      "region_b": "Canberra",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.53,
+      "sensitivity_b": 0.57
+    },
+    "options": [
+      "A. Liverpool",
+      "B. Canberra",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Canberra has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Liverpool=0.53, Canberra=0.57.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0010",
+    "task": "region_sensitivity",
+    "question": "Compare Penrith and Orange. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Penrith",
+      "region_b": "Orange",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.57,
+      "sensitivity_b": 0.43
+    },
+    "options": [
+      "A. Penrith",
+      "B. Orange",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Penrith has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Penrith=0.57, Orange=0.43.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0011",
+    "task": "region_sensitivity",
+    "question": "Compare Byron Bay and Armidale. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Byron Bay",
+      "region_b": "Armidale",
+      "condition": "strong winds",
+      "sensitivity_a": 0.7,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Byron Bay",
+      "B. Armidale",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Byron Bay has the higher estimated/heuristic sensitivity score for strong winds. Scores: Byron Bay=0.70, Armidale=0.50.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0012",
+    "task": "region_sensitivity",
+    "question": "Compare Albury and Katoomba. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Albury",
+      "region_b": "Katoomba",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.63
+    },
+    "options": [
+      "A. Albury",
+      "B. Katoomba",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Katoomba has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Albury=0.50, Katoomba=0.63.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0013",
+    "task": "region_sensitivity",
+    "question": "Compare Sydney CBD and Broken Hill. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Sydney CBD",
+      "region_b": "Broken Hill",
+      "condition": "rainfall",
+      "sensitivity_a": 0.8,
+      "sensitivity_b": 0.3
+    },
+    "options": [
+      "A. Sydney CBD",
+      "B. Broken Hill",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Sydney CBD has the higher estimated/heuristic sensitivity score for rainfall. Scores: Sydney CBD=0.80, Broken Hill=0.30.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0014",
+    "task": "region_sensitivity",
+    "question": "Compare Sydney CBD and Liverpool. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Sydney CBD",
+      "region_b": "Liverpool",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.73,
+      "sensitivity_b": 0.53
+    },
+    "options": [
+      "A. Sydney CBD",
+      "B. Liverpool",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Sydney CBD has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Sydney CBD=0.73, Liverpool=0.53.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0015",
+    "task": "region_sensitivity",
+    "question": "Compare Manly and Bathurst. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Manly",
+      "region_b": "Bathurst",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.6,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Manly",
+      "B. Bathurst",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Manly has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Manly=0.60, Bathurst=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0016",
+    "task": "region_sensitivity",
+    "question": "Compare Nowra and Broken Hill. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Nowra",
+      "region_b": "Broken Hill",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.9
+    },
+    "options": [
+      "A. Nowra",
+      "B. Broken Hill",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Broken Hill has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Nowra=0.50, Broken Hill=0.90.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0017",
+    "task": "region_sensitivity",
+    "question": "Compare Tamworth and Albury. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Tamworth",
+      "region_b": "Albury",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Tamworth",
+      "B. Albury",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Tamworth has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Tamworth=0.50, Albury=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0018",
+    "task": "region_sensitivity",
+    "question": "Compare Port Macquarie and Byron Bay. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Port Macquarie",
+      "region_b": "Byron Bay",
+      "condition": "rainfall",
+      "sensitivity_a": 0.7,
+      "sensitivity_b": 0.9
+    },
+    "options": [
+      "A. Port Macquarie",
+      "B. Byron Bay",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Byron Bay has the higher estimated/heuristic sensitivity score for rainfall. Scores: Port Macquarie=0.70, Byron Bay=0.90.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0019",
+    "task": "region_sensitivity",
+    "question": "Compare Dubbo and Katoomba. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Dubbo",
+      "region_b": "Katoomba",
+      "condition": "rainfall",
+      "sensitivity_a": 0.4,
+      "sensitivity_b": 0.8
+    },
+    "options": [
+      "A. Dubbo",
+      "B. Katoomba",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Katoomba has the higher estimated/heuristic sensitivity score for rainfall. Scores: Dubbo=0.40, Katoomba=0.80.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0020",
+    "task": "region_sensitivity",
+    "question": "Compare Albury and Perisher. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Albury",
+      "region_b": "Perisher",
+      "condition": "strong winds",
+      "sensitivity_a": 0.4,
+      "sensitivity_b": 0.8
+    },
+    "options": [
+      "A. Albury",
+      "B. Perisher",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Perisher has the higher estimated/heuristic sensitivity score for strong winds. Scores: Albury=0.40, Perisher=0.80.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0021",
+    "task": "region_sensitivity",
+    "question": "Compare Byron Bay and Cessnock. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Byron Bay",
+      "region_b": "Cessnock",
+      "condition": "rainfall",
+      "sensitivity_a": 0.9,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Byron Bay",
+      "B. Cessnock",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Byron Bay has the higher estimated/heuristic sensitivity score for rainfall. Scores: Byron Bay=0.90, Cessnock=0.50.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0022",
+    "task": "region_sensitivity",
+    "question": "Compare Bondi and Newcastle. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Bondi",
+      "region_b": "Newcastle",
+      "condition": "strong winds",
+      "sensitivity_a": 0.8,
+      "sensitivity_b": 0.7
+    },
+    "options": [
+      "A. Bondi",
+      "B. Newcastle",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Bondi has the higher estimated/heuristic sensitivity score for strong winds. Scores: Bondi=0.80, Newcastle=0.70.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0023",
+    "task": "region_sensitivity",
+    "question": "Compare Coffs Harbour and Albury. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Coffs Harbour",
+      "region_b": "Albury",
+      "condition": "strong winds",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.4
+    },
+    "options": [
+      "A. Coffs Harbour",
+      "B. Albury",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Coffs Harbour has the higher estimated/heuristic sensitivity score for strong winds. Scores: Coffs Harbour=0.50, Albury=0.40.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0024",
+    "task": "region_sensitivity",
+    "question": "Compare Wollongong and Albury. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Wollongong",
+      "region_b": "Albury",
+      "condition": "rainfall",
+      "sensitivity_a": 0.7,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Wollongong",
+      "B. Albury",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Wollongong has the higher estimated/heuristic sensitivity score for rainfall. Scores: Wollongong=0.70, Albury=0.50.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0025",
+    "task": "region_sensitivity",
+    "question": "Compare Liverpool and Nowra. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Liverpool",
+      "region_b": "Nowra",
+      "condition": "rainfall",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.6
+    },
+    "options": [
+      "A. Liverpool",
+      "B. Nowra",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Nowra has the higher estimated/heuristic sensitivity score for rainfall. Scores: Liverpool=0.50, Nowra=0.60.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0026",
+    "task": "region_sensitivity",
+    "question": "Compare Tamworth and Broken Hill. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Tamworth",
+      "region_b": "Broken Hill",
+      "condition": "strong winds",
+      "sensitivity_a": 0.4,
+      "sensitivity_b": 0.4
+    },
+    "options": [
+      "A. Tamworth",
+      "B. Broken Hill",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Tamworth has the higher estimated/heuristic sensitivity score for strong winds. Scores: Tamworth=0.40, Broken Hill=0.40.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0027",
+    "task": "region_sensitivity",
+    "question": "Compare Newcastle and Katoomba. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Newcastle",
+      "region_b": "Katoomba",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.6,
+      "sensitivity_b": 0.4
+    },
+    "options": [
+      "A. Newcastle",
+      "B. Katoomba",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Newcastle has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Newcastle=0.60, Katoomba=0.40.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0028",
+    "task": "region_sensitivity",
+    "question": "Compare Broken Hill and Cessnock. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Broken Hill",
+      "region_b": "Cessnock",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.53,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Broken Hill",
+      "B. Cessnock",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Broken Hill has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Broken Hill=0.53, Cessnock=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0029",
+    "task": "region_sensitivity",
+    "question": "Compare Orange and Katoomba. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Orange",
+      "region_b": "Katoomba",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.4,
+      "sensitivity_b": 0.4
+    },
+    "options": [
+      "A. Orange",
+      "B. Katoomba",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Orange has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Orange=0.40, Katoomba=0.40.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0030",
+    "task": "region_sensitivity",
+    "question": "Compare Newcastle and Canberra. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Newcastle",
+      "region_b": "Canberra",
+      "condition": "rainfall",
+      "sensitivity_a": 0.7,
+      "sensitivity_b": 0.6
+    },
+    "options": [
+      "A. Newcastle",
+      "B. Canberra",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Newcastle has the higher estimated/heuristic sensitivity score for rainfall. Scores: Newcastle=0.70, Canberra=0.60.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0031",
+    "task": "region_sensitivity",
+    "question": "Compare Orange and Cessnock. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Orange",
+      "region_b": "Cessnock",
+      "condition": "rainfall",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Orange",
+      "B. Cessnock",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Orange has the higher estimated/heuristic sensitivity score for rainfall. Scores: Orange=0.50, Cessnock=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0032",
+    "task": "region_sensitivity",
+    "question": "Compare Albury and Cessnock. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Albury",
+      "region_b": "Cessnock",
+      "condition": "strong winds",
+      "sensitivity_a": 0.4,
+      "sensitivity_b": 0.4
+    },
+    "options": [
+      "A. Albury",
+      "B. Cessnock",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Albury has the higher estimated/heuristic sensitivity score for strong winds. Scores: Albury=0.40, Cessnock=0.40.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0033",
+    "task": "region_sensitivity",
+    "question": "Compare Port Macquarie and Bathurst. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Port Macquarie",
+      "region_b": "Bathurst",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.57,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Port Macquarie",
+      "B. Bathurst",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Port Macquarie has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Port Macquarie=0.57, Bathurst=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0034",
+    "task": "region_sensitivity",
+    "question": "Compare Wagga Wagga and Bathurst. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Wagga Wagga",
+      "region_b": "Bathurst",
+      "condition": "rainfall",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Wagga Wagga",
+      "B. Bathurst",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Wagga Wagga has the higher estimated/heuristic sensitivity score for rainfall. Scores: Wagga Wagga=0.50, Bathurst=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0035",
+    "task": "region_sensitivity",
+    "question": "Compare Penrith and Albury. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Penrith",
+      "region_b": "Albury",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.57,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Penrith",
+      "B. Albury",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Penrith has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Penrith=0.57, Albury=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0036",
+    "task": "region_sensitivity",
+    "question": "Compare Liverpool and Byron Bay. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Liverpool",
+      "region_b": "Byron Bay",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.7,
+      "sensitivity_b": 0.7
+    },
+    "options": [
+      "A. Liverpool",
+      "B. Byron Bay",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Liverpool has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Liverpool=0.70, Byron Bay=0.70.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0037",
+    "task": "region_sensitivity",
+    "question": "Compare Liverpool and Wagga Wagga. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Liverpool",
+      "region_b": "Wagga Wagga",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.53,
+      "sensitivity_b": 0.53
+    },
+    "options": [
+      "A. Liverpool",
+      "B. Wagga Wagga",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Liverpool has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Liverpool=0.53, Wagga Wagga=0.53.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0038",
+    "task": "region_sensitivity",
+    "question": "Compare Newcastle and Byron Bay. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Newcastle",
+      "region_b": "Byron Bay",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.6,
+      "sensitivity_b": 0.7
+    },
+    "options": [
+      "A. Newcastle",
+      "B. Byron Bay",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Byron Bay has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Newcastle=0.60, Byron Bay=0.70.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0039",
+    "task": "region_sensitivity",
+    "question": "Compare Newcastle and Albury. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Newcastle",
+      "region_b": "Albury",
+      "condition": "rainfall",
+      "sensitivity_a": 0.7,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Newcastle",
+      "B. Albury",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Newcastle has the higher estimated/heuristic sensitivity score for rainfall. Scores: Newcastle=0.70, Albury=0.50.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0040",
+    "task": "region_sensitivity",
+    "question": "Compare Bondi and Orange. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Bondi",
+      "region_b": "Orange",
+      "condition": "rainfall",
+      "sensitivity_a": 0.9,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Bondi",
+      "B. Orange",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Bondi has the higher estimated/heuristic sensitivity score for rainfall. Scores: Bondi=0.90, Orange=0.50.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0041",
+    "task": "region_sensitivity",
+    "question": "Compare Liverpool and Newcastle. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Liverpool",
+      "region_b": "Newcastle",
+      "condition": "strong winds",
+      "sensitivity_a": 0.4,
+      "sensitivity_b": 0.7
+    },
+    "options": [
+      "A. Liverpool",
+      "B. Newcastle",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Newcastle has the higher estimated/heuristic sensitivity score for strong winds. Scores: Liverpool=0.40, Newcastle=0.70.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0042",
+    "task": "region_sensitivity",
+    "question": "Compare Wollongong and Wagga Wagga. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Wollongong",
+      "region_b": "Wagga Wagga",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.7
+    },
+    "options": [
+      "A. Wollongong",
+      "B. Wagga Wagga",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Wagga Wagga has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Wollongong=0.50, Wagga Wagga=0.70.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0043",
+    "task": "region_sensitivity",
+    "question": "Compare Bathurst and Katoomba. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Bathurst",
+      "region_b": "Katoomba",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.4
+    },
+    "options": [
+      "A. Bathurst",
+      "B. Katoomba",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Bathurst has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Bathurst=0.50, Katoomba=0.40.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0044",
+    "task": "region_sensitivity",
+    "question": "Compare Byron Bay and Katoomba. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Byron Bay",
+      "region_b": "Katoomba",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.77,
+      "sensitivity_b": 0.63
+    },
+    "options": [
+      "A. Byron Bay",
+      "B. Katoomba",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Byron Bay has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Byron Bay=0.77, Katoomba=0.63.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0045",
+    "task": "region_sensitivity",
+    "question": "Compare Bondi and Armidale. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Bondi",
+      "region_b": "Armidale",
+      "condition": "strong winds",
+      "sensitivity_a": 0.8,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Bondi",
+      "B. Armidale",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Bondi has the higher estimated/heuristic sensitivity score for strong winds. Scores: Bondi=0.80, Armidale=0.50.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0046",
+    "task": "region_sensitivity",
+    "question": "Compare Albury and Bathurst. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Albury",
+      "region_b": "Bathurst",
+      "condition": "strong winds",
+      "sensitivity_a": 0.4,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Albury",
+      "B. Bathurst",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Bathurst has the higher estimated/heuristic sensitivity score for strong winds. Scores: Albury=0.40, Bathurst=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0047",
+    "task": "region_sensitivity",
+    "question": "Compare Coffs Harbour and Orange. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Coffs Harbour",
+      "region_b": "Orange",
+      "condition": "strong winds",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.4
+    },
+    "options": [
+      "A. Coffs Harbour",
+      "B. Orange",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Coffs Harbour has the higher estimated/heuristic sensitivity score for strong winds. Scores: Coffs Harbour=0.50, Orange=0.40.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0048",
+    "task": "region_sensitivity",
+    "question": "Compare Armidale and Canberra. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Armidale",
+      "region_b": "Canberra",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.6
+    },
+    "options": [
+      "A. Armidale",
+      "B. Canberra",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Canberra has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Armidale=0.50, Canberra=0.60.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0049",
+    "task": "region_sensitivity",
+    "question": "Compare Bondi and Manly. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Bondi",
+      "region_b": "Manly",
+      "condition": "rainfall",
+      "sensitivity_a": 0.9,
+      "sensitivity_b": 0.9
+    },
+    "options": [
+      "A. Bondi",
+      "B. Manly",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Bondi has the higher estimated/heuristic sensitivity score for rainfall. Scores: Bondi=0.90, Manly=0.90.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0050",
+    "task": "region_sensitivity",
+    "question": "Compare Liverpool and Albury. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Liverpool",
+      "region_b": "Albury",
+      "condition": "rainfall",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Liverpool",
+      "B. Albury",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Liverpool has the higher estimated/heuristic sensitivity score for rainfall. Scores: Liverpool=0.50, Albury=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0051",
+    "task": "region_sensitivity",
+    "question": "Compare Coffs Harbour and Armidale. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Coffs Harbour",
+      "region_b": "Armidale",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.63,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Coffs Harbour",
+      "B. Armidale",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Coffs Harbour has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Coffs Harbour=0.63, Armidale=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0052",
+    "task": "region_sensitivity",
+    "question": "Compare Byron Bay and Canberra. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Byron Bay",
+      "region_b": "Canberra",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.77,
+      "sensitivity_b": 0.57
+    },
+    "options": [
+      "A. Byron Bay",
+      "B. Canberra",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Byron Bay has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Byron Bay=0.77, Canberra=0.57.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0053",
+    "task": "region_sensitivity",
+    "question": "Compare Nowra and Tamworth. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Nowra",
+      "region_b": "Tamworth",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.7
+    },
+    "options": [
+      "A. Nowra",
+      "B. Tamworth",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Tamworth has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Nowra=0.50, Tamworth=0.70.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0054",
+    "task": "region_sensitivity",
+    "question": "Compare Bondi and Nowra. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Bondi",
+      "region_b": "Nowra",
+      "condition": "rainfall",
+      "sensitivity_a": 0.9,
+      "sensitivity_b": 0.6
+    },
+    "options": [
+      "A. Bondi",
+      "B. Nowra",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Bondi has the higher estimated/heuristic sensitivity score for rainfall. Scores: Bondi=0.90, Nowra=0.60.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0055",
+    "task": "region_sensitivity",
+    "question": "Compare Parramatta and Newcastle. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Parramatta",
+      "region_b": "Newcastle",
+      "condition": "strong winds",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.7
+    },
+    "options": [
+      "A. Parramatta",
+      "B. Newcastle",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Newcastle has the higher estimated/heuristic sensitivity score for strong winds. Scores: Parramatta=0.50, Newcastle=0.70.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0056",
+    "task": "region_sensitivity",
+    "question": "Compare Nowra and Katoomba. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Nowra",
+      "region_b": "Katoomba",
+      "condition": "rainfall",
+      "sensitivity_a": 0.6,
+      "sensitivity_b": 0.8
+    },
+    "options": [
+      "A. Nowra",
+      "B. Katoomba",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Katoomba has the higher estimated/heuristic sensitivity score for rainfall. Scores: Nowra=0.60, Katoomba=0.80.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0057",
+    "task": "region_sensitivity",
+    "question": "Compare Byron Bay and Perisher. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Byron Bay",
+      "region_b": "Perisher",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.77,
+      "sensitivity_b": 0.6
+    },
+    "options": [
+      "A. Byron Bay",
+      "B. Perisher",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Byron Bay has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Byron Bay=0.77, Perisher=0.60.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0058",
+    "task": "region_sensitivity",
+    "question": "Compare Port Macquarie and Cessnock. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Port Macquarie",
+      "region_b": "Cessnock",
+      "condition": "rainfall",
+      "sensitivity_a": 0.7,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Port Macquarie",
+      "B. Cessnock",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Port Macquarie has the higher estimated/heuristic sensitivity score for rainfall. Scores: Port Macquarie=0.70, Cessnock=0.50.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0059",
+    "task": "region_sensitivity",
+    "question": "Compare Bathurst and Broken Hill. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Bathurst",
+      "region_b": "Broken Hill",
+      "condition": "strong winds",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.4
+    },
+    "options": [
+      "A. Bathurst",
+      "B. Broken Hill",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Bathurst has the higher estimated/heuristic sensitivity score for strong winds. Scores: Bathurst=0.50, Broken Hill=0.40.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0060",
+    "task": "region_sensitivity",
+    "question": "Compare Dubbo and Armidale. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Dubbo",
+      "region_b": "Armidale",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.47,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Dubbo",
+      "B. Armidale",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Armidale has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Dubbo=0.47, Armidale=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0061",
+    "task": "region_sensitivity",
+    "question": "Compare Tamworth and Cessnock. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Tamworth",
+      "region_b": "Cessnock",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.7,
+      "sensitivity_b": 0.6
+    },
+    "options": [
+      "A. Tamworth",
+      "B. Cessnock",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Tamworth has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Tamworth=0.70, Cessnock=0.60.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0062",
+    "task": "region_sensitivity",
+    "question": "Compare Coffs Harbour and Canberra. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Coffs Harbour",
+      "region_b": "Canberra",
+      "condition": "rainfall",
+      "sensitivity_a": 0.8,
+      "sensitivity_b": 0.6
+    },
+    "options": [
+      "A. Coffs Harbour",
+      "B. Canberra",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Coffs Harbour has the higher estimated/heuristic sensitivity score for rainfall. Scores: Coffs Harbour=0.80, Canberra=0.60.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0063",
+    "task": "region_sensitivity",
+    "question": "Compare Albury and Armidale. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Albury",
+      "region_b": "Armidale",
+      "condition": "rainfall",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Albury",
+      "B. Armidale",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Albury has the higher estimated/heuristic sensitivity score for rainfall. Scores: Albury=0.50, Armidale=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0064",
+    "task": "region_sensitivity",
+    "question": "Compare Nowra and Albury. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Nowra",
+      "region_b": "Albury",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.6
+    },
+    "options": [
+      "A. Nowra",
+      "B. Albury",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Albury has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Nowra=0.50, Albury=0.60.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0065",
+    "task": "region_sensitivity",
+    "question": "Compare Port Macquarie and Broken Hill. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Port Macquarie",
+      "region_b": "Broken Hill",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.9
+    },
+    "options": [
+      "A. Port Macquarie",
+      "B. Broken Hill",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Broken Hill has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Port Macquarie=0.50, Broken Hill=0.90.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0066",
+    "task": "region_sensitivity",
+    "question": "Compare Sydney CBD and Byron Bay. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Sydney CBD",
+      "region_b": "Byron Bay",
+      "condition": "strong winds",
+      "sensitivity_a": 0.9,
+      "sensitivity_b": 0.7
+    },
+    "options": [
+      "A. Sydney CBD",
+      "B. Byron Bay",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Sydney CBD has the higher estimated/heuristic sensitivity score for strong winds. Scores: Sydney CBD=0.90, Byron Bay=0.70.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0067",
+    "task": "region_sensitivity",
+    "question": "Compare Wollongong and Port Macquarie. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Wollongong",
+      "region_b": "Port Macquarie",
+      "condition": "rainfall",
+      "sensitivity_a": 0.7,
+      "sensitivity_b": 0.7
+    },
+    "options": [
+      "A. Wollongong",
+      "B. Port Macquarie",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Wollongong has the higher estimated/heuristic sensitivity score for rainfall. Scores: Wollongong=0.70, Port Macquarie=0.70.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0068",
+    "task": "region_sensitivity",
+    "question": "Compare Bathurst and Cessnock. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Bathurst",
+      "region_b": "Cessnock",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Bathurst",
+      "B. Cessnock",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Bathurst has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Bathurst=0.50, Cessnock=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0069",
+    "task": "region_sensitivity",
+    "question": "Compare Newcastle and Bathurst. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Newcastle",
+      "region_b": "Bathurst",
+      "condition": "rainfall",
+      "sensitivity_a": 0.7,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Newcastle",
+      "B. Bathurst",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Newcastle has the higher estimated/heuristic sensitivity score for rainfall. Scores: Newcastle=0.70, Bathurst=0.50.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0070",
+    "task": "region_sensitivity",
+    "question": "Compare Albury and Canberra. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Albury",
+      "region_b": "Canberra",
+      "condition": "strong winds",
+      "sensitivity_a": 0.4,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Albury",
+      "B. Canberra",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Canberra has the higher estimated/heuristic sensitivity score for strong winds. Scores: Albury=0.40, Canberra=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0071",
+    "task": "region_sensitivity",
+    "question": "Compare Armidale and Perisher. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Armidale",
+      "region_b": "Perisher",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.6
+    },
+    "options": [
+      "A. Armidale",
+      "B. Perisher",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Perisher has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Armidale=0.50, Perisher=0.60.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0072",
+    "task": "region_sensitivity",
+    "question": "Compare Penrith and Cessnock. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Penrith",
+      "region_b": "Cessnock",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.57,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Penrith",
+      "B. Cessnock",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Penrith has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Penrith=0.57, Cessnock=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0073",
+    "task": "region_sensitivity",
+    "question": "Compare Parramatta and Katoomba. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Parramatta",
+      "region_b": "Katoomba",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.63,
+      "sensitivity_b": 0.63
+    },
+    "options": [
+      "A. Parramatta",
+      "B. Katoomba",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Parramatta has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Parramatta=0.63, Katoomba=0.63.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0074",
+    "task": "region_sensitivity",
+    "question": "Compare Wollongong and Nowra. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Wollongong",
+      "region_b": "Nowra",
+      "condition": "strong winds",
+      "sensitivity_a": 0.6,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Wollongong",
+      "B. Nowra",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Wollongong has the higher estimated/heuristic sensitivity score for strong winds. Scores: Wollongong=0.60, Nowra=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0075",
+    "task": "region_sensitivity",
+    "question": "Compare Byron Bay and Broken Hill. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Byron Bay",
+      "region_b": "Broken Hill",
+      "condition": "rainfall",
+      "sensitivity_a": 0.9,
+      "sensitivity_b": 0.3
+    },
+    "options": [
+      "A. Byron Bay",
+      "B. Broken Hill",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Byron Bay has the higher estimated/heuristic sensitivity score for rainfall. Scores: Byron Bay=0.90, Broken Hill=0.30.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0076",
+    "task": "region_sensitivity",
+    "question": "Compare Dubbo and Broken Hill. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Dubbo",
+      "region_b": "Broken Hill",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.47,
+      "sensitivity_b": 0.53
+    },
+    "options": [
+      "A. Dubbo",
+      "B. Broken Hill",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Broken Hill has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Dubbo=0.47, Broken Hill=0.53.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0077",
+    "task": "region_sensitivity",
+    "question": "Compare Newcastle and Tamworth. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Newcastle",
+      "region_b": "Tamworth",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.6,
+      "sensitivity_b": 0.7
+    },
+    "options": [
+      "A. Newcastle",
+      "B. Tamworth",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Tamworth has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Newcastle=0.60, Tamworth=0.70.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0078",
+    "task": "region_sensitivity",
+    "question": "Compare Parramatta and Perisher. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Parramatta",
+      "region_b": "Perisher",
+      "condition": "strong winds",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.8
+    },
+    "options": [
+      "A. Parramatta",
+      "B. Perisher",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Perisher has the higher estimated/heuristic sensitivity score for strong winds. Scores: Parramatta=0.50, Perisher=0.80.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0079",
+    "task": "region_sensitivity",
+    "question": "Compare Sydney CBD and Parramatta. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Sydney CBD",
+      "region_b": "Parramatta",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.73,
+      "sensitivity_b": 0.63
+    },
+    "options": [
+      "A. Sydney CBD",
+      "B. Parramatta",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Sydney CBD has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Sydney CBD=0.73, Parramatta=0.63.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0080",
+    "task": "region_sensitivity",
+    "question": "Compare Wollongong and Dubbo. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Wollongong",
+      "region_b": "Dubbo",
+      "condition": "strong winds",
+      "sensitivity_a": 0.6,
+      "sensitivity_b": 0.3
+    },
+    "options": [
+      "A. Wollongong",
+      "B. Dubbo",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Wollongong has the higher estimated/heuristic sensitivity score for strong winds. Scores: Wollongong=0.60, Dubbo=0.30.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0081",
+    "task": "region_sensitivity",
+    "question": "Compare Penrith and Manly. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Penrith",
+      "region_b": "Manly",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.9,
+      "sensitivity_b": 0.6
+    },
+    "options": [
+      "A. Penrith",
+      "B. Manly",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Penrith has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Penrith=0.90, Manly=0.60.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0082",
+    "task": "region_sensitivity",
+    "question": "Compare Sydney CBD and Penrith. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Sydney CBD",
+      "region_b": "Penrith",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.73,
+      "sensitivity_b": 0.57
+    },
+    "options": [
+      "A. Sydney CBD",
+      "B. Penrith",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Sydney CBD has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Sydney CBD=0.73, Penrith=0.57.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0083",
+    "task": "region_sensitivity",
+    "question": "Compare Manly and Katoomba. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Manly",
+      "region_b": "Katoomba",
+      "condition": "rainfall",
+      "sensitivity_a": 0.9,
+      "sensitivity_b": 0.8
+    },
+    "options": [
+      "A. Manly",
+      "B. Katoomba",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Manly has the higher estimated/heuristic sensitivity score for rainfall. Scores: Manly=0.90, Katoomba=0.80.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0084",
+    "task": "region_sensitivity",
+    "question": "Compare Penrith and Wagga Wagga. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Penrith",
+      "region_b": "Wagga Wagga",
+      "condition": "strong winds",
+      "sensitivity_a": 0.4,
+      "sensitivity_b": 0.4
+    },
+    "options": [
+      "A. Penrith",
+      "B. Wagga Wagga",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Penrith has the higher estimated/heuristic sensitivity score for strong winds. Scores: Penrith=0.40, Wagga Wagga=0.40.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0085",
+    "task": "region_sensitivity",
+    "question": "Compare Parramatta and Coffs Harbour. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Parramatta",
+      "region_b": "Coffs Harbour",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.63,
+      "sensitivity_b": 0.63
+    },
+    "options": [
+      "A. Parramatta",
+      "B. Coffs Harbour",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Parramatta has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Parramatta=0.63, Coffs Harbour=0.63.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0086",
+    "task": "region_sensitivity",
+    "question": "Compare Manly and Canberra. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Manly",
+      "region_b": "Canberra",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.8,
+      "sensitivity_b": 0.57
+    },
+    "options": [
+      "A. Manly",
+      "B. Canberra",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Manly has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Manly=0.80, Canberra=0.57.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0087",
+    "task": "region_sensitivity",
+    "question": "Compare Sydney CBD and Orange. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Sydney CBD",
+      "region_b": "Orange",
+      "condition": "strong winds",
+      "sensitivity_a": 0.9,
+      "sensitivity_b": 0.4
+    },
+    "options": [
+      "A. Sydney CBD",
+      "B. Orange",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Sydney CBD has the higher estimated/heuristic sensitivity score for strong winds. Scores: Sydney CBD=0.90, Orange=0.40.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0088",
+    "task": "region_sensitivity",
+    "question": "Compare Wollongong and Perisher. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Wollongong",
+      "region_b": "Perisher",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.3
+    },
+    "options": [
+      "A. Wollongong",
+      "B. Perisher",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Wollongong has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Wollongong=0.50, Perisher=0.30.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0089",
+    "task": "region_sensitivity",
+    "question": "Compare Coffs Harbour and Cessnock. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Coffs Harbour",
+      "region_b": "Cessnock",
+      "condition": "strong winds",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.4
+    },
+    "options": [
+      "A. Coffs Harbour",
+      "B. Cessnock",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Coffs Harbour has the higher estimated/heuristic sensitivity score for strong winds. Scores: Coffs Harbour=0.50, Cessnock=0.40.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0090",
+    "task": "region_sensitivity",
+    "question": "Compare Byron Bay and Albury. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Byron Bay",
+      "region_b": "Albury",
+      "condition": "rainfall",
+      "sensitivity_a": 0.9,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Byron Bay",
+      "B. Albury",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Byron Bay has the higher estimated/heuristic sensitivity score for rainfall. Scores: Byron Bay=0.90, Albury=0.50.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0091",
+    "task": "region_sensitivity",
+    "question": "Compare Parramatta and Broken Hill. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Parramatta",
+      "region_b": "Broken Hill",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.8,
+      "sensitivity_b": 0.9
+    },
+    "options": [
+      "A. Parramatta",
+      "B. Broken Hill",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Broken Hill has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Parramatta=0.80, Broken Hill=0.90.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0092",
+    "task": "region_sensitivity",
+    "question": "Compare Tamworth and Bathurst. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Tamworth",
+      "region_b": "Bathurst",
+      "condition": "rainfall",
+      "sensitivity_a": 0.4,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Tamworth",
+      "B. Bathurst",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Bathurst has the higher estimated/heuristic sensitivity score for rainfall. Scores: Tamworth=0.40, Bathurst=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0093",
+    "task": "region_sensitivity",
+    "question": "Compare Newcastle and Dubbo. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Newcastle",
+      "region_b": "Dubbo",
+      "condition": "rainfall",
+      "sensitivity_a": 0.7,
+      "sensitivity_b": 0.4
+    },
+    "options": [
+      "A. Newcastle",
+      "B. Dubbo",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Newcastle has the higher estimated/heuristic sensitivity score for rainfall. Scores: Newcastle=0.70, Dubbo=0.40.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0094",
+    "task": "region_sensitivity",
+    "question": "Compare Dubbo and Canberra. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to strong winds?",
+    "context": {
+      "region_a": "Dubbo",
+      "region_b": "Canberra",
+      "condition": "strong winds",
+      "sensitivity_a": 0.3,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Dubbo",
+      "B. Canberra",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Canberra has the higher estimated/heuristic sensitivity score for strong winds. Scores: Dubbo=0.30, Canberra=0.50.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0095",
+    "task": "region_sensitivity",
+    "question": "Compare Bondi and Wagga Wagga. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Bondi",
+      "region_b": "Wagga Wagga",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.8,
+      "sensitivity_b": 0.53
+    },
+    "options": [
+      "A. Bondi",
+      "B. Wagga Wagga",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Bondi has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Bondi=0.80, Wagga Wagga=0.53.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0096",
+    "task": "region_sensitivity",
+    "question": "Compare Sydney CBD and Armidale. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to extreme heat?",
+    "context": {
+      "region_a": "Sydney CBD",
+      "region_b": "Armidale",
+      "condition": "extreme heat",
+      "sensitivity_a": 0.5,
+      "sensitivity_b": 0.5
+    },
+    "options": [
+      "A. Sydney CBD",
+      "B. Armidale",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Sydney CBD has the higher estimated/heuristic sensitivity score for extreme heat. Scores: Sydney CBD=0.50, Armidale=0.50.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0097",
+    "task": "region_sensitivity",
+    "question": "Compare Coffs Harbour and Port Macquarie. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to rainfall?",
+    "context": {
+      "region_a": "Coffs Harbour",
+      "region_b": "Port Macquarie",
+      "condition": "rainfall",
+      "sensitivity_a": 0.8,
+      "sensitivity_b": 0.7
+    },
+    "options": [
+      "A. Coffs Harbour",
+      "B. Port Macquarie",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Coffs Harbour has the higher estimated/heuristic sensitivity score for rainfall. Scores: Coffs Harbour=0.80, Port Macquarie=0.70.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0098",
+    "task": "region_sensitivity",
+    "question": "Compare Penrith and Byron Bay. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Penrith",
+      "region_b": "Byron Bay",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.57,
+      "sensitivity_b": 0.77
+    },
+    "options": [
+      "A. Penrith",
+      "B. Byron Bay",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Byron Bay has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Penrith=0.57, Byron Bay=0.77.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t3_0099",
+    "task": "region_sensitivity",
+    "question": "Compare Broken Hill and Canberra. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Broken Hill",
+      "region_b": "Canberra",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.53,
+      "sensitivity_b": 0.57
+    },
+    "options": [
+      "A. Broken Hill",
+      "B. Canberra",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "B",
+    "explanation": "Canberra has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Broken Hill=0.53, Canberra=0.57.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t3_0100",
+    "task": "region_sensitivity",
+    "question": "Compare Newcastle and Port Macquarie. Which region would likely show a larger traffic, pedestrian, and POI/mobility activity change in response to adverse weather in general?",
+    "context": {
+      "region_a": "Newcastle",
+      "region_b": "Port Macquarie",
+      "condition": "adverse weather in general",
+      "sensitivity_a": 0.67,
+      "sensitivity_b": 0.57
+    },
+    "options": [
+      "A. Newcastle",
+      "B. Port Macquarie",
+      "C. Both equally",
+      "D. Cannot be determined"
+    ],
+    "answer": "A",
+    "explanation": "Newcastle has the higher estimated/heuristic sensitivity score for adverse weather in general. Scores: Newcastle=0.67, Port Macquarie=0.57.",
+    "difficulty": "hard"
+  }
+]
