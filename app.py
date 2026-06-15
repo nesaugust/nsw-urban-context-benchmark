@@ -539,28 +539,21 @@ def task3_region_sensitivity(df):
         region = df[df["location"] == loc]
 
         rain = region["rain"].mean() if "rain" in region.columns else 0
+        ped = region["pedestrian_count_sum"].mean() if "pedestrian_count_sum" in region.columns else 0
+        alerts = region["alert_count"].mean() if "alert_count" in region.columns else 0
 
-        ped = (
-            region["pedestrian_count_sum"].mean()
-            if "pedestrian_count_sum" in region.columns
-            else 0
-        )
+        rain = 0 if pd.isna(rain) else rain
+        ped = 0 if pd.isna(ped) else ped
+        alerts = 0 if pd.isna(alerts) else alerts
 
-        alerts = (
-            region["alert_count"].mean()
-            if "alert_count" in region.columns
-            else 0
-        )
-
-        score = (
-            rain * 0.4
-            + ped * 0.4
-            + alerts * 0.2
-        )
+        score = rain * 0.4 + ped * 0.4 + alerts * 0.2
 
         rankings.append({
             "region": loc,
-            "sensitivity_score": round(float(score), 2)
+            "sensitivity_score": round(float(score), 2),
+            "avg_rain": round(float(rain), 2),
+            "avg_pedestrian": round(float(ped), 2),
+            "avg_alerts": round(float(alerts), 2),
         })
 
     rankings = sorted(
