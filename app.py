@@ -282,9 +282,16 @@ def summarize_context(df, question=None):
     summary["total_rain"] = safe_sum(df, "rain")
     summary["event_count"] = safe_sum(df, "event_count")
     summary["road_incidents"] = safe_sum(df, "incident_count")
-    summary["transport_alerts"] = safe_sum(df, "alert_count")
     summary["pedestrian_count"] = safe_sum(df, "pedestrian_count_sum")
     summary["poi_activity"] = safe_sum(df, "poi_activity")
+    if "alert_count" in df.columns and not df.empty:
+        summary["transport_alert_hours"] = int((df["alert_count"] > 0).sum())
+        summary["transport_alert_max"] = int(df["alert_count"].max())
+        summary["transport_alert_mean"] = round(float(df["alert_count"].mean()), 3)
+    else:
+        summary["transport_alert_hours"] = None
+        summary["transport_alert_max"] = None
+        summary["transport_alert_mean"] = None
 
     if "is_public_holiday" in df.columns and not df.empty:
         summary["public_holiday"] = bool(df["is_public_holiday"].any())
@@ -323,7 +330,8 @@ def predict_rule_based(summary, selected_task):
 
     rain = summary.get("effective_rain")
     events = summary.get("event_count")
-    alerts = summary.get("transport_alerts")
+    alerts = summary.get("transport_alert_hours")
+    alert_max = summary.get("transport_alert_max")
     incidents = summary.get("road_incidents")
     poi = summary.get("poi_activity")
 
@@ -357,8 +365,16 @@ def predict_rule_based(summary, selected_task):
         drivers.append("The question explicitly states there are no road incidents.")
 
     if alerts not in [None, 0]:
-        score -= 3
-        drivers.append("Transport alerts suggest possible delays, disruption, or abnormal travel conditions.")
+        if alert_max is not None and alert_max >= 100:
+            score -= 3
+            drivers.append(
+                f"Transport disruption detected: {alerts} alert time point(s), with maximum alert count {alert_max}."
+            )
+        else:
+            score -= 1
+            drivers.append(
+                f"Minor transport alert detected: {alerts} alert time point(s)."
+            )
 
     if summary.get("transport_disruption_scenario") is True:
         score -= 2
@@ -502,12 +518,14 @@ def generate_interpretation(summary, prediction_full, score, source):
     if score is not None:
         lines.append(f"Rule-based context score: {score}")
 
-    alerts = summary.get("transport_alerts")
+    alerts = summary.get("transport_alert_hours")
+    alert_max = summary.get("transport_alert_max")
 
     if alerts not in [None, 0]:
         lines.append(
-            f"Transport alerts = {alerts}. This means the retrieved data contains public transport disruption or service-warning signals. "
-            "If this value is greater than 0, the system treats it as evidence of abnormal travel conditions."
+            f"Transport alerts were detected in {alerts} retrieved time point(s). "
+            f"The maximum alert count is {alert_max}. "
+            "This means the system detected public transport warning or disruption signals, but it avoids summing all alert counts because the data contains large outliers."
         )
 
     if summary.get("road_incidents") not in [None, 0]:
@@ -782,8 +800,8 @@ if question:
         summary.get("effective_rain") if summary.get("effective_rain") is not None else "No data",
     )
     c4.metric(
-        "Transport Alerts",
-        summary.get("transport_alerts") if summary.get("transport_alerts") is not None else "No data",
+        "Alert Time Points",
+        summary.get("transport_alert_hours") if summary.get("transport_alert_hours") is not None else "No data",
     )
     c5.metric(
         "Road Incidents",
