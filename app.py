@@ -958,6 +958,28 @@ if question:
 
     summary = summarize_context(filtered, question)
 
+    display_events = summary.get("event_count")
+    if summary.get("event_scenario") is True:
+        display_events = 1
+    elif summary.get("event_scenario") is False:
+        display_events = 0
+
+    display_rain = summary.get("effective_rain")
+
+    display_alerts = summary.get("transport_alert_hours")
+    if summary.get("transport_disruption_scenario") is True:
+        display_alerts = 1
+    elif summary.get("transport_disruption_scenario") is False:
+        display_alerts = 0
+
+    display_incidents = summary.get("road_incidents")
+    if summary.get("road_incident_scenario") is True:
+        display_incidents = 1
+    elif summary.get("road_incident_scenario") is False:
+        display_incidents = 0
+
+    display_poi = summary.get("poi_activity")
+
     result = run_reasoning_task(
     question,
     summary,
@@ -1017,30 +1039,11 @@ if question:
 
     c1, c2, c3, c4, c5 = st.columns(5)
 
-    c1.metric(
-        "Events",
-        summary.get("event_count") if summary.get("event_count") is not None else "No data"
-    )
-
-    c2.metric(
-        "POI Activity",
-        summary.get("poi_activity") if summary.get("poi_activity") is not None else "No data"
-    )
-
-    c3.metric(
-        "Rain mm",
-        summary.get("effective_rain") if summary.get("effective_rain") is not None else "No data"
-    )
-
-    c4.metric(
-        "Alert Time Points",
-        summary.get("transport_alert_hours") if summary.get("transport_alert_hours") is not None else "No data"
-    )
-
-    c5.metric(
-        "Road Incidents",
-        summary.get("road_incidents") if summary.get("road_incidents") is not None else "No data"
-    )
+    c1.metric("Events", display_events if display_events is not None else "No data")
+    c2.metric("POI Activity", display_poi if display_poi is not None else "No data")
+    c3.metric("Rain mm", display_rain if display_rain is not None else "No data")
+    c4.metric("Alert Time Points", display_alerts if display_alerts is not None else "No data")
+    c5.metric("Road Incidents", display_incidents if display_incidents is not None else "No data")
 
     with st.expander("View retrieved context data"):
         if filtered.empty:
