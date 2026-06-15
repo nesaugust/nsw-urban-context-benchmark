@@ -7,7 +7,7 @@ import streamlit as st
 # PATHS
 # =========================
 
-DATA_PATH = "data/cleaned/master_context_table.csv"
+DATA_PATH = "data/cleaned/master_context_table_sample.csv"
 
 BENCHMARK_PATHS = {
     "Task 1 - Traffic Prediction": "data/benchmark/task1_traffic_prediction/task1_qa_pairs.csv",
