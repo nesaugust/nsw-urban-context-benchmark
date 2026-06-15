@@ -467,15 +467,196 @@ def detect_question_type(question):
     if any(x in q for x in ["contrastive", "compare two", "similar traffic", "different causes"]):
         return "contrastive_example"
 
-    if any(x in q for x in ["most sensitive", "sensitive to weather", "which region"]):
+    if any(x in q for x in ["most sensitive", "sensitive to weather", "which region","which regions"]):
         return "region_sensitivity"
 
     if any(x in q for x in ["abnormal", "anomaly", "unusual", "most likely primary cause"]):
         return "anomaly_classification"
+    if any(x in q for x in [
+        "poi",
+        "mobility",
+        "destination-based movement"
+    ]):
+        return "poi_reasoning"
 
     return "activity_prediction"
 
+def task1_activity_prediction(summary):
 
+    label, text, drivers, score = predict_rule_based(
+        summary,
+        "Task 1 - Traffic Prediction"
+    )
+
+    return {
+        "task": "Traffic Prediction",
+        "label": label,
+        "prediction": text,
+        "reasoning": drivers,
+        "score": score
+    }
+
+
+def task2_anomaly(summary):
+
+    rain = summary.get("effective_rain")
+    events = summary.get("event_count")
+    incidents = summary.get("road_incidents")
+    alerts = summary.get("transport_alert_hours")
+
+    cause = "Normal Variation"
+
+    if rain and rain >= 50:
+        cause = "Heavy Rain"
+
+    elif alerts and alerts > 0:
+        cause = "Transport Disruption"
+
+    elif incidents and incidents > 0:
+        cause = "Road Incident"
+
+    elif events and events > 0:
+        cause = "Major Event"
+
+    return {
+        "task": "Anomaly Classification",
+        "cause": cause,
+        "evidence": {
+            "rain": rain,
+            "events": events,
+            "incidents": incidents,
+            "alerts": alerts
+        }
+    }
+
+
+def task3_region_sensitivity(df):
+
+    rankings = []
+
+    for loc in df["location"].dropna().unique():
+
+        region = df[df["location"] == loc]
+
+        rain = region["rain"].mean() if "rain" in region.columns else 0
+
+        ped = (
+            region["pedestrian_count_sum"].mean()
+            if "pedestrian_count_sum" in region.columns
+            else 0
+        )
+
+        alerts = (
+            region["alert_count"].mean()
+            if "alert_count" in region.columns
+            else 0
+        )
+
+        score = (
+            rain * 0.4
+            + ped * 0.4
+            + alerts * 0.2
+        )
+
+        rankings.append({
+            "region": loc,
+            "sensitivity_score": round(float(score), 2)
+        })
+
+    rankings = sorted(
+        rankings,
+        key=lambda x: x["sensitivity_score"],
+        reverse=True
+    )
+
+    return rankings[:10]
+
+
+def task4_scenario_card(summary):
+
+    return {
+        "title": "Rainy Friday Evening Near Stadium Event",
+
+        "conditions": {
+            "rain_mm": summary.get("effective_rain"),
+            "event_count": summary.get("event_count"),
+            "transport_alerts":
+                summary.get("transport_alert_hours")
+        },
+
+        "expected_impacts": [
+            "Increased pedestrian volume",
+            "Higher transport demand",
+            "Longer travel times"
+        ],
+
+        "risk_level": "High"
+    }
+
+
+def task5_contrastive():
+
+    return {
+        "scenario_a": {
+            "traffic_level": "High",
+            "cause": "Major Event"
+        },
+
+        "scenario_b": {
+            "traffic_level": "High",
+            "cause": "Transport Disruption"
+        },
+
+        "reasoning":
+        "Traffic patterns appear similar but are driven by different causes."
+    }
+
+
+def task6_poi_reasoning(summary):
+
+    poi = summary.get("poi_activity")
+
+    if poi is None:
+        mobility = "Unknown"
+
+    elif poi > 20:
+        mobility = "High"
+
+    elif poi < 5:
+        mobility = "Low"
+
+    else:
+        mobility = "Moderate"
+
+    return {
+        "poi_activity": poi,
+        "mobility_assessment": mobility,
+        "reasoning":
+        f"POI activity of {poi} suggests {mobility.lower()} destination-based movement."
+    }
+
+def run_reasoning_task(question, summary, df):
+
+    qtype = detect_question_type(question)
+
+    if qtype == "activity_prediction":
+        return task1_activity_prediction(summary)
+
+    elif qtype == "anomaly_classification":
+        return task2_anomaly(summary)
+
+    elif qtype == "region_sensitivity":
+        return task3_region_sensitivity(df)
+
+    elif qtype == "scenario_card":
+        return task4_scenario_card(summary)
+
+    elif qtype == "contrastive_example":
+        return task5_contrastive()
+
+    else:
+        return task6_poi_reasoning(summary)
+    
 def build_ai_prompt(question, summary, selected_task):
     question_type = detect_question_type(question)
 
@@ -784,130 +965,60 @@ if question:
 
     summary = summarize_context(filtered, question)
 
-    if prediction_mode == "Rule-based":
-        answer_letter, answer_text, drivers, score = predict_rule_based(summary, selected_task)
-        source_text = "Rule-based scoring"
+    result = run_reasoning_task(
+    question,
+    summary,
+    df
+    )
 
-    elif prediction_mode == "GPT-4o Mini":
-        answer_letter, answer_text, drivers, score = predict_with_openai(
-            question, summary, selected_task, "gpt-4o-mini"
-        )
-        source_text = "OpenAI GPT-4o Mini"
+    st.markdown(
+        '<div class="section-title">Reasoning Output</div>',
+        unsafe_allow_html=True
+    )
 
-    elif prediction_mode == "Llama 3.3 70B":
-        answer_letter, answer_text, drivers, score = predict_with_groq(
-            question, summary, selected_task, "llama-3.3-70b-versatile"
-        )
-        source_text = "Groq Llama 3.3 70B"
+    if isinstance(result, list):
+        st.dataframe(pd.DataFrame(result), use_container_width=True)
 
-    elif prediction_mode == "DeepSeek R1":
-        answer_letter, answer_text, drivers, score = predict_with_groq(
-            question, summary, selected_task, "deepseek-r1-distill-llama-70b"
-        )
-        source_text = "Groq DeepSeek R1"
+    elif isinstance(result, dict):
 
-    else:
-        answer_letter, answer_text, drivers, score = predict_rule_based(summary, selected_task)
-        source_text = "Hybrid: rule-based prediction with contextual explanation"
+        for key, value in result.items():
 
-    prediction_full = f"{answer_letter} — {answer_text}"
-    match = evaluate_prediction(answer_letter, benchmark_expected)
+            st.subheader(
+                key.replace("_", " ").title()
+            )
 
-    st.markdown('<div class="section-title">Model Output</div>', unsafe_allow_html=True)
+            if isinstance(value, (dict, list)):
+                st.json(value)
+            else:
+                st.write(value)
 
-    col1, col2, col3 = st.columns(3)
+    
+        st.markdown('<div class="section-title">Task Reasoning</div>', unsafe_allow_html=True)
 
-    with col1:
-        st.markdown(
-            f"""
-            <div class="info-card">
-                <div class="label-small">Predicted Label</div>
-                <div class="label-big">{answer_letter}</div>
-                <div class="note">{answer_text}</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+    if isinstance(result, dict):
+        if "reasoning" in result:
+            reasoning = result["reasoning"]
 
-    with col2:
-        if benchmark_expected is not None:
-            expected_label = normalize_label(benchmark_expected)
-            expected_desc = LABEL_MEANINGS.get(expected_label, "Unknown label")
-            expected_display = expected_label if expected_label else "N/A"
+            if isinstance(reasoning, list):
+                for item in reasoning:
+                    st.markdown(
+                        f'<div class="driver-box">{item}</div>',
+                        unsafe_allow_html=True,
+                    )
+            else:
+                st.markdown(
+                    f'<div class="driver-box">{reasoning}</div>',
+                    unsafe_allow_html=True,
+                )
+
+        elif "evidence" in result:
+            st.json(result["evidence"])
+
         else:
-            expected_display = "N/A"
-            expected_desc = "No expected label provided."
+            st.write("Task-specific output is shown above.")
 
-        st.markdown(
-            f"""
-            <div class="info-card">
-                <div class="label-small">Expected Label</div>
-                <div class="label-big">{expected_display}</div>
-                <div class="note">{expected_desc}</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-    with col3:
-        if match is None:
-            eval_text = "N/A"
-            eval_class = "status-na"
-            eval_note = "No expected answer available."
-        elif match:
-            eval_text = "Correct"
-            eval_class = "status-correct"
-            eval_note = "Predicted label matches expected label."
-        else:
-            eval_text = "Mismatch"
-            eval_class = "status-mismatch"
-            eval_note = "Predicted label differs from expected label."
-
-        st.markdown(
-            f"""
-            <div class="info-card">
-                <div class="label-small">Evaluation</div>
-                <div class="label-big {eval_class}">{eval_text}</div>
-                <div class="note">{eval_note}</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-    if mode == "Interactive Reasoning":
-        if score is None:
-            confidence = "Model-based"
-            confidence_note = "Generated by selected LLM"
-        else:
-            confidence_value = min(95, 55 + abs(score) * 10)
-            confidence = f"{confidence_value}%"
-            confidence_note = "Estimated from rule strength"
-
-        st.markdown('<div class="section-title">Interactive Summary</div>', unsafe_allow_html=True)
-
-        c1, c2 = st.columns(2)
-
-        with c1:
-            st.metric("Prediction Source", source_text)
-
-        with c2:
-            st.metric("Confidence", confidence, confidence_note)
-
-    st.caption(f"Prediction source: {source_text}")
-
-    st.markdown('<div class="section-title">Reasoning</div>', unsafe_allow_html=True)
-
-    if len(drivers) == 0:
-        st.markdown(
-            '<div class="driver-box">No strong contextual signal was detected from the question or retrieved data.</div>',
-            unsafe_allow_html=True,
-        )
-    else:
-        for d in drivers:
-            st.markdown(f'<div class="driver-box">{d}</div>', unsafe_allow_html=True)
-
-    st.markdown('<div class="section-title">Explanation</div>', unsafe_allow_html=True)
-    st.write(generate_interpretation(summary, prediction_full, score, source_text))
+    elif isinstance(result, list):
+        st.write("Regions are ranked by estimated weather sensitivity score.")
 
     st.markdown('<div class="section-title">Context Signals</div>', unsafe_allow_html=True)
 
