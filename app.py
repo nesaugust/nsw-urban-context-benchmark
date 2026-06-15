@@ -709,44 +709,29 @@ if question:
     summary = summarize_context(filtered, question)
 
     if prediction_mode == "Rule-based":
-        answer_letter, answer_text, drivers, score = predict_rule_based(
-            summary,
-            selected_task,
-        )
+        answer_letter, answer_text, drivers, score = predict_rule_based(summary, selected_task)
         source_text = "Rule-based scoring"
 
     elif prediction_mode == "GPT-4o Mini":
         answer_letter, answer_text, drivers, score = predict_with_openai(
-            question,
-            summary,
-            selected_task,
-            "gpt-4o-mini",
+            question, summary, selected_task, "gpt-4o-mini"
         )
         source_text = "OpenAI GPT-4o Mini"
 
     elif prediction_mode == "Llama 3.3 70B":
         answer_letter, answer_text, drivers, score = predict_with_groq(
-            question,
-            summary,
-            selected_task,
-            "llama-3.3-70b-versatile",
+            question, summary, selected_task, "llama-3.3-70b-versatile"
         )
         source_text = "Groq Llama 3.3 70B"
 
     elif prediction_mode == "DeepSeek R1":
         answer_letter, answer_text, drivers, score = predict_with_groq(
-            question,
-            summary,
-            selected_task,
-            "deepseek-r1-distill-llama-70b",
+            question, summary, selected_task, "deepseek-r1-distill-llama-70b"
         )
         source_text = "Groq DeepSeek R1"
 
     else:
-        answer_letter, answer_text, drivers, score = predict_rule_based(
-            summary,
-            selected_task,
-        )
+        answer_letter, answer_text, drivers, score = predict_rule_based(summary, selected_task)
         source_text = "Hybrid: rule-based prediction with contextual explanation"
 
     prediction_full = f"{answer_letter} — {answer_text}"
@@ -757,7 +742,7 @@ if question:
     if mode == "Benchmark Evaluation":
         col1, col2, col3 = st.columns(3)
     else:
-        col1, col2 = st.columns(2)
+        col1 = st.columns(1)[0]
 
     with col1:
         st.markdown(
@@ -771,52 +756,51 @@ if question:
             unsafe_allow_html=True,
         )
 
-if mode == "Benchmark Evaluation":
-    with col2:
-        if benchmark_expected is not None:
-            expected_label = str(benchmark_expected).strip().upper()
-            expected_desc = LABEL_MEANINGS.get(expected_label, "Unknown label")
-            expected_display = expected_label
-        else:
-            expected_display = "N/A"
-            expected_desc = "Manual question has no benchmark label."
+    if mode == "Benchmark Evaluation":
+        with col2:
+            if benchmark_expected is not None:
+                expected_label = str(benchmark_expected).strip().upper()
+                expected_desc = LABEL_MEANINGS.get(expected_label, "Unknown label")
+                expected_display = expected_label
+            else:
+                expected_display = "N/A"
+                expected_desc = "No benchmark label."
 
-        st.markdown(
-            f"""
-            <div class="info-card">
-                <div class="label-small">Expected Label</div>
-                <div class="label-big">{expected_display}</div>
-                <div class="note">{expected_desc}</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+            st.markdown(
+                f"""
+                <div class="info-card">
+                    <div class="label-small">Expected Label</div>
+                    <div class="label-big">{expected_display}</div>
+                    <div class="note">{expected_desc}</div>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
 
-if mode == "Benchmark Evaluation":
-    with col3:
-        if match is None:
-            eval_text = "N/A"
-            eval_class = "status-na"
-            eval_note = "No benchmark answer available."
-        elif match:
-            eval_text = "Correct"
-            eval_class = "status-correct"
-            eval_note = "Predicted label matches expected label."
-        else:
-            eval_text = "Mismatch"
-            eval_class = "status-mismatch"
-            eval_note = "Predicted label differs from expected label."
+        with col3:
+            if match is None:
+                eval_text = "N/A"
+                eval_class = "status-na"
+                eval_note = "No benchmark answer available."
+            elif match:
+                eval_text = "Correct"
+                eval_class = "status-correct"
+                eval_note = "Predicted label matches expected label."
+            else:
+                eval_text = "Mismatch"
+                eval_class = "status-mismatch"
+                eval_note = "Predicted label differs from expected label."
 
-        st.markdown(
-            f"""
-            <div class="info-card">
-                <div class="label-small">Evaluation</div>
-                <div class="label-big {eval_class}">{eval_text}</div>
-                <div class="note">{eval_note}</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+            st.markdown(
+                f"""
+                <div class="info-card">
+                    <div class="label-small">Evaluation</div>
+                    <div class="label-big {eval_class}">{eval_text}</div>
+                    <div class="note">{eval_note}</div>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
 
     st.caption(f"Prediction source: {source_text}")
 
@@ -829,64 +813,20 @@ if mode == "Benchmark Evaluation":
         )
     else:
         for d in drivers:
-            st.markdown(
-                f'<div class="driver-box">{d}</div>',
-                unsafe_allow_html=True,
-            )
+            st.markdown(f'<div class="driver-box">{d}</div>', unsafe_allow_html=True)
 
-    st.markdown(
-        '<div class="section-title">Explanation</div>',
-        unsafe_allow_html=True,
-    )
-
-    st.write(
-        generate_interpretation(
-            summary,
-            prediction_full,
-            score,
-            source_text
-            )
-        )
-    
+    st.markdown('<div class="section-title">Explanation</div>', unsafe_allow_html=True)
+    st.write(generate_interpretation(summary, prediction_full, score, source_text))
 
     st.markdown('<div class="section-title">Context Signals</div>', unsafe_allow_html=True)
 
     c1, c2, c3, c4, c5 = st.columns(5)
 
-    c1.metric(
-        "Events",
-        summary.get("event_count") if summary.get("event_count") is not None else "No data",
-    )
-    c2.metric(
-        "POI Activity",
-        summary.get("poi_activity") if summary.get("poi_activity") is not None else "No data",
-    )
-    c3.metric(
-        "Rain mm",
-        summary.get("effective_rain") if summary.get("effective_rain") is not None else "No data",
-    )
-    c4.metric(
-        "Alert Time Points",
-        summary.get("transport_alert_hours") if summary.get("transport_alert_hours") is not None else "No data",
-    )
-    c5.metric(
-        "Road Incidents",
-        summary.get("road_incidents") if summary.get("road_incidents") is not None else "No data",
-    )
-
-    st.markdown('<div class="section-title">Key Drivers</div>', unsafe_allow_html=True)
-
-    if len(drivers) == 0:
-        st.markdown(
-            '<div class="driver-box">No major contextual signal detected.</div>',
-            unsafe_allow_html=True,
-        )
-    else:
-        for d in drivers:
-            st.markdown(f'<div class="driver-box">{d}</div>', unsafe_allow_html=True)
-
-    st.markdown('<div class="section-title">Interpretation</div>', unsafe_allow_html=True)
-    st.write(generate_interpretation(summary, prediction_full, score, source_text))
+    c1.metric("Events", summary.get("event_count") if summary.get("event_count") is not None else "No data")
+    c2.metric("POI Activity", summary.get("poi_activity") if summary.get("poi_activity") is not None else "No data")
+    c3.metric("Rain mm", summary.get("effective_rain") if summary.get("effective_rain") is not None else "No data")
+    c4.metric("Alert Time Points", summary.get("transport_alert_hours") if summary.get("transport_alert_hours") is not None else "No data")
+    c5.metric("Road Incidents", summary.get("road_incidents") if summary.get("road_incidents") is not None else "No data")
 
     with st.expander("View retrieved context data"):
         if filtered.empty:
@@ -897,7 +837,9 @@ if mode == "Benchmark Evaluation":
     with st.expander("View context summary"):
         st.json(summary)
 
-    if selected_task != "Manual Question" and not benchmark_df.empty:
+    if mode == "Benchmark Evaluation" and not benchmark_df.empty:
         with st.expander("View benchmark file"):
             st.dataframe(benchmark_df.head(200), use_container_width=True)
 
+else:
+    st.info("Choose a benchmark example or type a question.")
