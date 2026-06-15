@@ -649,6 +649,56 @@ def run_reasoning_task(question, summary, df):
 
     else:
         return task6_poi_reasoning(summary)
+
+def run_single_model(model_name, question, summary, df, selected_task):
+
+    if model_name == "Rule-based":
+        return run_reasoning_task(question, summary, df)
+
+    elif model_name == "GPT-4o Mini":
+        label, text, drivers, score = predict_with_openai(
+            question,
+            summary,
+            selected_task,
+            "gpt-4o-mini"
+        )
+
+        return {
+            "model": "GPT-4o Mini",
+            "label": label,
+            "prediction": text,
+            "reasoning": drivers[0] if drivers else "",
+        }
+
+    elif model_name == "Llama 3.3 70B":
+        label, text, drivers, score = predict_with_groq(
+            question,
+            summary,
+            selected_task,
+            "llama-3.3-70b-versatile"
+        )
+
+        return {
+            "model": "Llama 3.3 70B",
+            "label": label,
+            "prediction": text,
+            "reasoning": drivers[0] if drivers else "",
+        }
+
+    elif model_name == "DeepSeek R1":
+        label, text, drivers, score = predict_with_groq(
+            question,
+            summary,
+            selected_task,
+            "deepseek-r1-distill-llama-70b"
+        )
+
+        return {
+            "model": "DeepSeek R1",
+            "label": label,
+            "prediction": text,
+            "reasoning": drivers[0] if drivers else "",
+        }
     
 def build_ai_prompt(question, summary, selected_task):
     question_type = detect_question_type(question)
@@ -831,7 +881,11 @@ with st.sidebar:
 
     mode = st.radio(
         "Mode",
-        ["Benchmark Evaluation", "Interactive Reasoning"]
+        [
+            "Benchmark Evaluation",
+            "Interactive Reasoning",
+            "Compare Models"
+        ]
     )
 
     selected_location = st.selectbox(
@@ -839,19 +893,19 @@ with st.sidebar:
         ["Auto-detect"] + locations,
     )
 
-    prediction_mode = st.selectbox(
-        "Prediction Source",
-        [
-            "Rule-based",
-            "GPT-4o Mini",
-            "Llama 3.3 70B",
-            "DeepSeek R1",
-            "Hybrid",
-        ],
-    )
+    if mode != "Compare Models":
+        prediction_mode = st.selectbox(
+            "Prediction Source",
+            [
+                "Rule-based",
+                "GPT-4o Mini",
+                "Llama 3.3 70B",
+                "DeepSeek R1",
+            ],
+        )
+    else:
+        prediction_mode = "Compare Models"
 
-    if prediction_mode == "Hybrid":
-        st.caption("Hybrid uses rule-based prediction plus contextual explanation.")
 
     st.divider()
 
@@ -980,16 +1034,88 @@ if question:
 
     display_poi = summary.get("poi_activity")
 
-    result = run_reasoning_task(
-    question,
-    summary,
-    df
-    )
+    if mode == "Compare Models":
+
+        models = [
+            "Rule-based",
+            "GPT-4o Mini",
+            "Llama 3.3 70B",
+            "DeepSeek R1"
+        ]
+
+        result = {}
+
+        for model in models:
+            result[model] = run_single_model(
+                model,
+                question,
+                summary,
+                df,
+                selected_task
+            )
+
+    else:
+        result = run_single_model(
+            prediction_mode,
+            question,
+            summary,
+            df,
+            selected_task
+        )
 
     st.markdown(
         '<div class="section-title">Reasoning Output</div>',
         unsafe_allow_html=True
     )
+
+    if mode == "Compare Models":
+
+        comparison_rows = []
+
+        for model_name, model_result in result.items():
+
+            if isinstance(model_result, dict):
+                comparison_rows.append({
+                    "Model": model_name,
+                    "Task": model_result.get("task", selected_task),
+                    "Label": model_result.get("label", "N/A"),
+                    "Prediction/Cause": model_result.get(
+                        "prediction",
+                        model_result.get("cause", "N/A")
+                    ),
+                    "Reasoning": str(model_result.get("reasoning", ""))[:300]
+                })
+
+        st.dataframe(
+            pd.DataFrame(comparison_rows),
+            use_container_width=True
+        )
+
+        with st.expander("View full model outputs"):
+            st.json(result)
+
+    else:
+
+        if isinstance(result, list):
+            st.dataframe(pd.DataFrame(result), use_container_width=True)
+
+        elif isinstance(result, dict):
+
+            for key, value in result.items():
+
+                if isinstance(value, (int, float)):
+                    st.metric(
+                        key.replace("_", " ").title(),
+                        value
+                    )
+
+                elif isinstance(value, (dict, list)):
+                    st.subheader(key.replace("_", " ").title())
+                    st.json(value)
+
+                else:
+                    st.subheader(key.replace("_", " ").title())
+                    st.write(value)
 
     if isinstance(result, list):
         st.dataframe(pd.DataFrame(result), use_container_width=True)
@@ -998,13 +1124,22 @@ if question:
 
         for key, value in result.items():
 
-            st.subheader(
-                key.replace("_", " ").title()
-            )
+            if isinstance(value, (int, float)):
+                st.metric(
+                    key.replace("_", " ").title(),
+                    value
+                )
 
-            if isinstance(value, (dict, list)):
+            elif isinstance(value, (dict, list)):
+                st.subheader(
+                    key.replace("_", " ").title()
+                )
                 st.json(value)
+
             else:
+                st.subheader(
+                    key.replace("_", " ").title()
+                )
                 st.write(value)
 
     
