@@ -71,3 +71,5 @@ data/05_traffic/nsw_traffic_hf/Traffic_X.npy
 data/cleaned/master_context_table.csv
 data/cleaned/traffic_counts_clean.csv
 data/cleaned/weather_clean.csv
+
+!data/cleaned/master_context_table_sample.csv
