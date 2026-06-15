@@ -3,10 +3,6 @@ import re
 import pandas as pd
 import streamlit as st
 
-# =========================
-# PATHS
-# =========================
-
 DATA_PATH = "data/cleaned/master_context_table_sample.csv"
 
 BENCHMARK_PATHS = {
@@ -18,10 +14,71 @@ BENCHMARK_PATHS = {
     "Task 6 - POI Mobility Reasoning": "data/benchmark/task6_poi_mobility_reasoning/task6_qa_pairs.csv",
 }
 
+LABEL_MEANINGS = {
+    "A": "Significantly Higher activity",
+    "B": "No Significant Change",
+    "C": "Significantly Lower activity / Disruption detected"
+}
+
 st.set_page_config(
     page_title="NSW Urban Context Benchmark",
-    page_icon="🏙",
+    page_icon="NSW",
     layout="wide"
+)
+
+# =========================
+# STYLE
+# =========================
+
+st.markdown(
+    """
+    <style>
+    .main-title {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+    .subtitle {
+        color: #6b7280;
+        font-size: 15px;
+        margin-bottom: 28px;
+    }
+    .question-box {
+        background-color: #f8fafc;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 18px;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    .section-title {
+        font-size: 22px;
+        font-weight: 650;
+        margin-top: 28px;
+        margin-bottom: 12px;
+    }
+    .metric-card {
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 16px;
+        background-color: white;
+    }
+    .metric-label {
+        color: #6b7280;
+        font-size: 13px;
+    }
+    .metric-value {
+        font-size: 28px;
+        font-weight: 650;
+        margin-top: 4px;
+    }
+    .small-note {
+        color: #6b7280;
+        font-size: 13px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
 # =========================
@@ -31,13 +88,10 @@ st.set_page_config(
 @st.cache_data
 def load_data():
     df = pd.read_csv(DATA_PATH, low_memory=False)
-
     df["datetime"] = pd.to_datetime(df["datetime"], errors="coerce")
     df = df.dropna(subset=["datetime", "location"])
-
     df["date"] = df["datetime"].dt.date.astype(str)
     df["hour"] = df["datetime"].dt.hour
-
     return df
 
 
@@ -48,7 +102,6 @@ def load_benchmark_data(path):
     except Exception:
         return pd.DataFrame()
 
-
 # =========================
 # HELPERS
 # =========================
@@ -56,24 +109,18 @@ def load_benchmark_data(path):
 def safe_sum(df, col):
     if df.empty or col not in df.columns:
         return None
-
     val = df[col].sum(skipna=True)
-
     if pd.isna(val):
         return None
-
     return round(float(val), 2)
 
 
 def safe_mean(df, col):
     if df.empty or col not in df.columns:
         return None
-
     val = df[col].mean(skipna=True)
-
     if pd.isna(val):
         return None
-
     return round(float(val), 2)
 
 
@@ -117,10 +164,7 @@ def extract_scenario(question):
 
     if "heavy rain" in q or "storm" in q or "flood" in q:
         scenario["weather_event"] = "heavy_rain"
-        scenario["scenario_rain"] = max(
-            scenario.get("scenario_rain", 0),
-            50
-        )
+        scenario["scenario_rain"] = max(scenario.get("scenario_rain", 0), 50)
 
     if "weekday" in q:
         scenario["day_type"] = "weekday"
@@ -131,60 +175,29 @@ def extract_scenario(question):
     if "public holiday" in q or "holiday" in q:
         scenario["public_holiday_scenario"] = True
 
-    if (
-        "event" in q
-        or "concert" in q
-        or "festival" in q
-        or "sports" in q
-        or "match" in q
-    ):
+    if any(word in q for word in ["event", "concert", "festival", "sports", "match"]):
         scenario["event_scenario"] = True
 
-    if "crash" in q or "accident" in q or "road incident" in q:
+    if any(word in q for word in ["crash", "accident", "road incident"]):
         scenario["road_incident_scenario"] = True
 
-    if (
-        "train delay" in q
-        or "bus delay" in q
-        or "transport delay" in q
-        or "service disruption" in q
-    ):
+    if any(word in q for word in ["train delay", "bus delay", "transport delay", "service disruption"]):
         scenario["transport_disruption_scenario"] = True
 
     return scenario
 
 
 def get_question_column(df):
-    possible_cols = [
-        "question",
-        "query",
-        "prompt",
-        "input",
-        "scenario",
-        "text"
-    ]
-
-    for col in possible_cols:
+    for col in ["question", "query", "prompt", "input", "scenario", "text"]:
         if col in df.columns:
             return col
-
     return None
 
 
 def get_answer_column(df):
-    possible_cols = [
-        "answer",
-        "label",
-        "target",
-        "expected_answer",
-        "gold_answer",
-        "output"
-    ]
-
-    for col in possible_cols:
+    for col in ["answer", "label", "target", "expected_answer", "gold_answer", "output"]:
         if col in df.columns:
             return col
-
     return None
 
 
@@ -192,7 +205,6 @@ def summarize_context(df, question=None):
     summary = {}
 
     summary["data_available"] = not df.empty
-
     summary["avg_temperature"] = safe_mean(df, "temperature_2m")
     summary["total_rain"] = safe_sum(df, "rain")
     summary["event_count"] = safe_sum(df, "event_count")
@@ -212,8 +224,7 @@ def summarize_context(df, question=None):
         summary["has_nearby_event"] = None
 
     if question:
-        scenario = extract_scenario(question)
-        summary.update(scenario)
+        summary.update(extract_scenario(question))
 
     if summary.get("scenario_rain") is not None:
         summary["effective_rain"] = summary["scenario_rain"]
@@ -222,118 +233,121 @@ def summarize_context(df, question=None):
 
     return summary
 
-
 # =========================
 # PREDICTION LOGIC
 # =========================
 
-def predict_activity(summary):
+def predict_activity(summary, selected_task):
     score = 0
     drivers = []
 
     rain = summary.get("effective_rain")
+    alerts = summary.get("transport_alerts")
+    incidents = summary.get("road_incidents")
+    events = summary.get("event_count")
+    poi = summary.get("poi_activity")
 
     if rain is not None and rain >= 50:
         score -= 4
-        drivers.append("Heavy rainfall scenario detected")
-
+        drivers.append("Heavy rainfall is likely to reduce outdoor activity and disrupt mobility.")
     elif rain is not None and rain >= 20:
         score -= 2
-        drivers.append("Moderate rainfall detected")
+        drivers.append("Moderate rainfall may reduce some outdoor activity.")
 
-    if summary.get("event_count") not in [None, 0]:
+    if events not in [None, 0]:
         score += 3
-        drivers.append("Nearby event detected")
+        drivers.append("Nearby events may increase pedestrian, transport, and retail activity.")
 
     if summary.get("event_scenario", False):
-        score += 3
-        drivers.append("Event scenario detected from question")
-
-    if (
-        summary.get("poi_activity") not in [None, 0]
-        and summary.get("poi_activity") > 10
-    ):
         score += 2
-        drivers.append("High POI activity")
+        drivers.append("The question mentions an event-related scenario.")
 
-    if summary.get("road_incidents") not in [None, 0]:
+    if poi not in [None, 0] and poi > 10:
+        score += 2
+        drivers.append("High POI activity indicates stronger local activity potential.")
+
+    if incidents not in [None, 0]:
         score -= 2
-        drivers.append("Road incidents detected")
+        drivers.append("Road incidents may increase congestion and reduce normal mobility.")
 
     if summary.get("road_incident_scenario", False):
         score -= 2
-        drivers.append("Road incident scenario detected from question")
+        drivers.append("The question mentions a road incident scenario.")
 
-    if summary.get("transport_alerts") not in [None, 0]:
-        score -= 1
-        drivers.append("Transport disruptions detected")
+    if alerts not in [None, 0]:
+        score -= 3
+        drivers.append(
+            "Transport alerts are present. This suggests possible public transport disruption, delays, or service changes."
+        )
 
     if summary.get("transport_disruption_scenario", False):
-        score -= 1
-        drivers.append("Transport disruption scenario detected from question")
+        score -= 2
+        drivers.append("The question mentions a transport disruption scenario.")
 
-    if (
-        summary.get("public_holiday") is True
-        or summary.get("public_holiday_scenario") is True
-    ):
+    if summary.get("public_holiday") is True or summary.get("public_holiday_scenario") is True:
         score -= 1
-        drivers.append("Public holiday effect")
+        drivers.append("Calendar effects may change normal commuter and leisure activity.")
+
+    if selected_task == "Task 2 - Anomaly Classification":
+        if alerts not in [None, 0] or incidents not in [None, 0] or abs(score) >= 3:
+            return "C", LABEL_MEANINGS["C"], drivers, score
 
     if score >= 3:
-        return "A", "Significantly Higher", drivers
-
+        return "A", LABEL_MEANINGS["A"], drivers, score
     elif score <= -3:
-        return "C", "Significantly Lower", drivers
-
+        return "C", LABEL_MEANINGS["C"], drivers, score
     else:
-        return "B", "No Significant Change", drivers
+        return "B", LABEL_MEANINGS["B"], drivers, score
 
 
-def generate_rule_based_reasoning(summary, prediction):
+def generate_rule_based_reasoning(summary, prediction_full, score):
     lines = []
 
-    lines.append(f"Prediction: {prediction}")
+    lines.append(f"Model prediction: {prediction_full}")
+    lines.append(f"Context score: {score}")
 
-    rain = summary.get("effective_rain")
+    alerts = summary.get("transport_alerts")
 
-    if rain is not None and rain >= 50:
+    if alerts not in [None, 0]:
         lines.append(
-            "Heavy rain is expected to reduce outdoor pedestrian activity, "
-            "street-level retail visits, cycling, and tourism movement."
-        )
-        lines.append(
-            "It may also increase traffic congestion, public transport reliance, "
-            "taxi demand, and rideshare demand."
+            f"Transport alerts = {alerts}. This means the retrieved context contains public transport warning or disruption signals. "
+            "When alerts are greater than 0, the model treats this as evidence of possible delays, service changes, or abnormal travel conditions."
         )
 
-    if summary.get("event_count") not in [None, 0] or summary.get("event_scenario"):
+    if summary.get("road_incidents") not in [None, 0]:
         lines.append(
-            "Nearby events can increase pedestrian volumes, public transport demand, "
-            "and retail activity around the event location."
+            f"Road incidents = {summary.get('road_incidents')}. This suggests road disruption and possible congestion."
         )
 
-    if summary.get("road_incidents") not in [None, 0] or summary.get("road_incident_scenario"):
+    if summary.get("effective_rain") not in [None, 0]:
         lines.append(
-            "Road incidents are expected to increase congestion and travel time."
+            f"Rain = {summary.get('effective_rain')} mm. Higher rainfall can reduce outdoor pedestrian and retail activity."
         )
 
-    if summary.get("transport_alerts") not in [None, 0] or summary.get("transport_disruption_scenario"):
+    if summary.get("event_count") not in [None, 0]:
         lines.append(
-            "Transport alerts may shift travellers to other modes such as walking, driving, taxis, or rideshare."
+            f"Events = {summary.get('event_count')}. Events may increase pedestrian flows and public transport demand."
         )
 
-    if summary.get("public_holiday") is True or summary.get("public_holiday_scenario"):
+    if summary.get("poi_activity") not in [None, 0]:
         lines.append(
-            "Public holidays may reduce commuter activity but increase leisure or tourism activity."
+            f"POI activity = {summary.get('poi_activity')}. Higher POI activity indicates more local destination-based movement."
         )
 
-    if len(lines) == 1:
-        lines.append(
-            "No strong contextual signal was detected from the retrieved data or the question."
-        )
+    if len(lines) == 2:
+        lines.append("No strong contextual signal was detected.")
 
     return "\n\n".join(lines)
 
+
+def evaluate_prediction(predicted, expected):
+    if expected is None:
+        return None
+
+    expected = str(expected).strip().upper()
+    predicted = str(predicted).strip().upper()
+
+    return expected == predicted
 
 # =========================
 # OPENAI
@@ -348,7 +362,7 @@ def ask_llm(question, summary):
         prompt = f"""
 You are an urban reasoning benchmark assistant.
 
-Use the provided context and scenario only.
+Use only the provided context.
 
 Question:
 {question}
@@ -356,22 +370,20 @@ Question:
 Context:
 {summary}
 
-Answer briefly with:
+Label meanings:
+A = Significantly Higher activity
+B = No Significant Change
+C = Significantly Lower activity or Disruption detected
+
+Answer briefly:
 1. Prediction
 2. Key signals
 3. Explanation
-
-Do not invent data. If a value is missing, say it is missing.
 """
 
         response = client.chat.completions.create(
             model="gpt-4o-mini",
-            messages=[
-                {
-                    "role": "user",
-                    "content": prompt
-                }
-            ],
+            messages=[{"role": "user", "content": prompt}],
             temperature=0.2
         )
 
@@ -380,31 +392,21 @@ Do not invent data. If a value is missing, say it is missing.
     except Exception as e:
         return f"OpenAI response unavailable: {e}"
 
-
 # =========================
-# UI HEADER
+# UI
 # =========================
 
-st.title("🏙 NSW Urban Context Benchmark")
-
-st.caption(
-    "Weather • Events • Traffic • Public Transport • Pedestrian • POI Mobility"
+st.markdown('<div class="main-title">NSW Urban Context Benchmark</div>', unsafe_allow_html=True)
+st.markdown(
+    '<div class="subtitle">Context-aware benchmark for weather, events, traffic, transport, pedestrian activity, and POI mobility.</div>',
+    unsafe_allow_html=True
 )
 
-# =========================
-# LOAD DATA
-# =========================
-
 df = load_data()
-
 locations = sorted(df["location"].dropna().unique())
 
-# =========================
-# SIDEBAR
-# =========================
-
 with st.sidebar:
-    st.header("Filters")
+    st.header("Benchmark Setup")
 
     selected_location = st.selectbox(
         "Location",
@@ -416,50 +418,43 @@ with st.sidebar:
         ["Manual Question"] + list(BENCHMARK_PATHS.keys())
     )
 
-    use_llm = st.checkbox(
-        "Use OpenAI",
-        value=False
-    )
+    use_llm = st.checkbox("Use OpenAI", value=False)
 
     benchmark_question = None
     benchmark_expected = None
     benchmark_df = pd.DataFrame()
 
     if selected_task != "Manual Question":
-        benchmark_df = load_benchmark_data(
-            BENCHMARK_PATHS[selected_task]
-        )
-
-        st.caption(f"Loaded {len(benchmark_df)} examples")
+        benchmark_df = load_benchmark_data(BENCHMARK_PATHS[selected_task])
+        st.caption(f"{len(benchmark_df)} examples loaded")
 
         question_col = get_question_column(benchmark_df)
         answer_col = get_answer_column(benchmark_df)
 
         if question_col is None:
-            st.warning("No question column found in this benchmark file.")
-
+            st.warning("No question column found.")
         else:
             selected_idx = st.selectbox(
-                "Select QA Example",
+                "QA example",
                 benchmark_df.index.tolist()
             )
 
-            benchmark_question = str(
-                benchmark_df.loc[selected_idx, question_col]
-            )
+            benchmark_question = str(benchmark_df.loc[selected_idx, question_col])
 
-            st.caption("Selected question:")
+            st.markdown("**Question**")
             st.write(benchmark_question)
 
             if answer_col is not None:
                 benchmark_expected = benchmark_df.loc[selected_idx, answer_col]
 
-                st.caption("Expected answer:")
-                st.write(benchmark_expected)
+                st.markdown("**Expected label**")
+                st.write(f"{benchmark_expected} — {LABEL_MEANINGS.get(str(benchmark_expected).strip().upper(), 'Unknown label')}")
 
-# =========================
-# QUESTION INPUT
-# =========================
+    st.divider()
+    st.markdown("**Label guide**")
+    st.write("A: Significantly Higher activity")
+    st.write("B: No Significant Change")
+    st.write("C: Lower activity / Disruption detected")
 
 default_question = (
     "Heavy rain (50 mm+) occurred in Sydney CBD on a weekday. "
@@ -468,29 +463,20 @@ default_question = (
 )
 
 if selected_task == "Manual Question":
-    question = st.chat_input("Ask an urban reasoning question...")
+    question = st.chat_input("Ask an urban reasoning question")
 else:
     question = benchmark_question
 
-# Optional default demo button
 if selected_task == "Manual Question":
-    if st.button("Use heavy rain demo question"):
+    if st.button("Use demo question"):
         question = default_question
-
-# =========================
-# MAIN
-# =========================
 
 if question:
 
-    with st.chat_message("user"):
-        st.write(question)
+    st.markdown("### Query")
+    st.markdown(f'<div class="question-box">{question}</div>', unsafe_allow_html=True)
 
-    location = (
-        None
-        if selected_location == "Auto-detect"
-        else selected_location
-    )
+    location = None if selected_location == "Auto-detect" else selected_location
 
     if location is None:
         location = extract_location(question, locations)
@@ -500,158 +486,80 @@ if question:
     filtered = df.copy()
 
     if location:
-        filtered = filtered[
-            filtered["location"] == location
-        ]
+        filtered = filtered[filtered["location"] == location]
 
     if date:
-        filtered = filtered[
-            filtered["date"] == date
-        ]
+        filtered = filtered[filtered["date"] == date]
 
     summary = summarize_context(filtered, question)
 
-    answer_letter, answer_text, drivers = predict_activity(summary)
+    answer_letter, answer_text, drivers, score = predict_activity(summary, selected_task)
 
-    prediction_full = f"{answer_letter}. {answer_text}"
+    prediction_full = f"{answer_letter} — {answer_text}"
 
-    with st.chat_message("assistant"):
+    st.markdown('<div class="section-title">Prediction</div>', unsafe_allow_html=True)
 
-        st.subheader("🎯 Prediction")
+    col_pred, col_expected, col_eval = st.columns(3)
 
-        if answer_letter == "A":
-            st.success(prediction_full)
+    with col_pred:
+        st.metric("Predicted label", answer_letter)
+        st.caption(answer_text)
 
-        elif answer_letter == "C":
-            st.error(prediction_full)
-
-        else:
-            st.info(prediction_full)
-
+    with col_expected:
         if benchmark_expected is not None:
-            st.caption("Benchmark expected answer")
-            st.write(benchmark_expected)
-
-        # =====================
-        # KEY DRIVERS
-        # =====================
-
-        st.subheader("📌 Key Drivers")
-
-        if len(drivers) == 0:
-            st.write("✓ No major contextual signal detected")
-
-        for d in drivers:
-            st.write(f"✓ {d}")
-
-        st.divider()
-
-        # =====================
-        # KPI CARDS
-        # =====================
-
-        c1, c2, c3, c4, c5 = st.columns(5)
-
-        c1.metric(
-            "🎫 Events",
-            summary.get("event_count")
-            if summary.get("event_count") is not None
-            else "No data"
-        )
-
-        c2.metric(
-            "🏪 POI",
-            summary.get("poi_activity")
-            if summary.get("poi_activity") is not None
-            else "No data"
-        )
-
-        c3.metric(
-            "🌧 Rain",
-            summary.get("effective_rain")
-            if summary.get("effective_rain") is not None
-            else "No data"
-        )
-
-        c4.metric(
-            "🚇 Alerts",
-            summary.get("transport_alerts")
-            if summary.get("transport_alerts") is not None
-            else "No data"
-        )
-
-        c5.metric(
-            "🚗 Incidents",
-            summary.get("road_incidents")
-            if summary.get("road_incidents") is not None
-            else "No data"
-        )
-
-        st.divider()
-
-        # =====================
-        # POI ACTIVITY
-        # =====================
-
-        st.subheader("🏪 POI Activity")
-
-        poi_score = summary.get("poi_activity")
-
-        if poi_score is None:
-            st.caption("POI Activity Score: No data")
+            expected_label = str(benchmark_expected).strip().upper()
+            st.metric("Expected label", expected_label)
+            st.caption(LABEL_MEANINGS.get(expected_label, "Unknown label"))
         else:
-            poi_score = float(poi_score)
-            st.progress(min(poi_score / 100, 1.0))
-            st.caption(f"POI Activity Score: {poi_score:.2f}")
+            st.metric("Expected label", "N/A")
+            st.caption("Manual question")
 
-        # =====================
-        # REASONING
-        # =====================
+    with col_eval:
+        match = evaluate_prediction(answer_letter, benchmark_expected)
+        if match is None:
+            st.metric("Evaluation", "N/A")
+        elif match:
+            st.metric("Evaluation", "Correct")
+        else:
+            st.metric("Evaluation", "Mismatch")
 
-        with st.expander("🧠 Show Reasoning", expanded=True):
+    st.markdown('<div class="section-title">Context Signals</div>', unsafe_allow_html=True)
 
-            if use_llm:
-                llm_answer = ask_llm(question, summary)
-                st.write(llm_answer)
+    c1, c2, c3, c4, c5 = st.columns(5)
 
-            else:
-                reasoning = generate_rule_based_reasoning(
-                    summary,
-                    prediction_full
-                )
-                st.write(reasoning)
+    c1.metric("Events", summary.get("event_count") if summary.get("event_count") is not None else "No data")
+    c2.metric("POI activity", summary.get("poi_activity") if summary.get("poi_activity") is not None else "No data")
+    c3.metric("Rain mm", summary.get("effective_rain") if summary.get("effective_rain") is not None else "No data")
+    c4.metric("Transport alerts", summary.get("transport_alerts") if summary.get("transport_alerts") is not None else "No data")
+    c5.metric("Road incidents", summary.get("road_incidents") if summary.get("road_incidents") is not None else "No data")
 
-        # =====================
-        # RAW DATA
-        # =====================
+    st.markdown('<div class="section-title">Key Drivers</div>', unsafe_allow_html=True)
 
-        with st.expander("📄 View Retrieved Data"):
+    if len(drivers) == 0:
+        st.write("No major contextual signal detected.")
+    else:
+        for d in drivers:
+            st.write(f"- {d}")
 
-            if filtered.empty:
-                st.warning("No retrieved context rows found.")
-            else:
-                st.dataframe(
-                    filtered.head(200),
-                    use_container_width=True
-                )
+    st.markdown('<div class="section-title">Interpretation</div>', unsafe_allow_html=True)
 
-        # =====================
-        # SUMMARY
-        # =====================
+    if use_llm:
+        st.write(ask_llm(question, summary))
+    else:
+        st.write(generate_rule_based_reasoning(summary, prediction_full, score))
 
-        with st.expander("📊 Context Summary", expanded=True):
-            st.json(summary)
+    with st.expander("View retrieved context data"):
+        if filtered.empty:
+            st.warning("No retrieved context rows found.")
+        else:
+            st.dataframe(filtered.head(200), use_container_width=True)
 
-        # =====================
-        # BENCHMARK TABLE
-        # =====================
+    with st.expander("View context summary"):
+        st.json(summary)
 
-        if selected_task != "Manual Question" and not benchmark_df.empty:
-            with st.expander("📚 View Benchmark QA File"):
-                st.dataframe(
-                    benchmark_df.head(200),
-                    use_container_width=True
-                )
+    if selected_task != "Manual Question" and not benchmark_df.empty:
+        with st.expander("View benchmark file"):
+            st.dataframe(benchmark_df.head(200), use_container_width=True)
 
 else:
     st.info("Choose a benchmark example from the sidebar or ask a manual question.")
