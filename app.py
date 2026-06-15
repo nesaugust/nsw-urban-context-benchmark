@@ -137,7 +137,11 @@ st.markdown(
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv(DATA_PATH, low_memory=False)
+    try:
+        df = pd.read_csv(DATA_PATH, low_memory=False)
+    except FileNotFoundError:
+        st.error(f"Data file not found: {DATA_PATH}")
+        st.stop()
 
     df["datetime"] = pd.to_datetime(df["datetime"], errors="coerce")
     df = df.dropna(subset=["datetime", "location"])
@@ -201,7 +205,7 @@ def extract_location(question, locations):
     q = question.lower()
 
     for loc in locations:
-        if loc.lower() in q:
+        if str(loc).lower() in q:
             return loc
 
     return None
@@ -284,6 +288,7 @@ def summarize_context(df, question=None):
     summary["road_incidents"] = safe_sum(df, "incident_count")
     summary["pedestrian_count"] = safe_sum(df, "pedestrian_count_sum")
     summary["poi_activity"] = safe_sum(df, "poi_activity")
+
     if "alert_count" in df.columns and not df.empty:
         summary["transport_alert_hours"] = int((df["alert_count"] > 0).sum())
         summary["transport_alert_max"] = int(df["alert_count"].max())
@@ -314,14 +319,28 @@ def summarize_context(df, question=None):
     return summary
 
 
-def evaluate_prediction(predicted, expected):
-    if expected is None:
+def normalize_label(value):
+    if value is None:
         return None
 
-    predicted = str(predicted).strip().upper()
-    expected = str(expected).strip().upper()
+    text = str(value).strip().upper()
 
-    return predicted == expected
+    match = re.search(r"\b([ABC])\b", text)
+
+    if match:
+        return match.group(1)
+
+    return None
+
+
+def evaluate_prediction(predicted, expected):
+    predicted_label = normalize_label(predicted)
+    expected_label = normalize_label(expected)
+
+    if expected_label is None:
+        return None
+
+    return predicted_label == expected_label
 
 
 def predict_rule_based(summary, selected_task):
@@ -438,6 +457,7 @@ def parse_ai_label(text):
 
     return "B"
 
+
 def detect_question_type(question):
     q = question.lower()
 
@@ -454,6 +474,7 @@ def detect_question_type(question):
         return "anomaly_classification"
 
     return "activity_prediction"
+
 
 def build_ai_prompt(question, summary, selected_task):
     question_type = detect_question_type(question)
@@ -525,7 +546,12 @@ KEY SIGNALS:
 
 def predict_with_openai(question, summary, selected_task, model_name):
     try:
-        client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+        api_key = st.secrets.get("OPENAI_API_KEY")
+
+        if not api_key:
+            return "B", LABEL_MEANINGS["B"], ["OpenAI API key is missing."], None
+
+        client = OpenAI(api_key=api_key)
         prompt = build_ai_prompt(question, summary, selected_task)
 
         response = client.chat.completions.create(
@@ -545,7 +571,12 @@ def predict_with_openai(question, summary, selected_task, model_name):
 
 def predict_with_groq(question, summary, selected_task, model_name):
     try:
-        client = Groq(api_key=st.secrets["GROQ_API_KEY"])
+        api_key = st.secrets.get("GROQ_API_KEY")
+
+        if not api_key:
+            return "B", LABEL_MEANINGS["B"], ["Groq API key is missing."], None
+
+        client = Groq(api_key=api_key)
         prompt = build_ai_prompt(question, summary, selected_task)
 
         response = client.chat.completions.create(
@@ -626,19 +657,12 @@ with st.sidebar:
 
     mode = st.radio(
         "Mode",
-        [
-            "Benchmark Evaluation",
-            "Interactive Reasoning"
-        ]
+        ["Benchmark Evaluation", "Interactive Reasoning"]
     )
+
     selected_location = st.selectbox(
         "Location",
         ["Auto-detect"] + locations,
-    )
-
-    selected_task = st.selectbox(
-        "Benchmark Task",
-        ["Manual Question"] + list(BENCHMARK_PATHS.keys()),
     )
 
     prediction_mode = st.selectbox(
@@ -662,53 +686,44 @@ with st.sidebar:
     benchmark_df = pd.DataFrame()
 
     if mode == "Benchmark Evaluation":
-
         selected_task = st.selectbox(
             "Benchmark Task",
             list(BENCHMARK_PATHS.keys())
         )
 
-        benchmark_df = load_benchmark_data(
-            BENCHMARK_PATHS[selected_task]
-        )
+        benchmark_df = load_benchmark_data(BENCHMARK_PATHS[selected_task])
 
-        st.caption(
-            f"{len(benchmark_df)} examples loaded"
-        )
+        st.caption(f"{len(benchmark_df)} examples loaded")
 
-        question_col = get_question_column(
-            benchmark_df
-        )
+        question_col = get_question_column(benchmark_df)
+        answer_col = get_answer_column(benchmark_df)
 
-        answer_col = get_answer_column(
-            benchmark_df
-        )
-
-        if question_col:
-
+        if question_col and not benchmark_df.empty:
             selected_idx = st.selectbox(
                 "QA Example",
                 benchmark_df.index.tolist()
             )
 
             benchmark_question = str(
-                benchmark_df.loc[
-                    selected_idx,
-                    question_col
-                ]
+                benchmark_df.loc[selected_idx, question_col]
             )
 
             if answer_col:
-                benchmark_expected = (
-                    benchmark_df.loc[
-                        selected_idx,
-                        answer_col
-                    ]
-                )
+                benchmark_expected = benchmark_df.loc[selected_idx, answer_col]
+        else:
+            st.warning("No valid question column found in this benchmark file.")
 
     else:
-
         selected_task = "Interactive Reasoning"
+
+        benchmark_expected = st.selectbox(
+            "Optional Expected Label",
+            ["None", "A", "B", "C"],
+            help="Use this if you want to compare the interactive prediction with an expected answer."
+        )
+
+        if benchmark_expected == "None":
+            benchmark_expected = None
 
     st.divider()
 
@@ -733,17 +748,17 @@ default_question = (
     "and POI/mobility activity to be:"
 )
 
-if mode == "Benchmark Evaluation":
+question = None
 
+if mode == "Benchmark Evaluation":
     question = benchmark_question
 
 else:
+    typed_question = st.chat_input("Ask an urban reasoning question")
 
-    question = st.chat_input(
-        "Ask an urban reasoning question"
-    )
+    if typed_question:
+        question = typed_question
 
-if selected_task == "Manual Question":
     if st.button("Use demo question"):
         question = default_question
 
@@ -800,69 +815,66 @@ if question:
 
     st.markdown('<div class="section-title">Model Output</div>', unsafe_allow_html=True)
 
-    if mode == "Benchmark Evaluation":
-        col1, col2, col3 = st.columns(3)
+    col1, col2, col3 = st.columns(3)
 
-        with col1:
-            st.markdown(
-                f"""
-                <div class="info-card">
-                    <div class="label-small">Predicted Label</div>
-                    <div class="label-big">{answer_letter}</div>
-                    <div class="note">{answer_text}</div>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
+    with col1:
+        st.markdown(
+            f"""
+            <div class="info-card">
+                <div class="label-small">Predicted Label</div>
+                <div class="label-big">{answer_letter}</div>
+                <div class="note">{answer_text}</div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
-        with col2:
-            if benchmark_expected is not None:
-                expected_label = str(benchmark_expected).strip().upper()
-                expected_desc = LABEL_MEANINGS.get(expected_label, "Unknown label")
-                expected_display = expected_label
-            else:
-                expected_display = "N/A"
-                expected_desc = "No benchmark label."
+    with col2:
+        if benchmark_expected is not None:
+            expected_label = normalize_label(benchmark_expected)
+            expected_desc = LABEL_MEANINGS.get(expected_label, "Unknown label")
+            expected_display = expected_label if expected_label else "N/A"
+        else:
+            expected_display = "N/A"
+            expected_desc = "No expected label provided."
 
-            st.markdown(
-                f"""
-                <div class="info-card">
-                    <div class="label-small">Expected Label</div>
-                    <div class="label-big">{expected_display}</div>
-                    <div class="note">{expected_desc}</div>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
+        st.markdown(
+            f"""
+            <div class="info-card">
+                <div class="label-small">Expected Label</div>
+                <div class="label-big">{expected_display}</div>
+                <div class="note">{expected_desc}</div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
-        with col3:
-            if match is None:
-                eval_text = "N/A"
-                eval_class = "status-na"
-                eval_note = "No benchmark answer available."
-            elif match:
-                eval_text = "Correct"
-                eval_class = "status-correct"
-                eval_note = "Predicted label matches expected label."
-            else:
-                eval_text = "Mismatch"
-                eval_class = "status-mismatch"
-                eval_note = "Predicted label differs from expected label."
+    with col3:
+        if match is None:
+            eval_text = "N/A"
+            eval_class = "status-na"
+            eval_note = "No expected answer available."
+        elif match:
+            eval_text = "Correct"
+            eval_class = "status-correct"
+            eval_note = "Predicted label matches expected label."
+        else:
+            eval_text = "Mismatch"
+            eval_class = "status-mismatch"
+            eval_note = "Predicted label differs from expected label."
 
-            st.markdown(
-                f"""
-                <div class="info-card">
-                    <div class="label-small">Evaluation</div>
-                    <div class="label-big {eval_class}">{eval_text}</div>
-                    <div class="note">{eval_note}</div>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
+        st.markdown(
+            f"""
+            <div class="info-card">
+                <div class="label-small">Evaluation</div>
+                <div class="label-big {eval_class}">{eval_text}</div>
+                <div class="note">{eval_note}</div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
-    else:
-        col1, col2, col3 = st.columns(3)
-
+    if mode == "Interactive Reasoning":
         if score is None:
             confidence = "Model-based"
             confidence_note = "Generated by selected LLM"
@@ -871,41 +883,15 @@ if question:
             confidence = f"{confidence_value}%"
             confidence_note = "Estimated from rule strength"
 
-        with col1:
-            st.markdown(
-                f"""
-                <div class="info-card">
-                    <div class="label-small">Predicted Label</div>
-                    <div class="label-big">{answer_letter}</div>
-                    <div class="note">{answer_text}</div>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
+        st.markdown('<div class="section-title">Interactive Summary</div>', unsafe_allow_html=True)
 
-        with col2:
-            st.markdown(
-                f"""
-                <div class="info-card">
-                    <div class="label-small">Prediction Source</div>
-                    <div class="label-big" style="font-size:22px;">{source_text}</div>
-                    <div class="note">Interactive reasoning mode</div>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
+        c1, c2 = st.columns(2)
 
-        with col3:
-            st.markdown(
-                f"""
-                <div class="info-card">
-                    <div class="label-small">Confidence</div>
-                    <div class="label-big">{confidence}</div>
-                    <div class="note">{confidence_note}</div>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
+        with c1:
+            st.metric("Prediction Source", source_text)
+
+        with c2:
+            st.metric("Confidence", confidence, confidence_note)
 
     st.caption(f"Prediction source: {source_text}")
 
@@ -927,11 +913,30 @@ if question:
 
     c1, c2, c3, c4, c5 = st.columns(5)
 
-    c1.metric("Events", summary.get("event_count") if summary.get("event_count") is not None else "No data")
-    c2.metric("POI Activity", summary.get("poi_activity") if summary.get("poi_activity") is not None else "No data")
-    c3.metric("Rain mm", summary.get("effective_rain") if summary.get("effective_rain") is not None else "No data")
-    c4.metric("Alert Time Points", summary.get("transport_alert_hours") if summary.get("transport_alert_hours") is not None else "No data")
-    c5.metric("Road Incidents", summary.get("road_incidents") if summary.get("road_incidents") is not None else "No data")
+    c1.metric(
+        "Events",
+        summary.get("event_count") if summary.get("event_count") is not None else "No data"
+    )
+
+    c2.metric(
+        "POI Activity",
+        summary.get("poi_activity") if summary.get("poi_activity") is not None else "No data"
+    )
+
+    c3.metric(
+        "Rain mm",
+        summary.get("effective_rain") if summary.get("effective_rain") is not None else "No data"
+    )
+
+    c4.metric(
+        "Alert Time Points",
+        summary.get("transport_alert_hours") if summary.get("transport_alert_hours") is not None else "No data"
+    )
+
+    c5.metric(
+        "Road Incidents",
+        summary.get("road_incidents") if summary.get("road_incidents") is not None else "No data"
+    )
 
     with st.expander("View retrieved context data"):
         if filtered.empty:
