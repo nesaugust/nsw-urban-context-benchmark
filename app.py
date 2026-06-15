@@ -570,6 +570,13 @@ locations = sorted(df["location"].dropna().unique())
 with st.sidebar:
     st.header("Benchmark Setup")
 
+    mode = st.radio(
+        "Mode",
+        [
+            "Benchmark Evaluation",
+            "Interactive Reasoning"
+        ]
+    )
     selected_location = st.selectbox(
         "Location",
         ["Auto-detect"] + locations,
@@ -600,34 +607,54 @@ with st.sidebar:
     benchmark_expected = None
     benchmark_df = pd.DataFrame()
 
-    if selected_task != "Manual Question":
-        benchmark_df = load_benchmark_data(BENCHMARK_PATHS[selected_task])
-        st.caption(f"{len(benchmark_df)} examples loaded")
+    if mode == "Benchmark Evaluation":
 
-        question_col = get_question_column(benchmark_df)
-        answer_col = get_answer_column(benchmark_df)
+        selected_task = st.selectbox(
+            "Benchmark Task",
+            list(BENCHMARK_PATHS.keys())
+        )
 
-        if question_col is None:
-            st.warning("No question column found.")
-        else:
+        benchmark_df = load_benchmark_data(
+            BENCHMARK_PATHS[selected_task]
+        )
+
+        st.caption(
+            f"{len(benchmark_df)} examples loaded"
+        )
+
+        question_col = get_question_column(
+            benchmark_df
+        )
+
+        answer_col = get_answer_column(
+            benchmark_df
+        )
+
+        if question_col:
+
             selected_idx = st.selectbox(
                 "QA Example",
-                benchmark_df.index.tolist(),
+                benchmark_df.index.tolist()
             )
 
-            benchmark_question = str(benchmark_df.loc[selected_idx, question_col])
+            benchmark_question = str(
+                benchmark_df.loc[
+                    selected_idx,
+                    question_col
+                ]
+            )
 
-            st.markdown("**Question**")
-            st.write(benchmark_question)
-
-            if answer_col is not None:
-                benchmark_expected = benchmark_df.loc[selected_idx, answer_col]
-                expected_label = str(benchmark_expected).strip().upper()
-
-                st.markdown("**Expected Label**")
-                st.write(
-                    f"{expected_label} — {LABEL_MEANINGS.get(expected_label, 'Unknown label')}"
+            if answer_col:
+                benchmark_expected = (
+                    benchmark_df.loc[
+                        selected_idx,
+                        answer_col
+                    ]
                 )
+
+    else:
+
+        selected_task = "Interactive Reasoning"
 
     st.divider()
 
@@ -645,10 +672,15 @@ default_question = (
     "and POI/mobility activity to be:"
 )
 
-if selected_task == "Manual Question":
-    question = st.chat_input("Ask an urban reasoning question")
-else:
+if mode == "Benchmark Evaluation":
+
     question = benchmark_question
+
+else:
+
+    question = st.chat_input(
+        "Ask an urban reasoning question"
+    )
 
 if selected_task == "Manual Question":
     if st.button("Use demo question"):
@@ -722,7 +754,10 @@ if question:
 
     st.markdown('<div class="section-title">Model Output</div>', unsafe_allow_html=True)
 
-    col1, col2, col3 = st.columns(3)
+    if mode == "Benchmark Evaluation":
+        col1, col2, col3 = st.columns(3)
+    else:
+        col1, col2 = st.columns(2)
 
     with col1:
         st.markdown(
@@ -735,7 +770,8 @@ if question:
             """,
             unsafe_allow_html=True,
         )
-
+        
+if mode == "Benchmark Evaluation":
     with col2:
         if benchmark_expected is not None:
             expected_label = str(benchmark_expected).strip().upper()
@@ -756,6 +792,7 @@ if question:
             unsafe_allow_html=True,
         )
 
+if mode == "Benchmark Evaluation":
     with col3:
         if match is None:
             eval_text = "N/A"
