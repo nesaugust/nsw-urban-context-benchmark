@@ -421,6 +421,9 @@ def parse_ai_label(text):
 
     text_upper = text.upper()
 
+    if "LABEL: N/A" in text_upper:
+        return "B"
+
     match = re.search(r"\bLABEL\s*[:\-]?\s*([ABC])\b", text_upper)
     if match:
         return match.group(1)
@@ -435,16 +438,53 @@ def parse_ai_label(text):
 
     return "B"
 
+def detect_question_type(question):
+    q = question.lower()
+
+    if any(x in q for x in ["scenario card", "generate scenario", "create scenario"]):
+        return "scenario_card"
+
+    if any(x in q for x in ["contrastive", "compare two", "similar traffic", "different causes"]):
+        return "contrastive_example"
+
+    if any(x in q for x in ["most sensitive", "sensitive to weather", "which region"]):
+        return "region_sensitivity"
+
+    if any(x in q for x in ["abnormal", "anomaly", "unusual", "most likely primary cause"]):
+        return "anomaly_classification"
+
+    return "activity_prediction"
 
 def build_ai_prompt(question, summary, selected_task):
+    question_type = detect_question_type(question)
+
     return f"""
-You are an urban context reasoning benchmark model.
+You are an urban context reasoning benchmark assistant.
 
-Classify the expected urban activity outcome using one label only:
+You can answer five types of urban reasoning tasks:
 
+1. Activity prediction:
+Predict whether traffic, pedestrian, or POI activity is significantly higher, lower/disrupted, or unchanged.
+
+2. Anomaly classification:
+Identify the most likely primary cause of abnormal urban activity using weather, events, calendar, incidents, transport, and POI/mobility signals.
+
+3. Region sensitivity:
+Estimate which region is more sensitive to weather changes using contextual evidence such as rain, heat, pedestrian activity, POI activity, incidents, and transport alerts.
+
+4. Scenario card generation:
+Generate reusable urban scenario cards such as "rainy Friday evening near a stadium event".
+
+5. Contrastive examples:
+Create paired examples where similar activity patterns have different causes.
+
+Label meanings:
 A = Significantly Higher Activity
 B = No Significant Change
 C = Lower Activity / Disruption Detected
+
+Detected question type:
+{question_type}
 
 Task:
 {selected_task}
@@ -455,17 +495,31 @@ Question:
 Retrieved context:
 {json.dumps(summary, indent=2)}
 
-Important rules:
-- If the question says no rain, no events, no incidents, no transport disruptions, and normal mobility, choose B.
-- If transport alerts, road incidents, severe weather, or disruption are present, choose C.
-- If major events or high POI activity strongly increase movement, choose A.
-- Do not invent missing data.
-- Explain briefly.
+Instructions:
+- Use the question and retrieved context only.
+- Do not invent exact numeric values if they are missing.
+- If the question asks for prediction/classification, return a label A/B/C.
+- If the question asks for scenario cards, generate a clear scenario card.
+- If the question asks for contrastive examples, generate two or more contrasting examples.
+- If the question asks for region sensitivity, compare regions qualitatively or using available signals.
+- Explain the reasoning clearly.
 
-Return this format exactly:
-LABEL: A/B/C
-REASON: short explanation
-KEY SIGNALS: short bullet-style list
+Return this format:
+
+QUESTION_TYPE: {question_type}
+
+LABEL: A/B/C or N/A
+
+ANSWER:
+short direct answer
+
+REASONING:
+brief explanation using weather, events, incidents, transport, calendar, pedestrian, and POI signals
+
+KEY SIGNALS:
+- signal 1
+- signal 2
+- signal 3
 """
 
 
@@ -662,6 +716,13 @@ with st.sidebar:
     st.write("A — Significantly Higher Activity")
     st.write("B — No Significant Change")
     st.write("C — Lower Activity / Disruption Detected")
+
+    with st.expander("Example questions"):
+        st.write("1. Predict whether traffic or POI activity changes significantly under heavy rain in Sydney CBD.")
+        st.write("2. Classify abnormal urban activity in Parramatta given rain, event, incident, and transport context.")
+        st.write("3. Which regions are most sensitive to weather changes?")
+        st.write("4. Generate a scenario card for a rainy Friday evening near a stadium event.")
+        st.write("5. Create contrastive examples where similar traffic patterns have different causes.")
 
 
 default_question = (
