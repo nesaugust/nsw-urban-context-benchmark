@@ -122,6 +122,22 @@ st.markdown(
         box-shadow: 0 1px 4px rgba(16, 42, 67, 0.05);
     }
 
+    /* Better demo button */
+    div[data-testid="stButton"] > button {
+        background-color: #ffffff !important;
+        color: #123c4a !important;
+        border: 1px solid #c9dede !important;
+        border-radius: 12px !important;
+        padding: 0.75rem 1rem !important;
+        font-weight: 600 !important;
+    }
+
+    div[data-testid="stButton"] > button:hover {
+        background-color: #e8f3f3 !important;
+        color: #123c4a !important;
+        border-color: #2a9d8f !important;
+    }
+
     .section-title {
         font-size: 23px;
         font-weight: 700;
@@ -1003,7 +1019,12 @@ else:
     if typed_question:
         question = typed_question
 
-    if st.button("Use demo question"):
+    demo_clicked = st.button(
+        "✨ Try demo question",
+        use_container_width=True
+    )
+
+    if demo_clicked:
         question = default_question
 
 
