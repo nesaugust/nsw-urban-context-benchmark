@@ -36,9 +36,66 @@ st.markdown(
         color: #102a43;
     }
 
+    /* Sidebar desktop */
     [data-testid="stSidebar"] {
         background-color: #e8f3f3;
         border-right: 1px solid #c9dede;
+        width: 330px !important;
+        min-width: 330px !important;
+        max-width: 330px !important;
+    }
+
+    /* Sidebar text fix */
+    [data-testid="stSidebar"] * {
+        color: #102a43 !important;
+    }
+
+    [data-testid="stSidebar"] label,
+    [data-testid="stSidebar"] p,
+    [data-testid="stSidebar"] span,
+    [data-testid="stSidebar"] h1,
+    [data-testid="stSidebar"] h2,
+    [data-testid="stSidebar"] h3 {
+        color: #102a43 !important;
+    }
+
+    /* Selectbox / radio readable */
+    [data-testid="stSidebar"] div[data-baseweb="select"] > div {
+        background-color: #ffffff !important;
+        color: #102a43 !important;
+        border: 1px solid #c9dede !important;
+    }
+
+    [data-testid="stSidebar"] div[role="radiogroup"] label span {
+        color: #102a43 !important;
+    }
+
+    /* Mobile sidebar fix */
+    @media (max-width: 768px) {
+        [data-testid="stSidebar"] {
+            width: 82vw !important;
+            min-width: 82vw !important;
+            max-width: 82vw !important;
+            background-color: #e8f3f3 !important;
+        }
+
+        [data-testid="stSidebar"] * {
+            color: #102a43 !important;
+            font-size: 15px !important;
+        }
+
+        .main-title {
+            font-size: 28px !important;
+        }
+
+        .subtitle {
+            font-size: 14px !important;
+        }
+
+        .block-container {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
     }
 
     .main-title {
@@ -73,53 +130,12 @@ st.markdown(
         margin-bottom: 12px;
     }
 
-    .info-card {
-        background: #ffffff;
-        border: 1px solid #d9e8e8;
-        border-radius: 14px;
-        padding: 18px;
-        box-shadow: 0 1px 5px rgba(16, 42, 67, 0.05);
-        min-height: 145px;
-    }
-
-    .label-small {
-        color: #6b7c85;
-        font-size: 13px;
-        margin-bottom: 4px;
-    }
-
-    .label-big {
-        font-size: 34px;
-        font-weight: 720;
-        color: #123c4a;
-    }
-
-    .status-correct {
-        color: #16825d;
-        font-weight: 700;
-    }
-
-    .status-mismatch {
-        color: #b42318;
-        font-weight: 700;
-    }
-
-    .status-na {
-        color: #6b7c85;
-        font-weight: 700;
-    }
-
     .driver-box {
         background: #ffffff;
         border: 1px solid #d9e8e8;
         border-radius: 12px;
         padding: 14px 18px;
         margin-bottom: 8px;
-    }
-
-    .note {
-        color: #60717a;
-        font-size: 14px;
     }
 
     div[data-testid="stMetric"] {
@@ -1117,34 +1133,7 @@ if question:
                     st.subheader(key.replace("_", " ").title())
                     st.write(value)
 
-    if isinstance(result, list):
-        st.dataframe(pd.DataFrame(result), use_container_width=True)
-
-    elif isinstance(result, dict):
-
-        for key, value in result.items():
-
-            if isinstance(value, (int, float)):
-                st.metric(
-                    key.replace("_", " ").title(),
-                    value
-                )
-
-            elif isinstance(value, (dict, list)):
-                st.subheader(
-                    key.replace("_", " ").title()
-                )
-                st.json(value)
-
-            else:
-                st.subheader(
-                    key.replace("_", " ").title()
-                )
-                st.write(value)
-
     
-        st.markdown('<div class="section-title">Task Reasoning</div>', unsafe_allow_html=True)
-
     if isinstance(result, dict):
         if "reasoning" in result:
             reasoning = result["reasoning"]
