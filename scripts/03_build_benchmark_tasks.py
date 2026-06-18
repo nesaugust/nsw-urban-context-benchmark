@@ -22,6 +22,7 @@ Output:
     data/benchmark/task4_scenario_cards/task4_scenario_cards.json
     data/benchmark/task5_contrastive_examples/task5_contrastive_pairs.json
     data/benchmark/task6_poi_mobility_reasoning/task6_qa_pairs.json
+    data/benchmark/task7_next_poi_prediction/task7_qa_pairs.json
     data/benchmark/benchmark_summary.json
 
 Usage:
@@ -53,8 +54,9 @@ T3 = BENCH_DIR / "task3_region_sensitivity"
 T4 = BENCH_DIR / "task4_scenario_cards"
 T5 = BENCH_DIR / "task5_contrastive_examples"
 T6 = BENCH_DIR / "task6_poi_mobility_reasoning"
+T7 = BENCH_DIR / "task7_next_poi_prediction"
 
-for folder in [T1, T2, T3, T4, T5, T6]:
+for folder in [T1, T2, T3, T4, T5, T6, T7]:
     folder.mkdir(parents=True, exist_ok=True)
 
 # ── Sample sizes ───────────────────────────────────────────────────────────────
@@ -64,6 +66,7 @@ N_TASK3 = 100
 N_TASK4 = 200
 N_TASK5 = 200
 N_TASK6 = 200
+N_TASK7 = 200
 
 # ── Thresholds ─────────────────────────────────────────────────────────────────
 RAIN_NONE = 0.1
@@ -235,6 +238,10 @@ def context_dict(row):
             "event_count": safe_int(row.get("event_count", 0)),
             "event_categories": str(row.get("event_categories", "") or ""),
             "description": event_description(row),
+            "has_major_event": safe_bool(row.get("has_major_event", False)),
+            "major_event_count": safe_int(row.get("major_event_count", 0)),
+            "major_event_names": str(row.get("major_event_names", "") or ""),
+            "major_event_types": str(row.get("major_event_types", "") or ""),
         },
         "incidents": {
             "crash_risk_count": safe_int(row.get("crash_risk_count", 0)),
@@ -249,6 +256,17 @@ def context_dict(row):
             "poi_category": str(row.get("poi_category", "") or ""),
             "mobility_level": str(row.get("mobility_level", "") or ""),
             "description": poi_description(row),
+        },
+        "static_poi": {
+        "total_poi_count": safe_int(row.get("total_poi_count", 0)),
+        "amenity": safe_int(row.get("amenity", 0)),
+        "leisure": safe_int(row.get("leisure", 0)),
+        "office": safe_int(row.get("office", 0)),
+        "other": safe_int(row.get("other", 0)),
+        "public_transport": safe_int(row.get("public_transport", 0)),
+        "railway": safe_int(row.get("railway", 0)),
+        "shop": safe_int(row.get("shop", 0)),
+        "tourism": safe_int(row.get("tourism", 0)),
         },
     }
 
@@ -268,8 +286,44 @@ def load_master():
     print("  Loading master context table...")
 
     df = pd.read_csv(path, low_memory=False)
-    df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
 
+    df.columns = [
+        c.strip().lower().replace(" ", "_")
+        for c in df.columns
+    ]
+
+    # Keep only the first copy of duplicated columns
+    df = df.loc[:, ~df.columns.duplicated()].copy()
+
+    print("Duplicate columns after cleanup:", df.columns[df.columns.duplicated()].tolist())
+    
+    # Clean weather column names with units
+    rename_map = {
+        "temperature_2m_(â°c)": "temperature_2m",
+        "temperature_2m_(Â°c)": "temperature_2m",
+        "apparent_temperature_(â°c)": "apparent_temperature",
+        "apparent_temperature_(Â°c)": "apparent_temperature",
+        "relative_humidity_2m_(%)": "relative_humidity_2m",
+        "weather_code_(wmo_code)": "weather_code",
+        "cloud_cover_(%)": "cloud_cover",
+        "cloud_cover_low_(%)": "cloud_cover_low",
+        "precipitation_(mm)": "precipitation",
+        "rain_(mm)": "rain",
+        "windspeed_10m_(km/h)": "wind_speed_kmh",
+        "windgusts_10m_(km/h)": "wind_gust_kmh",
+        "shortwave_radiation_(w/mâ²)": "shortwave_radiation",
+        "shortwave_radiation_(w/mÂ²)": "shortwave_radiation",
+        "sunshine_duration_(s)": "sunshine_duration",
+        "wet_bulb_temperature_2m_(â°c)": "wet_bulb_temperature_2m",
+        "wet_bulb_temperature_2m_(Â°c)": "wet_bulb_temperature_2m",
+        "boundary_layer_height_(m)": "boundary_layer_height",
+    }
+
+    df = df.rename(columns={k: v for k, v in rename_map.items() if k in df.columns})
+    
+    # Remove duplicate columns again after renaming
+    df = df.loc[:, ~df.columns.duplicated()].copy()
+    
     if "datetime" not in df.columns:
         raise ValueError("master_context_table.csv must contain a datetime column.")
 
@@ -337,6 +391,7 @@ def load_master():
         "incident_count",
         "alert_count",
         "event_count",
+        "major_event_count",
         "traffic_volume_mean",
         "traffic_volume_max",
         "pedestrian_count_sum",
@@ -346,12 +401,19 @@ def load_master():
 
     for col in numeric_cols:
         if col in df.columns:
-            df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
+            if isinstance(df[col], pd.DataFrame):
+                df[col] = df[col].iloc[:, 0]
+
+            df[col] = pd.to_numeric(
+                df[col],
+                errors="coerce"
+            ).fillna(0)
 
     bool_cols = [
         "is_public_holiday",
         "is_school_term",
         "has_nearby_event",
+        "has_major_event",
         "is_weekend",
         "is_peak_am",
         "is_peak_pm",
@@ -620,7 +682,10 @@ def _primary_cause(row):
 
     if safe_bool(row.get("has_nearby_event")) and safe_int(row.get("event_count", 0)) > 0:
         return "large_event"
-
+    
+    if safe_bool(row.get("has_major_event")) and safe_int(row.get("major_event_count", 0)) > 0:
+        return "major_event"
+    
     if safe_float(row.get("temperature_2m", 22), 22) >= HEAT_THRESHOLD:
         return "extreme_heat"
 
@@ -694,6 +759,7 @@ def build_task2(df):
         (df["rain"] > RAIN_MODERATE)
         | (df["is_public_holiday"] == True)
         | (df["has_nearby_event"] == True)
+        | (df["has_major_event"] == True)
         | (df["incident_count"] > 0)
         | (df["alert_count"] > 0)
         | (df["temperature_2m"] >= HEAT_THRESHOLD)
@@ -1251,7 +1317,7 @@ def _explain_poi(row, label):
 
 
 def build_task6(df):
-    log("TASK 6 — POI / mobility reasoning")
+    log("TASK 6 — POI Context Reasoning")
 
     pool = df[
         (df["poi_activity"] > 0)
@@ -1289,7 +1355,7 @@ def build_task6(df):
 
         qa.append({
             "id": make_id(6, i + 1),
-            "task": "poi_mobility_reasoning",
+            "task": "poi_context_reasoning",
             "question": question,
             "context": context_dict(row),
             "options": options,
@@ -1301,18 +1367,102 @@ def build_task6(df):
             "label": label,
         })
 
-    save_json(qa, T6 / "task6_qa_pairs.json", "Task 6 — POI Mobility Reasoning")
+    save_json(qa,T6 / "task6_qa_pairs.json","Task 6 — POI Context Reasoning")
     return qa
 
 
+
+def build_task7():
+    log("TASK 7 — Massive-STEPS Next POI Prediction")
+
+    path = CLEANED / "poi_llm_tasks_clean.csv"
+
+    if not path.exists():
+        print("  ! poi_llm_tasks_clean.csv not found — skipping Task 7")
+        save_json([], T7 / "task7_qa_pairs.json", "Task 7 — Next POI Prediction")
+        return []
+
+    df = pd.read_csv(path, low_memory=False)
+    df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
+
+    required = {"input_text", "target_poi_id"}
+    missing = required - set(df.columns)
+
+    if missing:
+        print(f"  ! Missing columns for Task 7: {missing}")
+        save_json([], T7 / "task7_qa_pairs.json", "Task 7 — Next POI Prediction")
+        return []
+
+    df = df.dropna(subset=["input_text", "target_poi_id"]).copy()
+
+    if df.empty:
+        save_json([], T7 / "task7_qa_pairs.json", "Task 7 — Next POI Prediction")
+        return []
+
+    sample = df.sample(min(N_TASK7, len(df)), random_state=42)
+
+    qa = []
+
+    for i, (_, row) in enumerate(tqdm(sample.iterrows(), total=len(sample), desc="  Task 7")):
+        target = safe_int(row.get("target_poi_id"))
+
+        # Build simple multiple choice options from other POI ids
+        other_ids = (
+            df["target_poi_id"]
+            .dropna()
+            .astype(int)
+            .loc[lambda x: x != target]
+            .sample(min(3, len(df) - 1), random_state=42 + i)
+            .tolist()
+        )
+
+        options_ids = [target] + other_ids
+        random.shuffle(options_ids)
+
+        options = [
+            f"{chr(65 + j)}. POI id {poi_id}"
+            for j, poi_id in enumerate(options_ids)
+        ]
+
+        correct = chr(65 + options_ids.index(target))
+
+        qa.append({
+            "id": make_id(7, i + 1),
+            "task": "next_poi_prediction",
+            "question": str(row["input_text"]),
+            "context": {
+                "user_id": row.get("user_id", ""),
+                "trail_id": row.get("trail_id", ""),
+                "previous_time": str(row.get("previous_time", "")),
+                "query_time": str(row.get("query_time", "")),
+                "previous_poi_id": safe_int(row.get("previous_poi_id", 0)),
+                "previous_poi_category": str(row.get("previous_poi_category", "") or ""),
+                "previous_suburb": str(row.get("previous_suburb", "") or ""),
+                "previous_hour": safe_int(row.get("previous_hour", 0)),
+                "query_hour": safe_int(row.get("query_hour", 0)),
+                "previous_day_of_week": str(row.get("previous_day_of_week", "") or ""),
+                "query_day_of_week": str(row.get("query_day_of_week", "") or ""),
+            },
+            "options": options,
+            "answer": correct,
+            "target_poi_id": target,
+            "explanation": (
+                "The answer is derived from the Massive-STEPS target trajectory label. "
+                "This task evaluates whether a model can infer the next POI from trajectory text."
+            ),
+            "difficulty": "hard",
+        })
+
+    save_json(qa, T7 / "task7_qa_pairs.json", "Task 7 — Next POI Prediction")
+    return qa
 # ══════════════════════════════════════════════════════════════════════════════
 # Summary
 # ══════════════════════════════════════════════════════════════════════════════
 
-def build_summary(t1, t2, t3, t4, t5, t6, df):
+def build_summary(t1, t2, t3, t4, t5, t6, t7, df):
     log("BENCHMARK SUMMARY")
 
-    scored = t1 + t2 + t3 + t6
+    scored = t1 + t2 + t3 + t6 + t7
 
     summary = {
         "benchmark_name": "NSW Urban Context Benchmark (Topic 3)",
@@ -1356,17 +1506,22 @@ def build_summary(t1, t2, t3, t4, t5, t6, df):
                 "format": "open-ended reasoning pair",
                 "metric": "contrastive reasoning accuracy",
             },
-            "task6_poi_mobility_reasoning": {
+            "task6_poi_context_reasoning": {
                 "n_examples": len(t6),
                 "format": "4-option MCQ",
                 "metric": "accuracy",
             },
+            "task7_next_poi_prediction": {
+                "n_examples": len(t7),
+                "format": "4-option MCQ",
+                "metric": "accuracy",
+            },
         },
-        "total_items": len(t1) + len(t2) + len(t3) + len(t4) + len(t5) + len(t6),
+        "total_items": len(t1) + len(t2) + len(t3) + len(t4) + len(t5) + len(t6) + len(t7),
         "difficulty_distribution": {
             "easy": sum(1 for x in scored if x.get("difficulty") == "easy"),
             "medium": sum(1 for x in scored if x.get("difficulty") == "medium"),
-            "hard": sum(1 for x in (scored + t5) if x.get("difficulty") == "hard"),
+            "hard": sum(1 for x in (scored + t5 ) if x.get("difficulty") == "hard"),
         },
         "context_signals_used": [
             "weather",
@@ -1378,7 +1533,7 @@ def build_summary(t1, t2, t3, t4, t5, t6, df):
             "public transport alerts",
             "pedestrian counts",
             "traffic activity",
-            "POI/mobility activity patterns",
+            "POI context reasoning",
         ],
         "data_sources": [
             "Open-Meteo",
@@ -1422,8 +1577,9 @@ def main():
     t4 = build_task4(df)
     t5 = build_task5(df)
     t6 = build_task6(df)
+    t7 = build_task7()
 
-    build_summary(t1, t2, t3, t4, t5, t6, df)
+    build_summary(t1, t2, t3, t4, t5, t6, t7, df)
 
     print(f"\n{'=' * 62}\n  ALL BENCHMARK FILES SAVED\n{'=' * 62}")
 

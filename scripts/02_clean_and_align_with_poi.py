@@ -531,6 +531,74 @@ def clean_events():
     return save(agg, "events_clean.csv")
 
 
+def clean_major_events():
+    log("4b/10 EVENTS — Curated Major NSW Events")
+
+    src = RAW / "02_events" / "major_events" / "nsw_major_events_2018_2026.csv"
+
+    if not src.exists():
+        print("  ! No major events file found — skipping")
+        return pd.DataFrame()
+
+    df = pd.read_csv(src)
+    df = normalise_columns(df)
+
+    required = {"event_name", "start_date", "end_date", "location", "event_type"}
+    missing = required - set(df.columns)
+
+    if missing:
+        print(f"  ! Missing columns in major events file: {missing}")
+        return pd.DataFrame()
+
+    df["start_date"] = pd.to_datetime(df["start_date"], errors="coerce")
+    df["end_date"] = pd.to_datetime(df["end_date"], errors="coerce")
+    df = df.dropna(subset=["start_date", "end_date"])
+
+    rows = []
+
+    for _, r in df.iterrows():
+        location = str(r["location"])
+
+        if location == "NSW":
+            affected_locations = REGIONS_DF["location"].tolist()
+        elif location == "Sydney":
+            affected_locations = ["Sydney CBD"]
+        else:
+            affected_locations = [location]
+
+        for loc in affected_locations:
+            for d in pd.date_range(r["start_date"].date(), r["end_date"].date(), freq="D"):
+                for h in range(24):
+                    rows.append(
+                        {
+                            "datetime": pd.Timestamp(d) + pd.Timedelta(hours=h),
+                            "location": loc,
+                            "major_event_count": 1,
+                            "major_event_name": r["event_name"],
+                            "major_event_type": r["event_type"],
+                            "major_event_source": r.get("source", "manual_seed"),
+                            "has_major_event": True,
+                        }
+                    )
+
+    if not rows:
+        return pd.DataFrame()
+
+    out = pd.DataFrame(rows)
+
+    agg = (
+        out.groupby(["datetime", "location"])
+        .agg(
+            major_event_count=("major_event_count", "sum"),
+            major_event_names=("major_event_name", lambda x: "|".join(sorted(set(x.dropna().astype(str))))),
+            major_event_types=("major_event_type", lambda x: "|".join(sorted(set(x.dropna().astype(str))))),
+            has_major_event=("has_major_event", "max"),
+        )
+        .reset_index()
+    )
+
+    return save(agg, "major_events_clean.csv")
+
 # ══════════════════════════════════════════════════════════════════════════════
 # 5. ROAD CRASHES
 # ══════════════════════════════════════════════════════════════════════════════
@@ -956,7 +1024,8 @@ def clean_traffic():
     log("8/10 TRAFFIC — NSW Hourly Traffic Counts")
 
     folder = RAW / "05_traffic" / "nsw_traffic_hf"
-    files = find_files(folder, "*.csv")
+    files = [folder / "Traffic_X.csv"]
+    files = [f for f in files if f.exists()]
 
     if not files:
         print("  ! No traffic count files found — skipping")
@@ -1292,6 +1361,166 @@ def clean_poi_mobility():
     return save(agg, "poi_mobility_clean.csv")
 
 
+def clean_osm_poi_static():
+    log("10b/10 POI — OSM Static Regional Features")
+
+    src = RAW / "07_poi_mobility" / "osm_poi" / "nsw_osm_poi_region_features.csv"
+
+    if not src.exists():
+        print("  ! No OSM POI region features found — skipping")
+        return pd.DataFrame()
+
+    df = pd.read_csv(src)
+    df = normalise_columns(df)
+
+    if "location" not in df.columns:
+        print("  ! No location column in OSM POI file")
+        return pd.DataFrame()
+
+    for col in df.columns:
+        if col != "location":
+            df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
+
+    return save(df, "osm_poi_static_clean.csv")
+
+def clean_massive_steps_llm_tasks():
+    log("10c/10 POI — Massive-STEPS LLM Trajectory Tasks")
+
+    folder = RAW / "07_poi_mobility" / "massive_steps"
+    files = find_files(folder, "*.csv")
+
+    if not files:
+        print("  ! No Massive-STEPS LLM files found — skipping")
+        return pd.DataFrame()
+
+    import re
+
+    frames = []
+
+    for f in files:
+        try:
+            df = pd.read_csv(f)
+            df = normalise_columns(df)
+            df["source_file"] = f.name
+            frames.append(df)
+            print(f"  Loaded {f.name} ({len(df):,} rows)")
+        except Exception as e:
+            print(f"  ! Failed to load {f.name}: {e}")
+
+    if not frames:
+        return pd.DataFrame()
+
+    df = pd.concat(frames, ignore_index=True)
+
+    # Expected columns: user_id, trail_id, inputs, targets
+    required = {"user_id", "trail_id", "inputs", "targets"}
+    missing = required - set(df.columns)
+
+    if missing:
+        print(f"  ! Missing columns: {missing}")
+        return pd.DataFrame()
+
+    input_pattern = re.compile(
+        r"At\s+([\d\-]+\s+[\d:]+),\s+user\s+(\d+)\s+visited\s+POI id\s+(\d+)\s+which is a\s+([^,]+),\s+at\s+([^,]+),\s+AU",
+        re.IGNORECASE,
+    )
+
+    query_pattern = re.compile(
+        r"Given the data,\s+At\s+([\d\-]+\s+[\d:]+),\s+Which POI id will user\s+(\d+)\s+visit",
+        re.IGNORECASE,
+    )
+
+    target_pattern = re.compile(
+        r"At\s+([\d\-]+\s+[\d:]+),\s+user\s+(\d+)\s+will visit POI id\s+(\d+)",
+        re.IGNORECASE,
+    )
+
+    rows = []
+
+    for _, r in df.iterrows():
+        input_text = str(r["inputs"])
+        target_text = str(r["targets"])
+
+        input_match = input_pattern.search(input_text)
+        query_match = query_pattern.search(input_text)
+        target_match = target_pattern.search(target_text)
+
+        previous_time = None
+        previous_user_id = None
+        previous_poi_id = None
+        previous_poi_category = None
+        previous_suburb = None
+
+        if input_match:
+            previous_time = input_match.group(1)
+            previous_user_id = input_match.group(2)
+            previous_poi_id = input_match.group(3)
+            previous_poi_category = input_match.group(4)
+            previous_suburb = input_match.group(5)
+
+        query_time = None
+        query_user_id = None
+
+        if query_match:
+            query_time = query_match.group(1)
+            query_user_id = query_match.group(2)
+
+        target_time = None
+        target_user_id = None
+        target_poi_id = None
+
+        if target_match:
+            target_time = target_match.group(1)
+            target_user_id = target_match.group(2)
+            target_poi_id = target_match.group(3)
+
+        rows.append(
+            {
+                "user_id": r.get("user_id"),
+                "trail_id": r.get("trail_id"),
+                "source_file": r.get("source_file"),
+                "input_text": input_text,
+                "target_text": target_text,
+                "previous_time": previous_time,
+                "query_time": query_time,
+                "target_time": target_time,
+                "previous_poi_id": previous_poi_id,
+                "previous_poi_category": previous_poi_category,
+                "previous_suburb": previous_suburb,
+                "target_poi_id": target_poi_id,
+                "task_type": "poi_next_location_prediction",
+            }
+        )
+
+    out = pd.DataFrame(rows)
+
+    out["previous_time"] = pd.to_datetime(out["previous_time"], errors="coerce")
+    out["query_time"] = pd.to_datetime(out["query_time"], errors="coerce")
+    out["target_time"] = pd.to_datetime(out["target_time"], errors="coerce")
+
+    out["previous_hour"] = out["previous_time"].dt.hour
+    out["query_hour"] = out["query_time"].dt.hour
+    out["previous_day_of_week"] = out["previous_time"].dt.day_name()
+    out["query_day_of_week"] = out["query_time"].dt.day_name()
+
+    out["previous_poi_id"] = pd.to_numeric(out["previous_poi_id"], errors="coerce")
+    out["target_poi_id"] = pd.to_numeric(out["target_poi_id"], errors="coerce")
+
+    return save(out, "poi_llm_tasks_clean.csv")
+
+# Join all tables to master grid
+def build_base_region_time_grid(start="2022-01-01", end="2026-12-31", freq="h"):
+    dates = pd.date_range(start=start, end=end + " 23:00:00", freq=freq)
+
+    grid = (
+        REGIONS_DF.assign(key=1)
+        .merge(pd.DataFrame({"datetime": dates, "key": 1}), on="key")
+        .drop(columns="key")
+    )
+
+    grid["datetime"] = pd.to_datetime(grid["datetime"]).dt.floor("h")
+    return grid
+
 # ══════════════════════════════════════════════════════════════════════════════
 # MASTER JOIN TABLE
 # ══════════════════════════════════════════════════════════════════════════════
@@ -1318,18 +1547,33 @@ def build_master_table():
     holidays = load("holidays_clean.csv")
     school = load("school_terms_clean.csv")
     events = load("events_clean.csv")
+    major_events = load("major_events_clean.csv")
     crashes = load("road_crashes_clean.csv")
     hazards = load("traffic_hazards_clean.csv")
     alerts = load("transport_alerts_clean.csv")
     traffic = load("traffic_counts_clean.csv")
     pedestrian = load("pedestrian_clean.csv")
     poi = load("poi_mobility_clean.csv")
+    osm_poi = load("osm_poi_static_clean.csv")
+    master = build_base_region_time_grid(
+        start="2022-01-01",
+        end="2026-12-31",
+        freq="h"
+    )
 
-    if weather is None or weather.empty:
-        print("\n  ✗ Weather data is required for master table — aborting")
-        return pd.DataFrame()
+    print(f"  Created full region-hour grid: {len(master):,} rows")
 
-    master = weather.copy()
+    if weather is not None and not weather.empty:
+        weather_cols = [c for c in weather.columns if c not in ["latitude", "longitude"]]
+        weather_slim = weather[weather_cols].copy()
+
+        master = master.merge(
+            weather_slim,
+            on=["datetime", "location"],
+            how="left"
+        )
+    else:
+        print("  ! No weather data found — weather columns will be blank")
 
     # Holidays
     if holidays is not None and not holidays.empty:
@@ -1363,6 +1607,42 @@ def build_master_table():
         master["has_nearby_event"] = False
         master["event_count"] = 0
         master["event_categories"] = ""
+
+    # Curated major events
+    if major_events is not None and not major_events.empty and "location" in major_events.columns:
+        me_cols = [
+            c for c in [
+                "datetime",
+                "location",
+                "major_event_count",
+                "major_event_names",
+                "major_event_types",
+                "has_major_event",
+            ]
+            if c in major_events.columns
+        ]
+
+        me_slim = major_events[me_cols].copy()
+
+        master = master.merge(
+            me_slim,
+            on=["datetime", "location"],
+            how="left"
+        )
+
+        master["major_event_count"] = master["major_event_count"].fillna(0).astype(int)
+        master["has_major_event"] = master["has_major_event"].fillna(False)
+
+        if "major_event_names" in master.columns:
+            master["major_event_names"] = master["major_event_names"].fillna("")
+
+        if "major_event_types" in master.columns:
+            master["major_event_types"] = master["major_event_types"].fillna("")
+    else:
+        master["major_event_count"] = 0
+        master["has_major_event"] = False
+        master["major_event_names"] = ""
+        master["major_event_types"] = ""
 
     # Calendar keys for crash profile and traffic slot join
     master["month"] = pd.to_datetime(master["datetime"]).dt.month
@@ -1483,6 +1763,29 @@ def build_master_table():
         master["poi_category"] = ""
         master["mobility_level"] = "normal"
 
+    # OSM static POI join
+    if (
+        osm_poi is not None
+        and not osm_poi.empty
+        and "location" in osm_poi.columns
+    ):
+        osm_poi_slim = osm_poi.drop_duplicates("location")
+
+        master = master.merge(
+            osm_poi_slim,
+            on="location",
+            how="left"
+        )
+
+        if "total_poi_count" in master.columns:
+            master["total_poi_count"] = (
+                master["total_poi_count"]
+                .fillna(0)
+            )
+    else:
+        master["total_poi_count"] = 0
+
+
     # Derived flags
     master["is_weekend"] = pd.to_datetime(master["datetime"]).dt.dayofweek >= 5
     master["is_peak_am"] = pd.to_datetime(master["datetime"]).dt.hour.between(7, 9)
@@ -1515,6 +1818,8 @@ def build_master_table():
             parts.append("school_term")
         if row.get("has_nearby_event"):
             parts.append("event_nearby")
+        if row.get("has_major_event"):
+            parts.append("major_event")
         if row.get("incident_count", 0) > 0:
             parts.append("road_incident")
         if row.get("alert_count", 0) > 0:
@@ -1530,7 +1835,11 @@ def build_master_table():
     master["context_label"] = master.apply(context_label, axis=1)
 
     master = master.sort_values(["location", "datetime"]).reset_index(drop=True)
-
+    
+    master = master.drop_duplicates(
+        subset=["location", "datetime"],
+        keep="first"
+    )
     save(master, "master_context_table.csv")
 
     print("\n  Context label distribution (top 20):")
@@ -1572,15 +1881,19 @@ def main():
     clean_holidays()
     clean_school_terms()
     clean_events()
+    clean_major_events()
     clean_road_crashes()
     clean_traffic_hazards()
     clean_transport_alerts()
     clean_traffic()
     clean_pedestrian()
     clean_poi_mobility()
+    clean_osm_poi_static()
+    clean_massive_steps_llm_tasks()
 
-    build_master_table()
+    build_master_table() 
     print_summary()
+    
 
 
 if __name__ == "__main__":

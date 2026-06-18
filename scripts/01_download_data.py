@@ -6,9 +6,9 @@ Downloads the raw data folders for Topic 3 in a consistent structure.
 What this script captures
 -------------------------
 1) Weather
-   - Open-Meteo ERA5 hourly      : 1940-01-01 -> yesterday, 24 regions
-   - NASA POWER daily            : 1981-01-01 -> yesterday, 24 regions
-   - BoM/Meteostat hourly        : 2000-01-01 -> yesterday, 24 regions
+   - Open-Meteo ERA5 hourly      : 2022-01-01 -> yesterday, 24 regions
+   - NASA POWER daily            : 2022-01-01 -> yesterday, 24 regions
+   - BoM/Meteostat hourly        : 2022-01-01 -> yesterday, 24 regions
 
 2) Calendar / events
    - NSW public holidays         : 2021 -> 2025 from data.gov.au
@@ -101,9 +101,9 @@ TODAY = date.today()
 YESTERDAY = TODAY - timedelta(days=1)
 YESTERDAY_STR = YESTERDAY.strftime("%Y-%m-%d")
 
-OPENMETEO_START = "1940-01-01"
-NASA_START = "1981-01-01"
-BOM_START = "2000-01-01"
+OPENMETEO_START = "2022-01-01"
+NASA_START = "2022-01-01"
+BOM_START = "2022-01-01"
 
 TICKETMASTER_KEY = os.getenv("TICKETMASTER_API_KEY", "").strip()
 TFNSW_KEY = os.getenv("TFNSW_API_KEY", "").strip()
@@ -304,7 +304,7 @@ def download_weather_openmeteo() -> None:
         hourly = ",".join(vars_list)
         print(f"  [{idx:02d}/24] {name:<18}")
 
-        for start_date, end_date in year_chunks(1940, YESTERDAY.year, chunk_years=5):
+        for start_date, end_date in year_chunks(2022, YESTERDAY.year, chunk_years=1):
             part_path = out / "parts" / f"{name}_{start_date[:4]}_{end_date[:4]}.csv"
             mkdir(part_path.parent)
             if valid_file(part_path, min_kb=20):
@@ -343,10 +343,28 @@ def download_weather_openmeteo() -> None:
             print(f"      ✗ no data saved for {name}")
 
     if merged_files:
-        frames = [pd.read_csv(p) for p in merged_files]
-        merged = pd.concat(frames, ignore_index=True)
-        merged.to_csv(out / "nsw_all_regions_weather.csv", index=False)
-        print(f"  ✓ merged Open-Meteo: {len(merged):,} rows")
+        frames = []
+
+        for p in merged_files:
+            try:
+                df = csv_with_location_from_openmeteo(
+                    p.read_text(encoding="utf-8", errors="ignore"),
+                    p.stem.split("_weather_")[0],
+                    np.nan,
+                    np.nan,
+                )
+                frames.append(df)
+            except Exception:
+                try:
+                    df = pd.read_csv(p, skiprows=3)
+                    frames.append(df)
+                except Exception as e:
+                    print(f"  ! Could not merge {p.name}: {e}")
+
+        if frames:
+            merged = pd.concat(frames, ignore_index=True)
+            merged.to_csv(out / "nsw_all_regions_weather.csv", index=False)
+            print(f"  ✓ merged Open-Meteo: {len(merged):,} rows")
 
 
 def download_weather_nasa() -> None:

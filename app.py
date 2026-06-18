@@ -8,12 +8,26 @@ from groq import Groq
 DATA_PATH = "data/cleaned/master_context_table_sample.csv"
 
 BENCHMARK_PATHS = {
-    "Task 1 - Traffic Prediction": "data/benchmark/task1_traffic_prediction/task1_qa_pairs.csv",
-    "Task 2 - Anomaly Classification": "data/benchmark/task2_anomaly_classification/task2_qa_pairs.csv",
-    "Task 3 - Region Sensitivity": "data/benchmark/task3_region_sensitivity/task3_qa_pairs.csv",
-    "Task 4 - Scenario Cards": "data/benchmark/task4_scenario_cards/task4_scenario_cards.csv",
-    "Task 5 - Contrastive Examples": "data/benchmark/task5_contrastive_examples/task5_contrastive_pairs.csv",
-    "Task 6 - POI Mobility Reasoning": "data/benchmark/task6_poi_mobility_reasoning/task6_qa_pairs.csv",
+    "Task 1 - Traffic Prediction":
+        "data/benchmark/task1_traffic_prediction/task1_qa_pairs.csv",
+
+    "Task 2 - Anomaly Classification":
+        "data/benchmark/task2_anomaly_classification/task2_qa_pairs.csv",
+
+    "Task 3 - Region Sensitivity":
+        "data/benchmark/task3_region_sensitivity/task3_qa_pairs.csv",
+
+    "Task 4 - Scenario Cards":
+        "data/benchmark/task4_scenario_cards/task4_scenario_cards.csv",
+
+    "Task 5 - Contrastive Examples":
+        "data/benchmark/task5_contrastive_examples/task5_contrastive_pairs.csv",
+
+    "Task 6 - POI Mobility Reasoning":
+        "data/benchmark/task6_poi_mobility_reasoning/task6_qa_pairs.csv",
+
+    "Task 7 - Next POI Prediction":
+        "data/benchmark/task7_next_poi_prediction/task7_qa_pairs.csv",
 }
 
 LABEL_MEANINGS = {
@@ -526,7 +540,16 @@ def detect_question_type(question):
         "destination-based movement"
     ]):
         return "poi_reasoning"
-
+    if any(x in q for x in [
+        "next poi",
+        "next location",
+        "next destination",
+        "trajectory",
+        "previous poi",
+        "where will the user go next",
+        "target_poi_id"
+    ]):
+        return "next_poi_prediction"
     return "activity_prediction"
 
 def task1_activity_prediction(summary):
@@ -676,6 +699,34 @@ def task6_poi_reasoning(summary):
         f"POI activity of {poi} suggests {mobility.lower()} destination-based movement."
     }
 
+def task7_next_poi(question, summary):
+
+    previous_poi = "Unknown"
+
+    match = re.search(
+        r"previous[_ ]poi[_ ]id[: ]+(\d+)",
+        question.lower()
+    )
+
+    if match:
+        previous_poi = match.group(1)
+
+    return {
+        "task": "Next POI Prediction",
+
+        "prediction":
+            "Most likely next destination inferred from historical trajectory context.",
+
+        "previous_poi": previous_poi,
+
+        "reasoning": (
+            "This task evaluates trajectory reasoning. "
+            "The model uses previous POI visits, time context, "
+            "day-of-week patterns, and movement history to predict "
+            "the next POI."
+        )
+    }
+
 def run_reasoning_task(question, summary, df):
 
     qtype = detect_question_type(question)
@@ -695,8 +746,14 @@ def run_reasoning_task(question, summary, df):
     elif qtype == "contrastive_example":
         return task5_contrastive()
 
-    else:
+    elif qtype == "poi_reasoning":
         return task6_poi_reasoning(summary)
+
+    elif qtype == "next_poi_prediction":
+        return task7_next_poi(question, summary)
+
+    else:
+        return task1_activity_prediction(summary)
 
 def run_single_model(model_name, question, summary, df, selected_task):
 
@@ -754,7 +811,7 @@ def build_ai_prompt(question, summary, selected_task):
     return f"""
 You are an urban context reasoning benchmark assistant.
 
-You can answer five types of urban reasoning tasks:
+You can answer seven types of urban reasoning tasks:
 
 1. Activity prediction:
 Predict whether traffic, pedestrian, or POI activity is significantly higher, lower/disrupted, or unchanged.
@@ -770,6 +827,12 @@ Generate reusable urban scenario cards such as "rainy Friday evening near a stad
 
 5. Contrastive examples:
 Create paired examples where similar activity patterns have different causes.
+
+6. POI mobility reasoning:
+Explain POI activity and mobility signals.
+
+7. Next POI prediction:
+Predict the most likely next POI destination based on trajectory history, previous POI visits, time context, and mobility behaviour.
 
 Label meanings:
 A = Significantly Higher Activity
@@ -1014,7 +1077,8 @@ with st.sidebar:
         st.write("3. Which regions are most sensitive to weather changes?")
         st.write("4. Generate a scenario card for a rainy Friday evening near a stadium event.")
         st.write("5. Create contrastive examples where similar traffic patterns have different causes.")
-
+        st.write("6. Given a user's previous trajectory, predict the next POI destination.")
+        st.write("7. Explain the mobility patterns at a specific POI under different weather conditions.")
 
 default_question = (
     "It is Wednesday at 10:00 in Penrith. Current conditions: no rain, cold (0°C). "

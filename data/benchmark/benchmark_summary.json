@@ -1,12 +1,12 @@
 {
   "benchmark_name": "NSW Urban Context Benchmark (Topic 3)",
   "version": "1.1",
-  "created": "2026-06-15T02:38:28.002532",
+  "created": "2026-06-18T14:04:47.601447",
   "description": "Context-aware urban reasoning benchmark using weather, events, holidays, school terms, road incidents, transport disruptions, pedestrian, traffic, and POI/mobility context.",
   "data_coverage": {
-    "regions": 17,
-    "date_range": "2022-01-01 to 2026-06-07",
-    "total_rows": 660552,
+    "regions": 24,
+    "date_range": "2022-01-01 to 2026-12-31",
+    "total_rows": 1051776,
     "has_poi_mobility": false,
     "has_traffic": false,
     "has_pedestrian": true
@@ -28,26 +28,31 @@
       "metric": "accuracy"
     },
     "task4_scenario_cards": {
-      "n_examples": 40,
+      "n_examples": 80,
       "format": "JSON scenario card",
       "metric": "coverage and diversity"
     },
     "task5_contrastive_examples": {
-      "n_examples": 87,
+      "n_examples": 200,
       "format": "open-ended reasoning pair",
       "metric": "contrastive reasoning accuracy"
     },
-    "task6_poi_mobility_reasoning": {
+    "task6_poi_context_reasoning": {
+      "n_examples": 200,
+      "format": "4-option MCQ",
+      "metric": "accuracy"
+    },
+    "task7_next_poi_prediction": {
       "n_examples": 200,
       "format": "4-option MCQ",
       "metric": "accuracy"
     }
   },
-  "total_items": 1027,
+  "total_items": 1380,
   "difficulty_distribution": {
-    "easy": 800,
-    "medium": 42,
-    "hard": 145
+    "easy": 796,
+    "medium": 54,
+    "hard": 450
   },
   "context_signals_used": [
     "weather",
@@ -59,7 +64,7 @@
     "public transport alerts",
     "pedestrian counts",
     "traffic activity",
-    "POI/mobility activity patterns"
+    "POI context reasoning"
   ],
   "data_sources": [
     "Open-Meteo",
