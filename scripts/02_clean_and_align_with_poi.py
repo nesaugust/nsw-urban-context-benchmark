@@ -1364,24 +1364,151 @@ def clean_poi_mobility():
 def clean_osm_poi_static():
     log("10b/10 POI — OSM Static Regional Features")
 
-    src = RAW / "07_poi_mobility" / "osm_poi" / "nsw_osm_poi_region_features.csv"
+    raw_path = RAW / "07_poi_mobility" / "osm_poi" / "nsw_osm_poi_raw.csv"
+    feature_path = RAW / "07_poi_mobility" / "osm_poi" / "nsw_osm_poi_region_features.csv"
 
-    if not src.exists():
-        print("  ! No OSM POI region features found — skipping")
+    frames = []
+
+    if raw_path.exists():
+        raw = pd.read_csv(raw_path, low_memory=False)
+        raw = normalise_columns(raw)
+
+        if "location" not in raw.columns:
+            print("  ! No location column in raw OSM POI file")
+        else:
+            category_cols = [
+                c for c in [
+                    "amenity", "shop", "tourism", "leisure",
+                    "office", "public_transport", "railway"
+                ]
+                if c in raw.columns
+            ]
+
+            raw["poi_main_category"] = "other"
+
+            for c in category_cols:
+                raw.loc[raw[c].notna(), "poi_main_category"] = c
+
+            raw_agg = (
+                raw.groupby("location")
+                .agg(
+                    total_poi_count=("location", "count"),
+                    amenity=("poi_main_category", lambda x: (x == "amenity").sum()),
+                    shop=("poi_main_category", lambda x: (x == "shop").sum()),
+                    tourism=("poi_main_category", lambda x: (x == "tourism").sum()),
+                    leisure=("poi_main_category", lambda x: (x == "leisure").sum()),
+                    office=("poi_main_category", lambda x: (x == "office").sum()),
+                    public_transport=("poi_main_category", lambda x: (x == "public_transport").sum()),
+                    railway=("poi_main_category", lambda x: (x == "railway").sum()),
+                    other=("poi_main_category", lambda x: (x == "other").sum()),
+                )
+                .reset_index()
+            )
+
+            frames.append(raw_agg)
+
+    if feature_path.exists():
+        feat = pd.read_csv(feature_path, low_memory=False)
+        feat = normalise_columns(feat)
+
+        if "location" in feat.columns:
+            for col in feat.columns:
+                if col != "location":
+                    feat[col] = pd.to_numeric(feat[col], errors="coerce").fillna(0)
+
+            frames.append(feat)
+        else:
+            print("  ! No location column in OSM region features file")
+
+    if not frames:
+        print("  ! No OSM POI files found — skipping")
         return pd.DataFrame()
 
-    df = pd.read_csv(src)
-    df = normalise_columns(df)
+    out = frames[0]
 
-    if "location" not in df.columns:
-        print("  ! No location column in OSM POI file")
-        return pd.DataFrame()
+    for f in frames[1:]:
+        out = out.merge(f, on="location", how="outer", suffixes=("", "_region"))
 
-    for col in df.columns:
-        if col != "location":
-            df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
+    for col in list(out.columns):
+        if col.endswith("_region"):
+            base = col.replace("_region", "")
+            if base in out.columns:
+                out[base] = out[base].fillna(0) + out[col].fillna(0)
+                out.drop(columns=[col], inplace=True)
+            else:
+                out.rename(columns={col: base}, inplace=True)
 
-    return save(df, "osm_poi_static_clean.csv")
+    out["location"] = (
+        out["location"]
+        .astype(str)
+        .str.strip()
+        .str.replace("_", " ", regex=False)
+        .str.title()
+    )
+
+    poi_count_cols = [
+        "amenity",
+        "shop",
+        "tourism",
+        "leisure",
+        "office",
+        "public_transport",
+        "railway",
+        "other",
+    ]
+
+    for col in poi_count_cols:
+        if col not in out.columns:
+            out[col] = 0
+
+    for col in poi_count_cols:
+        out[col] = pd.to_numeric(out[col], errors="coerce").fillna(0)
+
+    if "total_poi_count" not in out.columns:
+        out["total_poi_count"] = out[poi_count_cols].sum(axis=1)
+    else:
+        out["total_poi_count"] = pd.to_numeric(out["total_poi_count"], errors="coerce").fillna(0)
+
+    max_poi = out["total_poi_count"].max()
+
+    if max_poi > 0:
+        out["poi_activity"] = out["total_poi_count"] / max_poi
+    else:
+        out["poi_activity"] = 0
+
+    out["mobility_level"] = pd.cut(
+        out["poi_activity"],
+        bins=[-0.01, 0.33, 0.66, 1.01],
+        labels=["low", "normal", "high"],
+    ).astype(str)
+
+    def dominant_poi_category(row):
+        counts = row[poi_count_cols]
+        if counts.sum() == 0:
+            return ""
+        return counts.idxmax()
+
+    out["poi_category"] = out.apply(dominant_poi_category, axis=1)
+
+    keep_cols = [
+        "location",
+        "total_poi_count",
+        "amenity",
+        "shop",
+        "tourism",
+        "leisure",
+        "office",
+        "public_transport",
+        "railway",
+        "other",
+        "poi_activity",
+        "mobility_level",
+        "poi_category",
+    ]
+
+    out = out[[c for c in keep_cols if c in out.columns]].copy()
+
+    return save(out, "osm_poi_static_clean.csv")
 
 def clean_massive_steps_llm_tasks():
     log("10c/10 POI — Massive-STEPS LLM Trajectory Tasks")
@@ -1763,33 +1890,89 @@ def build_master_table():
         master["poi_category"] = ""
         master["mobility_level"] = "normal"
 
-    # OSM static POI join
+        # OSM static POI join
     if (
         osm_poi is not None
         and not osm_poi.empty
         and "location" in osm_poi.columns
     ):
+        osm_poi["location"] = (
+            osm_poi["location"]
+            .astype(str)
+            .str.strip()
+            .str.replace("_", " ", regex=False)
+            .str.title()
+        )
+
+        master["location"] = (
+            master["location"]
+            .astype(str)
+            .str.strip()
+            .str.replace("_", " ", regex=False)
+            .str.title()
+        )
+
         osm_poi_slim = osm_poi.drop_duplicates("location")
 
         master = master.merge(
             osm_poi_slim,
             on="location",
-            how="left"
+            how="left",
+            suffixes=("", "_osm")
         )
 
-        if "total_poi_count" in master.columns:
-            master["total_poi_count"] = (
-                master["total_poi_count"]
-                .fillna(0)
+        poi_static_cols = [
+            "total_poi_count",
+            "amenity",
+            "shop",
+            "tourism",
+            "leisure",
+            "office",
+            "public_transport",
+            "railway",
+            "other",
+        ]
+
+        for col in poi_static_cols:
+            if col in master.columns:
+                master[col] = pd.to_numeric(master[col], errors="coerce").fillna(0)
+            else:
+                master[col] = 0
+
+        if "poi_activity_osm" in master.columns:
+            master["poi_activity"] = np.where(
+                master["poi_activity"].fillna(0) > 0,
+                master["poi_activity"],
+                master["poi_activity_osm"].fillna(0)
             )
+
+        if "mobility_level_osm" in master.columns:
+            master["mobility_level"] = np.where(
+                master["mobility_level"].fillna("").astype(str).str.lower().isin(["", "normal", "nan"]),
+                master["mobility_level_osm"].fillna("normal"),
+                master["mobility_level"]
+            )
+
+        if "poi_category_osm" in master.columns:
+            master["poi_category"] = np.where(
+                master["poi_category"].fillna("").astype(str).str.strip().eq(""),
+                master["poi_category_osm"].fillna(""),
+                master["poi_category"]
+            )
+
+        drop_osm_cols = [c for c in master.columns if c.endswith("_osm")]
+        master = master.drop(columns=drop_osm_cols)
+
     else:
         master["total_poi_count"] = 0
-
-
-    # Derived flags
-    master["is_weekend"] = pd.to_datetime(master["datetime"]).dt.dayofweek >= 5
-    master["is_peak_am"] = pd.to_datetime(master["datetime"]).dt.hour.between(7, 9)
-    master["is_peak_pm"] = pd.to_datetime(master["datetime"]).dt.hour.between(16, 19)
+        master["amenity"] = 0
+        master["shop"] = 0
+        master["tourism"] = 0
+        master["leisure"] = 0
+        master["office"] = 0
+        master["public_transport"] = 0
+        master["railway"] = 0
+        master["other"] = 0
 
     def context_label(row):
         parts = []

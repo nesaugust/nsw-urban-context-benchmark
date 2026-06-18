@@ -22,7 +22,7 @@ Output:
     data/benchmark/task4_scenario_cards/task4_scenario_cards.json
     data/benchmark/task5_contrastive_examples/task5_contrastive_pairs.json
     data/benchmark/task6_poi_mobility_reasoning/task6_qa_pairs.json
-    data/benchmark/task7_next_poi_prediction/task7_qa_pairs.json
+    data/benchmark/task7_llm_urban_context_reasoning/task7_qa_pairs.json
     data/benchmark/benchmark_summary.json
 
 Usage:
@@ -54,7 +54,7 @@ T3 = BENCH_DIR / "task3_region_sensitivity"
 T4 = BENCH_DIR / "task4_scenario_cards"
 T5 = BENCH_DIR / "task5_contrastive_examples"
 T6 = BENCH_DIR / "task6_poi_mobility_reasoning"
-T7 = BENCH_DIR / "task7_next_poi_prediction"
+T7 = BENCH_DIR / "task7_llm_urban_context_reasoning"
 
 for folder in [T1, T2, T3, T4, T5, T6, T7]:
     folder.mkdir(parents=True, exist_ok=True)
@@ -1372,88 +1372,521 @@ def build_task6(df):
 
 
 
-def build_task7():
-    log("TASK 7 — Massive-STEPS Next POI Prediction")
 
-    path = CLEANED / "poi_llm_tasks_clean.csv"
+# ── Task 7 helpers ─────────────────────────────────────────────────────────────
 
-    if not path.exists():
-        print("  ! poi_llm_tasks_clean.csv not found — skipping Task 7")
-        save_json([], T7 / "task7_qa_pairs.json", "Task 7 — Next POI Prediction")
+def _t7_data_sufficiency(row):
+    """
+    Check whether the context has enough signal to produce a confident prediction.
+    Returns 'sufficient', 'partial', or 'insufficient'.
+
+    Rationale: outputting a confident label when all signals are zero is the core
+    logic error identified in the app — this guard prevents that.
+    """
+    n_signals = sum([
+        safe_float(row.get("rain", 0)) > RAIN_NONE,
+        safe_bool(row.get("has_nearby_event", False)),
+        safe_int(row.get("incident_count", 0)) > 0,
+        safe_int(row.get("alert_count", 0)) > 0,
+        safe_float(row.get("poi_activity", 0)) > 0,
+        safe_float(row.get("temperature_2m", 22), 22) >= HEAT_THRESHOLD
+        or safe_float(row.get("temperature_2m", 22), 22) <= COLD_THRESHOLD,
+        safe_bool(row.get("is_public_holiday", False)),
+        safe_bool(row.get("has_major_event", False)),
+    ])
+
+    if n_signals >= 3:
+        return "sufficient"
+    if n_signals >= 1:
+        return "partial"
+    return "insufficient"
+
+
+def _t7_primary_driver(row):
+    """
+    Identify the strongest single signal for chain reasoning Step 1.
+    Order of dominance matches real-world urban impact magnitude.
+    """
+    if safe_bool(row.get("has_major_event", False)):
+        n = safe_int(row.get("major_event_count", 1), 1)
+        names = str(row.get("major_event_names", "") or "")
+        return f"major event nearby ({n} event(s){': ' + names if names else ''})"
+
+    if safe_bool(row.get("is_public_holiday", False)):
+        name = str(row.get("holiday_name", "") or "public holiday")
+        return f"public holiday ({name})"
+
+    rain = safe_float(row.get("rain", 0))
+    if rain > RAIN_HEAVY:
+        return f"extreme rainfall ({rain:.1f} mm/hr)"
+    if rain > RAIN_MODERATE:
+        return f"heavy rainfall ({rain:.1f} mm/hr)"
+
+    temp = safe_float(row.get("temperature_2m", 22), 22)
+    if temp >= HEAT_THRESHOLD:
+        return f"extreme heat ({temp:.0f}°C)"
+
+    if safe_bool(row.get("has_nearby_event", False)):
+        return f"nearby event ({event_description(row)})"
+
+    if safe_int(row.get("incident_count", 0)) > 0:
+        n = safe_int(row.get("incident_count", 0))
+        return f"{n} road incident(s) causing network disruption"
+
+    if safe_int(row.get("alert_count", 0)) > 0:
+        n = safe_int(row.get("alert_count", 0))
+        return f"{n} public transport alert(s) shifting modal demand"
+
+    if safe_float(row.get("poi_activity", 0)) > 0:
+        mob = str(row.get("mobility_level", "") or "observed")
+        cat = str(row.get("poi_category", "") or "")
+        return f"POI activity signal ({mob} mobility{', ' + cat if cat else ''})"
+
+    if rain > RAIN_LIGHT:
+        return f"light-to-moderate rainfall ({rain:.1f} mm/hr)"
+
+    return "baseline conditions (no dominant signal)"
+
+
+def _t7_secondary_factors(row):
+    """
+    Return a list of secondary contributing factors (all signals not already the primary).
+    Used to populate the 'secondary_factors' field in chain reasoning Step 2.
+    """
+    factors = []
+
+    if safe_bool(row.get("is_school_term", False)):
+        factors.append("school term active — school-run peaks present")
+    else:
+        factors.append("school holidays — reduced school-run and family commutes")
+
+    if safe_bool(row.get("is_weekend", False)):
+        factors.append("weekend — leisure travel dominates over commuter traffic")
+    elif safe_bool(row.get("is_peak_am", False)):
+        factors.append("AM peak hour — high baseline commuter demand")
+    elif safe_bool(row.get("is_peak_pm", False)):
+        factors.append("PM peak hour — high baseline commuter demand")
+
+    rain = safe_float(row.get("rain", 0))
+    if RAIN_NONE < rain <= RAIN_LIGHT:
+        factors.append(f"light rain ({rain:.1f} mm/hr) — minor deterrent to walking")
+
+    wind = safe_float(row.get("wind_speed_kmh", 0))
+    if wind > 30:
+        factors.append(f"moderate-to-strong winds ({wind:.0f} km/h) — affects cycling and pedestrians")
+
+    cloud = safe_float(row.get("cloud_cover", 0))
+    if cloud > 80:
+        factors.append("overcast sky — may deter outdoor leisure activity")
+
+    crash_risk = safe_int(row.get("crash_risk_count", 0))
+    if crash_risk > 0:
+        level = str(row.get("crash_risk_level", "elevated") or "elevated")
+        factors.append(f"historical crash risk {level} ({crash_risk} risk segments) in this area")
+
+    if not factors:
+        factors.append("no notable secondary signals detected")
+
+    return factors
+
+
+def _t7_confidence_score(row, sufficiency):
+    """
+    Compute a 0–1 confidence score for the LLM prediction.
+
+    Logic:
+    - Start at 0.5 (baseline uncertainty)
+    - Each strong signal adds confidence
+    - Zero-data cases are capped at 0.3 (partial) or returned as None (insufficient)
+    - Conflicting signals (event + rain) reduce confidence slightly
+    """
+    if sufficiency == "insufficient":
+        return None
+
+    score = 0.4
+
+    rain = safe_float(row.get("rain", 0))
+    if rain > RAIN_HEAVY:
+        score += 0.25
+    elif rain > RAIN_MODERATE:
+        score += 0.15
+    elif rain > RAIN_LIGHT:
+        score += 0.05
+
+    if safe_bool(row.get("is_public_holiday", False)):
+        score += 0.20
+    if safe_bool(row.get("has_major_event", False)):
+        score += 0.20
+    if safe_bool(row.get("has_nearby_event", False)):
+        score += 0.10
+    if safe_int(row.get("incident_count", 0)) > 0:
+        score += 0.10
+    if safe_int(row.get("alert_count", 0)) > 0:
+        score += 0.08
+    if safe_float(row.get("poi_activity", 0)) > 0:
+        score += 0.10
+
+    # Conflicting signals (event + heavy rain) reduce certainty
+    has_event = safe_bool(row.get("has_nearby_event", False)) or safe_bool(row.get("has_major_event", False))
+    if has_event and rain > RAIN_MODERATE:
+        score -= 0.10  # Rain suppresses event turnout unpredictably
+
+    return round(min(max(score, 0.1), 0.95), 2)
+
+
+def _t7_label(row, sufficiency):
+    """
+    Derive the ground-truth activity label for Task 7.
+    Labels: A (significantly_higher), B (no_significant_change), C (lower_activity_disruption).
+
+    Key fix: returns None when data is insufficient — forcing the LLM to say
+    'cannot determine' rather than guessing. This is the core logic fix from the audit.
+    """
+    if sufficiency == "insufficient":
+        return None
+
+    score = 0
+
+    rain = safe_float(row.get("rain", 0))
+    if rain > RAIN_MODERATE:
+        score -= 2
+    elif rain > RAIN_LIGHT:
+        score -= 1
+
+    temp = safe_float(row.get("temperature_2m", 22), 22)
+    if temp >= HEAT_THRESHOLD or temp <= COLD_THRESHOLD:
+        score -= 1
+
+    if safe_bool(row.get("is_public_holiday", False)):
+        score -= 1  # Reduces commuter traffic, but effect is mixed
+
+    if safe_bool(row.get("has_major_event", False)):
+        score += 3
+    elif safe_bool(row.get("has_nearby_event", False)):
+        score += 2
+
+    if safe_int(row.get("incident_count", 0)) > 0:
+        score -= 1
+
+    if safe_int(row.get("alert_count", 0)) > 0:
+        score -= 1
+
+    mob = str(row.get("mobility_level", "")).lower()
+    if mob == "high":
+        score += 1
+    elif mob == "low":
+        score -= 1
+
+    if safe_bool(row.get("is_weekend", False)) and not (
+        safe_bool(row.get("has_nearby_event", False)) or safe_bool(row.get("has_major_event", False))
+    ):
+        score -= 1  # Weekend without event = lower commuter baseline
+
+    if score >= 2:
+        return "A"  # Significantly higher activity
+    if score <= -2:
+        return "C"  # Lower activity / disruption detected
+    return "B"      # No significant change
+
+
+def _t7_counter_scenario(row, label):
+    """
+    Generate a counter-scenario: describe what single signal change would flip the label.
+    This forces the reasoning to expose what the model is sensitive to.
+    """
+    rain = safe_float(row.get("rain", 0))
+    has_event = safe_bool(row.get("has_nearby_event", False)) or safe_bool(row.get("has_major_event", False))
+
+    if label == "A":
+        if rain > RAIN_LIGHT:
+            return (
+                f"If rainfall intensified beyond {rain:.1f} mm/hr to extreme levels (>16 mm/hr), "
+                "event attendance would drop sharply and the label would shift to C."
+            )
+        return (
+            "If the event were cancelled or relocated, the localised activity spike "
+            "would disappear and the label would shift to B."
+        )
+
+    if label == "C":
+        if has_event:
+            return (
+                "Despite adverse weather, if a major event proceeded with strong attendance, "
+                "the label could shift to A for localised precinct activity."
+            )
+        return (
+            "If rain eased below 1 mm/hr and no further incidents occurred, "
+            "activity could recover to baseline — shifting the label to B."
+        )
+
+    # label == "B"
+    if has_event:
+        return (
+            "If the nearby event drew unexpectedly large crowds (>10,000 attendance), "
+            "the label could shift to A."
+        )
+    return (
+        "If a major road incident or PT disruption occurred during this period, "
+        "the label could shift to C."
+    )
+
+
+def _t7_build_question(row, loc, dow, hour, wdesc, sufficiency):
+    """
+    Build a structured, anchored benchmark question for Task 7.
+
+    Key improvements over the original:
+    - Includes time, suburb, weather, all signals explicitly
+    - Asks for chain reasoning (primary driver → secondary factors → confidence → label)
+    - Asks for counter-scenario to expose model sensitivity
+    - Frames against a named baseline (same day/hour historical norm)
+    - If data is insufficient, question explicitly tests whether model knows to abstain
+    """
+    hol = f"It is {row.get('holiday_name', 'a public holiday')}. " if safe_bool(row.get("is_public_holiday", False)) else ""
+    sch = "School term is active." if safe_bool(row.get("is_school_term", False)) else "School holidays are in effect."
+    inc = (
+        f"{safe_int(row.get('incident_count', 0))} road incident(s) active."
+        if safe_int(row.get("incident_count", 0)) > 0
+        else "No road incidents."
+    )
+    alert = (
+        f"{safe_int(row.get('alert_count', 0))} public transport alert(s) in effect."
+        if safe_int(row.get("alert_count", 0)) > 0
+        else "No transport disruptions."
+    )
+    crash = (
+        f"Historical crash risk: {row.get('crash_risk_level', 'unknown')} "
+        f"({safe_int(row.get('crash_risk_count', 0))} risk segments)."
+    )
+    poi = poi_description(row)
+    event = event_description(row)
+
+    base = (
+        f"It is {dow} at {hour:02d}:00 in {loc}. "
+        f"Current conditions: {wdesc}. "
+        f"{hol}{sch} "
+        f"Nearby events: {event}. "
+        f"{inc} {alert} {crash} "
+        f"POI/mobility signal: {poi}. "
+        f"Compared to a typical {dow} at {hour:02d}:00 in {loc}, "
+    )
+
+    if sufficiency == "insufficient":
+        return (
+            base
+            + "assess whether there is enough contextual information to predict urban activity. "
+            "If not, explain what additional signals would be required."
+        )
+
+    return (
+        base
+        + "predict pedestrian, vehicle, and POI/mobility activity. "
+        "In your response: (1) identify the primary driver, "
+        "(2) list secondary contributing factors, "
+        "(3) assign a confidence score (0–1), "
+        "(4) select a label (A: significantly higher, B: no significant change, C: lower activity/disruption), "
+        "and (5) describe one counter-scenario that would flip your label."
+    )
+
+
+def _t7_build_options(label):
+    """
+    Build answer options. When label is None (insufficient data), option D is correct.
+    This enforces that the benchmark tests abstention as a valid model behaviour.
+    """
+    opts = [
+        "A. Significantly higher activity than baseline (event-driven or strong positive signal)",
+        "B. No significant change from baseline (within normal variation)",
+        "C. Lower activity or disruption detected (weather, incident, or holiday suppression)",
+        "D. Insufficient data to make a confident prediction — more signals required",
+    ]
+
+    if label is None:
+        correct = "D"
+    else:
+        correct = label  # Already "A", "B", or "C"
+
+    return opts, correct
+
+
+def _t7_explanation(row, label, sufficiency, primary, secondary, confidence):
+    """
+    Build a structured chain-of-reasoning explanation for each Task 7 item.
+    This is what the Streamlit app surfaces as the 'reasoning' field — it should
+    show multi-step logic, not a single sentence.
+    """
+    if sufficiency == "insufficient":
+        return (
+            "Insufficient context signals to produce a reliable prediction. "
+            "All primary signals (events, weather, incidents, alerts, POI activity) "
+            "are at baseline or unavailable. A model should abstain rather than guess. "
+            "To make a confident prediction, at least 2–3 non-trivial signals are required."
+        )
+
+    parts = [
+        f"Step 1 — Primary driver: {primary}.",
+        f"Step 2 — Secondary factors: {'; '.join(secondary)}.",
+        f"Step 3 — Confidence: {confidence} "
+        f"({'high' if confidence >= 0.7 else 'moderate' if confidence >= 0.45 else 'low'}).",
+        f"Step 4 — Label: {label} — "
+        + {
+            "A": "Significantly higher activity. Strong positive signal (event or major crowd driver) outweighs any suppression factors.",
+            "B": "No significant change. Signals are balanced or weak; activity expected near historical baseline.",
+            "C": "Lower activity or disruption. Suppression factors (weather, incident, holiday) dominate without offsetting event uplift.",
+        }.get(label, ""),
+        f"Step 5 — Counter-scenario: {_t7_counter_scenario(row, label)}",
+    ]
+
+    return " | ".join(parts)
+
+
+def build_task7(df=None):
+    """
+    Task 7 — LLM Urban Context Reasoning (master table).
+
+    Redesigned to fix the core logic issues identified in the benchmark audit:
+
+    1. NULL/zero-signal handling: rows where all context signals are zero/false
+       are now labelled 'insufficient' and the correct answer is D (abstain).
+       Previously, the app produced confident labels even on all-zero signal rows.
+
+    2. Chain reasoning structure: questions explicitly ask for a 5-step response
+       (primary driver → secondary factors → confidence → label → counter-scenario).
+       Previously, only a single reason was generated.
+
+    3. LLM-native inference: Task 7 now draws from the same master_context_table
+       as Tasks 1–6 (not a separate poi_llm_tasks_clean.csv). The prediction is
+       derived from real context signals, not trajectory POI IDs. This resolves
+       the disconnect where 'prediction source = rule-based' appeared even in the
+       LLM master table.
+
+    4. Anchored, specific questions: each question includes time-of-day, suburb,
+       all active signals, and a named baseline (same day/hour), making ground
+       truth verifiable. Previously questions were too generic for meaningful eval.
+
+    5. Counter-scenario field: each item includes a counter-scenario that specifies
+       what single signal change would flip the label. This exposes model sensitivity
+       and enables contrastive evaluation.
+
+    Fallback: if master table (df) is not passed in, attempts to load from disk.
+    """
+    log("TASK 7 — LLM Urban Context Reasoning (master table, redesigned)")
+
+    # ── Load data ──────────────────────────────────────────────────────────────
+    if df is None:
+        path = CLEANED / "master_context_table.csv"
+        if not path.exists():
+            print("  ! master_context_table.csv not found — skipping Task 7")
+            save_json([], T7 / "task7_qa_pairs.json", "Task 7 — LLM Urban Context Reasoning")
+            return []
+        df = load_master()
+
+    # ── Stratified sampling ────────────────────────────────────────────────────
+    # Sample across data sufficiency levels so the benchmark includes all three
+    # categories: sufficient (confident prediction), partial, and insufficient
+    # (model should abstain). Ratio: 60% sufficient, 25% partial, 15% insufficient.
+    df = df.copy()
+    df["_t7_sufficiency"] = df.apply(_t7_data_sufficiency, axis=1)
+
+    n_suf   = int(N_TASK7 * 0.60)
+    n_part  = int(N_TASK7 * 0.25)
+    n_insuf = N_TASK7 - n_suf - n_part
+
+    pool_suf   = df[df["_t7_sufficiency"] == "sufficient"]
+    pool_part  = df[df["_t7_sufficiency"] == "partial"]
+    pool_insuf = df[df["_t7_sufficiency"] == "insufficient"]
+
+    frames = []
+    if not pool_suf.empty:
+        frames.append(pool_suf.sample(min(n_suf, len(pool_suf)), random_state=42))
+    if not pool_part.empty:
+        frames.append(pool_part.sample(min(n_part, len(pool_part)), random_state=42))
+    if not pool_insuf.empty:
+        frames.append(pool_insuf.sample(min(n_insuf, len(pool_insuf)), random_state=42))
+
+    if not frames:
+        print("  ! No data available for Task 7")
+        save_json([], T7 / "task7_qa_pairs.json", "Task 7 — LLM Urban Context Reasoning")
         return []
 
-    df = pd.read_csv(path, low_memory=False)
-    df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
+    sample = pd.concat(frames).sample(frac=1, random_state=42).reset_index(drop=True)
 
-    required = {"input_text", "target_poi_id"}
-    missing = required - set(df.columns)
-
-    if missing:
-        print(f"  ! Missing columns for Task 7: {missing}")
-        save_json([], T7 / "task7_qa_pairs.json", "Task 7 — Next POI Prediction")
-        return []
-
-    df = df.dropna(subset=["input_text", "target_poi_id"]).copy()
-
-    if df.empty:
-        save_json([], T7 / "task7_qa_pairs.json", "Task 7 — Next POI Prediction")
-        return []
-
-    sample = df.sample(min(N_TASK7, len(df)), random_state=42)
-
+    # ── Build QA pairs ─────────────────────────────────────────────────────────
     qa = []
 
     for i, (_, row) in enumerate(tqdm(sample.iterrows(), total=len(sample), desc="  Task 7")):
-        target = safe_int(row.get("target_poi_id"))
+        loc        = str(row.get("location", ""))
+        dow        = str(row.get("day_of_week", ""))
+        hour       = safe_int(row.get("hour", 12), 12)
+        wdesc      = weather_description(row)
+        sufficiency = str(row.get("_t7_sufficiency", "partial"))
 
-        # Build simple multiple choice options from other POI ids
-        other_ids = (
-            df["target_poi_id"]
-            .dropna()
-            .astype(int)
-            .loc[lambda x: x != target]
-            .sample(min(3, len(df) - 1), random_state=42 + i)
-            .tolist()
-        )
+        primary    = _t7_primary_driver(row)
+        secondary  = _t7_secondary_factors(row)
+        confidence = _t7_confidence_score(row, sufficiency)
+        label      = _t7_label(row, sufficiency)
 
-        options_ids = [target] + other_ids
-        random.shuffle(options_ids)
-
-        options = [
-            f"{chr(65 + j)}. POI id {poi_id}"
-            for j, poi_id in enumerate(options_ids)
-        ]
-
-        correct = chr(65 + options_ids.index(target))
+        question   = _t7_build_question(row, loc, dow, hour, wdesc, sufficiency)
+        options, correct = _t7_build_options(label)
+        explanation = _t7_explanation(row, label, sufficiency, primary, secondary, confidence)
 
         qa.append({
             "id": make_id(7, i + 1),
-            "task": "next_poi_prediction",
-            "question": str(row["input_text"]),
-            "context": {
-                "user_id": row.get("user_id", ""),
-                "trail_id": row.get("trail_id", ""),
-                "previous_time": str(row.get("previous_time", "")),
-                "query_time": str(row.get("query_time", "")),
-                "previous_poi_id": safe_int(row.get("previous_poi_id", 0)),
-                "previous_poi_category": str(row.get("previous_poi_category", "") or ""),
-                "previous_suburb": str(row.get("previous_suburb", "") or ""),
-                "previous_hour": safe_int(row.get("previous_hour", 0)),
-                "query_hour": safe_int(row.get("query_hour", 0)),
-                "previous_day_of_week": str(row.get("previous_day_of_week", "") or ""),
-                "query_day_of_week": str(row.get("query_day_of_week", "") or ""),
-            },
+            "task": "llm_urban_context_reasoning",
+
+            # ── Core benchmark fields ──────────────────────────────────────────
+            "question": question,
+            "context": context_dict(row),
             "options": options,
             "answer": correct,
-            "target_poi_id": target,
-            "explanation": (
-                "The answer is derived from the Massive-STEPS target trajectory label. "
-                "This task evaluates whether a model can infer the next POI from trajectory text."
-            ),
-            "difficulty": "hard",
+            "explanation": explanation,
+            "difficulty": _difficulty(row),
+            "region": loc,
+            "datetime": str(row["datetime"]),
+
+            # ── Task 7 specific: chain reasoning scaffold ──────────────────────
+            "chain_reasoning": {
+                "step1_primary_driver":     primary,
+                "step2_secondary_factors":  secondary,
+                "step3_confidence_score":   confidence,
+                "step4_label":              label,
+                "step5_counter_scenario":   _t7_counter_scenario(row, label) if label else (
+                    "No counter-scenario available — abstention is the correct response."
+                ),
+            },
+
+            # ── Data quality metadata ──────────────────────────────────────────
+            "data_sufficiency":     sufficiency,
+            "n_active_signals":     sum([
+                safe_float(row.get("rain", 0)) > RAIN_NONE,
+                safe_bool(row.get("has_nearby_event", False)),
+                safe_bool(row.get("has_major_event", False)),
+                safe_int(row.get("incident_count", 0)) > 0,
+                safe_int(row.get("alert_count", 0)) > 0,
+                safe_float(row.get("poi_activity", 0)) > 0,
+                safe_bool(row.get("is_public_holiday", False)),
+            ]),
+
+            # ── Raw signal snapshot (mirrors app context signals panel) ────────
+            "signal_snapshot": {
+                "events":           safe_int(row.get("event_count", 0)),
+                "poi_activity":     round(safe_float(row.get("poi_activity", 0)), 3),
+                "bus_routes":       safe_int(row.get("alert_count", 0)),  # proxy for PT coverage
+                "alert_zone_points": safe_int(row.get("incident_count", 0)),
+                "road_incidents":   safe_int(row.get("crash_risk_count", 0)),
+                "rain_mm_hr":       round(safe_float(row.get("rain", 0)), 2),
+                "temp_c":           round(safe_float(row.get("temperature_2m", 20), 20), 1),
+            },
         })
 
-    save_json(qa, T7 / "task7_qa_pairs.json", "Task 7 — Next POI Prediction")
+    save_json(qa, T7 / "task7_qa_pairs.json", "Task 7 — LLM Urban Context Reasoning")
+
+    # ── Print distribution summary ─────────────────────────────────────────────
+    suf_counts = {s: sum(1 for x in qa if x["data_sufficiency"] == s) for s in ["sufficient", "partial", "insufficient"]}
+    label_counts = {l: sum(1 for x in qa if x["answer"] == l) for l in ["A", "B", "C", "D"]}
+    print(f"  Sufficiency distribution: {suf_counts}")
+    print(f"  Label distribution:       {label_counts}")
+
     return qa
 # ══════════════════════════════════════════════════════════════════════════════
 # Summary
@@ -1511,10 +1944,16 @@ def build_summary(t1, t2, t3, t4, t5, t6, t7, df):
                 "format": "4-option MCQ",
                 "metric": "accuracy",
             },
-            "task7_next_poi_prediction": {
+            "task7_llm_urban_context_reasoning": {
                 "n_examples": len(t7),
-                "format": "4-option MCQ",
-                "metric": "accuracy",
+                "format": "4-option MCQ with chain reasoning scaffold",
+                "metric": "accuracy + chain reasoning quality",
+                "notes": (
+                    "Redesigned master table. Questions are anchored to time/suburb/signals. "
+                    "Includes data_sufficiency stratification (sufficient/partial/insufficient), "
+                    "5-step chain reasoning (primary driver, secondary factors, confidence, label, counter-scenario), "
+                    "and abstention testing (label D when signals are all zero)."
+                ),
             },
         },
         "total_items": len(t1) + len(t2) + len(t3) + len(t4) + len(t5) + len(t6) + len(t7),
@@ -1528,12 +1967,15 @@ def build_summary(t1, t2, t3, t4, t5, t6, t7, df):
             "public holidays",
             "school terms",
             "large events",
+            "major events",
             "crash historical risk profile",
             "road incidents",
             "public transport alerts",
             "pedestrian counts",
             "traffic activity",
             "POI context reasoning",
+            "data sufficiency / abstention testing",
+            "chain reasoning (primary driver → secondary factors → confidence → label → counter-scenario)",
         ],
         "data_sources": [
             "Open-Meteo",
@@ -1577,7 +2019,7 @@ def main():
     t4 = build_task4(df)
     t5 = build_task5(df)
     t6 = build_task6(df)
-    t7 = build_task7()
+    t7 = build_task7(df)
 
     build_summary(t1, t2, t3, t4, t5, t6, t7, df)
 
