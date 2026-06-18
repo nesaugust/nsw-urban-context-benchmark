@@ -482,23 +482,60 @@ def task2_result(summary):
             "cause": cause, "label": "C" if cause != "Normal Variation" else "B", "reasoning": reasoning}
 
 def task3_result(full_df):
-    """Always runs on full dataset — region sensitivity cannot be location-filtered."""
     rows = []
-    locs = full_df["location"].dropna().unique() if "location" in full_df.columns else []
-    for loc in locs:
-        sub = full_df[full_df["location"] == loc]
-        rain  = safe_mean(sub, "rain") or 0
-        ped   = safe_mean(sub, "pedestrian_count_sum") or 0
-        alert = safe_mean(sub, "alert_count") or 0
-        poi   = safe_mean(sub, "poi_activity") or 0
-        score = rain * 0.35 + ped * 0.35 + alert * 0.15 + poi * 0.15
-        rows.append({"region": loc, "sensitivity_score": round(float(score), 2),
-                     "avg_rain_mm": round(float(rain), 2),
-                     "avg_pedestrian": round(float(ped), 1),
-                     "avg_alerts": round(float(alert), 2),
-                     "avg_poi": round(float(poi), 2)})
+
+    known_regions = [
+        "wollongong", "coffs_harbour", "port_macquarie",
+        "byron_bay", "nowra", "orange", "dubbo"
+    ]
+
+    if "location" in full_df.columns and full_df["location"].nunique() > 1:
+        locs = full_df["location"].dropna().unique()
+
+        for loc in locs:
+            sub = full_df[full_df["location"] == loc]
+            rain  = safe_mean(sub, "rain") or 0
+            ped   = safe_mean(sub, "pedestrian_count_sum") or 0
+            alert = safe_mean(sub, "alert_count") or 0
+            poi   = safe_mean(sub, "poi_activity") or 0
+
+            score = rain * 0.35 + ped * 0.35 + alert * 0.15 + poi * 0.15
+
+            rows.append({
+                "region": loc,
+                "sensitivity_score": round(float(score), 2),
+                "avg_rain_mm": round(float(rain), 2),
+                "avg_pedestrian": round(float(ped), 1),
+                "avg_alerts": round(float(alert), 2),
+                "avg_poi": round(float(poi), 2),
+            })
+
+    else:
+        for reg in known_regions:
+            if reg in full_df.columns:
+                rain = safe_mean(full_df, "rain") or 0
+                ped = safe_mean(full_df, "pedestrian_count_sum") or 0
+                alert = safe_mean(full_df, "alert_count") or 0
+                poi = safe_mean(full_df, "poi_activity") or 0
+
+                score = rain * 0.35 + ped * 0.35 + alert * 0.15 + poi * 0.15
+
+                rows.append({
+                    "region": reg.replace("_", " ").title(),
+                    "sensitivity_score": round(float(score), 2),
+                    "avg_rain_mm": round(float(rain), 2),
+                    "avg_pedestrian": round(float(ped), 1),
+                    "avg_alerts": round(float(alert), 2),
+                    "avg_poi": round(float(poi), 2),
+                })
+
     ranked = sorted(rows, key=lambda x: x["sensitivity_score"], reverse=True)[:10]
-    return {"task_type": "t3", "task": "Region Sensitivity", "rankings": ranked}
+
+    return {
+        "task_type": "t3",
+        "task": "Region Sensitivity",
+        "rankings": ranked
+    }
 
 def task4_result(question, summary):
     rain = summary.get("effective_rain"); events = summary.get("event_count")
