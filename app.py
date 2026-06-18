@@ -483,8 +483,54 @@ def load_data():
     except FileNotFoundError:
         st.error(f"Data file not found: {DATA_PATH}")
         st.stop()
+
+    # Normalise column names
+    df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
+    df = df.loc[:, ~df.columns.duplicated()].copy()
+
+    # Rename encoded Open-Meteo column artefacts
+    rename_map = {
+        "temperature_2m_(â°c)": "temperature_2m",
+        "temperature_2m_(â°c)": "temperature_2m",
+        "apparent_temperature_(â°c)": "apparent_temperature",
+        "rain_(mm)": "rain",
+        "windspeed_10m_(km/h)": "wind_speed_kmh",
+        "windgusts_10m_(km/h)": "wind_gust_kmh",
+        "relative_humidity_2m_(%)": "relative_humidity_2m",
+        "cloud_cover_(%)": "cloud_cover",
+    }
+    df = df.rename(columns={k: v for k, v in rename_map.items() if k in df.columns})
+    df = df.loc[:, ~df.columns.duplicated()].copy()
+
+    # Ensure datetime column exists — try common alternatives
+    if "datetime" not in df.columns:
+        for alt in ["date_time", "timestamp", "time", "date"]:
+            if alt in df.columns:
+                df = df.rename(columns={alt: "datetime"})
+                break
+        else:
+            df["datetime"] = pd.NaT
+
+    # Ensure location column exists — try common alternatives
+    if "location" not in df.columns:
+        for alt in ["suburb", "region", "area", "loc"]:
+            if alt in df.columns:
+                df = df.rename(columns={alt: "location"})
+                break
+        else:
+            df["location"] = "Unknown"
+
     df["datetime"] = pd.to_datetime(df["datetime"], errors="coerce")
-    df = df.dropna(subset=["datetime", "location"])
+
+    # Only drop rows where the columns we know exist are null
+    subset_drop = [c for c in ["datetime", "location"] if c in df.columns]
+    if subset_drop:
+        df = df.dropna(subset=subset_drop)
+
+    if df.empty:
+        st.warning("Master context table loaded but is empty after cleaning. Check the CSV.")
+        return df
+
     df["date"] = df["datetime"].dt.date.astype(str)
     df["hour"] = df["datetime"].dt.hour
     return df
