@@ -251,38 +251,57 @@ def load_data():
     except FileNotFoundError:
         st.error(f"Data file not found: {DATA_PATH}")
         st.stop()
-    df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
-    df = df.loc[:, ~df.columns.duplicated()].copy()
+
+    df.columns = (
+        df.columns
+        .str.strip()
+        .str.lower()
+        .str.replace(" ", "_", regex=False)
+    )
+
     rename_map = {
-        "temperature_2m_(â°c)": "temperature_2m", "temperature_2m_(Â°c)": "temperature_2m",
+        "temperature_2m_(°c)": "temperature_2m",
+        "temperature_2m_(â°c)": "temperature_2m",
+        "temperature_2m_(Â°c)": "temperature_2m",
+        "apparent_temperature_(°c)": "apparent_temperature",
         "apparent_temperature_(â°c)": "apparent_temperature",
-        "rain_(mm)": "rain", "windspeed_10m_(km/h)": "wind_speed_kmh",
+        "apparent_temperature_(Â°c)": "apparent_temperature",
+        "relative_humidity_2m_(%)": "relative_humidity_2m",
+        "cloud_cover_(%)": "cloud_cover",
+        "precipitation_(mm)": "precipitation",
+        "rain_(mm)": "rain",
+        "windspeed_10m_(km/h)": "wind_speed_kmh",
         "windgusts_10m_(km/h)": "wind_gust_kmh",
-        "relative_humidity_2m_(%)": "relative_humidity_2m", "cloud_cover_(%)": "cloud_cover",
     }
+
     df = df.rename(columns={k: v for k, v in rename_map.items() if k in df.columns})
     df = df.loc[:, ~df.columns.duplicated()].copy()
-    if "datetime" not in df.columns:
-        for alt in ["date_time", "timestamp", "time", "date"]:
-            if alt in df.columns:
-                df = df.rename(columns={alt: "datetime"}); break
-        else:
-            df["datetime"] = pd.NaT
-    if "location" not in df.columns:
-        for alt in ["suburb", "region", "area", "loc"]:
-            if alt in df.columns:
-                df = df.rename(columns={alt: "location"}); break
-        else:
-            df["location"] = "Unknown"
+
+    required = ["location", "datetime"]
+    missing = [c for c in required if c not in df.columns]
+    if missing:
+        st.error(f"Missing required column(s): {missing}")
+        st.stop()
+
+    df["location"] = df["location"].astype(str).str.strip()
     df["datetime"] = pd.to_datetime(df["datetime"], errors="coerce")
-    subset_drop = [c for c in ["datetime", "location"] if c in df.columns]
-    if subset_drop:
-        df = df.dropna(subset=subset_drop)
+
+    df = df.dropna(subset=["location", "datetime"])
+    df = df[~df["location"].str.lower().isin(["", "unknown", "nan"])]
+
+    df["location"] = (
+        df["location"]
+        .str.replace("_", " ", regex=False)
+        .str.title()
+    )
+
+    df["date"] = df["datetime"].dt.date.astype(str)
+    df["hour"] = df["datetime"].dt.hour
+
     if df.empty:
         st.warning("Master context table is empty after cleaning.")
         return df
-    df["date"] = df["datetime"].dt.date.astype(str)
-    df["hour"] = df["datetime"].dt.hour
+
     return df
 
 
