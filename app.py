@@ -8,26 +8,13 @@ from groq import Groq
 DATA_PATH = "data/cleaned/master_context_table_sample.csv"
 
 BENCHMARK_PATHS = {
-    "Task 1 - Traffic Prediction":
-        "data/benchmark/task1_traffic_prediction/task1_qa_pairs.csv",
-
-    "Task 2 - Anomaly Classification":
-        "data/benchmark/task2_anomaly_classification/task2_qa_pairs.csv",
-
-    "Task 3 - Region Sensitivity":
-        "data/benchmark/task3_region_sensitivity/task3_qa_pairs.csv",
-
-    "Task 4 - Scenario Cards":
-        "data/benchmark/task4_scenario_cards/task4_scenario_cards.csv",
-
-    "Task 5 - Contrastive Examples":
-        "data/benchmark/task5_contrastive_examples/task5_contrastive_pairs.csv",
-
-    "Task 6 - POI Mobility Reasoning":
-        "data/benchmark/task6_poi_mobility_reasoning/task6_qa_pairs.csv",
-
-    "Task 7 - Next POI Prediction":
-        "data/benchmark/task7_next_poi_prediction/task7_qa_pairs.csv",
+    "Task 1 - Traffic Prediction": "data/benchmark/task1_traffic_prediction/task1_qa_pairs.csv",
+    "Task 2 - Anomaly Classification": "data/benchmark/task2_anomaly_classification/task2_qa_pairs.csv",
+    "Task 3 - Region Sensitivity": "data/benchmark/task3_region_sensitivity/task3_qa_pairs.csv",
+    "Task 4 - Scenario Cards": "data/benchmark/task4_scenario_cards/task4_scenario_cards.csv",
+    "Task 5 - Contrastive Examples": "data/benchmark/task5_contrastive_examples/task5_contrastive_pairs.csv",
+    "Task 6 - POI Mobility Reasoning": "data/benchmark/task6_poi_mobility_reasoning/task6_qa_pairs.csv",
+    "Task 7 - Next POI Prediction": "data/benchmark/task7_next_poi_prediction/task7_qa_pairs.csv",
 }
 
 LABEL_MEANINGS = {
@@ -46,157 +33,133 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color: #f7fafc;
+        background: #f7fafc;
         color: #102a43;
     }
 
-    /* Sidebar desktop */
+    .block-container {
+        padding-top: 3rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+        max-width: 1500px;
+    }
+
     [data-testid="stSidebar"] {
-        background-color: #e8f3f3;
+        background: linear-gradient(180deg, #edf8f8 0%, #e6f3f3 100%);
         border-right: 1px solid #c9dede;
         width: 330px !important;
         min-width: 330px !important;
         max-width: 330px !important;
     }
 
-    /* Sidebar text fix */
     [data-testid="stSidebar"] * {
         color: #102a43 !important;
     }
 
-    [data-testid="stSidebar"] label,
-    [data-testid="stSidebar"] p,
-    [data-testid="stSidebar"] span,
-    [data-testid="stSidebar"] h1,
-    [data-testid="stSidebar"] h2,
-    [data-testid="stSidebar"] h3 {
-        color: #102a43 !important;
-    }
-
-    /* Selectbox / radio readable */
     [data-testid="stSidebar"] div[data-baseweb="select"] > div {
         background-color: #ffffff !important;
-        color: #102a43 !important;
         border: 1px solid #c9dede !important;
-    }
-
-    [data-testid="stSidebar"] div[role="radiogroup"] label span {
-        color: #102a43 !important;
-    }
-
-    /* Mobile sidebar fix */
-    @media (max-width: 768px) {
-        [data-testid="stSidebar"] {
-            width: 82vw !important;
-            min-width: 82vw !important;
-            max-width: 82vw !important;
-            background-color: #e8f3f3 !important;
-        }
-
-        [data-testid="stSidebar"] * {
-            color: #102a43 !important;
-            font-size: 15px !important;
-        }
-
-        .main-title {
-            font-size: 28px !important;
-        }
-
-        .subtitle {
-            font-size: 14px !important;
-        }
-
-        .block-container {
-            padding-left: 1rem !important;
-            padding-right: 1rem !important;
-        }
+        border-radius: 10px !important;
     }
 
     .main-title {
-        font-size: 40px;
-        font-weight: 750;
-        color: #123c4a;
+        font-size: 42px;
+        font-weight: 800;
+        color: #0f2f3f;
         margin-bottom: 4px;
     }
 
     .subtitle {
         font-size: 15px;
-        color: #5c6f77;
-        margin-bottom: 28px;
+        color: #526b78;
+        margin-bottom: 26px;
+        max-width: 900px;
+    }
+
+    .section-title {
+        font-size: 22px;
+        font-weight: 750;
+        color: #0f2f3f;
+        margin-top: 28px;
+        margin-bottom: 12px;
     }
 
     .query-box {
         background: #ffffff;
-        border: 1px solid #d9e8e8;
+        border: 1px solid #cfe4e4;
         border-left: 5px solid #2a9d8f;
-        border-radius: 12px;
-        padding: 18px 20px;
+        border-radius: 14px;
+        padding: 20px 24px;
         font-size: 16px;
         line-height: 1.65;
-        box-shadow: 0 1px 4px rgba(16, 42, 67, 0.05);
+        box-shadow: 0 3px 10px rgba(16, 42, 67, 0.05);
     }
 
-    /* Better demo button */
-    div[data-testid="stButton"] > button {
-        background-color: #ffffff !important;
-        color: #123c4a !important;
-        border: 1px solid #c9dede !important;
-        border-radius: 12px !important;
-        padding: 0.75rem 1rem !important;
-        font-weight: 600 !important;
+    .output-card {
+        background: #ffffff;
+        border: 1px solid #d6e6e6;
+        border-radius: 16px;
+        padding: 22px;
+        box-shadow: 0 3px 10px rgba(16, 42, 67, 0.05);
+        margin-bottom: 18px;
+        min-height: 150px;
     }
 
-    div[data-testid="stButton"] > button:hover {
-        background-color: #e8f3f3 !important;
-        color: #123c4a !important;
-        border-color: #2a9d8f !important;
+    .label-card {
+        background: #fffaf0;
+        border: 1px solid #f5dfaa;
+        border-radius: 14px;
+        padding: 20px;
+        text-align: center;
+        min-height: 150px;
     }
 
-    .section-title {
-        font-size: 23px;
-        font-weight: 700;
-        color: #123c4a;
-        margin-top: 30px;
-        margin-bottom: 12px;
+    .label-big {
+        font-size: 52px;
+        font-weight: 800;
+        color: #f0a202;
+        line-height: 1;
+        margin: 10px 0;
+    }
+
+    .small-muted {
+        color: #667085;
+        font-size: 13px;
+        margin-bottom: 6px;
     }
 
     .driver-box {
         background: #ffffff;
-        border: 1px solid #d9e8e8;
-        border-radius: 12px;
-        padding: 14px 18px;
-        margin-bottom: 8px;
+        border: 1px solid #cfe4e4;
+        border-radius: 14px;
+        padding: 16px 18px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 8px rgba(16, 42, 67, 0.04);
+        min-height: 95px;
+    }
+
+    .driver-title {
+        font-weight: 700;
+        color: #0f2f3f;
+        margin-bottom: 4px;
     }
 
     div[data-testid="stMetric"] {
-    background-color: #ffffff;
-    border: 1px solid #d9e8e8;
-    padding: 16px;
-    border-radius: 12px;
-    box-shadow: 0 1px 4px rgba(16, 42, 67, 0.04);
-    }
-
-    div[data-testid="stMetric"] label,
-    div[data-testid="stMetric"] p,
-    div[data-testid="stMetric"] div {
-        color: #102a43 !important;
+        background-color: #ffffff;
+        border: 1px solid #d6e6e6;
+        padding: 18px;
+        border-radius: 16px;
+        box-shadow: 0 3px 10px rgba(16, 42, 67, 0.04);
     }
 
     div[data-testid="stMetricValue"] {
-        color: #102a43 !important;
-        font-weight: 700 !important;
+        color: #0f2f3f !important;
+        font-weight: 800 !important;
     }
 
     div[data-testid="stMetricLabel"] {
-        color: #3d5a66 !important;
-        font-weight: 600 !important;
-    }
-
-    .kpi-explain {
-        font-size: 12px;
-        color: #5c6f77;
-        margin-top: 4px;
-        line-height: 1.4;
+        color: #526b78 !important;
+        font-weight: 650 !important;
     }
     </style>
     """,
@@ -212,32 +175,8 @@ def load_data():
         st.error(f"Data file not found: {DATA_PATH}")
         st.stop()
 
-    # Strip whitespace from column names
-    df.columns = df.columns.str.strip()
-
-    # Flexible datetime column detection
-    dt_candidates = [c for c in df.columns if c.lower() in ("datetime", "timestamp", "date_time", "time")]
-    if dt_candidates:
-        dt_col = dt_candidates[0]
-        if dt_col != "datetime":
-            df = df.rename(columns={dt_col: "datetime"})
-        df["datetime"] = pd.to_datetime(df["datetime"], errors="coerce")
-    else:
-        st.error(f"No datetime column found. Columns available: {list(df.columns)}")
-        st.stop()
-
-    # Flexible location column detection
-    loc_candidates = [c for c in df.columns if c.lower() in ("location", "suburb", "region", "area", "site")]
-    if loc_candidates:
-        loc_col = loc_candidates[0]
-        if loc_col != "location":
-            df = df.rename(columns={loc_col: "location"})
-    else:
-        st.error(f"No location column found. Columns available: {list(df.columns)}")
-        st.stop()
-
-    drop_cols = [c for c in ["datetime", "location"] if c in df.columns]
-    df = df.dropna(subset=drop_cols)
+    df["datetime"] = pd.to_datetime(df["datetime"], errors="coerce")
+    df = df.dropna(subset=["datetime", "location"])
 
     df["date"] = df["datetime"].dt.date.astype(str)
     df["hour"] = df["datetime"].dt.hour
@@ -256,7 +195,7 @@ def load_benchmark_data(path):
 def safe_sum(df, col):
     if df.empty or col not in df.columns:
         return None
-    val = df[col].sum(skipna=True)
+    val = pd.to_numeric(df[col], errors="coerce").sum(skipna=True)
     if pd.isna(val):
         return None
     return round(float(val), 2)
@@ -265,7 +204,7 @@ def safe_sum(df, col):
 def safe_mean(df, col):
     if df.empty or col not in df.columns:
         return None
-    val = df[col].mean(skipna=True)
+    val = pd.to_numeric(df[col], errors="coerce").mean(skipna=True)
     if pd.isna(val):
         return None
     return round(float(val), 2)
@@ -291,16 +230,20 @@ def get_answer_column(df):
 def extract_location(question, locations):
     if not question:
         return None
+
     q = question.lower()
+
     for loc in locations:
         if str(loc).lower() in q:
             return loc
+
     return None
 
 
 def extract_date(question):
     if not question:
         return None
+
     match = re.search(r"\d{4}-\d{2}-\d{2}", question)
     return match.group(0) if match else None
 
@@ -318,7 +261,6 @@ def extract_scenario(question):
     if "no rain" in q:
         scenario["scenario_rain"] = 0
         scenario["weather_event"] = "no_rain"
-
     elif rain_match:
         rain_mm = float(rain_match.group(1))
         scenario["scenario_rain"] = rain_mm
@@ -329,22 +271,21 @@ def extract_scenario(question):
             scenario["weather_event"] = "moderate_rain"
         elif rain_mm > 0:
             scenario["weather_event"] = "light_rain"
-
     elif has_any(q, ["heavy rain", "storm", "flood"]):
         scenario["weather_event"] = "heavy_rain"
         scenario["scenario_rain"] = 50
 
-    if has_any(q, ["no major events", "no nearby events", "nearby events: no major events"]):
+    if has_any(q, ["no major events", "no nearby events"]):
         scenario["event_scenario"] = False
-    elif has_any(q, ["concert", "festival", "major event", "sports event", "match"]):
+    elif has_any(q, ["concert", "festival", "major event", "sports event", "match", "stadium"]):
         scenario["event_scenario"] = True
 
-    if has_any(q, ["no road incidents", "no incidents", "incidents: no road incidents", "no crash", "no accident"]):
+    if has_any(q, ["no road incidents", "no incidents", "no crash", "no accident"]):
         scenario["road_incident_scenario"] = False
     elif has_any(q, ["crash", "accident", "road incident"]):
         scenario["road_incident_scenario"] = True
 
-    if has_any(q, ["no transport disruptions", "no transport disruption", "transport: no transport disruptions"]):
+    if has_any(q, ["no transport disruptions", "no transport disruption"]):
         scenario["transport_disruption_scenario"] = False
     elif has_any(q, ["train delay", "bus delay", "transport delay", "service disruption", "transport disruption"]):
         scenario["transport_disruption_scenario"] = True
@@ -376,9 +317,10 @@ def summarize_context(df, question=None):
     summary["poi_activity"] = safe_sum(df, "poi_activity")
 
     if "alert_count" in df.columns and not df.empty:
-        summary["transport_alert_hours"] = int((df["alert_count"] > 0).sum())
-        summary["transport_alert_max"] = int(df["alert_count"].max())
-        summary["transport_alert_mean"] = round(float(df["alert_count"].mean()), 3)
+        alert_numeric = pd.to_numeric(df["alert_count"], errors="coerce")
+        summary["transport_alert_hours"] = int((alert_numeric > 0).sum())
+        summary["transport_alert_max"] = int(alert_numeric.max()) if not pd.isna(alert_numeric.max()) else None
+        summary["transport_alert_mean"] = round(float(alert_numeric.mean()), 3) if not pd.isna(alert_numeric.mean()) else None
     else:
         summary["transport_alert_hours"] = None
         summary["transport_alert_max"] = None
@@ -408,19 +350,14 @@ def summarize_context(df, question=None):
 def normalize_label(value):
     if value is None:
         return None
+
     text = str(value).strip().upper()
     match = re.search(r"\b([ABC])\b", text)
+
     if match:
         return match.group(1)
+
     return None
-
-
-def evaluate_prediction(predicted, expected):
-    predicted_label = normalize_label(predicted)
-    expected_label = normalize_label(expected)
-    if expected_label is None:
-        return None
-    return predicted_label == expected_label
 
 
 def predict_rule_based(summary, selected_task):
@@ -440,6 +377,8 @@ def predict_rule_based(summary, selected_task):
     elif rain is not None and rain >= 20:
         score -= 2
         drivers.append("Moderate rainfall may reduce outdoor activity.")
+    elif rain == 0:
+        drivers.append("No rainfall signal was detected, so weather is unlikely to reduce activity.")
 
     if events not in [None, 0]:
         score += 3
@@ -466,14 +405,10 @@ def predict_rule_based(summary, selected_task):
     if alerts not in [None, 0]:
         if alert_max is not None and alert_max >= 100:
             score -= 3
-            drivers.append(
-                f"Transport disruption detected: {alerts} alert time point(s), with maximum alert count {alert_max}."
-            )
+            drivers.append(f"Transport disruption detected across {alerts} alert time point(s).")
         else:
             score -= 1
-            drivers.append(
-                f"Minor transport alert detected: {alerts} alert time point(s)."
-            )
+            drivers.append(f"Minor transport alert detected across {alerts} alert time point(s).")
 
     if summary.get("transport_disruption_scenario") is True:
         score -= 2
@@ -482,9 +417,10 @@ def predict_rule_based(summary, selected_task):
     if summary.get("transport_disruption_scenario") is False:
         drivers.append("The question explicitly states there are no transport disruptions.")
 
-    if poi not in [None, 0] and poi > 10:
-        score += 2
-        drivers.append("High POI activity suggests stronger local destination-based movement.")
+    if selected_task != "Task 1 - Traffic Prediction":
+        if poi not in [None, 0] and poi > 10:
+            score += 2
+            drivers.append("High POI activity suggests stronger local destination-based movement.")
 
     if summary.get("public_holiday") is True or summary.get("public_holiday_scenario") is True:
         score -= 1
@@ -517,34 +453,33 @@ def predict_rule_based(summary, selected_task):
 def parse_ai_label(text):
     if not text:
         return "B"
+
     text_upper = text.upper()
+
     if "LABEL: N/A" in text_upper:
         return "B"
+
     match = re.search(r"\bLABEL\s*[:\-]?\s*([ABC])\b", text_upper)
     if match:
         return match.group(1)
+
     match = re.search(r"\bPREDICTION\s*[:\-]?\s*([ABC])\b", text_upper)
     if match:
         return match.group(1)
+
     match = re.search(r"\b([ABC])\s*[-—:]", text_upper)
     if match:
         return match.group(1)
+
     return "B"
 
 
-# ── Task 7 detection MUST come before POI to avoid misclassification ──
 def detect_question_type(question):
     q = question.lower()
 
-    # Task 7 first — "next poi" must not fall into poi_reasoning
     if any(x in q for x in [
-        "next poi",
-        "next location",
-        "next destination",
-        "trajectory",
-        "previous poi",
-        "where will the user go next",
-        "target_poi_id"
+        "next poi", "next location", "next destination", "trajectory",
+        "previous poi", "where will the user go next", "target_poi_id"
     ]):
         return "next_poi_prediction"
 
@@ -560,7 +495,6 @@ def detect_question_type(question):
     if any(x in q for x in ["abnormal", "anomaly", "unusual", "most likely primary cause"]):
         return "anomaly_classification"
 
-    # poi_reasoning comes after next_poi_prediction to avoid conflict
     if any(x in q for x in ["poi", "mobility", "destination-based movement"]):
         return "poi_reasoning"
 
@@ -568,9 +502,8 @@ def detect_question_type(question):
 
 
 def task1_activity_prediction(summary):
-    label, text, drivers, score = predict_rule_based(
-        summary, "Task 1 - Traffic Prediction"
-    )
+    label, text, drivers, score = predict_rule_based(summary, "Task 1 - Traffic Prediction")
+
     return {
         "task": "Traffic Prediction",
         "label": label,
@@ -585,67 +518,44 @@ def task2_anomaly(summary):
     events = summary.get("event_count")
     incidents = summary.get("road_incidents")
     alerts = summary.get("transport_alert_hours")
-    alert_max = summary.get("transport_alert_max")
 
     cause = "Normal Variation"
     reasoning = []
 
-    # Determine primary cause (priority order: rain > transport > incidents > events)
     if rain and rain >= 50:
         cause = "Heavy Rain"
-        reasoning.append(
-            f"Rainfall reached {rain:.0f} mm, which is above the heavy rain threshold (50 mm). "
-            "Heavy rain typically suppresses pedestrian activity and disrupts road and transport networks."
-        )
+        reasoning.append("Heavy rain is the strongest disruption signal and may reduce normal movement.")
     elif rain and rain >= 20:
         cause = "Moderate Rain"
-        reasoning.append(
-            f"Rainfall of {rain:.0f} mm is in the moderate range. "
-            "This level of rain can reduce footfall and slow road speeds."
-        )
+        reasoning.append("Moderate rain may explain lower outdoor and pedestrian activity.")
 
     if alerts and alerts > 0:
         if cause == "Normal Variation":
             cause = "Transport Disruption"
-        alert_detail = f" (peak alert count: {alert_max})" if alert_max else ""
-        reasoning.append(
-            f"Transport alerts were active during {alerts} hour(s){alert_detail}. "
-            "This indicates trains, buses, or other services were delayed or cancelled, "
-            "pushing commuters onto alternative routes."
-        )
+        reasoning.append(f"Transport alerts were detected across {alerts} time point(s).")
 
     if incidents and incidents > 0:
         if cause == "Normal Variation":
             cause = "Road Incident"
-        reasoning.append(
-            f"Road incidents were recorded (count: {incidents}). "
-            "Crashes or hazards on key corridors increase congestion and reduce throughput."
-        )
+        reasoning.append(f"Road incident count is {incidents}, suggesting potential congestion or disruption.")
 
     if events and events > 0:
         if cause == "Normal Variation":
             cause = "Major Event"
-        reasoning.append(
-            f"Nearby events detected (count: {events}). "
-            "Large gatherings generate predictable pedestrian and transport demand spikes "
-            "that can appear anomalous without event context."
-        )
+        reasoning.append(f"Nearby event activity was detected with event count {events}.")
 
-    if cause == "Normal Variation":
-        reasoning.append(
-            "No strong anomalous signals detected across rain, transport, incidents, or events. "
-            "The observed activity pattern is consistent with typical baseline conditions."
-        )
+    if not reasoning:
+        reasoning.append("No strong abnormal signal was detected from rain, events, incidents, or transport alerts.")
 
     return {
         "task": "Anomaly Classification",
         "cause": cause,
         "reasoning": reasoning,
         "evidence": {
-            "rain_mm": rain,
+            "rain": rain,
             "events": events,
-            "road_incidents": incidents,
-            "transport_alert_hours": alerts,
+            "incidents": incidents,
+            "alerts": alerts,
         },
     }
 
@@ -656,13 +566,9 @@ def task3_region_sensitivity(df):
     for loc in df["location"].dropna().unique():
         region = df[df["location"] == loc]
 
-        rain = region["rain"].mean() if "rain" in region.columns else 0
-        ped = region["pedestrian_count_sum"].mean() if "pedestrian_count_sum" in region.columns else 0
-        alerts = region["alert_count"].mean() if "alert_count" in region.columns else 0
-
-        rain = 0 if pd.isna(rain) else rain
-        ped = 0 if pd.isna(ped) else ped
-        alerts = 0 if pd.isna(alerts) else alerts
+        rain = safe_mean(region, "rain") or 0
+        ped = safe_mean(region, "pedestrian_count_sum") or 0
+        alerts = safe_mean(region, "alert_count") or 0
 
         score = rain * 0.4 + ped * 0.4 + alerts * 0.2
 
@@ -674,228 +580,107 @@ def task3_region_sensitivity(df):
             "avg_alerts": round(float(alerts), 2),
         })
 
-    rankings = sorted(rankings, key=lambda x: x["sensitivity_score"], reverse=True)
-    return rankings[:10]
+    return sorted(rankings, key=lambda x: x["sensitivity_score"], reverse=True)[:10]
 
 
-def task4_scenario_card(summary, question=""):
-    """Generate a scenario card dynamically from the question and context signals."""
+def task4_scenario_card(question, summary):
     rain = summary.get("effective_rain")
-    events = summary.get("event_count", 0) or 0
-    alerts = summary.get("transport_alert_hours", 0) or 0
-    incidents = summary.get("road_incidents", 0) or 0
-    day_type = summary.get("day_type", "weekday")
+    events = summary.get("event_count")
+    alerts = summary.get("transport_alert_hours")
+    incidents = summary.get("road_incidents")
 
-    conditions = []
     impacts = []
     risk_score = 0
 
-    # Rain
-    if rain and rain >= 50:
-        conditions.append("Heavy Rain")
-        impacts.append("Significant drop in outdoor pedestrian activity — foot traffic expected to fall 30–60%.")
-        impacts.append("Road speeds reduced; expect longer travel times across all routes.")
-        risk_score += 3
-    elif rain and rain >= 20:
-        conditions.append("Moderate Rain")
-        impacts.append("Reduced footfall in open-air areas and outdoor dining precincts.")
-        impacts.append("Minor road delays likely on key arterials.")
-        risk_score += 2
-    elif rain and rain > 0:
-        conditions.append("Light Rain")
-        impacts.append("Slight reduction in outdoor pedestrian dwell time.")
-        risk_score += 1
-
-    # Events
-    if events > 0 or summary.get("event_scenario") is True:
-        conditions.append("Major Nearby Event")
-        impacts.append("Pedestrian surge expected within 1 km of the venue, especially 1 hour before and after the event.")
-        impacts.append("Increased public transport demand — trains and buses to/from the venue may be crowded.")
+    if rain and rain >= 20:
+        impacts.append("Reduced outdoor pedestrian activity due to rainfall.")
         risk_score += 2
 
-    # Transport disruption
-    if alerts > 0 or summary.get("transport_disruption_scenario") is True:
-        conditions.append("Transport Disruption")
-        impacts.append("Displaced commuters shifted to road network — increased road congestion across surrounding suburbs.")
+    if events and events > 0:
+        impacts.append("Higher pedestrian and transport demand due to nearby events.")
         risk_score += 2
 
-    # Road incidents
-    if incidents > 0 or summary.get("road_incident_scenario") is True:
-        conditions.append("Road Incident")
-        impacts.append("Localised congestion at incident site; rerouting behaviour expected on nearby streets.")
+    if alerts and alerts > 0:
+        impacts.append("Potential public transport delay or disruption.")
         risk_score += 2
 
-    # Public holiday
-    if summary.get("public_holiday") or summary.get("public_holiday_scenario"):
-        conditions.append("Public Holiday")
-        impacts.append("Lower commuter volumes but higher leisure travel — shift from office districts to retail and entertainment areas.")
-        risk_score += 1
+    if incidents and incidents > 0:
+        impacts.append("Possible road congestion from incidents.")
+        risk_score += 2
 
-    # Weekend
-    if day_type == "weekend":
-        conditions.append("Weekend")
-        impacts.append("Leisure-dominant travel patterns — CBD retail and entertainment more active than business districts.")
-
-    # Fallback for no signals
-    if not conditions:
-        conditions.append("Baseline Conditions")
-        impacts.append("No significant disruptions detected. Activity expected to follow typical patterns for this time and location.")
-
-    # Build title from top conditions
-    title = " + ".join(conditions[:3])
-    if day_type:
-        title += f" ({day_type.title()})"
+    if not impacts:
+        impacts.append("No major disruption signal detected; activity likely remains close to baseline.")
 
     if risk_score >= 5:
-        risk_level = "High"
-    elif risk_score >= 3:
-        risk_level = "Moderate"
+        risk = "High"
+    elif risk_score >= 2:
+        risk = "Medium"
     else:
-        risk_level = "Low"
+        risk = "Low"
 
     return {
         "task": "Scenario Card",
-        "title": title,
+        "title": "Dynamic Urban Context Scenario",
         "conditions": {
             "rain_mm": rain,
-            "event_count": int(events),
-            "transport_alert_hours": int(alerts),
-            "road_incidents": int(incidents),
-            "day_type": day_type,
+            "event_count": events,
+            "transport_alert_time_points": alerts,
+            "road_incidents": incidents,
         },
         "expected_impacts": impacts,
-        "risk_level": risk_level,
+        "risk_level": risk,
+        "reasoning": [
+            "Scenario card is generated dynamically from the query and retrieved context signals.",
+            f"Overall risk level is {risk} based on rain, events, transport alerts, and incidents.",
+        ],
     }
 
 
-def task5_contrastive(summary, question=""):
-    """Generate a meaningful contrastive pair based on available context signals."""
+def task5_contrastive(summary):
     rain = summary.get("effective_rain")
-    events = summary.get("event_count", 0) or 0
-    alerts = summary.get("transport_alert_hours", 0) or 0
-    incidents = summary.get("road_incidents", 0) or 0
+    events = summary.get("event_count")
+    alerts = summary.get("transport_alert_hours")
+    incidents = summary.get("road_incidents")
 
-    # Choose the most relevant contrast based on what signals are present
-    if (rain and rain >= 20) and (events > 0 or summary.get("event_scenario") is True):
+    if rain not in [None, 0] or events not in [None, 0]:
         scenario_a = {
-            "traffic_level": "High",
-            "cause": "Major Event",
-            "rain_mm": 0,
-            "events": int(events) if events else 1,
-            "incidents": 0,
-            "transport_alerts": 0,
-            "description": (
-                "Activity is elevated because of a large nearby event. "
-                "Pedestrian counts are high near the venue. "
-                "Roads are busy but the network is operating normally."
-            ),
+            "description": "High activity caused by a major event.",
+            "cause": "Event-driven demand",
         }
         scenario_b = {
-            "traffic_level": "High (road) / Low (foot)",
-            "cause": f"Heavy Rain ({rain:.0f} mm)",
-            "rain_mm": rain,
-            "events": 0,
-            "incidents": 0,
-            "transport_alerts": 0,
-            "description": (
-                "Road congestion is elevated as commuters avoid walking and switch to cars. "
-                "Pedestrian and retail activity is suppressed. "
-                "The high volume signal is fragmented across the road network rather than concentrated near a venue."
-            ),
+            "description": "Lower or disrupted activity caused by rain.",
+            "cause": "Weather-driven disruption",
         }
-        key_contrast = (
-            "Both scenarios produce elevated road volumes, but the cause is fundamentally different. "
-            "Event-driven peaks are spatially concentrated near the venue and follow predictable event timing. "
-            "Rain-driven peaks are diffuse, network-wide, and correlated with low foot traffic — "
-            "the opposite of an event surge."
-        )
-        reasoning = [
-            "This contrastive pair highlights how the same surface-level signal (high road volume) can have structurally different causes.",
-            "Event surges: high pedestrian counts near a specific location, predictable timing, concentrated spatial pattern.",
-            "Rain surges: low pedestrian counts everywhere, unpredictable duration, diffuse road congestion across the network.",
-            key_contrast,
-        ]
+        contrast = "Both scenarios may change activity levels, but one is demand-driven while the other is disruption-driven."
 
-    elif incidents > 0 and alerts > 0:
+    elif incidents not in [None, 0] or alerts not in [None, 0]:
         scenario_a = {
-            "traffic_level": "High (localised)",
-            "cause": f"Road Incident ({incidents} reported)",
-            "rain_mm": 0,
-            "events": 0,
-            "incidents": int(incidents),
-            "transport_alerts": 0,
-            "description": (
-                "A crash or road hazard creates a bottleneck at a specific point. "
-                "Congestion builds upstream of the incident but clears quickly once the hazard is removed."
-            ),
+            "description": "Road congestion caused by incidents.",
+            "cause": "Road incident",
         }
         scenario_b = {
-            "traffic_level": "High (network-wide)",
-            "cause": f"Transport Disruption ({alerts} alert hours)",
-            "rain_mm": 0,
-            "events": 0,
-            "incidents": 0,
-            "transport_alerts": int(alerts),
-            "description": (
-                "A public transport failure pushes displaced commuters onto the road network. "
-                "Congestion is distributed across the broader area rather than at a single point, "
-                "and persists for the duration of the service outage."
-            ),
+            "description": "Mobility disruption caused by public transport alerts.",
+            "cause": "Transport disruption",
         }
-        key_contrast = (
-            "Road incidents produce a single congestion hotspot that resolves rapidly once cleared. "
-            "Transport disruptions produce sustained, distributed congestion that requires service restoration to resolve — "
-            "the impact is broader and harder to clear."
-        )
-        reasoning = [
-            "This contrastive pair shows how two types of disruption produce similar congestion signals but differ in spatial extent and duration.",
-            "Road incident: localised, resolves in minutes to hours once cleared.",
-            "Transport disruption: network-wide, persists until service is restored.",
-            key_contrast,
-        ]
+        contrast = "Both scenarios disrupt movement, but one affects road traffic while the other affects public transport mobility."
 
     else:
-        # Generic fallback contrast
         scenario_a = {
-            "traffic_level": "High",
-            "cause": "Major Event",
-            "rain_mm": 0,
-            "events": 1,
-            "incidents": 0,
-            "transport_alerts": 0,
-            "description": (
-                "Activity spike is concentrated near a venue and follows a predictable pattern "
-                "aligned with event start and end times."
-            ),
+            "description": "Normal weekday baseline with no major disruption.",
+            "cause": "Baseline activity",
         }
         scenario_b = {
-            "traffic_level": "High",
-            "cause": "Transport Disruption",
-            "rain_mm": 0,
-            "events": 0,
-            "incidents": 0,
-            "transport_alerts": 1,
-            "description": (
-                "Activity spike is distributed as displaced commuters seek alternative routes. "
-                "The pattern is unpredictable in duration and spatial extent."
-            ),
+            "description": "Potential activity change under a hypothetical event or disruption.",
+            "cause": "Contextual change",
         }
-        key_contrast = (
-            "Surface-level traffic counts look similar, but the underlying cause differs completely. "
-            "Event surges are predictable and concentrated; disruption surges are unpredictable and spread across the network."
-        )
-        reasoning = [
-            "Contrastive analysis examines scenarios that produce similar surface signals but have structurally different causes.",
-            "Understanding the cause is critical for the right response: event management, incident clearance, and transport recovery each require different interventions.",
-            key_contrast,
-        ]
+        contrast = "The key contrast is between stable baseline conditions and context-driven activity change."
 
     return {
         "task": "Contrastive Examples",
         "scenario_a": scenario_a,
         "scenario_b": scenario_b,
-        "key_contrast": key_contrast,
-        "reasoning": reasoning,
+        "key_contrast": contrast,
+        "reasoning": [contrast],
     }
 
 
@@ -904,50 +689,39 @@ def task6_poi_reasoning(summary):
 
     if poi is None:
         mobility = "Unknown"
-        reasoning = "No POI activity data is available for this location and time window."
     elif poi > 20:
         mobility = "High"
-        reasoning = (
-            f"POI activity score of {poi} is above the high-activity threshold (>20). "
-            "This indicates strong destination-based movement — users are actively visiting "
-            "commercial, hospitality, or recreational points of interest."
-        )
     elif poi < 5:
         mobility = "Low"
-        reasoning = (
-            f"POI activity score of {poi} is below the low-activity threshold (<5). "
-            "This may reflect off-peak hours, weather suppression, or a low-density POI environment."
-        )
     else:
         mobility = "Moderate"
-        reasoning = (
-            f"POI activity score of {poi} is in the moderate range (5–20). "
-            "Typical patronage is occurring without a notable surge or suppression event."
-        )
 
     return {
         "task": "POI Mobility Reasoning",
         "poi_activity": poi,
         "mobility_assessment": mobility,
-        "reasoning": reasoning,
+        "reasoning": [
+            f"POI activity of {poi} suggests {mobility.lower()} destination-based movement."
+        ],
     }
 
 
 def task7_next_poi(question, summary):
     previous_poi = "Unknown"
+
     match = re.search(r"previous[_ ]poi[_ ]id[: ]+(\d+)", question.lower())
+
     if match:
         previous_poi = match.group(1)
 
     return {
         "task": "Next POI Prediction",
-        "prediction": "Most likely next destination inferred from historical trajectory context.",
+        "prediction": "Most likely next destination inferred from trajectory and time context.",
         "previous_poi": previous_poi,
-        "reasoning": (
-            "This task evaluates trajectory reasoning. "
-            "The model uses previous POI visits, time context, "
-            "day-of-week patterns, and movement history to predict the next POI."
-        ),
+        "reasoning": [
+            "This task evaluates trajectory reasoning.",
+            "The prediction uses previous POI visits, time context, day-of-week patterns, and mobility behaviour.",
+        ],
     }
 
 
@@ -961,9 +735,9 @@ def run_reasoning_task(question, summary, df):
     elif qtype == "region_sensitivity":
         return task3_region_sensitivity(df)
     elif qtype == "scenario_card":
-        return task4_scenario_card(summary, question)
+        return task4_scenario_card(question, summary)
     elif qtype == "contrastive_example":
-        return task5_contrastive(summary, question)
+        return task5_contrastive(summary)
     elif qtype == "poi_reasoning":
         return task6_poi_reasoning(summary)
     elif qtype == "next_poi_prediction":
@@ -972,65 +746,11 @@ def run_reasoning_task(question, summary, df):
         return task1_activity_prediction(summary)
 
 
-def run_single_model(model_name, question, summary, df, selected_task):
-    if model_name == "Rule-based":
-        return run_reasoning_task(question, summary, df)
-
-    elif model_name == "GPT-4o Mini":
-        label, text, drivers, score = predict_with_openai(
-            question, summary, selected_task, "gpt-4o-mini"
-        )
-        return {"model": "GPT-4o Mini", "label": label, "prediction": text,
-                "reasoning": drivers[0] if drivers else ""}
-
-    elif model_name == "Llama 3.3 70B":
-        label, text, drivers, score = predict_with_groq(
-            question, summary, selected_task, "llama-3.3-70b-versatile"
-        )
-        return {"model": "Llama 3.3 70B", "label": label, "prediction": text,
-                "reasoning": drivers[0] if drivers else ""}
-
-    elif model_name == "DeepSeek R1":
-        label, text, drivers, score = predict_with_groq(
-            question, summary, selected_task, "deepseek-r1-distill-llama-70b"
-        )
-        return {"model": "DeepSeek R1", "label": label, "prediction": text,
-                "reasoning": drivers[0] if drivers else ""}
-
-
 def build_ai_prompt(question, summary, selected_task):
     question_type = detect_question_type(question)
 
     return f"""
 You are an urban context reasoning benchmark assistant.
-
-You can answer seven types of urban reasoning tasks:
-
-1. Activity prediction:
-Predict whether traffic, pedestrian, or POI activity is significantly higher, lower/disrupted, or unchanged.
-
-2. Anomaly classification:
-Identify the most likely primary cause of abnormal urban activity using weather, events, calendar, incidents, transport, and POI/mobility signals.
-
-3. Region sensitivity:
-Estimate which region is more sensitive to weather changes using contextual evidence such as rain, heat, pedestrian activity, POI activity, incidents, and transport alerts.
-
-4. Scenario card generation:
-Generate reusable urban scenario cards such as "rainy Friday evening near a stadium event".
-
-5. Contrastive examples:
-Create paired examples where similar activity patterns have different causes.
-
-6. POI mobility reasoning:
-Explain POI activity and mobility signals.
-
-7. Next POI prediction:
-Predict the most likely next POI destination based on trajectory history, previous POI visits, time context, and mobility behaviour.
-
-Label meanings:
-A = Significantly Higher Activity
-B = No Significant Change
-C = Lower Activity / Disruption Detected
 
 Detected question type:
 {question_type}
@@ -1044,14 +764,10 @@ Question:
 Retrieved context:
 {json.dumps(summary, indent=2)}
 
-Instructions:
-- Use the question and retrieved context only.
-- Do not invent exact numeric values if they are missing.
-- If the question asks for prediction/classification, return a label A/B/C.
-- If the question asks for scenario cards, generate a clear scenario card.
-- If the question asks for contrastive examples, generate two or more contrasting examples.
-- If the question asks for region sensitivity, compare regions qualitatively or using available signals.
-- Explain the reasoning clearly.
+Label meanings:
+A = Significantly Higher Activity
+B = No Significant Change
+C = Lower Activity / Disruption Detected
 
 Return this format:
 
@@ -1075,18 +791,24 @@ KEY SIGNALS:
 def predict_with_openai(question, summary, selected_task, model_name):
     try:
         api_key = st.secrets.get("OPENAI_API_KEY")
+
         if not api_key:
             return "B", LABEL_MEANINGS["B"], ["OpenAI API key is missing."], None
+
         client = OpenAI(api_key=api_key)
         prompt = build_ai_prompt(question, summary, selected_task)
+
         response = client.chat.completions.create(
             model=model_name,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.1,
         )
+
         text = response.choices[0].message.content
         label = parse_ai_label(text)
+
         return label, LABEL_MEANINGS[label], [text], None
+
     except Exception as e:
         return "B", LABEL_MEANINGS["B"], [f"OpenAI unavailable: {e}"], None
 
@@ -1094,61 +816,55 @@ def predict_with_openai(question, summary, selected_task, model_name):
 def predict_with_groq(question, summary, selected_task, model_name):
     try:
         api_key = st.secrets.get("GROQ_API_KEY")
+
         if not api_key:
             return "B", LABEL_MEANINGS["B"], ["Groq API key is missing."], None
+
         client = Groq(api_key=api_key)
         prompt = build_ai_prompt(question, summary, selected_task)
+
         response = client.chat.completions.create(
             model=model_name,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.1,
         )
+
         text = response.choices[0].message.content
         label = parse_ai_label(text)
+
         return label, LABEL_MEANINGS[label], [text], None
+
     except Exception as e:
         return "B", LABEL_MEANINGS["B"], [f"Groq unavailable: {e}"], None
 
 
-def generate_interpretation(summary, prediction_full, score, source):
-    lines = []
-    lines.append(f"Prediction source: {source}")
-    lines.append(f"Model output: {prediction_full}")
-    if score is not None:
-        lines.append(f"Rule-based context score: {score}")
-    alerts = summary.get("transport_alert_hours")
-    alert_max = summary.get("transport_alert_max")
-    if alerts not in [None, 0]:
-        lines.append(
-            f"Transport alerts were detected in {alerts} retrieved time point(s). "
-            f"The maximum alert count is {alert_max}. "
-            "This means the system detected public transport warning or disruption signals."
-        )
-    if summary.get("road_incidents") not in [None, 0]:
-        lines.append(f"Road incidents = {summary.get('road_incidents')}. This suggests road disruption and possible congestion.")
-    if summary.get("effective_rain") not in [None, 0]:
-        lines.append(f"Rain = {summary.get('effective_rain')} mm. Higher rainfall can reduce outdoor pedestrian and retail activity.")
-    if summary.get("event_count") not in [None, 0]:
-        lines.append(f"Events = {summary.get('event_count')}. Events may increase pedestrian movement and public transport demand.")
-    if summary.get("poi_activity") not in [None, 0]:
-        lines.append(f"POI activity = {summary.get('poi_activity')}. Higher values indicate stronger destination-based activity.")
-    if len(lines) <= 3:
-        lines.append("No strong disruption or high-activity signal was detected.")
-    return "\n\n".join(lines)
+def run_single_model(model_name, question, summary, df, selected_task):
+    if model_name == "Rule-based":
+        return run_reasoning_task(question, summary, df)
+
+    elif model_name == "GPT-4o Mini":
+        label, text, drivers, score = predict_with_openai(question, summary, selected_task, "gpt-4o-mini")
+    elif model_name == "Llama 3.3 70B":
+        label, text, drivers, score = predict_with_groq(question, summary, selected_task, "llama-3.3-70b-versatile")
+    elif model_name == "DeepSeek R1":
+        label, text, drivers, score = predict_with_groq(question, summary, selected_task, "deepseek-r1-distill-llama-70b")
+    else:
+        label, text, drivers, score = "B", LABEL_MEANINGS["B"], ["Unknown model."], None
+
+    return {
+        "model": model_name,
+        "label": label,
+        "prediction": text,
+        "reasoning": drivers,
+        "score": score,
+    }
 
 
-# ── Helper: render a metric with an explanation line below ──
-def metric_with_note(label, value, note):
-    display = value if value is not None else "No data"
-    st.metric(label, display)
-    st.markdown(f'<div class="kpi-explain">{note}</div>', unsafe_allow_html=True)
+st.markdown(
+    '<div class="main-title">🏙️ NSW Urban Context Benchmark</div>',
+    unsafe_allow_html=True,
+)
 
-
-# ─────────────────────────────────────────────────────────────────────────────
-# App layout
-# ─────────────────────────────────────────────────────────────────────────────
-
-st.markdown('<div class="main-title">NSW Urban Context Benchmark</div>', unsafe_allow_html=True)
 st.markdown(
     '<div class="subtitle">A context-aware evaluation app for urban activity reasoning using weather, events, traffic, transport alerts, pedestrian activity, and POI mobility.</div>',
     unsafe_allow_html=True,
@@ -1162,7 +878,7 @@ with st.sidebar:
 
     mode = st.radio(
         "Mode",
-        ["Benchmark Evaluation", "Interactive Reasoning", "Compare Models"]
+        ["Benchmark Evaluation", "Interactive Reasoning", "Compare Models"],
     )
 
     selected_location = st.selectbox("Location", ["Auto-detect"] + locations)
@@ -1196,6 +912,7 @@ with st.sidebar:
         if question_col and not benchmark_df.empty:
             selected_idx = st.selectbox("QA Example", benchmark_df.index.tolist())
             benchmark_question = str(benchmark_df.loc[selected_idx, question_col])
+
             if answer_col:
                 benchmark_expected = benchmark_df.loc[selected_idx, answer_col]
         else:
@@ -1203,6 +920,13 @@ with st.sidebar:
 
     else:
         selected_task = "Interactive Reasoning"
+        benchmark_expected = st.selectbox(
+            "Optional Expected Label",
+            ["None", "A", "B", "C"],
+        )
+
+        if benchmark_expected == "None":
+            benchmark_expected = None
 
     st.divider()
 
@@ -1212,13 +936,13 @@ with st.sidebar:
     st.write("C — Lower Activity / Disruption Detected")
 
     with st.expander("Example questions"):
-        st.write("1. Predict whether traffic or POI activity changes significantly under heavy rain in Sydney CBD.")
-        st.write("2. Classify abnormal urban activity in Parramatta given rain, event, incident, and transport context.")
+        st.write("1. Predict whether traffic changes under heavy rain in Sydney CBD.")
+        st.write("2. Classify abnormal urban activity using rain, events, incidents, and transport context.")
         st.write("3. Which regions are most sensitive to weather changes?")
-        st.write("4. Generate a scenario card for a rainy Friday evening near a stadium event.")
-        st.write("5. Create contrastive examples where similar traffic patterns have different causes.")
-        st.write("6. Given a user's previous trajectory, predict the next POI destination.")
-        st.write("7. Explain the mobility patterns at a specific POI under different weather conditions.")
+        st.write("4. Generate a scenario card for a rainy Friday evening.")
+        st.write("5. Create contrastive examples for similar traffic patterns.")
+        st.write("6. Explain POI mobility patterns.")
+        st.write("7. Predict the next POI from trajectory context.")
 
 default_question = (
     "It is Wednesday at 10:00 in Penrith. Current conditions: no rain, cold (0°C). "
@@ -1234,33 +958,36 @@ if mode == "Benchmark Evaluation":
     question = benchmark_question
 else:
     typed_question = st.chat_input("Ask an urban reasoning question")
+
     if typed_question:
         question = typed_question
 
     demo_clicked = st.button("✨ Try demo question", use_container_width=True)
+
     if demo_clicked:
         question = default_question
-
 
 if question:
     st.markdown('<div class="section-title">Query</div>', unsafe_allow_html=True)
     st.markdown(f'<div class="query-box">{question}</div>', unsafe_allow_html=True)
 
     location = None if selected_location == "Auto-detect" else selected_location
+
     if location is None:
         location = extract_location(question, locations)
 
     date = extract_date(question)
 
     filtered = df.copy()
+
     if location:
         filtered = filtered[filtered["location"] == location]
+
     if date:
         filtered = filtered[filtered["date"] == date]
 
     summary = summarize_context(filtered, question)
 
-    # ── Resolve display values ──
     display_events = summary.get("event_count")
     if summary.get("event_scenario") is True:
         display_events = 1
@@ -1283,20 +1010,20 @@ if question:
 
     display_poi = summary.get("poi_activity")
 
-    # ── Run model(s) ──
     if mode == "Compare Models":
         models = ["Rule-based", "GPT-4o Mini", "Llama 3.3 70B", "DeepSeek R1"]
         result = {}
+
         for model in models:
             result[model] = run_single_model(model, question, summary, df, selected_task)
     else:
         result = run_single_model(prediction_mode, question, summary, df, selected_task)
 
-    # ── Reasoning Output ──
     st.markdown('<div class="section-title">Reasoning Output</div>', unsafe_allow_html=True)
 
     if mode == "Compare Models":
         comparison_rows = []
+
         for model_name, model_result in result.items():
             if isinstance(model_result, dict):
                 comparison_rows.append({
@@ -1306,173 +1033,102 @@ if question:
                     "Prediction/Cause": model_result.get("prediction", model_result.get("cause", "N/A")),
                     "Reasoning": str(model_result.get("reasoning", ""))[:300],
                 })
+
         st.dataframe(pd.DataFrame(comparison_rows), use_container_width=True)
+
         with st.expander("View full model outputs"):
             st.json(result)
 
     else:
         if isinstance(result, list):
-            # Task 3 — region ranking table
             st.dataframe(pd.DataFrame(result), use_container_width=True)
-            st.write("Regions are ranked by estimated weather sensitivity score. "
-                     "Score = (avg rain × 0.4) + (avg pedestrians × 0.4) + (avg transport alerts × 0.2). "
-                     "Higher scores mean the region is more affected by contextual changes.")
 
         elif isinstance(result, dict):
-            task_key = result.get("task", "")
+            label = result.get("label", "N/A")
+            prediction = result.get("prediction", result.get("cause", "N/A"))
+            task_name = result.get("task", selected_task)
+            score = result.get("score", None)
 
-            # ── Task 4: Scenario Card ──
-            if task_key == "Scenario Card":
-                st.subheader(f"📋 {result.get('title', 'Scenario Card')}")
-                st.write(f"**Risk Level:** {result.get('risk_level', 'Unknown')}")
-                conds = result.get("conditions", {})
-                if conds:
-                    st.write("**Conditions:**")
-                    for k, v in conds.items():
-                        st.write(f"- {k.replace('_', ' ').title()}: {v}")
-                impacts = result.get("expected_impacts", [])
-                if impacts:
-                    st.write("**Expected Impacts:**")
-                    for item in impacts:
-                        st.markdown(f'<div class="driver-box">📌 {item}</div>', unsafe_allow_html=True)
+            col1, col2, col3 = st.columns([1.2, 3.2, 1.8])
 
-            # ── Task 5: Contrastive Examples ──
-            elif task_key == "Contrastive Examples":
-                col_a, col_b = st.columns(2)
-                sa = result.get("scenario_a", {})
-                sb = result.get("scenario_b", {})
+            with col1:
+                st.markdown(
+                    f"""
+                    <div class="label-card">
+                        <div class="small-muted">Predicted Label</div>
+                        <div class="label-big">{label}</div>
+                        <b>{LABEL_MEANINGS.get(label, "Task Output")}</b>
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
 
-                with col_a:
-                    st.subheader("Scenario A")
-                    for k, v in sa.items():
-                        if k == "description":
-                            st.markdown(f'<div class="driver-box">{v}</div>', unsafe_allow_html=True)
-                        else:
-                            st.write(f"**{k.replace('_', ' ').title()}:** {v}")
+            with col2:
+                st.markdown(
+                    f"""
+                    <div class="output-card">
+                        <div class="small-muted">Prediction</div>
+                        <h4>{prediction}</h4>
+                        <div class="small-muted">Rule-based Score</div>
+                        <h3>{score if score is not None else "N/A"}</h3>
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
 
-                with col_b:
-                    st.subheader("Scenario B")
-                    for k, v in sb.items():
-                        if k == "description":
-                            st.markdown(f'<div class="driver-box">{v}</div>', unsafe_allow_html=True)
-                        else:
-                            st.write(f"**{k.replace('_', ' ').title()}:** {v}")
+            with col3:
+                st.markdown(
+                    f"""
+                    <div class="output-card">
+                        <div class="small-muted">Prediction Source</div>
+                        <h4>{prediction_mode}</h4>
+                        <div class="small-muted">Task</div>
+                        <b>{task_name}</b>
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
 
-                st.write("**Key Contrast:**")
-                st.markdown(f'<div class="driver-box">{result.get("key_contrast", "")}</div>', unsafe_allow_html=True)
+    if isinstance(result, dict) and "reasoning" in result:
+        st.markdown('<div class="section-title">Reasoning</div>', unsafe_allow_html=True)
 
-                reasoning = result.get("reasoning", [])
-                if isinstance(reasoning, list) and reasoning:
-                    st.write("**Reasoning:**")
-                    for item in reasoning:
-                        st.markdown(f'<div class="driver-box">{item}</div>', unsafe_allow_html=True)
+        reasoning = result["reasoning"]
 
-            # ── Task 2: Anomaly Classification ──
-            elif task_key == "Anomaly Classification":
-                st.subheader(f"Most Likely Cause: {result.get('cause', 'Unknown')}")
-                reasoning = result.get("reasoning", [])
-                if reasoning:
-                    for item in reasoning:
-                        st.markdown(f'<div class="driver-box">{item}</div>', unsafe_allow_html=True)
-                with st.expander("Raw evidence signals"):
-                    st.json(result.get("evidence", {}))
+        if not isinstance(reasoning, list):
+            reasoning = [reasoning]
 
-            # ── All other tasks (T1, T6, T7, etc.) ──
-            else:
-                for key, value in result.items():
-                    if key == "reasoning":
-                        continue  # rendered separately below
-                    if isinstance(value, (int, float)):
-                        st.metric(key.replace("_", " ").title(), value)
-                    elif isinstance(value, (dict, list)):
-                        st.subheader(key.replace("_", " ").title())
-                        st.json(value)
-                    else:
-                        st.subheader(key.replace("_", " ").title())
-                        st.write(value)
+        rcols = st.columns(min(3, len(reasoning)))
 
-                # Reasoning drivers for T1, T6, T7
-                reasoning = result.get("reasoning")
-                if reasoning:
-                    if isinstance(reasoning, list):
-                        for item in reasoning:
-                            st.markdown(f'<div class="driver-box">{item}</div>', unsafe_allow_html=True)
-                    else:
-                        st.markdown(f'<div class="driver-box">{reasoning}</div>', unsafe_allow_html=True)
+        for i, item in enumerate(reasoning):
+            with rcols[i % len(rcols)]:
+                st.markdown(
+                    f"""
+                    <div class="driver-box">
+                        <div class="driver-title">✓ Reason {i + 1}</div>
+                        {item}
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
 
-    # ── Context Signals / KPIs ──
     st.markdown('<div class="section-title">Context Signals</div>', unsafe_allow_html=True)
 
-    # Task 1: hide POI (usually irrelevant and returns 0)
     if selected_task == "Task 1 - Traffic Prediction":
         c1, c2, c3, c4 = st.columns(4)
-        with c1:
-            metric_with_note(
-                "Events",
-                display_events if display_events is not None else "No data",
-                "Number of nearby events (concerts, sports, festivals) detected in the dataset. "
-                "Even 1 event can significantly increase pedestrian and transport demand."
-            )
-        with c2:
-            metric_with_note(
-                "Rain (mm)",
-                display_rain if display_rain is not None else "No data",
-                "Total rainfall in millimetres. "
-                "Light rain (<20 mm) has minor impact; moderate rain (20–49 mm) reduces activity; "
-                "heavy rain (≥50 mm) causes significant disruption."
-            )
-        with c3:
-            metric_with_note(
-                "Alert Time Points",
-                display_alerts if display_alerts is not None else "No data",
-                "Number of hourly time slots where a transport alert was active. "
-                "Each point = 1 hour of detected disruption (train delays, bus cancellations, etc.)."
-            )
-        with c4:
-            metric_with_note(
-                "Road Incidents",
-                display_incidents if display_incidents is not None else "No data",
-                "Total road incidents (crashes, hazards) recorded. "
-                "Higher values mean more congestion and longer travel times on affected routes."
-            )
+
+        c1.metric("Events", display_events if display_events is not None else "No data")
+        c2.metric("Rain mm", display_rain if display_rain is not None else "No data")
+        c3.metric("Alert Time Points", display_alerts if display_alerts is not None else "No data")
+        c4.metric("Road Incidents", display_incidents if display_incidents is not None else "No data")
 
     else:
         c1, c2, c3, c4, c5 = st.columns(5)
-        with c1:
-            metric_with_note(
-                "Events",
-                display_events if display_events is not None else "No data",
-                "Number of nearby events detected. "
-                "Events drive pedestrian surges and increased transport demand."
-            )
-        with c2:
-            metric_with_note(
-                "Rain (mm)",
-                display_rain if display_rain is not None else "No data",
-                "Total rainfall in mm. "
-                "≥20 mm reduces activity; ≥50 mm causes major disruption."
-            )
-        with c3:
-            metric_with_note(
-                "Alert Time Points",
-                display_alerts if display_alerts is not None else "No data",
-                "Hours with active transport alerts. "
-                "Indicates trains/buses were delayed or cancelled during those periods."
-            )
-        with c4:
-            metric_with_note(
-                "Road Incidents",
-                display_incidents if display_incidents is not None else "No data",
-                "Road incidents recorded. "
-                "Causes congestion and rerouting on affected corridors."
-            )
-        with c5:
-            metric_with_note(
-                "POI Activity",
-                display_poi if display_poi is not None else "No data",
-                "Aggregate point-of-interest activity score. "
-                ">20 = high destination-based movement; <5 = low patronage."
-            )
+
+        c1.metric("Events", display_events if display_events is not None else "No data")
+        c2.metric("POI Activity", display_poi if display_poi is not None else "No data")
+        c3.metric("Rain mm", display_rain if display_rain is not None else "No data")
+        c4.metric("Alert Time Points", display_alerts if display_alerts is not None else "No data")
+        c5.metric("Road Incidents", display_incidents if display_incidents is not None else "No data")
 
     with st.expander("View retrieved context data"):
         if filtered.empty:
