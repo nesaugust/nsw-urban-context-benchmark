@@ -1122,123 +1122,123 @@ benchmark_question = None; benchmark_expected = None; benchmark_df = pd.DataFram
 selected_task = st.session_state.selected_task_key
 
 # ══════════════════════════════════════════════════════════════
-# COMPARE MODELS MODE — Full benchmark evaluation across all tasks
+# COMPARE MODELS MODE — Selected task only
 # ══════════════════════════════════════════════════════════════
 if mode == "Compare Models":
-    st.markdown('<p class="section-label">Model Comparison — All Benchmark Tasks</p>', unsafe_allow_html=True)
-    st.markdown("""<div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;
+    st.markdown('<p class="section-label">Model Comparison — Selected Benchmark Task</p>', unsafe_allow_html=True)
+
+    st.markdown(f"""<div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;
         padding:12px 16px;font-size:13px;color:#0369a1;margin-bottom:1rem">
-        Evaluates <b>Rule-based</b>, <b>GPT-4o Mini</b>, <b>Llama 3.3 70B</b>, and <b>DeepSeek R1</b>
-        against ground truth labels across all 7 benchmark tasks. Accuracy = % of examples where
-        predicted label matches expected label.
+        Compare models on the selected task only: <b>{selected_task}</b>.
+        This avoids running all benchmark tasks at once and prevents heavy Streamlit rendering errors.
     </div>""", unsafe_allow_html=True)
 
     models_to_compare = ["Rule-based", "GPT-4o Mini", "Llama 3.3 70B", "DeepSeek R1"]
-    n_sample = st.slider("Examples per task to evaluate", min_value=5, max_value=50, value=10, step=5)
 
-    if st.button("▶ Run Full Benchmark Comparison", use_container_width=True):
-        all_results = []
-        progress = st.progress(0, text="Evaluating tasks…")
-        total_steps = len(BENCHMARK_PATHS) * len(models_to_compare)
+    bdf = load_benchmark_data(BENCHMARK_PATHS[selected_task])
+    qcol = get_question_column(bdf)
+    acol = get_answer_column(bdf)
+
+    if bdf.empty or not qcol or not acol:
+        st.warning("No benchmark data found for the selected task.")
+        st.stop()
+
+    n_sample = st.slider(
+        "Examples to evaluate from this task",
+        min_value=1,
+        max_value=min(50, len(bdf)),
+        value=min(10, len(bdf)),
+        step=1
+    )
+
+    if st.button("▶ Run Comparison for Selected Task", use_container_width=True):
+        rows_out = []
+        progress = st.progress(0, text="Evaluating selected task…")
+        total_steps = n_sample * len(models_to_compare)
         step = 0
 
-        for task_key, task_path in BENCHMARK_PATHS.items():
-            task_num = list(BENCHMARK_PATHS.keys()).index(task_key) + 1
-            bdf = load_benchmark_data(task_path)
-            qcol = get_question_column(bdf)
-            acol = get_answer_column(bdf)
+        sample = bdf.head(n_sample)
 
-            if bdf.empty or not qcol or not acol:
-                step += len(models_to_compare)
-                progress.progress(step / total_steps, text=f"Skipping {task_key} — no data")
-                continue
+        for _, row in sample.iterrows():
+            q = str(row[qcol])
+            expected = normalize_label(str(row[acol]))
 
-            sample = bdf.head(n_sample)
+            loc = extract_location(q, locations)
+            date_v = extract_date(q)
+
+            filt = df.copy()
+            if loc:
+                filt = filt[filt["location"] == loc]
+            if date_v:
+                filt = filt[filt["date"] == date_v]
+
+            summ = summarize_context(filt, q)
 
             for model_name in models_to_compare:
-                correct = 0; total = 0
-                for _, row in sample.iterrows():
-                    q = str(row[qcol])
-                    expected = normalize_label(str(row[acol]))
-                    if not expected:
-                        continue
+                res = run_single_model(model_name, q, summ, df, selected_task)
+                predicted = res.get("label", "B") if isinstance(res, dict) else "B"
+                predicted_norm = normalize_label(predicted)
 
-                    loc = extract_location(q, locations)
-                    date_v = extract_date(q)
-                    filt = df.copy()
-                    if loc: filt = filt[filt["location"] == loc]
-                    if date_v: filt = filt[filt["date"] == date_v]
-                    summ = summarize_context(filt, q)
-
-                    res = run_single_model(model_name, q, summ, df, task_key)
-                    predicted = res.get("label", "B") if isinstance(res, dict) else "B"
-                    if normalize_label(predicted) == expected:
-                        correct += 1
-                    total += 1
-
-                acc = round(correct / total * 100, 1) if total > 0 else 0
-                all_results.append({
-                    "Task": f"T{task_num}",
-                    "Task Name": task_key.split(" - ", 1)[1] if " - " in task_key else task_key,
+                rows_out.append({
+                    "Question": q[:120],
                     "Model": model_name,
-                    "Correct": correct,
-                    "Total": total,
-                    "Accuracy %": acc,
+                    "Expected": expected,
+                    "Predicted": predicted_norm,
+                    "Correct": predicted_norm == expected,
                 })
 
                 step += 1
-                progress.progress(step / total_steps, text=f"T{task_num} — {model_name}")
+                progress.progress(step / total_steps, text=f"Evaluating {model_name}")
 
         progress.empty()
 
-        if all_results:
-            results_df = pd.DataFrame(all_results)
+        results_df = pd.DataFrame(rows_out)
 
-            # ── Accuracy table pivot ───────────────────────────
-            st.markdown('<p class="section-label" style="margin-top:1rem">Accuracy by Task & Model</p>', unsafe_allow_html=True)
-            pivot = results_df.pivot_table(index=["Task","Task Name"], columns="Model",
-                                           values="Accuracy %", aggfunc="first").reset_index()
-            pivot.columns.name = None
-            st.dataframe(pivot.style.format({m: "{:.1f}%" for m in models_to_compare if m in pivot.columns})
-                         .background_gradient(subset=[m for m in models_to_compare if m in pivot.columns],
-                                              cmap="RdYlGn", vmin=0, vmax=100),
-                         use_container_width=True, hide_index=True)
+        st.markdown('<p class="section-label">Accuracy Summary</p>', unsafe_allow_html=True)
 
-            # ── Overall accuracy per model ─────────────────────
-            st.markdown('<p class="section-label" style="margin-top:1rem">Overall Accuracy per Model</p>', unsafe_allow_html=True)
-            overall = results_df.groupby("Model").apply(
-                lambda g: round(g["Correct"].sum() / g["Total"].sum() * 100, 1)
-            ).reset_index(name="Overall Accuracy %").sort_values("Overall Accuracy %", ascending=False)
+        summary_acc = (
+            results_df.groupby("Model")
+            .agg(
+                Correct=("Correct", "sum"),
+                Total=("Correct", "count")
+            )
+            .reset_index()
+        )
+        summary_acc["Accuracy %"] = (
+            summary_acc["Correct"] / summary_acc["Total"] * 100
+        ).round(1)
 
-            cols_ov = st.columns(len(models_to_compare))
-            for i, row_ov in overall.iterrows():
-                with cols_ov[i % len(models_to_compare)]:
-                    acc_v = row_ov["Overall Accuracy %"]
-                    col_a = "#1a9e6e" if acc_v >= 70 else "#d4a017" if acc_v >= 50 else "#c0392b"
-                    st.markdown(f"""<div class="output-panel" style="text-align:center">
-                        <div class="small-label">{row_ov['Model']}</div>
-                        <div style="font-size:32px;font-weight:800;color:{col_a};margin:8px 0">{acc_v}%</div>
-                        <div class="confidence-bar-wrap">
-                            <div class="confidence-bar-fill" style="width:{int(acc_v)}%;background:{col_a}"></div>
-                        </div>
-                    </div>""", unsafe_allow_html=True)
+        cols = st.columns(len(summary_acc))
+        for i, row_acc in summary_acc.iterrows():
+            acc_v = row_acc["Accuracy %"]
+            col_a = "#1a9e6e" if acc_v >= 70 else "#d4a017" if acc_v >= 50 else "#c0392b"
 
-            # ── Raw results ────────────────────────────────────
-            with st.expander("📊 Full results table"):
-                st.dataframe(results_df, use_container_width=True, hide_index=True)
-        else:
-            st.warning("No results — check that benchmark CSV files exist in the data/benchmark/ directory.")
+            with cols[i]:
+                st.markdown(f"""<div class="output-panel" style="text-align:center">
+                    <div class="small-label">{row_acc['Model']}</div>
+                    <div style="font-size:32px;font-weight:800;color:{col_a};margin:8px 0">{acc_v}%</div>
+                    <div style="font-size:12px;color:#64748b">
+                        {int(row_acc['Correct'])}/{int(row_acc['Total'])} correct
+                    </div>
+                </div>""", unsafe_allow_html=True)
+
+        st.markdown('<p class="section-label">Detailed Results by Question</p>', unsafe_allow_html=True)
+
+        # No .style.background_gradient() because it requires matplotlib on Streamlit Cloud
+        st.dataframe(results_df, use_container_width=True, hide_index=True)
+
+        with st.expander("Raw accuracy table"):
+            st.dataframe(summary_acc, use_container_width=True, hide_index=True)
 
     else:
         st.markdown("""<div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;
             padding:28px 32px;text-align:center;color:#64748b;font-size:14px;margin-top:1rem">
             <div style="font-size:28px;margin-bottom:10px">📊</div>
             <div style="font-weight:600;font-size:14px;color:#0f172a;margin-bottom:6px">Ready to compare</div>
-            Select the number of examples to evaluate per task, then click Run.
+            Select a benchmark task from the sidebar, choose sample size, then run comparison.
         </div>""", unsafe_allow_html=True)
 
     st.stop()
-
 
 # ══════════════════════════════════════════════════════════════
 # BENCHMARK EVALUATION MODE
