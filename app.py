@@ -99,18 +99,22 @@ html, body, .stApp, [data-testid="stAppViewContainer"], [data-testid="stMain"],
     padding: .3rem .5rem !important;
 }
 
-/* ── Main content buttons (demo quick-actions) — keep accent style ── */
+/* ── Demo quick-action buttons — light accent style, NOT dark ── */
 .block-container .stButton > button {
-    background: #0f172a !important;
-    color: #ffffff !important;
-    border: none !important;
+    background: #ffffff !important;
+    color: #0284c7 !important;
+    border: 1.5px solid #bae6fd !important;
     border-radius: 8px !important;
     font-weight: 600 !important;
-    font-size: 13px !important;
-    padding: .45rem 1.1rem !important;
+    font-size: 12px !important;
+    padding: .4rem .9rem !important;
+    transition: all .15s !important;
+    box-shadow: 0 1px 3px rgba(14,165,233,.1) !important;
 }
 .block-container .stButton > button:hover {
-    background: #1e3a5f !important;
+    background: #e0f2fe !important;
+    border-color: #0ea5e9 !important;
+    color: #0284c7 !important;
 }
 
 /* header */
@@ -992,41 +996,36 @@ with st.sidebar:
                     label_visibility="collapsed")
     st.markdown("### Location")
     selected_location = st.selectbox("", ["Auto-detect"] + locations, label_visibility="collapsed")
-    if mode != "Compare Models":
+    if mode == "Benchmark Evaluation":
         st.markdown("### Prediction Source")
         prediction_mode = st.selectbox("", ["Rule-based","GPT-4o Mini","Llama 3.3 70B","DeepSeek R1"],
                                        label_visibility="collapsed")
     else:
-        prediction_mode = "Compare Models"
+        prediction_mode = "Rule-based" if mode == "Interactive Reasoning" else "Compare Models"
 
     st.divider()
 
-    # ── Task navigation ───────────────────────────────────────
-    st.markdown("### Benchmark Tasks")
-
-    task_keys = list(BENCHMARK_PATHS.keys())
-    for i, tk in enumerate(task_keys):
-        num = i + 1
-        is_active = (tk == st.session_state.selected_task_key and mode == "Benchmark Evaluation")
-        num_cls = "task-nav-num active-num" if is_active else "task-nav-num"
-        item_cls = "task-nav-item active" if is_active else "task-nav-item"
-        short_name = tk.split(" - ", 1)[1] if " - " in tk else tk
-        desc = TASK_DESCRIPTIONS.get(tk, "")
-
-        col_nav, col_browse = st.columns([3, 1])
-        with col_nav:
-            if st.button(f"T{num}  {short_name}", key=f"nav_{i}",
-                         help=desc, use_container_width=True):
-                st.session_state.selected_task_key = tk
-                st.session_state.sidebar_view = "main"
-                st.session_state.clicked_question = None
-        with col_browse:
-            if st.button("📋", key=f"browse_{i}", help=f"Browse all {short_name} questions"):
-                st.session_state.browsing_task = tk
-                st.session_state.sidebar_view = "task_browser"
-                st.session_state.clicked_question = None
-
-    st.divider()
+    # ── Task navigation — only visible in Benchmark or Compare modes ───
+    if mode != "Interactive Reasoning":
+        st.markdown("### Benchmark Tasks")
+        task_keys = list(BENCHMARK_PATHS.keys())
+        for i, tk in enumerate(task_keys):
+            num = i + 1
+            short_name = tk.split(" - ", 1)[1] if " - " in tk else tk
+            desc = TASK_DESCRIPTIONS.get(tk, "")
+            col_nav, col_browse = st.columns([3, 1])
+            with col_nav:
+                if st.button(f"T{num}  {short_name}", key=f"nav_{i}",
+                             help=desc, use_container_width=True):
+                    st.session_state.selected_task_key = tk
+                    st.session_state.sidebar_view = "main"
+                    st.session_state.clicked_question = None
+            with col_browse:
+                if st.button("📋", key=f"browse_{i}", help=f"Browse {short_name} questions"):
+                    st.session_state.browsing_task = tk
+                    st.session_state.sidebar_view = "task_browser"
+                    st.session_state.clicked_question = None
+        st.divider()
 
     # ── Label guide ───────────────────────────────────────────
     st.markdown("### Label Guide")
@@ -1108,13 +1107,134 @@ st.markdown("""
 benchmark_question = None; benchmark_expected = None; benchmark_df = pd.DataFrame()
 selected_task = st.session_state.selected_task_key
 
+# ══════════════════════════════════════════════════════════════
+# COMPARE MODELS MODE — Full benchmark evaluation across all tasks
+# ══════════════════════════════════════════════════════════════
+if mode == "Compare Models":
+    st.markdown('<p class="section-label">Model Comparison — All Benchmark Tasks</p>', unsafe_allow_html=True)
+    st.markdown("""<div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;
+        padding:12px 16px;font-size:13px;color:#0369a1;margin-bottom:1rem">
+        Evaluates <b>Rule-based</b>, <b>GPT-4o Mini</b>, <b>Llama 3.3 70B</b>, and <b>DeepSeek R1</b>
+        against ground truth labels across all 7 benchmark tasks. Accuracy = % of examples where
+        predicted label matches expected label.
+    </div>""", unsafe_allow_html=True)
+
+    models_to_compare = ["Rule-based", "GPT-4o Mini", "Llama 3.3 70B", "DeepSeek R1"]
+    n_sample = st.slider("Examples per task to evaluate", min_value=5, max_value=50, value=10, step=5)
+
+    if st.button("▶ Run Full Benchmark Comparison", use_container_width=True):
+        all_results = []
+        progress = st.progress(0, text="Evaluating tasks…")
+        total_steps = len(BENCHMARK_PATHS) * len(models_to_compare)
+        step = 0
+
+        for task_key, task_path in BENCHMARK_PATHS.items():
+            task_num = list(BENCHMARK_PATHS.keys()).index(task_key) + 1
+            bdf = load_benchmark_data(task_path)
+            qcol = get_question_column(bdf)
+            acol = get_answer_column(bdf)
+
+            if bdf.empty or not qcol or not acol:
+                step += len(models_to_compare)
+                progress.progress(step / total_steps, text=f"Skipping {task_key} — no data")
+                continue
+
+            sample = bdf.head(n_sample)
+
+            for model_name in models_to_compare:
+                correct = 0; total = 0
+                for _, row in sample.iterrows():
+                    q = str(row[qcol])
+                    expected = normalize_label(str(row[acol]))
+                    if not expected:
+                        continue
+
+                    loc = extract_location(q, locations)
+                    date_v = extract_date(q)
+                    filt = df.copy()
+                    if loc: filt = filt[filt["location"] == loc]
+                    if date_v: filt = filt[filt["date"] == date_v]
+                    summ = summarize_context(filt, q)
+
+                    res = run_single_model(model_name, q, summ, df, task_key)
+                    predicted = res.get("label", "B") if isinstance(res, dict) else "B"
+                    if normalize_label(predicted) == expected:
+                        correct += 1
+                    total += 1
+
+                acc = round(correct / total * 100, 1) if total > 0 else 0
+                all_results.append({
+                    "Task": f"T{task_num}",
+                    "Task Name": task_key.split(" - ", 1)[1] if " - " in task_key else task_key,
+                    "Model": model_name,
+                    "Correct": correct,
+                    "Total": total,
+                    "Accuracy %": acc,
+                })
+
+                step += 1
+                progress.progress(step / total_steps, text=f"T{task_num} — {model_name}")
+
+        progress.empty()
+
+        if all_results:
+            results_df = pd.DataFrame(all_results)
+
+            # ── Accuracy table pivot ───────────────────────────
+            st.markdown('<p class="section-label" style="margin-top:1rem">Accuracy by Task & Model</p>', unsafe_allow_html=True)
+            pivot = results_df.pivot_table(index=["Task","Task Name"], columns="Model",
+                                           values="Accuracy %", aggfunc="first").reset_index()
+            pivot.columns.name = None
+            st.dataframe(pivot.style.format({m: "{:.1f}%" for m in models_to_compare if m in pivot.columns})
+                         .background_gradient(subset=[m for m in models_to_compare if m in pivot.columns],
+                                              cmap="RdYlGn", vmin=0, vmax=100),
+                         use_container_width=True, hide_index=True)
+
+            # ── Overall accuracy per model ─────────────────────
+            st.markdown('<p class="section-label" style="margin-top:1rem">Overall Accuracy per Model</p>', unsafe_allow_html=True)
+            overall = results_df.groupby("Model").apply(
+                lambda g: round(g["Correct"].sum() / g["Total"].sum() * 100, 1)
+            ).reset_index(name="Overall Accuracy %").sort_values("Overall Accuracy %", ascending=False)
+
+            cols_ov = st.columns(len(models_to_compare))
+            for i, row_ov in overall.iterrows():
+                with cols_ov[i % len(models_to_compare)]:
+                    acc_v = row_ov["Overall Accuracy %"]
+                    col_a = "#1a9e6e" if acc_v >= 70 else "#d4a017" if acc_v >= 50 else "#c0392b"
+                    st.markdown(f"""<div class="output-panel" style="text-align:center">
+                        <div class="small-label">{row_ov['Model']}</div>
+                        <div style="font-size:32px;font-weight:800;color:{col_a};margin:8px 0">{acc_v}%</div>
+                        <div class="confidence-bar-wrap">
+                            <div class="confidence-bar-fill" style="width:{int(acc_v)}%;background:{col_a}"></div>
+                        </div>
+                    </div>""", unsafe_allow_html=True)
+
+            # ── Raw results ────────────────────────────────────
+            with st.expander("📊 Full results table"):
+                st.dataframe(results_df, use_container_width=True, hide_index=True)
+        else:
+            st.warning("No results — check that benchmark CSV files exist in the data/benchmark/ directory.")
+
+    else:
+        st.markdown("""<div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;
+            padding:28px 32px;text-align:center;color:#64748b;font-size:14px;margin-top:1rem">
+            <div style="font-size:28px;margin-bottom:10px">📊</div>
+            <div style="font-weight:600;font-size:14px;color:#0f172a;margin-bottom:6px">Ready to compare</div>
+            Select the number of examples to evaluate per task, then click Run.
+        </div>""", unsafe_allow_html=True)
+
+    st.stop()
+
+
+# ══════════════════════════════════════════════════════════════
+# BENCHMARK EVALUATION MODE
+# ══════════════════════════════════════════════════════════════
 if mode == "Benchmark Evaluation":
     benchmark_df = load_benchmark_data(BENCHMARK_PATHS[selected_task])
     question_col = get_question_column(benchmark_df)
     answer_col   = get_answer_column(benchmark_df)
 
     if not benchmark_df.empty and question_col:
-        # If user clicked a question from the browser, pre-select it
         if st.session_state.clicked_question is not None and st.session_state.clicked_question in benchmark_df.index:
             default_idx = benchmark_df.index.tolist().index(st.session_state.clicked_question)
         else:
@@ -1127,7 +1247,8 @@ if mode == "Benchmark Evaluation":
                                         index=default_idx,
                                         format_func=lambda i: f"#{i} — {str(benchmark_df.loc[i, question_col])[:80]}…")
         with top_bar[1]:
-            st.metric("Task", f"T{list(BENCHMARK_PATHS.keys()).index(selected_task)+1}", delta=f"{len(benchmark_df)} examples")
+            st.metric("Task", f"T{list(BENCHMARK_PATHS.keys()).index(selected_task)+1}",
+                      delta=f"{len(benchmark_df)} examples")
 
         benchmark_question = str(benchmark_df.loc[selected_idx, question_col])
         benchmark_expected = benchmark_df.loc[selected_idx, answer_col] if answer_col else None
@@ -1136,11 +1257,13 @@ if mode == "Benchmark Evaluation":
 
     question = benchmark_question
 
+# ══════════════════════════════════════════════════════════════
+# INTERACTIVE REASONING MODE
+# ══════════════════════════════════════════════════════════════
 else:
     selected_task = "Interactive Reasoning"
-    # ── Prominent chat input ──────────────────────────────────
     st.markdown('<p class="section-label">Ask a question</p>', unsafe_allow_html=True)
-    typed_question = st.chat_input("Ask an urban reasoning question… (try: 'Which regions are most sensitive to weather changes?')")
+    typed_question = st.chat_input("Ask an urban reasoning question…  e.g. 'Which regions are most sensitive to weather changes?'")
     cb1, cb2, cb3, cb4 = st.columns(4)
     with cb1:
         if st.button("🚦 Traffic prediction", use_container_width=True):
@@ -1158,7 +1281,6 @@ else:
     question = typed_question or st.session_state.get("demo_q")
     if typed_question:
         st.session_state.pop("demo_q", None)
-
     benchmark_expected = None
 
 # ══════════════════════════════════════════════════════════════
@@ -1185,11 +1307,7 @@ if question:
     display_poi       = summary.get("poi_activity")
 
     # Run model
-    if mode == "Compare Models":
-        models = ["Rule-based","GPT-4o Mini","Llama 3.3 70B","DeepSeek R1"]
-        result = {m: run_single_model(m, question, summary, df, selected_task) for m in models}
-    else:
-        result = run_single_model(prediction_mode, question, summary, df, selected_task)
+    result = run_single_model(prediction_mode, question, summary, df, selected_task)
 
     # ── QUERY + DETECTED CONTEXT ─────────────────────────────
     st.markdown('<p class="section-label">Query</p>', unsafe_allow_html=True)
@@ -1207,19 +1325,7 @@ if question:
     # ── REASONING OUTPUT ──────────────────────────────────────
     st.markdown('<p class="section-label">Reasoning Output</p>', unsafe_allow_html=True)
 
-    if mode == "Compare Models":
-        comp_rows = []
-        for mn, mr in result.items():
-            if isinstance(mr, dict):
-                reas = mr.get("reasoning",[])
-                rt = (reas[0][1] if reas and isinstance(reas[0],tuple) else str(reas[0]) if reas else "")
-                comp_rows.append({"Model":mn,"Label":mr.get("label","N/A"),
-                                  "Prediction":mr.get("prediction",mr.get("cause","N/A")),
-                                  "Primary Reason":rt[:180]})
-        st.dataframe(pd.DataFrame(comp_rows), use_container_width=True)
-        with st.expander("Full model outputs"):
-            st.json(result)
-    elif isinstance(result, dict):
+    if isinstance(result, dict):
         render_output_panels(result, summary, prediction_mode, selected_task)
     elif isinstance(result, list):
         st.dataframe(pd.DataFrame(result), use_container_width=True)
