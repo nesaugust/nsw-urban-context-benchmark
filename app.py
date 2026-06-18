@@ -247,7 +247,10 @@ def safe_mean(df, col):
 
 
 def get_question_column(df):
-    for col in ["question", "query", "prompt", "input", "scenario", "text"]:
+    for col in [
+        "question", "query", "prompt", "input", "scenario", "text",
+        "scenario_card", "title", "conditions", "description"
+    ]:
         if col in df.columns:
             return col
     return None
@@ -523,23 +526,6 @@ def parse_ai_label(text):
 def detect_question_type(question):
     q = question.lower()
 
-    if any(x in q for x in ["scenario card", "generate scenario", "create scenario"]):
-        return "scenario_card"
-
-    if any(x in q for x in ["contrastive", "compare two", "similar traffic", "different causes"]):
-        return "contrastive_example"
-
-    if any(x in q for x in ["most sensitive", "sensitive to weather", "which region","which regions"]):
-        return "region_sensitivity"
-
-    if any(x in q for x in ["abnormal", "anomaly", "unusual", "most likely primary cause"]):
-        return "anomaly_classification"
-    if any(x in q for x in [
-        "poi",
-        "mobility",
-        "destination-based movement"
-    ]):
-        return "poi_reasoning"
     if any(x in q for x in [
         "next poi",
         "next location",
@@ -550,6 +536,22 @@ def detect_question_type(question):
         "target_poi_id"
     ]):
         return "next_poi_prediction"
+
+    if any(x in q for x in ["scenario card", "generate scenario", "create scenario"]):
+        return "scenario_card"
+
+    if any(x in q for x in ["contrastive", "compare two", "similar traffic", "different causes"]):
+        return "contrastive_example"
+
+    if any(x in q for x in ["most sensitive", "sensitive to weather", "which region", "which regions"]):
+        return "region_sensitivity"
+
+    if any(x in q for x in ["abnormal", "anomaly", "unusual", "most likely primary cause"]):
+        return "anomaly_classification"
+
+    if any(x in q for x in ["poi", "mobility", "destination-based movement"]):
+        return "poi_reasoning"
+
     return "activity_prediction"
 
 def task1_activity_prediction(summary):
@@ -1032,8 +1034,11 @@ with st.sidebar:
 
         benchmark_df = load_benchmark_data(BENCHMARK_PATHS[selected_task])
 
-        st.caption(f"{len(benchmark_df)} examples loaded")
+        if benchmark_df.empty:
+            st.warning(f"Benchmark file not found or empty: {BENCHMARK_PATHS[selected_task]}")
 
+        st.caption(f"{len(benchmark_df)} examples loaded")
+        
         question_col = get_question_column(benchmark_df)
         answer_col = get_answer_column(benchmark_df)
 
@@ -1262,14 +1267,18 @@ if question:
 
     st.markdown('<div class="section-title">Context Signals</div>', unsafe_allow_html=True)
 
-    c1, c2, c3, c4, c5 = st.columns(5)
+    if selected_task == "Task 1 - Traffic Prediction":
+        c1, c2, c3, c4 = st.columns(4)
 
-    c1.metric("Events", display_events if display_events is not None else "No data")
-    c2.metric("POI Activity", display_poi if display_poi is not None else "No data")
-    c3.metric("Rain mm", display_rain if display_rain is not None else "No data")
-    c4.metric("Alert Time Points", display_alerts if display_alerts is not None else "No data")
-    c5.metric("Road Incidents", display_incidents if display_incidents is not None else "No data")
+        c1.metric("Events", display_events if display_events is not None else "No data")
+        c2.metric("Rain mm", display_rain if display_rain is not None else "No data")
+        c3.metric("Alert Time Points", display_alerts if display_alerts is not None else "No data")
+        c4.metric("Road Incidents", display_incidents if display_incidents is not None else "No data")
 
+    else:
+        c1, c2, c3, c4, c5 = st.columns(5)
+
+    
     with st.expander("View retrieved context data"):
         if filtered.empty:
             st.warning("No retrieved context rows found.")
