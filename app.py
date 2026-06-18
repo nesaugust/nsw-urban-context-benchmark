@@ -34,7 +34,7 @@ LABEL_MEANINGS = {
     "D": "Insufficient Data — Cannot Predict",
 }
 LABEL_COLORS = {"A": "#1a9e6e", "B": "#d4a017", "C": "#c0392b", "D": "#7f8c8d"}
-LABEL_BG     = {"A": "#cadbd1", "B": "#fffbea", "C": "#fdedec", "D": "#f2f3f4"}
+LABEL_BG     = {"A": "#eafaf1", "B": "#fffbea", "C": "#fdedec", "D": "#f2f3f4"}
 
 st.set_page_config(page_title="NSW Urban Context Benchmark", page_icon="🏙️", layout="wide")
 
@@ -60,7 +60,7 @@ html,body,[class*="css"]{font-family:'Inter',sans-serif;}
 .task-nav-desc{font-size:10px;color:#94a3b8;margin-top:1px;line-height:1.3;}
 
 /* header */
-.page-title{font-size:28px;font-weight:700;color:#0f172a;letter-spacing:-.5px;margin:0;}
+.page-title{font-size:28px;font-weight:700;color:#102a43;letter-spacing:-.5px;margin:0;}
 .page-subtitle{font-size:13px;color:#64748b;margin:2px 0 1rem 0;max-width:820px;line-height:1.6;}
 .section-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#94a3b8;margin:1rem 0 .5rem 0;}
 
@@ -149,7 +149,7 @@ div[data-testid="stMetricValue"]{font-size:22px!important;font-weight:700!import
 div[data-testid="stMetricLabel"]{font-size:10px!important;color:#64748b!important;font-weight:600!important;text-transform:uppercase;letter-spacing:.05em;}
 .stButton>button{background:#0f172a;color:#fff;border:none;border-radius:8px;font-weight:600;font-size:13px;padding:.45rem 1.1rem;transition:background .2s;}
 .stButton>button:hover{background:#1e293b;}
-div[data-testid="stExpander"]{border:1px solid ##06381c!important;border-radius:10px!important;background:#ffffff!important;}
+div[data-testid="stExpander"]{border:1px solid #e2e8f0!important;border-radius:10px!important;background:#ffffff!important;}
 </style>
 """, unsafe_allow_html=True)
 
@@ -631,6 +631,14 @@ def compute_confidence(summary, label):
 
 
 # ══════════════════════════════════════════════════════════════
+# ── Safe float formatter ──────────────────────────────────────
+def fmt_float(v, decimals=1, fallback="—"):
+    """Safely format a float that may be None, 0, or a valid number."""
+    try:
+        return f"{float(v):.{decimals}f}"
+    except (TypeError, ValueError):
+        return fallback
+
 # UI helpers
 # ══════════════════════════════════════════════════════════════
 def render_signal_card(icon, label, value, sub=""):
@@ -781,7 +789,7 @@ def render_output_panels(result, summary, prediction_mode, selected_task):
                 <div class="small-label">Mobility Level</div>
                 <div style="font-size:36px;font-weight:800;color:{mob_color};margin:8px 0">{mob}</div>
                 <div class="small-label">POI Activity Score</div>
-                <div style="font-size:22px;font-weight:700;color:#0f172a">{poi:.1f if poi else "—"}</div>
+                <div style="font-size:22px;font-weight:700;color:#0f172a">{fmt_float(poi)}</div>
                 <div class="poi-gauge-row">
                     <div class="poi-gauge-bg"><div style="width:{bar_pct}%;height:10px;border-radius:99px;background:linear-gradient(90deg,#0ea5e9,{mob_color})"></div></div>
                 </div>
@@ -1154,8 +1162,8 @@ if question:
     poi_sub  = ("Low" if (display_poi or 0)<5 else "Moderate" if (display_poi or 0)<20 else "High") if display_poi else ""
     sc1,sc2,sc3,sc4,sc5 = st.columns(5)
     with sc1: st.markdown(render_signal_card("📅","Events",int(display_events) if display_events is not None else 0,"No data" if display_events is None else ""),unsafe_allow_html=True)
-    with sc2: st.markdown(render_signal_card("🏢","POI Activity",f"{display_poi:.1f}" if display_poi is not None else "—",poi_sub),unsafe_allow_html=True)
-    with sc3: st.markdown(render_signal_card("🌧️","Rain (mm)",f"{display_rain:.1f}" if display_rain is not None else "—",rain_sub),unsafe_allow_html=True)
+    with sc2: st.markdown(render_signal_card("🏢","POI Activity",fmt_float(display_poi),poi_sub),unsafe_allow_html=True)
+    with sc3: st.markdown(render_signal_card("🌧️","Rain (mm)",fmt_float(display_rain),rain_sub),unsafe_allow_html=True)
     with sc4: st.markdown(render_signal_card("⚠️","Alert Time Points",int(display_alerts) if display_alerts is not None else 0,"No alerts" if (display_alerts or 0)==0 else ""),unsafe_allow_html=True)
     with sc5: st.markdown(render_signal_card("🚗","Road Incidents",int(display_incidents) if display_incidents is not None else 0,"No incidents" if (display_incidents or 0)==0 else ""),unsafe_allow_html=True)
 
