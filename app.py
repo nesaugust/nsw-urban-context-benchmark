@@ -75,32 +75,38 @@ html, body, .stApp, [data-testid="stAppViewContainer"], [data-testid="stMain"],
     color: #1e293b !important;
 }
 
-/* ── Task nav buttons — light style, NOT black ── */
-[data-testid="stSidebar"] .stButton > button {
+/* ── Sidebar task buttons — light style ── */
+[data-testid="stSidebar"] button,
+[data-testid="stSidebar"] .stButton > button,
+[data-testid="stSidebar"] [data-testid="stBaseButton-secondary"],
+[data-testid="stSidebar"] [data-testid="stBaseButton-primary"] {
     background: #f1f5f9 !important;
     color: #1e293b !important;
-    border: 1px solid #e2e8f0 !important;
+    border: 1px solid #cbd5e1 !important;
     border-radius: 8px !important;
     font-weight: 500 !important;
     font-size: 12px !important;
     padding: .35rem .8rem !important;
     text-align: left !important;
-    transition: background .15s !important;
     box-shadow: none !important;
 }
-[data-testid="stSidebar"] .stButton > button:hover {
-    background: #e0f2fe !important;
-    border-color: #bae6fd !important;
-    color: #0284c7 !important;
-}
-/* Browse (📋) button stays compact */
-[data-testid="stSidebar"] .stButton > button[title*="Browse"],
-[data-testid="stSidebar"] .stButton > button:has-text("📋") {
-    padding: .3rem .5rem !important;
+
+[data-testid="stSidebar"] button *,
+[data-testid="stSidebar"] .stButton > button * {
+    color: inherit !important;
 }
 
-/* ── Demo quick-action buttons — light accent style, NOT dark ── */
-.block-container .stButton > button {
+[data-testid="stSidebar"] button:hover,
+[data-testid="stSidebar"] .stButton > button:hover {
+    background: #e0f2fe !important;
+    border-color: #7dd3fc !important;
+    color: #0284c7 !important;
+}
+
+/* ── Main content demo buttons — light blue accent ── */
+[data-testid="stMain"] .stButton > button,
+[data-testid="stMain"] [data-testid="stBaseButton-secondary"],
+[data-testid="stMain"] [data-testid="stBaseButton-primary"] {
     background: #ffffff !important;
     color: #0284c7 !important;
     border: 1.5px solid #bae6fd !important;
@@ -108,10 +114,18 @@ html, body, .stApp, [data-testid="stAppViewContainer"], [data-testid="stMain"],
     font-weight: 600 !important;
     font-size: 12px !important;
     padding: .4rem .9rem !important;
-    transition: all .15s !important;
     box-shadow: 0 1px 3px rgba(14,165,233,.1) !important;
 }
-.block-container .stButton > button:hover {
+
+[data-testid="stMain"] .stButton > button *,
+[data-testid="stMain"] [data-testid="stBaseButton-secondary"] *,
+[data-testid="stMain"] [data-testid="stBaseButton-primary"] * {
+    color: inherit !important;
+}
+
+[data-testid="stMain"] .stButton > button:hover,
+[data-testid="stMain"] [data-testid="stBaseButton-secondary"]:hover,
+[data-testid="stMain"] [data-testid="stBaseButton-primary"]:hover {
     background: #e0f2fe !important;
     border-color: #0ea5e9 !important;
     color: #0284c7 !important;
